@@ -21,20 +21,6 @@ class WidgetController extends AppController
 		}
 	}
 	
-	function getAdmins($name){
-	
-		//get the widget from the name and return the xhtml
-		
-		$out = "<h1>".$name."</h1>";
-		//$out = "rocketflash";
-		$json = "{\"name\": \"".$name."\", \"widgetcode\": \"".addslashes($out)."\"}";
-		$this->set('output',$json);
-		$this->render('wrapper','ajax');
-		
-		//$widget = $this->Widget->findByName($name);
-		//$this->set('output',$widget);
-		//$this->render('json','ajax');
-	}
 		
 	function getAdmin($id){
 		$this->Widget->id = $id;
