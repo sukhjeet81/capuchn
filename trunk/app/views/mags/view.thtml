@@ -1,0 +1,28 @@
+
+
+<div class="magcontent">
+<h2 class="magviewtitle"><?php echo $mag['Mag']['header']?></h2>
+<?php 
+if($mag['Mag']['type'] == "php"){
+	eval($mag['Mag']['content']);	
+}else{
+	echo $mag['Mag']['content']; 
+}
+?>
+<div style="clear:both"></div>
+<br/>
+<?php 
+$sessinfo = $this->requestAction('user/checkLogin');
+$toReturn = "";
+
+if($sessinfo['admin_enable']&&false){
+	$toReturn .= $html->link('edit page','/mags/wikiedit/'.$mag['Mag']['id']);
+	$toReturn .= " | ";
+	$toReturn .= $html->link('admin','/admin');
+	$toReturn .= " | ";
+	//TODO: get the volume id to put inline
+	$toReturn .= $html->link('edit section','/volumes/wikiedit/'.$mag['Mag']['volume_id']);
+}
+echo $toReturn;
+?>
+</div>

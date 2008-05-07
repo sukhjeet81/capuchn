@@ -1,0 +1,199 @@
+<?php
+//echo $output;
+//foreach widget configured.... or....
+//$this->requestAction("widget/getAdmin/".$name);
+
+/*
+ * user profile will contain a json string that will list each widget and thier configur
+ * ations. Also, any additional information about the display related can be contained here
+ * actually. display info too maybe.
+ * 
+ * {
+    "debug": "on",
+    "window": {
+        "title": "Sample Konfabulator Widget",
+        "name": "main_window",
+        "width": 500,
+        "height": 500
+    },
+    "image": { 
+        "src": "Images/Sun.png",
+        "name": "sun1",
+        "hOffset": 250,
+        "vOffset": 250,
+        "alignment": "center"
+    },
+    "text": {
+        "data": "Click Here",
+        "size": 36,
+        "style": "bold",
+        "name": "text1",
+        "hOffset": 250,
+        "vOffset": 100,
+        "alignment": "center",
+        "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
+    }
+	}<?php echo $user_profile ?>
+ */
+ 
+?>
+<script type="text/javascript">
+	//remove slashes on save
+	<?php echo "var txt =".$user_profile.";" ?>
+	var widgetConfig = eval(txt);
+	var wrapperCount = 1;
+	var widgetTargets = [];
+	var targetNode = null;
+	var isDragging = false;
+	dojo.addOnLoad(function(){
+		for( var wname in widgetConfig ){
+			getWidget(wname);	
+		}
+
+		dojo.subscribe("/dnd/start", function(source,nodes,iscopy){
+			console.debug("start drag");
+			isDragging = true;
+		});
+		
+		dojo.subscribe("/dnd/drop", function(source,nodes,iscopy){
+			if(isDragging){
+				//need to grab the node and apply it to the target
+				
+				alert("dropeed in "+source.id);
+				
+			}
+			
+			isDragging = false;
+		});
+		
+		dojo.subscribe("/dnd/cancel", function(source,nodes,iscopy){
+			isDragging = false;			
+		});
+		
+		dojo.subscribe("/dnd/source/over", function(source){
+                  //code to perform some action
+                if (isDragging) {
+				
+					if (source == null) {
+						if (targetNode != null) {
+							console.debug("out source, removing target")
+							targetNode.parentNode.style.height = (targetNode.parentNode.clientHeight - 200) + "px";
+							targetNode.parentNode.removeChild(targetNode);
+							targetNode = null;
+						}
+						
+					}
+					else {
+						if (targetNode == null) {
+							console.debug("adding target")
+							var cn = source.node;
+							cn.style.height = (cn.clientHeight + 200) + "px";
+							var ndiv = dojo.doc.createElement("div");
+							ndiv.className = "widgetDropTarget";
+							ndiv.style.height = "200px";
+							cn.appendChild(ndiv);
+							targetNode = ndiv;
+						}
+						else {
+							console.debug("into new source maybe, removing target")
+							targetNode.parentNode.style.height = (targetNode.parentNode.clientHeight - 200) + "px";
+							targetNode.parentNode.removeChild(targetNode);
+							targetNode = null;
+						}
+					}
+				}
+		});
+	});//end addOnLoad
+	
+
+	
+	function displayWidget(response){
+		//var wg = eval(response);
+		//need to set the stored variables from the widgetConfig
+		
+		//widgetDropZones will provide a single wrapper for
+		//both dnd source objects
+		var widgetDropZones = dojo.doc.createElement("div");
+		widgetDropZones.className = "widgetDropZone";
+		
+		//top of widget drop zone
+		var widgetTopZone = dojo.doc.createElement("div");
+		widgetTopZone.className = "widgetSource";
+		widgetTopZone.style.height = "20px";
+		widgetTopZone.style.background = "#eee"
+		widgetTopZone.innerHTML = "dropzone";
+		var wtz = new dojo.dnd.Source(widgetTopZone,{"withHandles":true});
+		widgetDropZones.appendChild(widgetTopZone);
+		var spacer = dojo.doc.createElement("div");
+		spacer.className = "spacer";
+		widgetTopZone.appendChild(spacer);
+		
+		
+		//add current widget source/container
+		var widgetWrapper = document.createElement("div");
+		widgetWrapper.dojoType="dojo.dnd.Source";
+		widgetWrapper.id = "wrapper_"+wrapperCount;
+		wrapperCount++;
+		widgetWrapper.className = "widgetSource";
+		var ww = new dojo.dnd.Source(widgetWrapper,{"withHandles":true});
+		widgetDropZones.appendChild(widgetWrapper);
+		ww.startup();
+		
+		//Create the widget
+		var newNode = document.createElement("div");
+		newNode.className = "dojoDndItem widget";
+		var header = document.createElement("div");
+		header.className = "dojoDndHandle widgetTop";
+		header.dndType = "handle";
+		
+		header.appendChild(document.createElement("div"));
+		var footer = document.createElement("div");
+		footer.appendChild(document.createElement("div"));
+		var content = document.createElement("div");
+		//header.innerHTML = response['widgettitle'];
+		footer.className = "widgetBottom";
+		content.className = "widgetContent";
+		content.innerHTML = response['widgetcode'];
+		newNode.appendChild(header);
+		newNode.appendChild(content);
+		newNode.appendChild(footer);
+		widgetWrapper.appendChild(newNode);
+		if (response['columnnumber'] != undefined) {
+			if(response['columnumber'] == 1){
+				var column = dojo.byId('widgetcolumnone');
+			}else{
+				var column = dojo.byId('widgetcolumntwo');
+			}					
+		}else{
+			var column = dojo.byId("widgetcolumnone");
+		}
+
+		column.appendChild(widgetDropZones);
+		//var srcNode = new dojo.dnd.Source(widgetWrapper, {"class": "widgetSource"});
+		ww.startup();
+		wtz.startup();
+		
+	}
+	
+	function updateWidgetConfig(wconfig){
+		console.debug(wconfig);
+	}
+	
+	function saveWidgetConfig(){
+		console.debug(txt);
+	}
+	
+	
+</script>
+
+<div id="maincontain">
+	<div id="widgetcolumns" 
+		dojoType="dojox.layout.ContentPane" 
+		title="widgetpanel1"
+	>
+		<div id="widgetcolumnone" style="width:50%"></div>
+		<div id="widgetcolumntwo" style="width:50%"></div>
+	</div>
+
+
+</div>

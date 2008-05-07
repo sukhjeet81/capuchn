@@ -1,0 +1,30 @@
+        @import "../js/dojoroot/dijit/themes/tundra/tundra.css";
+        @import "../js/dojoroot/dojox/grid/_grid/tundraGrid.css";
+        @import "../js/dojoroot/dojo/resources/dojo.css";
+        @import "adminspecific.css";
+
+/*Color scheme: E7E8D1, D3CEAA, FBF7E4, 424242, 8E001C*/
+/* or tundra moss FCF4E2,33301E,BAB497,4F4A24,C03910 */
+
+html,body {
+	height: 100%; width: 100%; margin: 0; padding: 0; 
+}
+
+table {
+	border:1px solid #666666;
+}
+
+td{
+	border-left:1px solid #D9D9D9;
+	font-family:"lucida grande",verdana,sans-serif;
+	font-size:8pt;
+	padding:3px 8px;		
+}
+
+td.even{
+	background-color:#FCF4E2;
+}
+
+td.odd{
+	background-color:#BAB497;
+}

@@ -1,0 +1,25 @@
+<?php
+//Use this to edit a specific image, initial dev will focus on a dialog.
+?>
+
+<div id="editdialog">
+	<div class="imageContainer" id="image_<?php echo $file['Image']['id']?>">
+	<img border=1 class="fullSizeImage" <?=(isset($width))?"width=\"".$width."\"":"width=\"400\"" ?> <?=(isset($width))?"height=\"".$height."\"":"height=\"400\"" ?> src="<?php echo $path.$file['Image']['location']?>"/>
+	</div>		
+	<div id="fulleditable_<?php echo $file['Image']['id']?>" class="thumbtext" <? echo (isset($width))?"style=\"width:".($width-5)."px\"":"style=\"width:395px\"" ?>
+		dojoType="dijit.InlineEditBox" 
+        onChange="myHandler(this.id,arguments[0])">
+        <?php echo $file['Image']['name'];?>
+    </div>
+	<div id="fullimagelink_<?php echo $file['Image']['id']?>" class="thumbtext" <? echo (isset($width))?"style=\"width:".($width-5)."px\"":"style=\"width:395px\"" ?>
+        	dojoType="dijit.InlineEditBox" 
+        	onChange="imageLinkHandler(this.id,arguments[0])"
+        	onClick="imageLinkHandler(this.id,arguments[0])">
+        	<?php echo $baseurl.$file['Image']['location'];?>
+    </div>
+	<div >
+		<a href="#" onClick="deleteImage('<?php echo $file['Image']['id']?>');dijit.byId('imgdialog'+<?php echo $file['Image']['id']?>).destroy()">Delete</a> 
+		<a target="_blank" href="<?php echo $baseurl.$file['Image']['location'];?>">View</a> 
+	</div>
+	<div>	
+</div>

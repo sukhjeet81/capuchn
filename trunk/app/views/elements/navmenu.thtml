@@ -1,0 +1,6 @@
+<?php
+
+$content_list = $this->requestAction('volumes/navmenu');
+echo $tree->navList($content_list, 'Volume', 'name');
+
+?>

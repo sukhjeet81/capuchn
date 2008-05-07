@@ -1,0 +1,26 @@
+<?php ?>
+<form id="messageForm">
+<table class="messages" cellspacing="0" cellpadding="0">
+<tbody>
+<?php 
+foreach($output as $msg){
+	echo "<tr class=\"message\" id=\"msg_date_".$msg['Message']['id']."\">";
+	echo "<td class=\"from\"><div class=\"msgfrom\">
+			<input id=\"cb_msg_".$msg['Message']['id']."\" dojotype=\"dijit.form.CheckBox\"
+           	name=\"msg_".$msg['Message']['id']."\" value=\"off\"
+           	type=\"checkbox\" onClick=\"messageCheck(".$msg['Message']['id'].")\"/>".$msg['Message']['from']."</div></td>";
+	echo "<td class=\"subject\" onClick=\"messageClick(".$msg['Message']['id'].")\"><div class=\"msgsubject\">".$msg['Message']['subject']."</div></td>";
+	echo "<td class=\"date\"><div class=\"msgdate\">".$msg['Message']['date']."</div></td>";
+	echo "</tr>\n";
+}
+
+?>
+</tbody>
+</table>
+</form>
+
+<?php 
+if(isset($moredatas)){
+	echo $moredatas;
+}
+?>

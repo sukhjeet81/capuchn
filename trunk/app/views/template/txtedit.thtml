@@ -1,0 +1,9 @@
+<?php
+
+?>
+<?php echo $html->formTag("savefile/")?>
+<?php echo $html->textarea('template/content', array('cols'=>"80", 'rows'=>"30", 'style'=>"width: 100%", 'value'=>$filedata));?>
+<?php echo $html->hidden('template/filepath',array("value"=>$filepath))?>
+<?php echo $html->hidden('template/filetype',array("value"=>$filetype))?>
+<?php echo $html->submit()?>
+</form>

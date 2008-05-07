@@ -1,0 +1,17 @@
+{ label: 'name',
+  identifier: 'id',
+  items: [
+  	{ name:'Main', type:'volume', id:'1',
+  		children: [
+			{ name:'Sinvertical CMS update', type:'mag', id:'1'},
+			{ name:'nothing', type:'mag', id:'5'},
+			{ name:'Fix extra popups', type:'mag', id:'9'},
+			{ name:'TinyMCE CSS', type:'mag', id:'10'},
+			{ name:'post812', type:'mag', id:'11'},
+			{ name:'newarticle', type:'mag', id:'12'}
+		]
+	},
+	{ name:'Second', type:'volume', id:'2'}
+  ]
+}
+    

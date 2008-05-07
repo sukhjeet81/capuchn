@@ -1,0 +1,32 @@
+<?php
+ 
+?>
+	<form id="widgetform">
+		<button dojoType="dijit.form.Button" onclick="saveWidget(this)">
+	    	Save
+		</button>
+		<input type="hidden" value="<?php echo $data['Widget']['id']?>" cols="60" name="data[Widget][id]"
+		<input id="WidgetName" type="text" value="<?php echo $data['Widget']['name']?>" cols="60" name="data[Widget][name]"/>
+		<input id="WidgetVersion" type="text" value="<?php echo $data['Widget']['version']?>" cols="60" name="data[Widget][version]"/>
+		<select id="WidgetTypeSelect" name="data[Widget][type]">
+			<option selected="selected" value="0">Admin Widget</option>
+			<option value="1">Display Widget</option>
+			<option value="2">Combo Widget</option>
+		</select>	
+		<div dojoType="dijit.TitlePane" title="Admin XHtML">	
+		  	<textarea id="dataWidgetAdmin" class="codepress javascript linenumbers-on" style="display:block; width:100%" name="data[Widget][admin_xhtml]"><?php echo htmlentities($data['Widget']['admin_xhtml'])?></textarea>
+		</div>
+		<div dojoType="dijit.TitlePane" title="Display Code">
+			<textarea id="dataWidgetDisplay" class="codepress javascript html css linenumbers-on" style="display:block; height: 400px;" name="data[Widget][display_xhtml]"><?php echo $data['Widget']['display_xhtml']?></textarea>
+		</div>
+		<div dojoType="dijit.TitlePane" title="Callback Code">
+			<textarea id="dataWidgetCallback" class="codepress php html linenumbers-on" style="display:block; height: 400px;" name="data[Widget][callback]"><?php echo $data['Widget']['callback']?></textarea>
+		</div>
+	</form>
+
+<script>
+	dojo.addOnLoad(function(){
+		console.debug("running codepress.run");
+		CodePress.run();
+	});
+</script>	

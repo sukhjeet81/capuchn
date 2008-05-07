@@ -1,0 +1,6 @@
+<?php
+
+$content_list = $this->requestAction('volumes/contentlist');
+echo $tree->displayTree($content_list);
+
+?>

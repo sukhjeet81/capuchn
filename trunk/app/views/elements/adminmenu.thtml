@@ -1,0 +1,29 @@
+<?php
+/*
+ * This will not have the access to determin what article or section the user is viewing unless this
+ * is setup in a global variable, (session would be a good one), Although, I think each of these should 
+ * be enabled in each 'block's view, although that then brings up the question of how I will handle login
+ * Info, i could use request acction in the same way in each view...
+ * 
+ * THIS MAY ACTUALLY BE DEPRECIATED NOW... unless  i find some other use for it..
+ * 
+ */
+
+$sessinfo = $this->requestAction('user/checkLogin');
+$toReturn = "";
+
+if($sessinfo['admin_enable']){
+	//TODO: add the ability to do multiedit for pages with more than one mag displayed
+	$toReturn .= $html->link('edit page','/mags/wikiedit/');
+	$toReturn .= " | ";
+	$toReturn .= $html->link('admin','/admin');
+	$toReturn .= " | ";
+	//TODO: get the volume id to put inline
+	$toReturn .= $html->link('edit section','/volumes/wikiedit/');
+	
+}
+
+return $toReturn;
+
+
+?>

@@ -1,0 +1,6 @@
+<?php
+echo $debug;
+?>
+<pre>
+<?php var_dump($userdata)?>
+</pre>
