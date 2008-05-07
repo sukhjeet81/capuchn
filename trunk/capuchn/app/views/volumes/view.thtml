@@ -1,0 +1,127 @@
+<?php
+
+$sessinfo = $this->requestAction('user/checkLogin');
+
+?>
+<?php
+//TODO: create volume display styles and add to the section add/edit page
+if($volume_out['Volume']['style'] == 'blog'){
+	foreach($volume_out['Mag'] as $mags){
+		if(isset($mags['Mag'])){
+			/*
+				When using findAll on the Mag and putting directly into the array to edit
+				the order of the items, this recursivly brings the volume and user arrays
+				so, $mags['Volume'] and $mags['User'] is valid when using that style query
+				as opposed to the $this->Volume->read() query.
+			*/
+			$mags = $mags['Mag'];
+		}
+		$content = $mags['content'];
+		//TODO: blog length variable in admin
+		if($mags['type'] == "html"){
+			$max_length = 120;
+			if(strlen($content) < $max_length){
+				$frm_content = $content;
+			}else{
+				//TODO: strip the string better
+				//$frm_content = substr($content, 0, 120);
+				//$frm_content .= "...";
+				$frm_content = $content;
+			}
+			echo "<div class=\"magcontent\">";
+			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
+			echo $frm_content;
+			echo "<div style=\"clear:both\"/></div>";
+			echo "</div>";
+		}else if($mags['type'] == "php"){
+			echo "<div class=\"magcontent\">";
+			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
+			//Should contain some optional field for this display
+			echo "<div class=\"phpmag\">Php article</div>";
+			eval($content);
+			echo "</div>";			
+		}else if($mags['type'] == "widget"){
+			echo "widget view not yet created";
+		}else{
+			echo "<div class=\"magcontent\">";
+			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
+			
+			echo "The aparticle was corrupted (invalid editor type)";
+			echo "</div>";
+		}
+	}
+	
+}else{
+	
+	foreach($volume_out['Mag'] as $mags){
+		if(isset($mags['Mag'])){
+			/*
+				When using findAll on the Mag and putting directly into the array to edit
+				the order of the items, this recursivly brings the volume and user arrays
+				so, $mags['Volume'] and $mags['User'] is valid when using that style query
+				as opposed to the $this->Volume->read() query.
+			*/
+			$mags = $mags['Mag'];
+		}
+		$content = $mags['content'];
+		//TODO: blog length variable in admin
+		if($mags['type'] == "html"){
+			//this is paginate or singlet, the only difference is the accessability of other pages
+			
+			//use request action here to display the single mag, as it would on its own page
+			$output = $this->requestAction("mags/view/".$mags['id']);
+			echo "<div class=\"magcontent\">";
+			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
+			echo "<div class=\"magwrapper\">";
+			echo $content;
+			echo "<div style=\"clear:both\"/></div>";
+			echo "</div>";
+			/*
+			if($sessinfo['admin_enable']){
+				echo "<br/>";
+				echo $html->link('edit article',"/mags/edit/".$mags['id']);
+			}
+			*/
+			echo "</div>";
+			
+		}else if($mags['type'] == "php"){
+			echo "<div class=\"magcontent\">";
+			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
+			
+			//handle the included like a normal script
+			//eval($content);
+			//echo "<pre>";
+			
+			eval($content);
+			
+			//echo "</pre>";
+			
+			if($sessinfo['admin_enable']){
+				echo "<br/>";
+				echo $html->link('edit article',"/mags/edit/".$mags['id']);
+			}
+			echo "</div>";
+			
+		}else if($mags['type'] == "widget"){
+			echo "widget view not yet created";
+		}else{
+			echo "<div class=\"magcontent\">";
+			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
+			
+			echo "The aparticle was corrupted (invalid editor type)";
+			
+			if($sessinfo['admin_enable']){
+				echo "<br/>";
+				echo $html->link('edit article',"/mags/edit/".$mags['id']);
+			}
+			echo "</div>";
+		}
+	}
+}
+
+if($sessinfo['admin_enable']){
+	echo "<br/>";
+	echo $html->link('edit section',"/admin/volumes/edit/".$volume_out['Volume']['id']);
+}
+?>
+ 

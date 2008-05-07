@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title><?php echo $title_for_layout?></title>
+    <!-- 
+    This layout is going to maybe get migrated to as the default layout for the admin usage. Its entry will
+    be by the admin controller only, while all components will be handled by thier respective things.
+    
+    dojoindex currently loads all libraries currently in use for the entire portion of the site.
+     -->
+    <!-- use a leading ../../webroot/ for aptana linkage-->
+	<link rel="stylesheet" href="css/admin.css" type="text/css">
+    
+	<script>
+		//setup global js vars from php before library loads
+		var baseurl = "<?php echo BASE; ?>";
+		var imagesurl = baseurl+"<?php echo IMAGESURL?>";
+		var phpsessionid = "<?php echo session_id(); ?>";
+	</script>
+    
+	<script type="text/javascript" src="js/dojo/dojo/dojo.js"
+        djConfig="parseOnLoad: true"></script>
+	<!-- mydojo.js contains all of the compiled layers required for this project,
+		 this was built using the dojo buildscripts -->
+	<script type="text/javascript" src="js/dojo/dojo/capuchndojo.js"></script>		
+	<!-- editor / tinymce scripts -->
+	<script type="text/javascript" src="js/tiny_mce/tiny_mce.js"></script>
+	<script type="text/javascript" src="js/codepress/codepress.js"></script>
+	
+	<!-- custom scripts for site -->
+	<script type="text/javascript" src="js/dojoindex.js"></script>
+	<script type="text/javascript" src="js/editmce.js"></script>
+</head>
+<body class="tundra">
+<div dojoType="dijit.layout.LayoutContainer" style="width: 100%; height: 100%; padding: 0; margin: 0; border: 0;">
+   <div dojoType="dijit.layout.ContentPane" layoutAlign="top" style="margin: 5px" id="topContentPane">
+		<div id="header">
+			<div id="titlebox">
+				<?php echo $html->image("sinvertical_title_admin.png", array('width'=>'164','height'=>'75')) ;?>
+			</div>
+			<a href="<?php echo BASE ?>admin/">Admin Home</a>			
+			<a href="#" onClick="mailboxesTab();">Mailboxes</a>
+			<a href="#" onClick="albumTab();">Albums</a>
+			<a href="#" onClick="siteTab();">Site</a>
+			<a href="#" onClick="imagesTab();">Manage Images</a>
+			<a href="#" onClick="viewSiteTab()">View Me!</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a style="float:right;" href="<?php echo BASE ?>user/logout">Logout.</a>
+		</div>
+		<div id="save_note_0" style="background:red; float:right;opacity: 0;">Saved!</div>		
+	</div>
+	<!-- End top layout -->
+	<!-- Start Where code goes -->
+	<div dojoType="dijit.layout.SplitContainer" orientation="horizontal" layoutAlign="client">
+	    <div dojoType="dijit.layout.AccordionContainer">
+	        <div dojoType="dijit.layout.AccordionPane" title="Articles" selected="true">
+				<button dojoType="dijit.form.Button" onclick="loadVol('0')">
+	            	New Volume
+	        	</button>
+											
+	        	<button dojoType="dijit.form.Button" onclick="loadMag('0')">
+	            	New Mag
+	        	</button>
+	        	<div id="response">Select an article</div>
+	        	<div dojoType="dojo.data.ItemFileReadStore"
+	             url="<?php echo BASE?>volumes/jsnavmenu" jsid="popStore"></div>
+		        <div id="treeBox">
+					<div id="contentTree" dojoType="dijit.Tree" store="popStore" labelAttr="name"
+			             label="Site Directory">
+			            <script type="dojo/method" event="onClick" args="item">
+							var currentIndex = popStore.getIdentity(item);
+							if(currentIndex.charAt(0) == 'm'){
+								//the current item is a mag, loaderup
+								loadMag(currentIndex.substring(2));
+							}else{
+								//the current item is volume, do something else
+								loadVol(currentIndex.substring(2));
+							}	
+	            		</script>
+			        </div>
+				</div>
+
+	        </div>
+			
+			<div dojoType="dijit.layout.AccordionPane" title="Widgets" >
+		       	<button dojoType="dijit.form.Button" onclick="editWidget('0')">
+			    	New Widget
+				</button>
+				<button dojoType="dijit.form.Button" 
+					onclick="dijit.byId('widgetListPane').refresh();">
+			    	Refresh
+				</button>
+			    <div id="widgetListPane" 
+					dojoType="dojox.layout.ContentPane" 
+					title="Widgets"
+					executeScripts="true"
+					href="widget/widgetlist"
+					style="padding:1px 0 20px 0"
+					
+				>
+					Widgets are loading...
+				</div>
+
+	        </div>
+			
+	        <div dojoType="dijit.layout.AccordionPane" title="Resources" >
+		        <div id="ImagesPane" 
+					dojoType="dojox.layout.ContentPane" 
+					title="Images"
+					executeScripts="true"
+					href="images/adminside"
+					style="padding:1px 0 20px 0"
+					
+				>
+					Images pane is loading...
+				</div>
+
+	        </div>
+	        <div dojoType="dijit.layout.AccordionPane" title="Messages" refreshOnShow=false id="MessagesPane">
+			<button dojoType="dijit.form.Button" onclick="call_message_function('refresh')">
+			                Check Mail!
+			</button>
+			<div dojoType="dijit.form.DropDownButton">
+			  <span>Action...</span>
+				<div dojoType="dijit.Menu" id="messageActionMenu">
+					<div dojoType="dijit.MenuItem" label="Delete"
+						onclick="call_message_function('delete');"></div>
+					<div dojoType="dijit.MenuItem" label="Archive" 
+						onclick="call_message_function('archive');"></div>
+					<div dojoType="dijit.MenuItem" label="Mark Read"
+			    		onclick="call_message_function('markread');"></div>
+				</div>
+			</div>
+			<span id="mailchecktime">O_o</span>
+			<div id="MessagesListPane" dojoType="dojox.layout.ContentPane"	title="MessageList" href="mailboxes/messages">
+			</div>
+
+	        </div>
+	    </div>
+		<div id="mainTabContainer" dojoType="dijit.layout.TabContainer">
+			<div id="HomePane" 
+				dojoType="dojox.layout.ContentPane" 
+				title="Home"
+				executeScripts="true"
+				<?php echo $tab1href?>
+			>
+		    	<?php echo $content_for_layout?>
+			</div>
+			<!-- end email content pain -->
+			<?php
+			//One tab manditory, the rest unlimited
+			foreach($tablist as $tab){ 			
+				?>
+				<div
+					id="<?php echo $tab['id']?>" 
+					dojoType="dijit.layout.ContentPane"
+					title="<?php echo $tab['title']?>"
+					<?php echo ($tab['href']!='')?"href=\"".$tab['href']."\"":"" ?>
+				>
+				<?php if(isset($tab['content']))echo $tab['content']?>
+				</div>
+				<?php 				
+			}//end tablist foreach
+			?>
+		</div>
+	</div>
+</div>
+<!-- end dojo layout stuff -->
+<!-- initially hidden dialog box -->
+<div dojoType="dijit.Dialog" id="newAlbumDialog" title="Add New Album" execute="addNewAlbum(arguments);">
+    <table>
+        <tr>
+        <td><label for="name">Album Name </label></td>
+                <td><input dojoType="dijit.form.TextBox" trim="true" name="name"></td>
+        </tr>
+        <tr>
+                <td colspan="2" align="center">
+                        <button dojoType=dijit.form.Button type="submit">OK</button></td>
+        </tr>
+    </table>
+</div> 
+</body>
+</html>

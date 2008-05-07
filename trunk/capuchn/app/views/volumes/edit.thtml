@@ -1,0 +1,83 @@
+<?php
+$optionList = array();
+$tree->sectionToList($section_list, $optionList);
+
+//vol_id
+//vol
+//section_list - just an array, findallthreaded like
+// /sinvert/dev/admin/volumes/ is the url that im submitting from
+?>
+<?php if($vol != null){ ?>
+	<h2>Posts:</h2>
+	<div>
+	<table>
+		<thead>
+			<td>ID</td>
+			<td>Name</td>
+			<td>date</td>
+			<td>edit</td>
+			<td>delete</td>			
+		</thead>
+		<tbody>
+		<?php
+			foreach($vol['Mag'] as $post){
+				echo "<tr>";
+				echo "<td>{$post['id']}</td><td>{$post['header']}</td><td>{$post['date']}</td><td><a href=\"#\" onClick=\"loadMag({$post['id']})\">edit</a></td><td><a href=\"#\" onClick=\"deleteMag({$post['id']},'{$post['header']}')\">Delete</a></td>";
+				echo "</tr>";
+			}
+		?>
+		</tbody>
+	</table>
+		
+	</div>
+<?php } ?>
+
+	<?php echo $html->formTag("../volumes/edit/".$vol_id,'post', array('style'=>'margin: 0px','id'=>'volumeform'))?>
+	
+	<div id="controls">
+		
+		<?php 
+			if(isset($vol_id)){
+				echo $html->hidden('Volume/id', array("value"=>$vol_id));
+			}
+		?> 
+		<div style="margin:2px 0 2px 5px">Parent:<br/>
+			<?php echo $html->selectTag('Volume/parent_id',$optionList)?>
+			<?php echo $html->tagErrorMsg('Volume/parent_id','Please select a section.') ?>
+		</div>
+		<br/>
+		<div style="margin:2px 0 2px 5px">Name:<br/>
+			<?php echo $html->input('Volume/name',array('cols'=>'60'));?>
+			<?php echo $html->tagErrorMsg('Volume/name','Please enter a name.') ?>
+		</div>
+		<br/>
+		<div style="margin:2px 0 2px 5px">Publish?:<br/>
+			<?php echo $html->checkbox('Volume/publish');?>
+		</div>
+		<br/>
+		<div style="margin:2px 0 2px 5px">Style:<br/>
+			<?php 
+				//TODO: select the correct default editor, store for page.
+				echo $html->selectTag('Volume/style',
+					array("blog" => "Blog", "singlet" => "Single", "paginate" => "Pages")
+				);
+			?>
+		</div>
+		<br/>
+		<div style="margin:2px 0 2px 5px">Limit:<br/>
+			<?php echo $html->input('Volume/limit', array('cols'=>'60'))?>
+			<?php //<input type="button" name="save" value="save" onclick="tinyMCE.triggerSave();" /> ?>
+		</div>
+		</div>
+		<button dojoType="dijit.form.Button" onclick="submitForm(this)">
+                Save Volume
+        </button>
+  	</form>
+<?php 
+if(isset($vol)){
+	//echo "<pre>";
+	//var_dump($vol);
+	//echo "</pre>";
+}  	
+?>
+  	

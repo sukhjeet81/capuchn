@@ -1,0 +1,17 @@
+<pre>
+<?php
+//var_dump($fileslist);
+//var_dump($debug);
+//TODO: make this interface better
+?>
+</pre>
+<div style="text-align: left">
+<ul>
+<?php 
+
+foreach($fileslist as $file){
+	echo "<li>".$html->link($file, "/template/txtedit/css/".$file)."</li>";	
+}
+?>
+</ul>
+</div>

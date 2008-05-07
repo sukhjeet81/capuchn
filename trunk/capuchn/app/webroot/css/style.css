@@ -1,0 +1,117 @@
+@CHARSET "ISO-8859-1";
+#headerbg {
+	background-image: url(/dev/capuchn/img/header_background.jpg);
+	background-position: center;
+	margin: 0px;
+	padding: 0px;
+	height: 200px;
+	width: 100%;
+}
+body {
+	padding: 0px;
+	background-image: url(/dev/capuchn/img/body_background.jpg);
+	background-repeat: repeat-y;
+	background-position: center;
+	margin: 0px;
+}
+#mainbody {
+	margin: 0px auto;
+	width: 700px;
+	text-align: left;
+	padding-right: 0px;
+	padding-left: 0px;
+	clear: none;
+}
+#leftside {
+	/*
+	This will create a block on the left side with a 320px max, this
+	should include a second block that floats to the left. so that the
+	layout looks correct at most resolutions
+	*/
+	float:left;
+	margin-left: -275px;
+	width: 320px;
+}
+#sidenote {
+	/*should be in leftside*/
+	float:right;
+	padding-right: 10px;
+	
+}
+
+
+#content {
+	width: 370px;
+	float: left;
+	margin-left: 15px;
+}
+#navbar {
+	float: right;
+	width: 180px;
+}
+
+
+#headerwrap {
+	text-align: center;
+}
+
+#bodywrap {
+	text-align: center;
+}
+
+#titlebox {
+	width: 400px;
+	padding-right: 300px;
+}
+
+.magcontent {
+	background-image: url('/dev/capuchn/img/articlebg.png');
+	background-repeat: no-repeat;
+	padding: 10px;
+	border:1px solid #555;
+	margin-bottom: 1em;
+	margin-top:0em;
+	background-color: #999;	
+}
+
+.magcontent h3, h3.magheader {
+	display:block;
+	width:100%;
+	border-bottom:1px solid #000;
+	margin-top: 0px;
+	margin-bottom: 0.5em;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: x-large;
+	color: #020202;
+	
+	
+}
+
+a{
+color:#003d4c;
+text-decoration:none;
+}
+asgard:hover{
+color:#003d4c;
+text-decoration:none;
+}
+
+a img{
+border:none;
+}
+
+h1, h2, h3, h4{
+font-weight:normal;
+}
+
+.mailimage {
+	float:left;
+	text-align:left;
+	vertical-align:text-top;	
+}
+
+.magwrapper {
+	padding-bottom:2px;
+	
+}

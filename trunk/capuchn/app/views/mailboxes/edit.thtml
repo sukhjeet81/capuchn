@@ -1,0 +1,112 @@
+<?php
+
+$optionList = array();
+
+$optionList['pop'] = "pop";
+//$optionList[''] 
+
+?>
+<table class="albums" border="0" cellpadding="0" cellspacing="0">
+<thead>
+	<tr>
+		<td>
+			ID
+		</td>
+		<td>
+			Name
+		</td>
+		<?php /*
+		<td>
+			Parent Album
+		</td>
+		*/ ?>
+		<td>
+			#Messages
+		</td>
+		<td>
+			delete?
+		</td>
+	</tr>
+</thead>
+<tbody>
+<?php
+	
+		$even = true;
+		foreach($datas as $mbox){
+			if($even=="even")$even="odd";
+			else $even="even";
+		?>
+			<tr>
+				<td class="<? echo $even; ?>">
+					<? echo $mbox['Mailbox']['id']; ?>
+				</td>				
+				<td class="<? echo $even; ?>">
+					<div id="mailbox_name_<?php echo $mbox['Mailbox']['id']?>" class="albumeditbox" 
+                		dojoType="dijit.InlineEditBox" 
+                		onChange="albumEditBoxHandler(this.id,arguments[0])">
+                		<? echo $mbox['Mailbox']['name']; ?>
+    				</div>					
+				</td>
+				<?php /*
+				<td class="<? echo $even; ?>">
+					<? echo $album['Album']['parent_id']; ?>
+				</td>
+				*/ ?>
+				<td class="<? echo $even; ?>">
+					<?
+					$len = sizeof($mbox['Message']);
+					echo $len;
+					?>
+				</td>
+				<td class="<? echo $even; ?>">
+					<a href="#"	onClick="deleteMailbox('<?php echo $mbox['Mailbox']['id']?>',this.parentNode.parentNode)">delete</a>				
+				</td>
+				
+				<td class="<? echo $even; ?>">
+					view! from the left :)
+				</td>
+
+
+			</tr>					
+		<?php	
+		}
+?>
+</tbody>	
+</table>
+		<form id="addmailbox" action="mailboxes/edit">
+
+		<div style="margin:2px 0 2px 5px">Name:<br/>
+			<?php echo $html->input('Mailbox/name',array('cols'=>'60'));?>
+			<?php echo $html->tagErrorMsg('Mailbox/name','Please enter a name.') ?>
+		</div>
+		
+		<div style="margin:2px 0 2px 5px">Username:<br/>
+			<?php echo $html->input('Mailbox/username',array('cols'=>'60'));?>
+			<?php echo $html->tagErrorMsg('Mailbox/username','Please enter a header/title.') ?>
+		</div>
+		
+		<div style="margin:2px 0 2px 5px">Password:<br/>
+			<?php echo $html->input('Mailbox/password',array('cols'=>'60'));?>
+			<?php echo $html->tagErrorMsg('Mailbox/password','Please enter a header/title.') ?>
+		</div>
+
+		<div style="margin:2px 0 2px 5px">server address<br/>
+			<?php echo $html->input('Mailbox/server',array('cols'=>'60'));?>
+			<?php echo $html->tagErrorMsg('Mailbox/server','Please enter a header/title.') ?>
+		</div>
+		
+		<div style="margin:2px 0 2px 5px">Auto password:<br/>
+			<?php echo $html->input('Mailbox/autopostpass',array('cols'=>'60'));?>
+			<?php echo $html->tagErrorMsg('Mailbox/autopostpass','Please enter a header/title.') ?>
+		</div>
+		
+
+		<div style="margin:2px 0 2px 5px">Section:<br/>
+			<?php echo $html->selectTag('Mailbox/type',$optionList)?>
+			<?php echo $html->tagErrorMsg('Mag/volume_id','Please select a section.') ?>
+		</div>
+		<br/>
+		<button dojoType="dijit.form.Button" onclick="submitForm(this)">
+	            	Submit
+	    </button>
+	    </form>

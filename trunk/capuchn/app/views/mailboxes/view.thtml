@@ -1,0 +1,22 @@
+<?php
+
+?>
+
+<div class="mailmessage">
+	<div class="msglabel">From:</div>
+	<div class="from"><div class="msgtext"><?php echo $msg['Message']['from']?></div></div>
+	<div class="msglabel">Subject:</div>
+	<div class="subject"><div class="msgtext"><?php echo $msg['Message']['subject']?></div></div>
+	<div class="msglabel">Body:</div>
+	<div class="body"><div class="msgtext"><?php echo $msg['Message']['body']?></div></div>
+	<div>
+		<?php
+		if($msg['Message']['album_id'] != '0'){
+			echo $this->requestAction('albums/gallery/'.$msg['Message']['album_id']);
+		}
+		
+		?>
+		
+	</div>
+	
+</div>

@@ -1,0 +1,6 @@
+<?php
+ vendor('JSON');
+ $json = new Services_JSON();
+ $out = $json->encode($output);
+ echo '/*'.$out.'*/';//comment filtered
+?>
