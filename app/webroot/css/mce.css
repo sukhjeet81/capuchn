@@ -1,0 +1,22 @@
+/*This is to be included along with style.css but should only contain elements that
+ * will affect the tinymce editor.
+ */
+
+.header1{
+	font-size-adjust:4;
+}
+
+.header2{
+	font-size-adjust:3;
+}
+
+.header3{
+	font-size-adjust:2;
+}
+
+.highlight{
+	padding:50px;
+	font-weight:bolder;
+	font-stretch:expanded;
+	font-style:italic;
+}

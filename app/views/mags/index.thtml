@@ -1,0 +1,6 @@
+<?php ?>
+<h1>Mag view</h1>
+Posts findAll:
+<pre>
+<?php var_dump($mag_def);?>
+</pre>

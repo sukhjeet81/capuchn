@@ -1,0 +1,48 @@
+<?php 
+$start = "{ label: 'name', identifier: 'id', items: [" . generateJSData($listing). "]}";
+echo $start;
+function generateJSData($arr,$ts = ""){
+	$t = "\t";
+	$toReturn = "";
+	$outerFirst = true;
+	foreach($arr as $vol){
+		if(isset($vol['Volume'])){
+			if(!$outerFirst){
+				$toReturn .= ",\n ";
+			}else{
+				$outerFirst = false;
+			}
+			//this is vol
+			$toReturn .= $ts." { name:'".$vol['Volume']['name']."', type:'volume', id:'v-".$vol['Volume']['id']."'";
+			//need to add either a , or }
+			if((count($vol['Mag'])>0) || (count($vol['children'])>0)){
+				$toReturn .= $ts.$t.", children: [\n";
+				$first = true;
+				foreach($vol['Mag'] as $mag){
+					if(!$first){
+						$toReturn .= ",\n";
+					}else{
+						$first = false;
+					}
+					$toReturn .= $ts.$t.$t."{ name:'".$mag['header']."', type:'mag', id:'m-".$mag['id']."' }";
+				}
+				if(count($vol['children'])>0){
+					if(!$first){
+						$toReturn .= ",\n";
+					}else{
+						$first = false;
+					}
+					$toReturn .= generateJSData($vol['children'],$ts.$t);
+				}
+				$toReturn .= $ts.$t."]";//terminate the children array
+			}//end child check
+			//Terminate this skittlepoper
+			$toReturn .= $ts."}";
+		}//end volume check
+	}//end foreach
+	return $toReturn;
+}
+?>
+
+
+
