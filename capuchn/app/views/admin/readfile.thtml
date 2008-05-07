@@ -1,0 +1,20 @@
+<?php
+
+?>
+
+	
+<form id="fileeditform">
+	<?php echo $filename; ?>
+	<button dojoType="dijit.form.Button" onclick="saveFile(this)">
+    	Save
+	</button>
+	<input type="hidden" value="<?php echo $filename?>" cols="60" name="filename">
+	<textarea id="fileEditor" class="codepress <?php echo $filetype?> linenumbers-on" style="display:block; width:100%" name="savetext"><?php echo $filecontents; ?></textarea>
+</form>
+
+<script>
+	dojo.addOnLoad(function(){
+		console.debug("running codepress.run");
+		CodePress.run();
+	});
+</script>	

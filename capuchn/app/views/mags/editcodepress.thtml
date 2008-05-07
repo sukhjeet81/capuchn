@@ -1,0 +1,102 @@
+<?php
+//TODO: add form tags to codepress mag view
+$optionList = array();
+$tree->sectionToList($section_list, $optionList);
+?>
+
+<style type="text/css">
+* {
+margin: 0px;
+padding: 0px;
+}
+tasble {
+clear:both;
+margin: 5px;
+padding: 5px;
+}
+</style>
+
+<?php echo $html->formTag($form,'post', array('name'=>'contentform','style'=>'margin-left: 0px','id'=>'magform'))?>
+<div id="left" style="overflow:auto">
+	<div class="notify">
+		<?php if(isset($savetext)) echo $savetext ?>
+	</div>	
+  	<div id="controls">
+		
+		<?php 
+			if(isset($mag_id)){
+				echo $html->hidden('Mag/id', array("value"=>$mag_id));
+			}
+		?>
+		<?php echo $html->hidden('Mag/type',array("value"=>"html"))?> 
+		<div style="float:left; margin:2px 0 2px 5px">Section:<br/>
+			<?php echo $html->selectTag('Mag/volume_id',$optionList)?>
+			<?php echo $html->tagErrorMsg('Mag/volume_id','Please select a section.') ?>
+		</div>
+		<div style="float:left; margin:2px 0 2px 5px">Title:<br/>
+			<?php echo $html->input('Mag/header',array('cols'=>'60'));?>
+			<?php echo $html->tagErrorMsg('Mag/header','Please enter a header/title.') ?>
+		</div>
+		
+		<div style="float:left; margin:2px 0 2px 5px">Editor:<br/>
+			<?php 
+				//TODO: select the correct default editor, store for page.
+				echo $html->selectTag('Mag/editor',
+					array("html" => "TinyMCE", "php" => "Codepress-php", "javascript" => "Codepress-js"), 
+					null,
+					array("onChange"=> "editor()")
+				);
+			?>
+		</div>
+		<div style="float:left; margin:2px 0 2px 5px">Type:<br/>
+			<?php 
+				//TODO: select the correct default editor, store for page.
+				echo $html->selectTag('Mag/type',
+					array("html" => "HTML", "php" => "PHP", "widget" => "Widget")
+				);
+			?>
+		</div>
+		<div style="float:left; margin:2px 0 2px 5px">&nbsp;<br/>
+			<?php echo $html->input('Mag/save', array('type'=>'button', 'name'=>'save', 'value'=>'save', 'onClick'=>'submitForm()'))?>
+			<?php //<input type="button" name="save" value="save" onclick="tinyMCE.triggerSave();" /> ?>
+		</div>
+	</div>
+	
+	<div id="static_nav">
+  		<?php echo $this->renderElement('contentlist');?>
+  	</div>
+  	
+</div>
+<div id="main">
+  	<div style="clear:both; margin:0 0 0 0; height:100%">
+  	<textarea id="myCpWindow" class="codepress php linenumbers-off" style="display:block; height: 100%; width:100%"><?php echo $mag_content?></textarea>
+	<?php 
+		echo $html->hidden('Mag/content', array("value"=>"$mag_content"));
+	?>
+	<?php echo $html->tagErrorMsg('Mag/content','Please enter in a body for this note.') ?>
+    </div>
+    
+</div>
+</form>
+  	
+<?php 
+/*
+<textarea style="width:100%; height:100%" name="iframe_elm" id="iframe_elm">
+   // your code here
+</textarea>
+*/
+?>
+
+<?php 
+/*
+<html>
+<head>
+<title>CodePress - Real Time Syntax Highlighting Editor written in JavaScript</title>
+<?php echo $javascript->link('codepress/codepress.js')?>
+</head>
+<body spellcheck="false">
+
+</body>
+</html>
+*/
+?>

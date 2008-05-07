@@ -1,0 +1,30 @@
+<?php
+
+foreach($widgets as $widg){
+?>
+	<table width=100% border=0 cellpadding=0 cellspacing=0>
+		<tr>
+			<td rowspan=2 width=40 class="widgeticon">
+				<?php
+					if($widg['Widget']['icon'] != null){
+						echo "<img width=32 height=32 src=\"".$widg['Widget']['icon']."\"/>";
+					}else{
+						echo "<img width=32 height=32 src=\"".$defaultIcon."\"/>";
+					}
+				?>
+			</td>
+			<td class="widgetdescribe">
+				<?php echo $widg['Widget']['name'] ?>
+			</td>
+		</tr>
+		<tr>
+			<td class="widgetbuttons">
+				<a href="#" onClick="addWidget('<?php echo $widg['Widget']['id']?>')">Add</a> 
+				<a href="#" onClick="editWidget('<?php echo $widg['Widget']['id']?>')">Edit</a>
+				<a href="#" onClick="alert('Delete!')">Delete</a>
+			</td>
+		</tr>
+	</table>
+<?php
+}
+?>

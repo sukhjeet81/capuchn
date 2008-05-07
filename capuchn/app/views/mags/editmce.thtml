@@ -1,0 +1,80 @@
+<?php
+$optionList = array();
+$tree->sectionToList($section_list, $optionList);
+?>
+
+</style>
+<?php 
+if(isset($mag_id)){
+	$formid="magform_".$mag_id;
+}else{
+	$formid="magform_new";
+}
+?>
+<?php echo $html->formTag($form,'post', array('name'=>'contentform','style'=>'margin-left: 0px','id'=>$formid))?>
+<div id="magform" style="overflow:auto">
+  	  	<div id="controls"> 		
+		<?php 
+			if(isset($mag_id)){
+				echo $html->hidden('Mag/id', array("value"=>$mag_id));
+			}
+		?>
+
+		<?php echo $html->hidden('Mag/type',array("value"=>"html"))?> 
+		<?php echo $html->hidden('Mag/state',array("value"=>"save"))?> 
+
+		<div class="formline">Section:<br/>
+			<?php echo $html->selectTag('Mag/volume_id',$optionList)?>
+			<?php echo $html->tagErrorMsg('Mag/volume_id','Please select a section.') ?>
+		</div>
+		
+		<div class="formline" style="padding:0.1em 0 0 0">Title:<br/>
+			<?php echo $html->input('Mag/header',array('cols'=>'60'));?>
+			<?php echo $html->tagErrorMsg('Mag/header','Please enter a header/title.') ?>
+		</div>
+		<div class="formline">Editor:<br/>
+			<?php 
+				//TODO: select the correct default editor, store for page.
+				echo $html->selectTag('Mag/editor',
+					array("html" => "TinyMCE", "php" => "Codepress-php", "javascript" => "Codepress-js"), 
+					null,
+					array("onChange"=> "editor()")
+				);
+			?>
+		</div>
+		<div class="formline">Type:<br/>
+			<?php 
+				//TODO: select the correct default editor, store for page.
+				echo $html->selectTag('Mag/type',
+					array("html" => "HTML", "php" => "PHP", "widget" => "Widget"), 
+					null,
+					array("onChange"=> "editor()")
+				);
+			?>
+		</div>
+		<?php
+			if(isset($mag_id)){
+				$idd = $mag_id;
+			}else{
+				$idd = "new";
+			}
+		?>
+		<div class="formline" style="padding:1em 0 0 0">
+			<button dojoType="dijit.form.Button" onclick="submitForm(this)" id="svpostbutton_<?php echo $idd; ?>">
+            	Save Post!
+        	</button>			
+		</div>
+		
+		<div style="clear:both; margin:0px" dojoType="dojo.dnd.Target" accept="image">
+		<?php 
+			//This is the frame the text area that will be replaced by javascripts
+
+			echo $html->textarea('Mag/content', array('name'=>'magcontent', 'id'=>'magcontent_'.$idd));
+		?>
+		<?php echo $html->tagErrorMsg('Mag/content','Please enter in a body for this note.') ?>
+	    </div>
+
+	</div><!-- end controls -->
+
+</div>
+</form> 

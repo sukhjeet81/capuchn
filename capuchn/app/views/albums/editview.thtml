@@ -1,0 +1,89 @@
+<script>
+	var album_list = <?php echo $alist; ?>;
+</script>
+
+TODO:<br/>
+Change name, and parent to hidden text fields, parent being a clickable
+to change... or som such, and then add a delete button to delete the entire
+album. with a alert requesting if the pictures should be deleted or not.
+<br/>
+<br/>
+If no, then they are moved to the master album., wich should have an entry hear
+<br/>
+<br/>
+Should We view pics here?
+
+<table class="albums" border="0" cellpadding="0" cellspacing="0">
+<thead>
+	<tr>
+		<td>
+			ID
+		</td>
+		<td>
+			Name
+		</td>
+		<?php /*
+		<td>
+			Parent Album
+		</td>
+		*/ ?>
+		<td>
+			#Pics
+		</td>
+		<td>
+			delete?
+		</td>
+		<td>
+			View
+		</td>
+	</tr>
+</thead>
+<tbody>
+<?php
+	if($viewtype == "multiview"){
+		$even = true;
+		foreach($datas as $album){
+			if($even=="even")$even="odd";
+			else $even="even";
+		?>
+			<tr>
+				<td class="<? echo $even; ?>">
+					<? echo $album['Album']['id']; ?>
+				</td>				
+				<td class="<? echo $even; ?>">
+					<div id="album_name_<?php echo $album['Album']['id']?>" class="albumeditbox" 
+                		dojoType="dijit.InlineEditBox" 
+                		onChange="albumEditBoxHandler(this.id,arguments[0])">
+                		<? echo $album['Album']['name']; ?>
+    				</div>					
+				</td>
+				<?php /*
+				<td class="<? echo $even; ?>">
+					<? echo $album['Album']['parent_id']; ?>
+				</td>
+				*/ ?>
+				<td class="<? echo $even; ?>">
+					<?
+					$len = sizeof($album['Image']);
+					echo $len;
+					?>
+					
+				</td>
+				<td class="<? echo $even; ?>">
+					<a href="#"	onClick="deleteAlbum('<? echo $album['Album']['id']?>',this.parentNode.parentNode)">delete</a>				
+				</td>
+				
+				<td class="<? echo $even; ?>">
+					view! from the left :)
+				</td>
+
+
+			</tr>					
+		<?php	
+		}
+	}
+?>
+</tbody>	
+</table>
+
+

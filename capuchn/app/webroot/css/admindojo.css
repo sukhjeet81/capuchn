@@ -1,0 +1,124 @@
+#header {
+    background-color: #c0c0c0;
+    margin: 10px;
+    vertical-align:center;
+    border:solid 1px #c00;
+    height:100px;
+    padding: 5px 10px 5px 10px;
+}
+
+#titlebox {
+	padding-right:300px;
+	width:400px;
+}
+
+/*NAVIGATION MENU*/
+#nav, #nav ul {
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:0pt;
+padding:0pt;
+}
+#nav {
+font-family:arial;
+font-size:96%;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:bold;
+height:2.09em;
+line-height:normal;
+}
+#nav li {
+background:#999999 none repeat scroll 0%;
+border-bottom:3px solid #666666;
+border-right:3px solid #252525;
+display:block;
+float:left;
+margin:0pt;
+padding:0pt;
+position:relative;
+width:10em;
+}
+#nav a, #nav a:link, #nav a:visited, #nav a:hover, #nav a:active {
+color:#FFFFFF;
+cursor:pointer;
+display:block;
+padding:4px 10px 2px;
+text-decoration:none;
+}
+#nav a:hover {
+color:#000000;
+}
+#nav li ul {
+background:#F6F6F6 none repeat scroll 0%;
+border-left:1px solid #CC0000;
+font-size:90%;
+font-weight:normal;
+left:-999em;
+margin-top:3px;
+position:absolute;
+width:15.8em;
+}
+#nav li:hover ul, #nav li.sfhover ul {
+left:0pt;
+}
+#nav li li {
+background:transparent none repeat scroll 0%;
+border-color:#FFFFFF -moz-use-text-color rgb(153, 153, 153);
+border-style:solid none;
+border-width:1px medium;
+float:none;
+padding-left:0pt;
+z-index: 999;
+}
+#nav li li.last {
+border-bottom:medium none;
+}
+#nav li li a, #nav li li a:link, #nav li li a:visited, #nav li li a:hover {
+color:#000000;
+padding:3px 10px 2px;
+width:14em;
+}
+#nav li li a:hover {
+background:#CC0000 none repeat scroll 0%;
+color:#FFFFFF;
+}
+#nav li.active {
+background:#CC0000 none repeat scroll 0%;
+border-bottom:3px solid #CC0000;
+}
+#nav li.active ul {
+background:#CC0000 none repeat scroll 0%;
+border:medium none;
+}
+#nav li.active a:link, #nav li.active a:visited, #nav li.active a:hover, #nav li.active a:active {
+}
+#nav li.active a:hover {
+color:#000000;
+}
+#nav li.active li {
+border-color:#C15C5C -moz-use-text-color rgb(135, 0, 0);
+border-style:solid none;
+border-width:1px medium;
+}
+#nav li.active li.last {
+border-bottom:medium none;
+}
+#nav li.active li a:link, #nav li.active li a:visited, #nav li.active li a:hover, #nav li.active li a:active {
+color:#FFFFFF;
+}
+#nav li.active li a:hover {
+background:#666666 none repeat scroll 0%;
+color:#FFFFFF;
+}
+#nav li.active li.active a:link, #nav li.active li.active a:visited, #nav li.active li.active a:hover, #nav li.active li.active a:active {
+background:#666666 none repeat scroll 0%;
+color:#FFFFFF;
+font-weight:bold;
+}
+#nav li {
+width:auto;
+}

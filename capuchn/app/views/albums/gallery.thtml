@@ -1,0 +1,36 @@
+<?php
+
+foreach($album['Image'] as $img){
+	echo $img['name'];
+}
+?>
+
+<div id="thumbnails">
+<?php 
+	//TODO: Add a form for each image , delete, rename, select album
+	foreach($album['Image'] as $img){
+		echo "<div class=\"thumbdivdock\" id=\"thumbddock_".$img['id']."\">";
+		echo "<div class=\"thumbnailContainer\" id=\"thumb_".$img['id']."\">";
+		echo "<div class=\"thumbNormalizeSize\">";
+		echo "<img class=\"thumb\" id=\"img_".$img['id']."\" src=\"".$path.$img['thumb']."\" onClick=\"thumbClick(this)\"/>";
+		echo "</div>";//end normalizeSize
+		?>
+		<div id="mail_editable_<?php echo $img['id']?>" class="thumbtext" 
+    		dojoType="dijit.InlineEditBox" 
+    		onChange="myHandler(this.id,arguments[0])">
+    		<?php echo $img['name'];?>
+		</div>
+		<div id="mail_imagelink_<?php echo $img['id']?>" class="thumbtext" 
+    		dojoType="dijit.InlineEditBox" 
+    		onChange="imageLinkHandler(this.id,arguments[0])"
+    		onClick="imageLinkHandler(this.id,arguments[0])">
+    		<?php echo $baseurl.$img['location'];?>
+		</div>
+		<?php 
+		 
+		echo "</div>";//end container
+		echo "</div>";//end dock
+	}
+
+?>			
+</div>

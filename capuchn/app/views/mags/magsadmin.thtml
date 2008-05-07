@@ -1,0 +1,41 @@
+<?php
+
+$debug = var_export($maglist, true);
+$debug = nl2br($debug);
+?>
+
+<div id="magsadmin">
+
+<table>
+<tr>
+	<td>Title</td>
+	<td>Id</td>
+	<td>Type</td>
+	<td>Volume</td>
+	<td>Date</td>
+	<td>User</td>
+	<td>Delete</td>
+	<td>Edit</td>
+</tr>
+<?php 
+	foreach($maglist as $mag){
+		echo "<tr>";
+		echo "<td>".$mag['Mag']['header']."</td>";
+		echo "<td>".$mag['Mag']['id']."</td>";
+		echo "<td>".$mag['Mag']['type']."</td>";
+		echo "<td>".$mag['Volume']['name']."</td>";
+		echo "<td>".$mag['Mag']['date']."</td>";
+		echo "<td>".$mag['User']['username']."</td>";
+		echo "<td>".$mag['Volume']['name']."</td>";
+		echo "<td>".$html->link("Delete", "/mags/delete/".$mag['Mag']['id'],null, "Delete mag \"".$mag['Mag']['header']."\" ?")."</td>";
+		echo "<td>".$html->link("Edit", "/mags/edit/".$mag['Mag']['id'])."</td>";
+		echo "</tr>";
+	}
+?>
+
+</table>
+random keypresses sdaf
+
+<?php //echo $debug?>
+
+</div>

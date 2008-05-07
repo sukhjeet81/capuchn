@@ -1,0 +1,3890 @@
+2008-02-14 16:24:59 Error: OK[0]
+2008-02-14 16:34:45 Error: OK[0]
+2008-02-14 17:49:53 Error: OK[0]
+2008-02-14 21:25:39 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:25:40 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:25:40 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:27:36 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:27:37 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:27:37 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:28:34 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:28:35 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:28:35 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:29:29 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:29:29 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:29:29 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:30:49 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:30:49 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:30:50 Error: invalid message array in getContentType, no root content type found
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 21:33:47 Error: mail content type does not contain semi colon : Array
+2008-02-14 23:58:33 Error: The file /dev/sinvert/img/pictures/testa.jpg is not writable
+2008-02-15 00:00:30 Error: The file /dev/sinvert/img/pictures/testa.jpg is not writable
+2008-02-15 00:06:38 Error: The file /dev/sinvert/img/pictures/testa.jpg is not writable
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:06:43 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:07 Error: Cannot open file (/dev/sinvert/img/pictures/testa.jpg)
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:09:12 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:14 Error: Cannot open file (/dev/sinvert/img/pictures/testa.jpg)
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:10:19 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:18 Error: Cannot open file (/var/www/dev/sinvert/img/pictures/testa.jpg)
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:22:24 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:35:33 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-15 00:43:23 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 14:59:21 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:04:41 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:08:53 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:19:19 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:24:48 Error: mail content type does not contain semi colon : Array
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: mail mime type is not in 2 part format
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:28:52 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: content type is missing semi colon; expected
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 15:31:22 Error: Cannot open file (/var/www/dev/sinvert/app/webroot/img/pictures/)
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:03:20 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:31:29 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:36:49 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 16:38:54 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:02:16 Error: content type is missing semi colon; expected
+2008-02-16 17:06:59 Error: OK[0]
+2008-02-16 17:17:58 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/testa(1).jpg
+2008-02-16 17:23:40 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/testa(1).jpg
+2008-02-16 17:23:40 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/testa(1)(2).jpg
+2008-02-16 17:28:11 Error: OK[0]
+2008-02-16 20:07:46 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:07:46 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:09:44 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:09:44 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:10:05 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:10:05 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:10:37 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:10:37 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:11:13 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:11:13 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:11:48 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:11:48 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-02-16 20:12:18 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cubed.jpg
+2008-02-16 20:12:18 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_cubed.jpg
+2008-02-16 20:13:25 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/pond 004.jpg
+2008-02-16 20:13:25 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_pond 004.jpg
+2008-02-16 20:13:40 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/testa(1)(2).jpg
+2008-02-16 20:13:40 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_testa(1)(2).jpg
+2008-03-05 14:48:28 Error: OK[0]
+2008-03-05 15:51:28 Error: OK[0]
+2008-03-05 15:53:14 Error: OK[0]
+2008-03-05 15:59:14 Error: OK[0]
+2008-03-05 16:01:19 Error: OK[0]
+2008-03-05 16:02:36 Error: OK[0]
+2008-03-05 16:03:19 Error: OK[0]
+2008-03-05 16:04:20 Error: OK[0]
+2008-03-05 16:06:25 Error: OK[0]
+2008-03-05 16:07:31 Error: OK[0]
+2008-03-05 16:08:00 Error: OK[0]
+2008-03-05 16:08:56 Error: OK[0]
+2008-03-05 16:09:17 Error: OK[0]
+2008-03-05 16:09:49 Error: OK[0]
+2008-03-05 16:09:56 Error: OK[0]
+2008-03-05 16:09:58 Error: OK[0]
+2008-03-05 16:10:46 Error: OK[0]
+2008-03-05 16:10:58 Error: OK[0]
+2008-03-05 16:11:10 Error: OK[0]
+2008-03-06 14:10:15 Error: OK[0]
+2008-03-07 15:58:23 Error: OK[0]
+2008-03-07 15:59:24 Error: OK[0]
+2008-03-11 19:16:43 Error: Saved image: P1000895.JPG
+2008-03-11 19:16:54 Error: Saved image: P1000895.JPG
+2008-03-11 19:17:18 Error: Saved image: IMG_0053-1.jpg
+2008-03-11 19:34:47 Error: Saved image: IMG_0055-1.jpg
+2008-03-11 19:34:47 Error: IMG_0055-1.jpg|111|/dev/sinvert/img/pictures/cache/75x100_IMG_0055-1.jpg
+2008-03-11 19:44:04 Error: Saved image: P1010300.JPG
+2008-03-11 19:45:40 Error: Saved image: GrizzlySkull_specimenlarge.jpg
+2008-03-11 19:46:15 Error: Saved image: 17_06-1.jpg
+2008-03-11 19:47:41 Error: Saved image: 17_06-2.jpg
+2008-03-11 19:48:49 Error: Saved image: 17_06-3.jpg
+2008-03-11 19:51:57 Error: Saved image: phone-paper-jolly.jpg
+2008-03-11 19:52:23 Error: Saved image: grizzly_wallpaper.jpg
+2008-03-11 19:55:45 Error: Saved image: Naturewonder2.jpg
+2008-03-11 19:58:06 Error: Saved image: nebula-hubble.jpg
+2008-03-11 19:59:30 Error: Saved image: me_the_grad.jpg
+2008-03-11 20:05:14 Error: Saved image: me_in_london.jpg
+2008-03-11 20:45:35 Error: OK[0]
+2008-03-11 20:45:39 Error: OK[0]
+2008-03-11 20:58:42 Error: OK[0]
+2008-04-15 19:44:08 Error: OK[0]
+2008-04-16 14:38:32 Error: Saved image: e2s71o0wi.jpg
+2008-04-16 14:48:14 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [Filename] => cvp30dyip.jpg
+            [PHPSESSID] => b0f2fef9b9345cac1de8553fa78d9325
+            [Upload] => Submit Query
+            [Filedata] => Array
+                (
+                    [name] => cvp30dyip.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => /tmp/phpEtOFVz
+                    [error] => 0
+                    [size] => 98865
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-04-16 14:48:14 Error: Saved image: cvp30dyip.jpg
+2008-04-16 14:56:39 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [Filename] => iPhone DAIM    Swinging DAIM-B.jpg
+            [PHPSESSID] => b0f2fef9b9345cac1de8553fa78d9325
+            [Upload] => Submit Query
+            [Filedata] => Array
+                (
+                    [name] => iPhone DAIM    Swinging DAIM-B.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => /tmp/phpk5YwCX
+                    [error] => 0
+                    [size] => 105202
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-04-16 14:56:40 Error: Saved image: iPhone DAIM    Swinging DAIM-B.jpg
+2008-04-16 15:00:02 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [Filename] => rz0jystg2.jpg
+            [Album] => 3
+            [PHPSESSID] => b0f2fef9b9345cac1de8553fa78d9325
+            [Upload] => Submit Query
+            [Filedata] => Array
+                (
+                    [name] => rz0jystg2.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => /tmp/php4Q9o1b
+                    [error] => 0
+                    [size] => 98169
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-04-16 15:00:02 Error: Saved image: rz0jystg2.jpg
+2008-04-16 15:21:28 Error: Saved image: ja5prmmw0.jpg
+2008-04-17 18:58:51 Error: Saved image: iPhone DAIM    Swinging DAIM-A.jpg
+2008-04-18 14:23:12 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/fg.jpg
+2008-04-18 14:23:13 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_fg.jpg
+2008-04-18 14:24:18 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/fg.jpg
+2008-04-18 14:24:18 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_fg.jpg
+2008-04-18 14:28:22 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cubed2.jpg
+2008-04-18 14:28:23 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_cubed2.jpg
+2008-04-18 14:28:59 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/fg.jpg
+2008-04-18 14:28:59 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_fg.jpg
+2008-04-18 14:29:22 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/bground_ccc.jpg
+2008-04-18 14:29:22 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_bground_ccc.jpg
+2008-04-18 14:30:23 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/Massive_Momentum.jpg
+2008-04-18 14:30:23 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x40_Massive_Momentum.jpg
+2008-04-18 14:47:07 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/GrizzlyHat_150x150_Front.jpg
+2008-04-18 14:47:08 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_GrizzlyHat_150x150_Front.jpg
+2008-04-18 14:50:01 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/21_14-2.jpg
+2008-04-18 14:50:01 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_21_14-2.jpg
+2008-04-18 14:56:13 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/IMG_0042.jpg
+2008-04-18 14:56:13 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_IMG_0042.jpg
+2008-04-18 14:56:28 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/IMG_0043.jpg
+2008-04-18 14:56:28 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_IMG_0043.jpg
+2008-04-18 14:56:32 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/IMG_0045.jpg
+2008-04-18 14:56:32 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_IMG_0045.jpg
+2008-04-18 14:56:37 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/Grizzly-Racing-Logo.jpg
+2008-04-18 14:56:37 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x73_Grizzly-Racing-Logo.jpg
+2008-04-18 14:56:41 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/pond 003.jpg
+2008-04-18 14:56:41 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_pond 003.jpg
+2008-04-18 14:56:45 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/pond 002.jpg
+2008-04-18 14:56:45 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_pond 002.jpg
+2008-04-18 14:57:45 Error: OK[0]
+2008-04-18 19:29:47 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/testa.jpg
+2008-04-18 19:29:47 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_testa.jpg
+2008-04-18 19:30:04 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/abraxas_poodle.jpg
+2008-04-18 19:30:04 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_abraxas_poodle.jpg
+2008-04-18 19:31:16 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/testa.jpg
+2008-04-18 19:31:16 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_testa.jpg
+2008-04-18 19:31:26 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/testa.jpg
+2008-04-18 19:31:26 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_testa.jpg
+2008-04-18 19:51:15 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/IMG_0047.jpg
+2008-04-18 19:51:15 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_IMG_0047.jpg
+2008-04-18 19:51:24 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/IMG_0089.jpg
+2008-04-18 19:51:24 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_IMG_0089.jpg
+2008-04-18 19:51:56 Error: Saved image: jolly-roger-grave.jpg
+2008-04-20 19:53:32 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/salad_medium.jpg
+2008-04-20 19:53:32 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x84_salad_medium.jpg
+2008-04-23 09:02:20 Error: stdClass Object
+(
+    [id] => 2
+    [field] => dsafdsf
+)
+
+2008-04-23 09:05:00 Error: stdClass Object
+(
+    [id] => 7
+    [field] => dsafd
+)
+
+2008-04-23 09:05:35 Error: stdClass Object
+(
+    [id] => 12
+    [value] => SupertheorySparta
+    [field] => name
+)
+
+2008-04-23 09:06:35 Error: stdClass Object
+(
+    [id] => 8
+    [value] => RinnnerMan
+    [field] => name
+)
+
+2008-04-23 09:08:20 Error: stdClass Object
+(
+    [id] => 8
+    [value] => Runnermaners
+    [field] => name
+)
+
+2008-04-23 09:09:17 Error: stdClass Object
+(
+    [id] => 8
+    [value] => Wunderlust
+    [field] => name
+)
+
+2008-04-23 09:11:23 Error: stdClass Object
+(
+    [id] => 8
+    [value] => buldsaf
+    [field] => name
+)
+
+2008-04-23 09:11:23 Error: id is ok
+2008-04-23 09:13:33 Error: stdClass Object
+(
+    [id] => 8
+    [value] => readytogo
+    [field] => name
+)
+
+2008-04-23 09:13:33 Error: id is ok
+2008-04-23 09:15:05 Error: stdClass Object
+(
+    [id] => 8
+    [value] => dsafdsafdsafdsa
+    [field] => name
+)
+
+2008-04-23 09:15:05 Error: id is ok
+2008-04-23 09:15:24 Error: stdClass Object
+(
+    [id] => 8
+    [value] => Some friggin album
+    [field] => name
+)
+
+2008-04-23 09:15:24 Error: id is ok
+2008-04-23 12:27:59 Error: OK[0]
+2008-04-23 12:28:37 Error: OK[0]
+2008-04-23 12:30:41 Error: OK[0]
+2008-04-23 12:33:05 Error: Checkbox
+2008-04-23 12:34:05 Error: Ooops in box : 1 POP3 connect: Error []
+
+2008-04-23 12:37:25 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => mailboxes
+    [action] => edit
+    [url] => Array
+        (
+            [url] => mailboxes/edit
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-04-23 12:38:58 Error: 
+2008-04-23 12:41:48 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => mailboxes
+    [action] => edit
+    [url] => Array
+        (
+            [url] => mailboxes/edit
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-04-23 12:41:55 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => mailboxes
+    [action] => edit
+    [form] => Array
+        (
+            [data] => Array
+                (
+                    [Mailbox] => Array
+                        (
+                            [name] => ddafdsa
+                            [username] => dsaf
+                            [password] => dsaf
+                            [autopostpass] => sdaf
+                            [server] => sadf
+                            [type] => 
+                        )
+
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Mailbox] => Array
+                (
+                    [name] => ddafdsa
+                    [username] => dsaf
+                    [password] => dsaf
+                    [autopostpass] => sdaf
+                    [server] => sadf
+                    [type] => 
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => mailboxes/edit
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-04-23 12:42:01 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => mailboxes
+    [action] => edit
+    [url] => Array
+        (
+            [url] => mailboxes/edit
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-04-23 12:42:35 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => mailboxes
+    [action] => edit
+    [form] => Array
+        (
+            [data] => Array
+                (
+                    [Mailbox] => Array
+                        (
+                            [name] => dsaf
+                            [username] => sdafd
+                            [password] => asdf
+                            [autopostpass] => asdf
+                            [server] => asdf
+                            [type] => 
+                        )
+
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Mailbox] => Array
+                (
+                    [name] => dsaf
+                    [username] => sdafd
+                    [password] => asdf
+                    [autopostpass] => asdf
+                    [server] => asdf
+                    [type] => 
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => mailboxes/edit
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-04-23 12:42:57 Error: Array
+(
+    [Mailbox] => Array
+        (
+            [name] => dsaf4
+            [username] => sdafd
+            [password] => asdf
+            [autopostpass] => asdf
+            [server] => asdf
+            [type] => 
+        )
+
+)
+
+2008-04-23 12:45:35 Error: Checkbox
+2008-04-23 12:45:35 Error: OK[0]
+2008-04-23 12:47:42 Error: Checkbox
+2008-04-23 12:47:43 Error: OK[0]
+2008-04-23 12:47:43 Error: Checkbox
+2008-04-23 12:47:43 Error: OK[0]
+2008-04-23 12:49:16 Error: test : OK[0]
+2008-04-23 12:49:17 Error: Scott@grizz : OK[0]
+2008-04-23 12:50:59 Error: test : OK[0]
+2008-04-23 12:50:59 Error: Scott@grizz : OK[0]
+2008-04-23 12:51:04 Error: test : OK[0]
+2008-04-23 12:51:04 Error: Scott@grizz : OK[0]
+2008-04-23 12:53:18 Error: test : OK[]
+2008-04-23 12:53:19 Error: Scott@grizz : OK[]
+2008-04-23 12:55:47 Error: test : OK[]
+2008-04-23 12:55:51 Error: Scott@grizz : OK[]
+2008-04-23 12:55:56 Error: test : OK[]
+2008-04-23 12:55:56 Error: Scott@grizz : OK[]
+2008-04-23 12:55:58 Error: test : OK[]
+2008-04-23 12:55:58 Error: Scott@grizz : OK[]
+2008-04-23 12:58:55 Error: test : OK[]
+2008-04-23 12:58:55 Error: Scott@grizz : OK[]
+2008-04-23 12:58:59 Error: test : OK[]
+2008-04-23 12:58:59 Error: Scott@grizz : OK[]
+2008-04-23 13:00:06 Error: test : OK[]
+2008-04-23 13:00:06 Error: Scott@grizz : OK[]
+2008-04-23 13:00:09 Error: test : OK[]
+2008-04-23 13:00:14 Error: Scott@grizz : OK[]
+2008-04-23 13:08:25 Error: test : OK[]
+2008-04-23 13:08:26 Error: Scott@grizz : OK[]
+2008-04-27 17:34:40 Error: test : OK[]
+2008-04-27 17:34:40 Error: Scott@grizz : OK[]
+2008-04-28 18:31:37 Error: test : OK[]
+2008-04-28 18:31:37 Error: Scott@grizz : OK[]
+2008-04-28 18:31:53 Error: test : OK[]
+2008-04-28 18:31:54 Error: Scott@grizz : OK[]
+2008-04-28 18:34:33 Error: test : OK[]
+2008-04-28 18:34:33 Error: Scott@grizz : OK[]
+2008-04-28 18:41:04 Error: test : OK[]
+2008-04-28 18:41:04 Error: Scott@grizz : OK[]
+2008-04-28 18:41:11 Error: test : OK[]
+2008-04-28 18:41:12 Error: Scott@grizz : OK[]
+2008-04-28 18:41:46 Error: test : OK[]
+2008-04-28 18:41:46 Error: Scott@grizz : OK[]
+2008-04-28 18:50:01 Error: test : OK[]
+2008-04-28 18:50:02 Error: Scott@grizz : OK[]
+2008-04-28 18:50:04 Error: test : OK[]
+2008-04-28 18:50:04 Error: Scott@grizz : OK[]
+2008-04-28 19:15:34 Error: test : OK[]
+2008-04-28 19:15:34 Error: Scott@grizz : OK[]
+2008-04-28 19:15:38 Error: test : OK[]
+2008-04-28 19:15:38 Error: Scott@grizz : OK[]
+2008-04-28 19:15:42 Error: test : OK[]
+2008-04-28 19:15:48 Error: Scott@grizz : OK[]
+2008-04-28 19:15:52 Error: test : OK[]
+2008-04-28 19:15:53 Error: Scott@grizz : OK[]
+2008-04-28 19:19:15 Error: test : OK[] 
+2008-04-28 19:19:15 Error: Scott@grizz : OK[] 
+2008-04-28 19:19:38 Error: test : OK[] error:
+2008-04-28 19:19:38 Error: Scott@grizz : OK[] error:
+2008-04-28 19:22:55 Error: test : OK[] error:POP3 pass: authentication failed [-ERR Login failed.]
+2008-04-28 19:22:55 Error: Scott@grizz : OK[] error:POP3 pass: authentication failed [-ERR Login failed.]
+2008-04-28 19:23:14 Error: test : OK[] error:
+2008-04-28 19:23:15 Error: Scott@grizz : OK[] error:
+2008-04-28 19:26:22 Error: test : OK[] error:
+2008-04-28 19:26:22 Error: Scott@grizz : OK[] error:
+2008-04-28 19:26:28 Error: test : OK[] error:
+2008-04-28 19:26:28 Error: Scott@grizz : OK[] error:
+2008-04-28 19:27:37 Error: test : OK[] error:
+2008-04-28 19:27:37 Error: Scott@grizz : OK[] error:
+2008-04-28 19:28:16 Error: test : OK[] error:
+2008-04-28 19:28:16 Error: Scott@grizz : OK[] error:
+2008-04-28 19:29:24 Error: Scott@grizz : OK[] error:
+2008-04-28 19:32:13 Error: test : OK[] error:
+2008-04-28 19:32:13 Error: Scott@grizz : OK[] error:
+2008-04-28 19:32:41 Error: test : OK[] error:
+2008-04-28 19:32:41 Error: Scott@grizz : OK[] error:
+2008-04-28 19:49:04 Error: Scott@grizz : OK[] error:
+2008-04-28 19:49:08 Error: test : OK[] error:
+2008-04-28 19:49:08 Error: Scott@grizz : OK[] error:
+2008-04-28 19:58:47 Error: Array
+(
+    [Headers] => Array
+        (
+            [content-type:] => image/jpeg; name=01a601c89a8d$11415660$6500a8c0.jpeg
+            [content-transfer-encoding:] => base64
+            [content-id:] => <DB1687BF-1B80-466F-B2E8-323281019056@local>
+            [x-attachment-id:] => 0.1.0.4
+        )
+
+    [Parts] => Array
+        (
+        )
+
+    [FileName] => 01a601c89a8d$11415660$6500a8c0.jpeg
+    [Body] => ÿØÿà JFIF   d d  ÿì Ducky       ÿî Adobe dÀ   ÿÛ „ #%'%#//33//@@@@@@@@@@@@@@@&&0##0+.'''.+550055@@?@@@@@@@@@@@@ÿÀ ©" ÿÄ –                             !1AQ"aq2‘¡±ÁBR#Ñbr3ğáñ‚’ÂCc²s$%5         !1AQaq2‘"RrÿÚ   ? Ğ/…ë¹ş°¤’1Õ÷:Ì…™3"»?i‘xbt‹àeğ˜*~rÑ^9=ã]d’GŒÙ["PĞ‰ÎaQI’k ô…Eé)T§è¹Š1Š24Œ .wˆpÂ.œq†‰èiõØ{F"tc#1ÀT.“4GúÇ6û•H1¯¦§_éÍ° ªÀî=N‡_¯ú†ÔowmßríÙÜh¹˜|¦Í¼†}v…'¡GkèfŞL×$î´1Ë1Ãù2ˆÍĞŒëûal`FÕÁ×?wı°!,Øğé‰•À÷°ÜŠåUÜùùøN‹İı™1Q†ÖsüUÅõîPÊIS×ÎgÑ9|u}Ç®f>Í§Vhù««Ñg¦Úı²Ëff×½û^\²F³ «ÔÛ_C*–”1•r&Ÿ¶sMnªÇ3%c5ô[Ê¸7‹8 ˜™Ü{‡®@êÌâ{‘J6/òÏq¹;¹$g©’–‘ÜñlßVg­°VÚØõúBŞrf=aÀÛÀ­–Á3æzâ2`wøKHÍ°ÀäÃ)Ò*†[j´	’HÌ†#â~DÎå&yL‘¨•$K À2$ $123‰G}¦&RÂeQd=‹ˆÉJÎs"ÊDi£è!w~Ùÿ “@v‚ŸüŠÙv
+ò@ÌKÊÌ;vJ(ÏÆg§¸Ñm¹œV£ ¦¤ßeåP•¢npÄä–oÙ™},‘¥IQ¦Dn·Elfa¿6ÂºìØÿ æÎ°õİe@úB5/O'±« ‰W°,Î¯˜X`ç¹Éë0Î™NÃÂñŸ„*8a‘2lÆjµ—NÑ«5”	Èşg –ÌËnšşl©Èâx®TÈ“Î\‹µ9:ÁYÇºFIÄ².â" Ó’ä‘µ¨ˆ+l$}9\&zÊç&D¤5 Ú‘*Áƒt–8<!«]I˜åih		/Zíiì,ƒÆJx-Á†[´Š¶¾‚ÜiH7ºaıâû4"µÓ#]ÌgI…ËÃÚT‚»÷1\‘÷§ÈäÖşáË ë¦Õ9Ü’&M®íc¾F2ã§o„ëÕv$ø\•UĞdz¶Vúàã]~3Ìldt– èç•ËH(c‹x7&TnÊô×9a>”ÏÔO›qË=ÔÁfuz`–óú›ğuï3öSÙÁ^EĞtë0yşÏ¸1Q®“¤¯Aó~1»!qñ=Ê¨óÇªÎ;•a¦a‘ô¥÷kà9Ùw$-®í~yìœ$UQm¶×r…ÛøÓZZ4>ÈË6KQq®Õ~ùšø^˜Z¯zÜè}@¤géƒËı;î46i_ÍWŒú•k‚|D®¶AÙµû’•øM¯Ì+¨Áí8—Üx‹êYE‹Z‘–*p>³W‰îùY£ø3s’À1Ä[:ÀbÛzÂ+	0fØÅdbX¶*âÒf0d˜f¬gç<jÒgfR@CœÂ˜2˜lØ$Ì(+:¨ŠÛx$ààøE¹İ§X×ì­l—¼ª¦Á±Ãq:0õ9ı“ß”«’§Ï²Åè«ûŒÏæ…6Qå-÷äeÖh{Oí°;‚¨§qº¿ŒÑ%À$ù1ù›¸Ü¦ã*ù—9ÔdFı·Û¹ÒÜàõc¬y¸Öò9vò ¾«î!†N>s[YjÜ+Q×oxĞD‹ÕíJ§eg
+:‘Ôüaÿ ñ|uóÙÿ 1üaıZªmƒ,ÿ Ş%o¿qÃ…­”¡ıñË¨õœZ×-J³2ê¬“äOyDãó2¬)³k6á‚ÍãÊû)v[mBªDÔœxé2WŞ·rl6—ÜrL:u2lÜ®ôş]ÕwnvÔˆzÆé‘G5¹‡c©ÓwÀM)8ı2”JãÔ;ÉUUé2-"ÒZ{ HÜ!8àâIaˆg·¤ëlå’ääÆ*Š±ªÎF$1¦Ó¤º=hòàA¼
+º0½ ‚â]HïÖj‘*ÅÆ«ÒN%[p>1°JÕz`E«1ŠŸ_”Í²Ğà¨Ì^Á¶0¶±{µ’¶WÏiƒŞ~âÁdå›APc' Ÿ¤â}ûİ,·“m@ƒY8¯—:¦»36§ Ÿ›Çãs¹lnWnBµc$ë¦§mÍã\v×•Ôœ0ÿ 	’HÉÀ×´y]Ê‡rF„Œı&‹€˜\äÿ H¬Wë’uÒHÆ	o»¾4’›¦„ºœüÄ RX^„nò0mÇ"?ÿ ú¿p§IrFI:ÿ /HŸzÚ»[k†Ê·†šÁû™®æßŸP÷p0sô€‰lê8ß«ëjÍ—Ò¯Ó;IOù–^ÏÔmÍ¬ªWéÔ|¥<sÜôœ0ßV
+6AÏÛ…{u ÀöÄukü’êÚ9If‹†(wÉã@OÊY†WWi>m|ßfuh)©U7&ÿ 6{œöÄ WÑHÂêÔäxKì(¶ö`»NÅ ³1Èêa©åİÇ Ócê7£wŠzî£ÌÛ²¿iğ•kí ¨ Qœ~ÈHA½O¾E¬¯[Oİ=wÙùõî¡‡“Œî×a9ï9Ô{B°M>‘ª­¬¶âÃi\zdù{ëó‰çäŞ7;‚AµwTz]_³õ#|~HaÖıæ%l¥MÍiÚ(ä©ë‘{¸Äz¼5² ¸6QhÎĞİuÌ‹SàÀÛGÌn£‘0¸ÜĞÃ¬Ò«”:¾dÓJ£¼	üõ‹šêÈñ$ŞbW§¸)óµh>.?öæFM8±–gò¬ T<‚0n¨Ÿõÿ ¶RŞ¸ÚÅş¶°H“>ëpùïÚgòÉ,ıücÍÀæØÌlOAó[vk_ :Ÿ¤5\?eÿ İóÖÊ¨U?L¿$!í\cw#;r¨2ß)Ñ?-xëùJ*z¼†Sö è§çÿ Êp8êxŞÕA{	Èvñ?Ìt¿²Óu‹îoëU7Í²zJZÀã%è²—»ıİSÌA=ÄÕáÿ yÃ²áKmCŒäxæg'²8.TØ@'ÁD{SÚ¸[úv’IÜuó|#@—r'"Î60‰ğ:‰~=|hup¬¹ˆéŸ	ÏÙÈºÛwïgİ¡bu3{Ù¸	u¸—]@Èî4SŸœ-‡÷N5oÃú™¬Œ!ÎÎ¿Âr–%bÜçÌÀäbu^ùZÓì­BêÈª™øƒ¯ïœÏŠr3"ÖÀÚ4¸jŠs^BöÂnq&W¬LÔ¥–au ™ ¶é
+·ñEa‰G´©ÒeÔ¹ÀóZ1¡‚õOŒÎn[	OÎ´]CºÑ‹™â3<«YĞrQY âFØZ”Ea„N’û	í	ZDi*fïr!ù|È4é4Íxí)éÊ^ÂH¨ƒq4.L£¬}Ø@|wŒÖã0%‘L¤Zc¦eä(8–ÆŒNØ«0;NAUQÜüÌæ9œ/KqşgÈœÿ ˜‰·ï§”ÜU§ˆ§ÕÁ(o¬â}ËƒË£‘È¯-®’`•}(’S<‚Sîq½Á×Z¯BOã+AókGòQ•Ñ·€Äb€6îÆW¦³9mäĞwùFš³Çk+c>=`ÑN{ãáğøv;N§Êu9ë¬¡0ÜjM¬¡œmÈ,WîÚ1ûg¹¨¢ä¬&ÚÎ€gnq-À­ı}ÕÀ$) uîs·Úí¾ÒÏ†a¨Á;Wğ”KØ‰á¥55	è­»hí™<Gµ¹á}™Ğiü”6ù€Óæa«ãÖ*U¬f¤×‚2GhÕ_ğºŸZÑ†c¢ã' KQµ«6ƒÛ&ZªÙäm(Æ§iUAU{UrÙêzká O©Y–;—w‰øAØ×Æq`:›îçÉ ÉÆ‡NøÌ\5‡PpGÆKåbÖ­ßnÂ4mÃøÈTK¶‡Pèq‘®§2”Ùk.Òsñ:ˆd¬¨ÌOŒñécr[Q’¨E ú9T›«ÆP’»º0FÄËVtW- ÂöÖyn Gl $€<H–šII¯íÜŞ9r©ºµèêFªuziV ¶ß„¿·û…OÄº»òÕT\€OÂeT¹)ö’q×øÈºK+’«,éè÷·¡6éegªû¤·'Û¹Ù	g¡köîkşVg.äã¬ wÌq§}DÁšL_#ôß&”ü¢sÙP>g=`økÇà^,}×:ÿ [í_¢‰›W¾_mKMü‹)¹@zµ€è¶ûÄ‹}ÏÜjä0º¶èàê~;Ó¬;|Õ=C{¨´´[jo¿/:ÄìöŞ?-YéâSÇ¸ô>êÏıµ¸ÛøNZÎUIÜHÿ 1ÖQy6¡?Bc™àKêtpıŞ¯í²SJøUVAÿ ±ìòü[…­›ôO	Ëpıï‘Ç!ZÆ5ÿ Ky„é«ÿ ùn«íöìäç^Ï‡Îe½ÓŞYU¿»Œhp×ÆrËùŸqå%Ue­µñæIo”÷5yUZS’Œ¶/g×ö™µúC4ÎãÌvßĞC{2]m³–œN*‚¬Á+8Õ¾?S¬ëÿ 5ÃöÚ-¼ ÍØ·ü ¸Ü¼NUöYåvÊRO|÷gÛ\†ôÕ?”²œ€:±1Ä±k0-î>íù·5×şÏLçÆ{´(ÄÎåÔ=@xÌG”m8úàøÏqìän+bÇ *btdöO&àp:D¿¬Ê¨s,ZœÔàË­îµ²í3ta&ÚòfK>“:›ËSiYF¬MÍºQì9•õ˜ƒÈ—H0¦T‰¬¤D0K¬f¥Ì‹!¤¥1Ê–¡ªsÜ¤‚•Ù¬&N4é(KbB‘õx7 FîÅ,R'ES%¡g"µé+´æ4ë-¼¶ß,ªäBn$Ö›dvÀâJ]I~32ËÓ|ÃŸ6÷`S’á²vôÏYô¿p/ExÜl “á‰Ç~¢à-¼ºî\yñŸLíªŸ…pÚ9T¬»h4Ö6.ĞÑüˆG±øÀ9@äc °êÑrŠÖ2	Æ	%óƒ™ä
+6ãR{‰q´€AšŒã€oÙê¯óœ*(P§©$Fù¾?¶µ˜îWÀøiöî/¸Ş.n+Ø zƒEÓ=£œ_iå·÷m­²Àä2”›Œö]lÔã@ÔuŠTyĞmmH#íÄ'†õ•õ*en£\cYuÙ[nÕœd–'-©ñ ¾Àú~Qœd	Ò
+¤9Q‚ÀjIøx˜İÕ±ÀUPN‡Ã÷Á²ººX°WşŞ³
+rj0¬]Uäœ2uŠ…ŞÙWZŸ–GñŒ½¢»qój3'«DÒîÈÎ£ÂêpÏLckÚŒ)L¨èFšJÚA,luÀé’›Fá]LÊÜºˆ§€H%]³Ç¬aÙIı"fÔÌK:÷*Âo[[r~Òƒ>—#š.'ÉŒmê4’Ü—Ô'Í”r†×@ñ¦w"Êê	 ÿ „èò=½H¬×[œV§¸[åá2®ö§¯;sÒ}0àI‚×Ì?DôlRQ¼§ã±,¨á†>2ìH‘àpñŸ
+HÇ˜~É	eµd”=Pê§éœ‚§(J·ÂrÖÏ-é»ÿ ±Fê{Ê„Â·¦ú¯öÏôgrõŒäĞÂÁı=} tòŸ)î—P+¸Íe÷k=·˜–gûNvÜ½Š3ôˆ¸)“â³Wí²:Í¼JÆ}!¥–·ò×Ù1$ë9f‡¤ş}VÚşÛ¶ËY>ÏÊöÊï·cÿ qú“óœ·#ŸÊæÚ÷r[Fk«ùhÿ ,Í[-BFzø˜Æß'sÎ÷>ò2–+X§!\úDy'—î±6VQº"õœúXöW±ëV#í°çpü#ßmœ{W9 ví&Nƒìµ-AùEQ§QM¼òñTWPÑíÓ_›eèË»®ªz‰‡ÌU]Õrk9êŸU:JØaf$éy¾ãÇØE*Sù7ŒÂbó.[íİå,qöê&uUQŸ+†_émmijö°9Fè~>;"êø–7é)³H6™‹%¹2}H©È2w@
+Ôâ,ò¬¸Ç‚øFh]"êpq§‘m†êPF°pe)éœÖ-«˜@“È!1$¸º’Ã"'m,DÔ#0L€˜~H3µÕ¤È49è&¨-°f”J†u|V$ÓFºˆÈ@%€Ä}›.µrâ‹xV(ê0ßœO/“ërk¬‚Ì5Æ?§Ã3¹÷NU|^){²±…ÇÏ¿Ê|ö‹Ï7İ,jĞ×XBW»yÈë=Öoñ×ÿ DYe‡b®×ÙªùA!$y~LkJ‚9Áè;M«T%­Ø]Û¾}1ÖdµŠ\©!]ˆòc ›_à*ƒ‹]F:øH´GÀy´ŞB…Ğ“Î®Ñƒ2<>2
+7}–Ûø¼[¬¡ÆæeRruÚ:iózåñØWkyœèÀ× øxÌÏo¶ÀŠªà£XNŸvƒ]cœ¤f\•Ş‡íè|wi/=pKÙ¯Æ÷n1}>B¨r:01£ÁàØ˜Ç”ãÃU»w0]:h3øMŸmåØÒÙÏòœÂ¶œ0ê5Ìöæ]¦‡Ğvñ˜¼‹k¥Ø^I_ÅLİ¾ç# ˜¾ïÆõ)-ê N ‘øÅwài Í¹Y{“Ÿ`˜2Ês‘Œt™uò¯¡™-Ã×Œd>‘„æÓjŒ¨gÃá&·L\²¦³‘êgÈŸY´™ª ã´Çk”ù”i¯ïşa.©OˆAFXÔ–fØÎNq±ª¸TÓw× Y{à($/R~P<JÛ79ÅcVcı=c,ÿ š¹®¬b°6Wã³?Ë.«M¬o×›ëkO1Uø 4»†#œD?“«#eÚ½&>¿saTs\ÏlVIƒÊöÇ¬’³¸º°Ú1:HC˜8¢¶¡ó	e»Æt<nVÈer½´®JˆÆ¬,¶ˆ=#•sî9[SÁÆ3«+ëÒy- ÂGƒzOˆÊúGñ_Æ“sáH`ÕWQ1øU¶<Øõ)ô¶Îİ
+ã©$ôƒª•c™Ÿë5éÒ®SuD¹6iª°!ı%:‰•_;ÄÆ«æŞ'R!š4r[ôí/Îã­õ0™­~ãœë48¼eî]"[fá;MÁ¨Ûı,ğŠó«Ùkc¤%€>Öèt?XìÈÀ¬e+r<½1¤¾33K"W&NÈ@˜2ø’y4Y1)¹q&$Ê=»Í©³ˆ`ô1ä|wŒ#æg£j#u“T´?S1­µ‡İã1hĞ’e	ÖK¸0h™¹&Ì8–»†duÑiééé½@Í÷êËûs2kdoÛ·øÎ+‹Oåùw§ö’åçĞ9µzÜKªÎ7#Î,º›Üƒ•?pé¨ gë=Ósæëşleé±nCãpS‚[¦2Ú‰—b£•D\3Kc¿ôıf+>uĞ·hğ×§™uŠ-ÚºŸ(=H{t ó4€¤ôÌ¥Äª…ĞäòÄ¡Øvô'S×X+X)\ù†<1¬ÍŒÛáÖÉÅ¡ÓË‘–údÑ®Æpkm¾˜SB&4Ø?t2ÒCt=±“JËSíµÚúœ¨+ñùÍnµñ¸ÊYFæ:–mb”9¨ñš#4ï)$)Ê¥¸#ù³ğ˜Şçê2 f§*õJÉÎ¾Îs.¾Ö*­œËÑ£J	úÉCšö†İüÄfQ—}QoúÊ%÷3né¦cõqì§¦€cYËd'´ñù€2“Y×§Có‚»ØıÆ…¼X£®?ç:.šëİ|§_4j¡.lMs5­Fmœw‡Ì%•ÃÚÊnğx@"‡ò€0Œw“íáXØ20:üÌZ¾eual`ÄËª‡Krnñ¶2-z :ËİVß,Îã{;†YXªš¬õÛX²³º²;kƒ2ı…‰AS:Õ×kSÛvõ=b¶‘Şa[IBdD^Ş*YÚ8PD²Õ4œÆ·ÚgË2¹~ÊT’€ƒ;d¥Jà‰KxHÃ¤RŠGÎ­âİOQ¤¨¶v¼¯hFË9şo³rTA@äÌË­ºˆ;x–ÔziIe!Ê[u—²ô3=m0‚ÜÃ°3J¾sw‹î·éøÌ5xE°ä`ô0osˆpg‡ØÙ…ªÿ [F|É±ˆ1‰£Z«ƒ¢·qå1”·3‹ˆÊ¡ŒÕÊÇ^½äº“Âe°"òÇŒ/æÇŒ]IêtwŒˆ›LqÏ›X½ƒY’e°j"©ÌõcXp‘Èø(ƒXåcA©ğŒÖ<¢CÉT©p3,ùIZ’ì¹3&xbH‚1¸Ó¾‘‘‚)lc¤l.%i@«	¨âbzL«G°.ÿ mõÇ•‡ìœ
+[ıÍ¤w=ëáÚwÿ pÇŒùğG§”kq†W*Äü3Úuş‹kºù£?Nù,ûÉ$°$
+‚¤õÒ ïg¨ú A‰Óÿ HC—jYkÙ´:×“¸›³÷–&S–ÕŸ9Ásş¦ğVytTí*JêqnÒÆ<àä|Œ-‚² mÔjsŞCŠÊÖWVÓ]d±›şßzšS`ş{Ûq®Ÿ·£&5|´ŠĞã§Î;ÄeE_7˜jÃ¦ìÆ­‚`İãÿ mq¦¹ùÂ½ '›Q×é3«çW·onÀk<y›>=f‰àD]M„[€õ‰7)6«Q»sw'#ÙcnP	ğÎƒénê‘Øå‰ÊÅ!n8ªë”º“ß¼Õ¨U^söŒøLjVû:¡®¹ñ¢×¿sƒn5×=qãPÛ7¸6ú¸VÀ?ÓğOŒµÀg@Dæªä`)
+1·=t93NK*‡\¨ÎHñ›pCFß•×Ì ÎCõ'¸oë¦•7l¹{…$àõîF¢G2š=ËŠüw80­§^ÆLlZgÏkäÁ€Á#SŒÿ ªtÅîÆ‡4ZÌÈú“Û3Ÿ÷+Ûy-Ç²²3œ>Üdxæî¡C°!Hlt'g¬2÷“è7“Ÿ˜ˆ[œÃñ¹òøËmg;@VÇb%lIÊ×[48Ä‹©1Š†H€+ƒQÄ¹Á06ƒI} Áü!3¦’22®1øÕ¹91·= XÍ29ÚŒdò= k…ÄéœÁ§ ‰\
+`ã.ö·S ‹?äí;[xˆÃA»Û³ü¹‘Û%+3’Ë&†XZfİşÕ“Ò'g´°è#ì>Àø<–àŸ+èĞ÷Œ3ı¾Q7á]QÈş‘·,ô¥¤|T ÃâCXAÒŒs€ÒÜŞ2ş³xÅÁ‰ïPBB¦YĞ#4‚l	ÌˆdV„‘­ iÁÖ5^"³Ø¤¸–C=%7Ôë%9)1”0è2"If#5Z"¹ª°B²Ud†ZgÂL©ë'3DÀñĞEìr;µ7k)@ĞJß#p~èê=ÎÒs]ò1×îİKŸœÏówÙÊİıNÌIÓCs:?QE¯ô#ĞRûUÎW0Ú€ßC‘+÷‡!|sÜí¾å «k5 ŒFìäç\jsÔfob±˜`A6à¡v÷$ÿ „ Ps¦H9ë¬”­àŠPmb(ò-†ÖmÇ\ö*Ø o»¦ïøÆªöë<Ä·ş1u¬m*B‹Ö5V‰vYfˆ¯aÿ )uk„¬„í¬aé¡Ü`‚©œ(ètUMueÕ@oê=eõ”¯‡´e²[Äöƒ¶”±¶60p|D±w¸·Ü¬­Œã¨0•V]W
+K×Ã­kEÆ`zŒË~N±Œ.qÜøã%Qò7díéˆÅx ƒ<e¤) kK«'‘t×]# &ÅØØ#_„º`çÿ Œ‹ôÇR>B>¡$‚Yr¸8é&“jÖ¶8Å£¡×˜LnÉ$}Ã¸–õA°ßÓÛöÄÔKr½NÎ1EkÀŞ< ø‰Çsı¯“í„Bêÿ k/”ì7! ÛF¥Tà~"WU\ş!¨ºÖùèGÇK¬„Áúİ` &RÆ ¨ÀÓÇYÕ²©ê Î™Ääp/Z9‚g>_æÉÈÔM¯g÷«i­i¿–z£ç2½;oîE§ÛÕ¬.Ó¤%|Ş í¹qâÙY€e±
+¶vØÏÊJó´e	ØrŸWãb²Œà€"¦Üª×‘Ç¶	­ÒÔ$Ëjbªd—Ìö3õ• ƒ)ÉåUÃ ò.$vEîÍŒ~Hœ[îôq,ô’³s/ûšíÇÀ@Wú“ˆêÅxíêö­›+ø‰…i»‘{úu³¹ÎGSã#ò<šìPØVş”9Ğõ2Õ+ë1ÉJ§UÂäm{oÅFz1#¿Ê¸¨A‰{ãñ¸ÿ —k®ìI/¦ì} ¬F½g?£‹ı½~D5™|•:DGËeXê7/ÒmX"°K3Û¤u)õÕ`˜H‘şJ¯¨qÒRšÃOeHƒPâSÒy¾œ ã¦e¿ñƒúdÈw:ıÂÉ¥K‰‰i&0WÄ(²M”€Şı İ€ÖÙ™F}b¥rT-ÉlD>%Öé¥&i%Ä°‹fH=fz\<aRéŸSEc@8–E°C-ƒI1”ÂãöÌÏÔ\îO·{Mü¾*¹06 n!s¬Ó"ŞåÄüçÎ:œ3/ÌtJGe:z8¯eı[îWòŠ{Ÿ>¾2zbÊ2®NtÜ»JœRÀ¿ïÉaªœ“¨ÄÉ÷¾?/Ì5ò«5X4ÁÔmìWá5•¾6½6’||pgw•RvhÎÍàAïJŸjå·}ˆ5?„MFºmû]~q«Eb¼ÿ IÓU-`è À!@ìc{*r’wmùw{EIg¸Ñê‚Ù?„ÎeRŒN„ÓCˆÏ^ÇJë>vÀC’5:v‚ÚÑÛşUT :ÆÚ2Œ´s‰Ã»J'"öä^[6;tù”³Ôš1Ô™¼I‘”	Æuë,ÜpNa¬u+
+ºı ¶;tøÁÔ‚¦]P¦3
+P}¤|Ä®ÂNÒ1òŠSU#Õ’{ |eV¬1$òÂ £u	¢:äj{É'a hzI}¤º™Rál^Àéò”"=D iaĞgáJ–C¿ıÆb¾‡ÊŒƒÓ8íÚğk/üôƒ 9Ü®…Iqöÿ À‘ù‘Å¯aPª§9“m_$gL©,îVE«³U/zÌíeŒ{ªş{‹Uƒ
+õäŒéœ÷Ìç“…È®ß>¦W¨WP—D)5øI²˜cN0a«Z\1È*;ÿ Á—ªëj"ü¸}NsÓÃû+©@bºL×[ ²ôa8şéÌ¬aîİY_ÍŸÇ1Ê½Æ‹W?›¨dòéû¦Zñ×¶OhAP©vq=¡A¨¶ûsÛİ şã­8Ewòm¦bVÍAÿ Rç÷Ë§*Ö$dj:»öEøüßƒ]­àV27ÜG`6ŒÌ_rÎf±ô©t®”ÓOé'ç+¼¸-®{†'LÁ?0&Q[§RNÑÿ §¬®´\;Vşš§ «Ñj~f­`§nÙb7^¹Ãè7jv®1Û:ÁÛî
+ªÛN	0Oï“Ù!¥!¹³êƒ i´`ó›^Ëo?ÜªaYFØq½˜ ìÀN6ŞKÙfF¿¿ú{Ü=£ƒEËW³˜Äaî]£é1»í²ú®NˆûW$ÿ »Ê¡ú÷JŸdâ1ş÷¸+BÆ*¿¬ıôá³( 6 |fµ^ùMõ%ÜzU«qÛ»wc¬Î#ÅÌÄöOb¾×©y<Pki@ü¯ì~Òµ¥\v¸]ÌHÅzg Œ[-Œõ"¡mùüíÖ8R~Æ)¿Œë¸Ÿ–;Q·×=e>¦:õ«6NOî=%ŠIÆÆ‹‰RÂS2¤Á"P`Ç·IpÆN’ËRÃ2s(%À’êF³Ù:HÌ‰&"«uë&y²#A,øÆÁ3VÂ!’Ò!ˆĞœÀûOÌöëøÈí]–!ÈÅHa¨ÔA¾2Ş¦u‰¨‡ğ)¼/æ?3g¥u¯wb¶H>æm®•«€Yô×3sİ¿Op=Ğ½»|“ÿ ÈšgıKÒcZ)µs¹€D[?;|œ¦Ìí¸2yd}BsûLˆVÒ2Y?tfò|Ã°IÓ®AıÑ<ïÜÖ«“×8Ï„Æ0A\@?H_nç§·ršÕz¦œ²¯O9]«øÌfÚsWH¿+zÖt¶)€;Óÿ ª¹òO—ZUkƒé2çiï´ælœó6jDùçéš.ä{½ÛS,aÑU5ı®ŒŞšÿ 7škåfë$YC‚ßî?ˆÏS & ùe•3ƒã.£:öùÍ$HLy†rOi5Ö£¨:õ2é¦„dãS!›f¡±Ñ*èŠpAş¹ªÈkuìGŒ¡}ps“‹te8éxÊ&4f:ıeC3/I9İZ©Âƒ–	ìÚàÁÚU™k)ÈÇÒ\’r@Ğô?¥ìËr Ó8àØr0B°9ÛÔâgŞ 2ºƒœé×N‘ÆÃg:æ©Š\ÇÔ­
+§M£B$¼[6Xã®@ü3Xá?„JæF±€× çQuoVøH‘…¶Ã·Ã=D[8èeØ1pñÈÒ¯+äĞëÖCe!äc‰/w”+j€‰ä(7—Ã¹?)Jîvnêºù@Ééâc‘…‡ q“¬­¬¡w.;Ù?\b'(…Ğí¶tùÄm¸’ÙğÃÀÆì’‘“ËB¥wm äW®Î%eÏ[ä¬	Á]?=E]‡òõ3ã®@ú˜å§}ÎæÓhñb&NòRPg[Ìµğ³ıf ³ØrÇ¬ß¿ô—9Z­—yÑt#ñÒf[í>áIÃñìR:§ø	<¢¦'
+Ó\™jù-[ƒºü%FPÚé1Ÿlö«½Ï“èÔv.¥Ü©*ŸêÄs­½·×Rÿ ò tn³ºãñjáĞœz¾ÚÆ3ıG©o¬SÛOÑÁ°]kEÃìÈÚ«òÖi…Ì†ä–¤¦Ó.‚NÙíD†DAR$byšStRLŒH{wYª,°ªhd:A–‚&@L’Ñbs¤©A:E à©’ õ—2JâE7bX<« …D‹ „©×ƒSãVñš|:Åt±—³Eù	u¬¸á;(¥†rNrç®£÷NÔÁjÆ9.¤NÃ­™cû§!i"ãæ?g˜³­UV¸3B
+Ï‘´1×$|ºLö*g;¼;fÿ MHÇ°»¾8b®OI9İ¸mÚóÒå6z5 w~PÁ­µ$c@|g‚»rkTÕÆ½’ô3¬öoÊğhZ*Æìf×ş£óšµÛIn­Ó3™ãqÜYæ%jğé¯Âmqh[6¢ĞÎŠi`Íìa˜ñF>Ø+x÷¡Ø~2 jG÷ÑÛÄÁÌˆsÖaÛã*l.	#ëò‚ãr¶©…L‚søF/÷D«@ªÊ:®5¸‹ï³çP3¤½~'»ø¼õe£û|€2ÈF„EY—Œ¬§ïÀ|"‘…¦Í€©nç´ª1²ãc/Aòü Q«4øõ‚²òHª²7§Áa!–\îâªÄ“á+`TÃ1¢Õ± ¢jOŞŞ„µCnæ)‚ú„°u]ŞÀøÀ5…Érvªõbq§Â3j*T
+Äõ‹–:¸Là0:~ø	·:­A¾0Ç-¸àƒÛÂ1f!lnÜC“×öÄ9¥S–ËQÔƒô™X°—ºÜ×¨‹¦ÒÄ·SÛ´ª²>¡Ç|Êµ«·¾;3.JˆÀÊlİ­1üÎÁeon¡µC?$Ÿ½¼¡|qãk¼¸-œxç"nûé.Gº äó¸¼"r€îZ<WwÚ>&Mı+\°0é«‘Ì¸SÆ¨İk}¨£?Sá:.éJêU³}[ºšÂàHû§aÃöÎ·qÇ‡Pª±Ôõg'»7V•µÂr[ö0‡×è ¦µZÑ~ÕQ€?z1MJuù[JålÊÉ¦Œ×»Æ
+µ'S©tÌ›8Áu`-àğîoRú+±ÏVtRt¡®º«ÙR-h?‘(üqÛX­Ç®$U¶ĞÅ\J É“.€MÚÀäšJ2!Y€Œr&/d±W2¸0¶©ƒÚcA@eÄ1‡C‘™²&*4g³‰CNƒH-˜|‰`av/œœğ$ÈGX@ä=}$°”‰;³!¢“(ı"íiÒ,Ñ!Ie:ã¾“p0¦Š“¡UñÉ33¸MAÁnI~S
+äÎûçÜâ³´FAÉè19~QoYÈb@UçÈï7ùnâ» ÎsûçyömŠô:0Ä`iğÎ‡ BfĞ›\gá}‹å=O÷ŒŞ	2ùÛ	Æ3¤RÅ@~İ ùLËD)t×O¤ĞöÚĞòçqAò™GpVÇCöûá7\öŠc#:+xÖØ„Õ€zàéöËM.}~£O†¿)›ÅçÛcz,7?ŠÎhÕäjge>m£¦LºÚ^	r&bÙ°dWØ"¼‹€|`aFK1ıÓ?“ÏåŞ+U 3kaí¿Ú,Nñ€Hê&Ä6Zî}Hv)ÒÙpw1 v‚FFrº«t>\tÖ.Ïjå«Ë1:®„`ö©mô÷ÊÙò0lmE"ãÚÉËCÆ°¸f;ªlã™¯ÍJ/Çª6Ú~ÖìN4ndyÚ|¹ıcWÚ­Yg9O¬¡—‹xözw§N²KT!ó¦hÜ•òxÁ-êFî™vTèÌÊ0€àöÄÍÕ§'!Â¹A]cÕ˜éã½ë`ÉëÑ4¶7/ôæ7_‹p®[wm¹+û#HLh½7íôÆBêİâvØ=FMÛHÕrFáÙMŒ8şQÖ#yO÷3€ªë)è•±˜ÛÈÎ7Ñ×¡é3ZÊG&Ö»Ì£v êÇãµÏšÊ†Aƒ§ï˜nå˜‘¦ã¨í0³†iP­aû»ÄKq¸ü¾méÇâ#_{ƒµ@Î|øöoa÷x±M(kâî"ŞIEñÛÜŸ”ú?Ú¸>ÕG¥Â¨&F,~®øîìuœşª®YIÉú:	¿t)ÈäõJ İMıg÷MÛ9$Lõ×œb#i,s9ÚµÜØ/'wy[-™ë¸ê!Àf’é¬”°æ/›"1b0X»M©|A7R5K 0L0´(Û3ÖĞ3	¿"R$Ë³ önÒQ˜çN’B“¬€`ÉÄ•yr™€cI¤Ê2[Y`3*g¨§²šé²4SI]‘HA[vŒ×Ò%^AŒ«âu¤d˜c"W|ÑÀY…S. K©ˆÂ'³ƒ*¦xc4L.éÖv$‡Ğ›,úÁ„'wIR$ÈH<ëğ´Ôõ=jQÇôãê:ÌÆëá[ŒÖuDßÆßÛêM óÿ ÙpÊ1Ó9"s\ÇÃ6K8ìß÷%9'8\ƒ×Àôœß%³ä9È,pm4›ßB¨¥ù[ı#Có‹2wuş]!ù?pb	È:Ÿ‘f9!º’LÁòhZÙ\~Ùug]¥°‡Nš“<ÕÙkŠÑIv;BÖû±qø‰ës©Ë) b¾ı<b­ŞÚ2Ø}§ĞOÌò[k0òVİHìc÷Ñeììÿ ígÈ£«xÃò¹¾G5€¬25_1Ó¦&]×¹frùÜ˜*î'JªªLæ\‘bTìm¸ÀV=3n RN²v) QĞæØa”g>?€ÖXª.W'R§·Æ¦Ç;F‡Ë‘Ò]
+¸RAÆ4ïhjÔúM§LëˆDd[ r=öFİ"òí³'¦€¬S•­^¥‡Õ±óé=ÇÎTç'E:Bsƒ[Û••ğ|¹ˆÙ]—z nîs!ëÂÔBã¦¿óˆí¯pF$†ÿ 0ğ±!ÆçSÉ¬½‹•Î˜8q¿.êL™>3¾?!lõU€@€t1mGŠ‚ÅÊ#?Ïæa/p¹—ÛH;HuÊFúÓ‘RÚìñåRN’²Ùpİ‡	æ6i®<a«CÏ¸%?í÷Ó >-eğ4Œ›ıb‰Ã¤5·]Ÿ*ê[ øMÏhı’ÿ r¸ûŸ_Ë@ÎnŸY¡ÂàQÃg4‚l³ï±Xáà&·Š'¯­›j®ªLĞª¤¥U¨®´Qa@ğE¤mÀƒ³ç:dÎu2VÊYYxJÚ’OÂ¶ˆÂ‰¦Mü•`g6â½ še2“;˜º‘¬µ–‚ºÄ­ ë™7[·Ck‰Î±¤Œ¬>%gq‰ú€‘ã¥„¸C•Ò‡Œ`v­ÀÁ—6	%4y”A•„-™S‚t• ©å\˜d¬bEh±•MfWf€š%}#5é)éÈœ§X`bâío'!s ¶º@–&H0œ!†Š+gXâ*±0á± ¼iÒŞ†¬4°Ä´*œÌÛ`¢x'†’OI“y $™åµ‘ƒÆx‰R%'ÏÃ _Ü[5Õ`ÆÂr:h@ÔNW”@l÷9í©ş3sÏŠÑrpKmà@ı³+‘ÄæRÕµa“
+H-óé;{;Õ8p!ar©åÃk˜ÇÔ+18 iq½›ÜùD¨m„à6œŞöÏÓŠïÉæù|µ ÁÇÆJ¤á¢»$Eı“Ø?.ƒ™~#¢6CQnG¥uelA½l^‡ç#Ü9üš ØÁ½7ñ÷m:ka©‹µoşàÈ×¤ÙEWTDÎJs­«MåôÛ9ƒ@ì¬êåö}Ç?’ªˆ±\3K1Æ­	øÓ=úÉlÀ¥˜¡dÈÏC¶VPX®K5=?ÅGA×>2ëV½ö0RX!Ù]Èa¸g.`ıJ¥ï¬¢øc;ÊY`²åRØÇÛô‡`‚9Şn+)êà1=1¬k‹Å$hººFzÔ?ÿ +¨?è5Y;‰\çí_”*²C2QŠşöìfR«—6“„€ 6fŸ, ÚN¸™6©­ËWnÓ“•ÆqŞ~SYy
+¨˜ ±Ğö”~K¸*¸lèÙˆSj(,ÇFIÆ±/Î])ü_ ğ…E¶r,¦”ƒepzÎ«…íÔñ*ôÔ Í÷‘ÒO·{u\:ü¾kï°õ1õA8½½ŸÚkP!1ÒªÉ Ë­@ëZë9°\·06Ú6àõ‡sˆ‡$àzGMŠË«·kêckyÌÃnASÖ]9Î:ĞüäU´Ç“…™¼ÎHbNë~]Œ>í"¶İ»¼™+º‚œ‹AÌP’{ÂÙ¬ÊkZ™¶Ws1ªÃŒgã ]N4Õ	1y„^GMb¤éòƒBÅñ¦ØÕ[‹B†\Lô°¯xÍG#&e|°íN f1]À"(êØÉé9í–h™§ë(•õd·+ŒË~gãœ—ØçÏY;±¤ìÈ'±ìã
+HC ù—S‚3qÖzAl¾U›=%w	#ş’˜‘tlu†CÉÏÆ³ƒ!¢ quY,3"¢„À3a•ì_—w¡Çk22Fƒşq÷@GÆ¸êåK€Ûu×´ºµ°ƒŒå_Ë[…ïêuCa##ÇGÛ=ãš÷¢×»O¸˜š—YÀås+ãl7½@ç²¯bMÌâ×u•ñ0ª§]½']+d¦a>Æ”r¹-POˆ1>Oªz»ä†Éü"_rPë]ÜvûñØMÒ½¥‹œ0Î&Ø™s£ûm-«Ø9Ïx…wÛUûØ`“½¦éÇb\0ÀøÌëM›Uwx›ŞÍÌ®‚Õ $
+ÎB…ÛY:õîĞwŞ+OJ³Õ‰øö‰MhI°ì¤p6æÇO)ÀéœÃÓEŒ­z|æMÜûÙê%jåØ‹·8;!¤kÛËUÑ:.‘qºû2—¡u‰ÃLf›ÇAÔÁ_â¦’å*‡VÓšFøöª”9á2›”£ç8øÃq\»déƒ šVÊIiäĞ÷U¨ÈøD)OTakŞÎ0£&¥|æ¨E;ŸîYà<Ò§ƒÇâ'§JãÅÜbô¼2©YFOÙUH³˜7¯¦<~3b“Z¦ÄPª:ĞO:äãd%d“s’¢07SCb í'¼ÌjlR5ë¤cI‡UìÂ=W#3ÔƒNì8ÌŞmšœt[i+¤Ïäe²%ùÕÌ™Y™îC6s*ÌTË²`ë*@3±eÈõ˜ŒJ5¤	b 'ĞÉuNìÈ-ï‰]ÇŒ`<º˜µy†¬ë^DË°9ƒÔ`÷„v‚İƒ.Í@ÒW1Î7˜àtğ™¢Ñ·;Á´—Ñ`Ò¨Õ®’ë}L§áªÔ	Ú–Á"r©“n¸2,ÑºÏoøÀrŸm`=oŒèêDæ„I.^°yHÆ'K9à¸ë†@’N:H™}ÀH.`ƒËÌhP\9Î!PÀ¬ lJ‘œBŞ]^K)!ÊL:Ä’À”°Ll‹1 œd@ğë¨•$«Œõ’°É9z³•íÎÔUQãU~XØ>û3Ø´Êâz¶X+A´1ˆë:oÔÌ=N;}ÛT’<5ë1ıOAêl'*Ç¶|'][´7ü	¦æ§–)¯şïñ2şíïwdqªÑkK|fw¨õ+«>¥»ë äVë|@u[ÇæÚ-ÌrN¿Y»AfU21ñœÈò¶F¡ı.íeœ”s–!Hú	´;A“Í-¬lVL’pAŠdÎùé[,Pëş`ï‹İíÜKScÔ˜ø§öD
+Ø8Œƒ&i{ÑâRã‡Å¬YÍ–ufoéÏÂe†2`¢á±.¶ƒ9‚¶>pˆ Ô}c@1ÆŞlŒëŒNŸÛ=·v,¸m—¹™şÅÃfÇ.ÏöÇûKıDw?)ĞWhYud6hTQP*.Ğ;	ç`IÄ]-Ò[xÄMœ†ÖHq{<%Q˜êOÒ5\	Ømˆ#Â.ÈÄé.70È–]ÙÁ™Ù™5THÆ>1…§hÌª¶!7œL-%ƒrF™‹Ø@–ä[Ö#o t•U’^ZA:A¤€ùô•fª«Vhş0o<XA—Hš&J?Y*	éÒQZ?l–6Â*ã¨ë	¢yzdÁ¹Ì™r#Ö6H”g kÖQš‘øËË@qøÇ8íµÁÌÎ¨sŞnÎ½$Y`Ö¦Òòt¿”ju™’Àh`”Ç®³:ù”î_—xv$œëõVV×gé ÙñšF ‰ä°ie³\@Ÿ¬ğû„²Ñô2ÁàS¤†ëŞfÃÃf_wLE—?Ù.#¨``4°h—ï/#ÀM{KÇYQ&­œG‰§Q¯¬‹hašÉT·ÍŒÊ¿Nò•}Ãøõ¢	b^ÿ ·ûNİÔ¯LôlÌ|© nbp™ğé™·ú“§æßÂc¿Üq¿Yµ>Ô4$C:ëÓ§LJ19øË7A÷u:JY÷iÿ ŒÊ³wô™Ç6åÇİQ×Ãˆ;ı&ßé?ÿ ²³ÿ Óoÿ %ˆÔ0™éÏ^%{S[ß;G€ñš§?]zâr>ïŸÎ[ŸS:}ÿ wìíäL›‰fbÇ,I$ü`@ÖåWé%ì¼AdR#¾ßÂüß)*o*³·‚/X¿‡Nİ>swôş=¾Îİ3¿şïòÊ@ôk…UPˆ6¢ ø¦$ç¸‘ ıebLò<Y~°ƒ YzdÏVçt÷á õ•‚3#u´0eÆz­];Ë¬ÊĞh¤9µA7ddDìÏù¾˜¹Çó~É‹ƒE$s/8™¦Ö-äõÿ ·~Òé^C#i¬†”ÂKMÖŒF‚isõ‚i<‚<°ÈGQÖ.°«õ‰Œ3XF’…ôÓ¬¯ãg^ò0‰$Ï-<!WííJ@ı!Œ™æÀ]5†?IFûOÛ'#ú3È&CıÓÕõ”³t÷¡^6öı²tÿ ŒÄÿÙ
+    [BodyPart] => 3
+    [BodyLength] => 15591
+)
+
+2008-04-28 19:58:48 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/01a601c89a8d$11415660$6500a8c0(1).jpeg
+2008-04-28 19:58:48 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/01a001c89a8d$11415660$6500a8c0(1).jpeg
+2008-04-28 19:58:48 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/01a201c89a8d$11415660$6500a8c0(1).jpeg
+2008-04-28 19:58:48 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/01a401c89a8d$11415660$6500a8c0(1).jpeg
+2008-04-28 19:58:48 Error: Scott@grizz : OK[] error:
+2008-04-28 19:58:53 Error: test : OK[] error:
+2008-04-28 19:58:53 Error: Scott@grizz : OK[] error:
+2008-04-28 20:08:13 Error: Scott@grizz : OK[] error:
+2008-04-28 20:08:19 Error: test : OK[] error:
+2008-04-28 20:08:20 Error: Scott@grizz : OK[] error:
+2008-04-30 21:05:36 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/nubulance.jpg
+2008-04-30 21:05:36 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_nubulance.jpg
+2008-04-30 21:07:09 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:09 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:09 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:09 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:09 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:09 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:07:10 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:09:37 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/Massive_Momentum.jpg
+2008-04-30 21:09:37 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x40_Massive_Momentum.jpg
+2008-04-30 21:09:37 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/GrizzlyHat_150x150_Front.jpg
+2008-04-30 21:09:37 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_GrizzlyHat_150x150_Front.jpg
+2008-04-30 21:10:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/phone-paper-jolly.jpg
+2008-04-30 21:10:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/75x100_phone-paper-jolly.jpg
+2008-04-30 21:13:02 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/Naturewonder2.jpg
+2008-04-30 21:13:02 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x65_Naturewonder2.jpg
+2008-04-30 21:13:52 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/nebula-hubble.jpg
+2008-04-30 21:13:52 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_nebula-hubble.jpg
+2008-04-30 21:14:19 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/dscf0002.jpg
+2008-04-30 21:14:19 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/dscf0007.jpg
+2008-04-30 21:14:19 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/dscf0003.jpg
+2008-04-30 21:14:20 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/dscf0009.jpg
+2008-04-30 21:14:20 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/dscf0006.jpg
+2008-04-30 21:14:20 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/jacksbadge.jpg
+2008-04-30 21:14:20 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/dscf0001.jpg
+2008-04-30 21:14:20 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/dscf0010.jpg
+2008-04-30 21:14:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_dscf0002.jpg
+2008-04-30 21:14:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_dscf0007.jpg
+2008-04-30 21:14:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_dscf0003.jpg
+2008-04-30 21:14:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_dscf0009.jpg
+2008-04-30 21:14:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_dscf0006.jpg
+2008-04-30 21:14:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_jacksbadge.jpg
+2008-04-30 21:14:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_dscf0001.jpg
+2008-04-30 21:14:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_dscf0010.jpg
+2008-04-30 21:14:21 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/21_12-2.jpg
+2008-04-30 21:14:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_21_12-2.jpg
+2008-04-30 21:14:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cvp30dyip.jpg
+2008-04-30 21:14:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/67x100_cvp30dyip.jpg
+2008-04-30 21:14:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/iPhone DAIM    Swinging DAIM-B.jpg
+2008-04-30 21:14:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/67x100_iPhone DAIM    Swinging DAIM-B.jpg
+2008-04-30 21:14:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/rz0jystg2.jpg
+2008-04-30 21:14:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/67x100_rz0jystg2.jpg
+2008-04-30 21:14:37 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/ja5prmmw0.jpg
+2008-04-30 21:14:37 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/67x100_ja5prmmw0.jpg
+2008-04-30 21:38:45 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/01a201c89a8d$11415660$6500a8c0.jpeg
+2008-04-30 21:38:45 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_01a201c89a8d$11415660$6500a8c0.jpeg
+2008-04-30 21:39:50 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/01a601c89a8d$11415660$6500a8c0.jpeg
+2008-04-30 21:39:50 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_01a601c89a8d$11415660$6500a8c0.jpeg
+2008-04-30 21:40:34 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/01a401c89a8d$11415660$6500a8c0.jpeg
+2008-04-30 21:40:34 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x68_01a401c89a8d$11415660$6500a8c0.jpeg
+2008-04-30 21:41:41 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/01a201c89a8d$11415660$6500a8c0(1).jpeg
+2008-04-30 21:41:41 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_01a201c89a8d$11415660$6500a8c0(1).jpeg
+2008-04-30 21:43:43 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/01a001c89a8d$11415660$6500a8c0(1).jpeg
+2008-04-30 21:43:43 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x85_01a001c89a8d$11415660$6500a8c0(1).jpeg
+2008-04-30 21:47:12 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:47:12 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:47:12 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:47:12 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/
+2008-04-30 21:56:25 Error: Saved image: grizzlyflames.png
+2008-05-01 01:42:58 Error: Saved image: grizzlyflames.png
+2008-05-01 01:45:19 Error: Saved image: grizzlyflames.png
+2008-05-02 01:39:27 Error: Saved new admin variable: emailtopostpass:
+2008-05-02 01:39:28 Error: Scott@grizz : OK[] error:
+2008-05-02 01:39:37 Error: test : OK[] error:
+2008-05-02 01:39:38 Error: Scott@grizz : OK[] error:
+2008-05-02 01:41:15 Error: Saved new admin variable: emailtopostpass:
+2008-05-02 01:41:15 Error: Scott@grizz : OK[] error:
+2008-05-02 01:43:32 Error: test : OK[] error:
+2008-05-02 01:43:32 Error: Scott@grizz : OK[] error:
+2008-05-02 01:44:25 Error: Saved new admin variable: emailtopostpass:
+2008-05-02 01:44:26 Error: Scott@grizz : OK[] error:
+2008-05-02 01:48:31 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:48:31 Error: Saved new admin variable: emailtopostpass:
+2008-05-02 01:48:31 Error: Scott@grizz : OK[] error:
+2008-05-02 01:49:25 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:49:25 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:49:25 Error: The site has a email post passpester386
+2008-05-02 01:49:25 Error: email to post
+2008-05-02 01:49:25 Error: 
+2008-05-02 01:49:25 Error: Saved new admin variable: defaultvolume:
+2008-05-02 01:52:08 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:52:08 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:52:08 Error: The site has a email post passpester386
+2008-05-02 01:52:08 Error: email to post
+2008-05-02 01:52:08 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:52:48 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:52:48 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:52:48 Error: The site has a email post passpester386
+2008-05-02 01:52:48 Error: email to post
+2008-05-02 01:52:48 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:52:48 Error: new post NOT saved via email
+2008-05-02 01:52:49 Error: Scott@grizz : OK[] error:
+2008-05-02 01:54:32 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:54:32 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:54:32 Error: The site has a email post passpester386
+2008-05-02 01:54:32 Error: email to post
+2008-05-02 01:54:32 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:54:32 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 
+)
+
+2008-05-02 01:54:32 Error: new post NOT saved via email
+2008-05-02 01:54:32 Error: Scott@grizz : OK[] error:
+2008-05-02 01:57:24 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:57:24 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:57:24 Error: The site has a email post passpester386
+2008-05-02 01:57:24 Error: email to post
+2008-05-02 01:57:24 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:57:24 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 
+)
+
+2008-05-02 01:57:24 Error: new post NOT saved via emailArray
+2008-05-02 01:57:25 Error: Scott@grizz : OK[] error:
+2008-05-02 01:57:57 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:57:57 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:57:57 Error: The site has a email post passpester386
+2008-05-02 01:57:57 Error: email to post
+2008-05-02 01:57:57 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:57:57 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 
+)
+
+2008-05-02 01:57:57 Error: new post NOT saved via email
+2008-05-02 01:57:57 Error: Array
+(
+    [volume_id] => 1
+)
+
+2008-05-02 01:57:58 Error: Scott@grizz : OK[] error:
+2008-05-02 01:59:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:59:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:59:21 Error: The site has a email post passpester386
+2008-05-02 01:59:21 Error: email to post
+2008-05-02 01:59:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 01:59:21 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 01:59:21 Error: new post saved via email
+2008-05-02 01:59:22 Error: Scott@grizz : OK[] error:
+2008-05-02 02:04:27 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:27 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:27 Error: The site has a email post passpester386
+2008-05-02 02:04:27 Error: email to post
+2008-05-02 02:04:27 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:27 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 02:04:27 Error: new post saved via email
+2008-05-02 02:04:28 Error: File exists writing different file..
+2008-05-02 02:04:28 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(1).jpg
+2008-05-02 02:04:29 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:29 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:29 Error: The site has a email post passpester386
+2008-05-02 02:04:29 Error: email to post
+2008-05-02 02:04:29 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:43 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:43 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:43 Error: The site has a email post passpester386
+2008-05-02 02:04:43 Error: email to post
+2008-05-02 02:04:43 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:43 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 02:04:43 Error: new post saved via email
+2008-05-02 02:04:44 Error: File exists writing different file..
+2008-05-02 02:04:44 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(1).jpg
+2008-05-02 02:04:44 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(2).jpg
+2008-05-02 02:04:44 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:44 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:04:44 Error: The site has a email post passpester386
+2008-05-02 02:04:44 Error: email to post
+2008-05-02 02:04:44 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:07:54 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:07:54 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:07:54 Error: The site has a email post passpester386
+2008-05-02 02:07:54 Error: email to post
+2008-05-02 02:07:54 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:07:54 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 02:07:54 Error: new post saved via email
+2008-05-02 02:07:55 Error: File exists writing different file..
+2008-05-02 02:07:55 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(1).jpg
+2008-05-02 02:07:55 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(2).jpg
+2008-05-02 02:07:55 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(3).jpg
+2008-05-02 02:07:55 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:07:55 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:07:55 Error: The site has a email post passpester386
+2008-05-02 02:07:55 Error: email to post
+2008-05-02 02:07:55 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:08:00 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:08:00 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:08:00 Error: The site has a email post passpester386
+2008-05-02 02:08:00 Error: email to post
+2008-05-02 02:08:00 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:08:00 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 02:08:00 Error: new post saved via email
+2008-05-02 02:08:01 Error: File exists writing different file..
+2008-05-02 02:08:01 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(1).jpg
+2008-05-02 02:08:01 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(2).jpg
+2008-05-02 02:08:01 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(3).jpg
+2008-05-02 02:08:01 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(4).jpg
+2008-05-02 02:08:01 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:08:01 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:08:01 Error: The site has a email post passpester386
+2008-05-02 02:08:01 Error: email to post
+2008-05-02 02:08:01 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:09:29 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:09:29 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:09:29 Error: The site has a email post passpester386
+2008-05-02 02:09:29 Error: email to post
+2008-05-02 02:09:29 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:09:29 Error: Array
+(
+    [content] => <br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername">Scott Fennell</b> &lt;<a href="mailto:stillboy@gmail.com">stillboy@gmail.com</a>&gt;<br>Date: Fri, May 2, 2008 at 1:44 AM<br>
+Subject: varma that is not<br>To: <a href="mailto:test@grizzlyracing.org">test@grizzlyracing.org</a><br><br><br>this is a test <br>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: varma that is not
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 02:09:29 Error: new post saved via email
+2008-05-02 02:09:30 Error: File exists writing different file..
+2008-05-02 02:09:30 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(1).jpg
+2008-05-02 02:09:30 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(2).jpg
+2008-05-02 02:09:30 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(3).jpg
+2008-05-02 02:09:30 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(4).jpg
+2008-05-02 02:09:30 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(5).jpg
+2008-05-02 02:09:31 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:09:31 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:09:31 Error: The site has a email post passpester386
+2008-05-02 02:09:31 Error: email to post
+2008-05-02 02:09:31 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:09:31 Error: albumarray :
+2008-05-02 02:09:31 Error: Array
+(
+    [content] => <img class="mailimage" id="img_" src="" />
+Here is a picture of my bike for the website, I just took it and now  
+im hoping this posts. 
+
+
+    [editor] => html
+    [header] => My bike
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 02:09:31 Error: new post saved via email
+2008-05-02 02:09:31 Error: Scott@grizz : OK[] error:
+2008-05-02 02:11:37 Error: test : OK[] error:
+2008-05-02 02:11:37 Error: Scott@grizz : OK[] error:
+2008-05-02 02:13:07 Error: test : OK[] error:
+2008-05-02 02:13:08 Error: Scott@grizz : OK[] error:
+2008-05-02 02:14:54 Error: test : OK[] error:
+2008-05-02 02:14:55 Error: Scott@grizz : OK[] error:
+2008-05-02 02:15:14 Error: File exists writing different file..
+2008-05-02 02:15:14 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(1).jpg
+2008-05-02 02:15:14 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(2).jpg
+2008-05-02 02:15:14 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(3).jpg
+2008-05-02 02:15:14 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(4).jpg
+2008-05-02 02:15:14 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(5).jpg
+2008-05-02 02:15:14 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/photo(6).jpg
+2008-05-02 02:15:14 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:15:14 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:15:14 Error: The site has a email post passpester386
+2008-05-02 02:15:14 Error: email to post
+2008-05-02 02:15:14 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:15:14 Error: albumarray :
+2008-05-02 02:15:14 Error: 
+2008-05-02 02:15:14 Error: Saved new admin variable: imagepath:
+2008-05-02 02:15:14 Error: Array
+(
+    [content] => <img class="mailimage" id="img_161" src="/dev/sinvert/img/pictures/cache/100x75_photo(6).jpg" />
+Hey all in tv land, it be my new paintjob up here. Check it 
+
+
+    [editor] => html
+    [header] => My new paintjob
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 02:15:14 Error: new post saved via email
+2008-05-02 02:15:15 Error: Scott@grizz : OK[] error:
+2008-05-02 02:15:46 Error: test : OK[] error:
+2008-05-02 02:15:46 Error: Scott@grizz : OK[] error:
+2008-05-02 02:33:23 Error: Volume did not save correctly: 
+2008-05-02 02:33:23 Error: Array
+(
+    [parent_id] => 1
+)
+
+2008-05-02 02:47:19 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:47:19 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:47:19 Error: The site has a email post passpester386
+2008-05-02 02:47:20 Error: Scott@grizz : OK[] error:
+2008-05-02 02:47:36 Error: test : OK[] error:
+2008-05-02 02:47:37 Error: Scott@grizz : OK[] error:
+2008-05-02 02:49:58 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/photo(2).jpg
+2008-05-02 02:49:58 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_photo(2).jpg
+2008-05-02 02:50:00 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/photo(3).jpg
+2008-05-02 02:50:00 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_photo(3).jpg
+2008-05-02 02:50:03 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/photo(4).jpg
+2008-05-02 02:50:03 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_photo(4).jpg
+2008-05-02 02:50:06 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/photo(5).jpg
+2008-05-02 02:50:06 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x75_photo(5).jpg
+2008-05-02 02:51:09 Error: File exists writing different file..
+2008-05-02 02:51:09 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/file004(1).jpg
+2008-05-02 02:51:09 Error: File exists writing different file..
+2008-05-02 02:51:09 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/Image(1).jpg
+2008-05-02 02:51:09 Error: File exists writing different file..
+2008-05-02 02:51:09 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/file001(1).jpg
+2008-05-02 02:51:09 Error: File exists writing different file..
+2008-05-02 02:51:09 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/file000(1).jpg
+2008-05-02 02:51:09 Error: File exists writing different file..
+2008-05-02 02:51:09 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/file003(1).jpg
+2008-05-02 02:51:10 Error: File exists writing different file..
+2008-05-02 02:51:10 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/file002(1).jpg
+2008-05-02 02:51:10 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:51:10 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:51:10 Error: The site has a email post passpester386
+2008-05-02 02:51:10 Error: email to post
+2008-05-02 02:51:10 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 3
+            [name] => defaultvolume
+            [value] => 1
+            [description] => This is the default volume a new post will go to if none is selected, this should probably the be the main volume.
+        )
+
+)
+
+2008-05-02 02:51:10 Error: albumarray :
+2008-05-02 02:51:10 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 02:51:10 Error: Array
+(
+    [content] => <img class="mailimage" id="img_164" src="/dev/sinvert/img/pictures/cache/100x75_file001(1).jpg" /><img class="mailimage" id="img_162" src="/dev/sinvert/img/pictures/cache/100x65_file004(1).jpg" /><img class="mailimage" id="img_163" src="/dev/sinvert/img/pictures/cache/100x75_Image(1).jpg" /><img class="mailimage" id="img_166" src="/dev/sinvert/img/pictures/cache/100x67_file003(1).jpg" /><img class="mailimage" id="img_167" src="/dev/sinvert/img/pictures/cache/100x75_file002(1).jpg" /><img class="mailimage" id="img_165" src="/dev/sinvert/img/pictures/cache/100x67_file000(1).jpg" /><br><br><div class="gmail_quote">---------- Forwarded message ----------<br>From: <b class="gmail_sendername"></b> &lt;<a href="mailto:Wood1175@aol.com">Wood1175@aol.com</a>&gt;<br>Date: Fri, Apr 25, 2008 at 10:45 AM<br>Subject: Fwd: FW: Care for a swim?????<br>
+To: <a href="mailto:hbrandmo@aol.com">hbrandmo@aol.com</a>, <a href="mailto:jebonfoey@yahoo.com">jebonfoey@yahoo.com</a>, <a href="mailto:gunter@ecentral.com">gunter@ecentral.com</a>, <a href="mailto:harold.manweiler@usmc.mil">harold.manweiler@usmc.mil</a>, <a href="mailto:grannye@netzero.net">grannye@netzero.net</a>, <a href="mailto:joyce154@centurytel.net">joyce154@centurytel.net</a>, <a href="mailto:DCHeil@aol.com">DCHeil@aol.com</a>, <a href="mailto:mom@sk8judge.com">mom@sk8judge.com</a>, <a href="mailto:Stillboy@comcast.net">Stillboy@comcast.net</a><br>
+<br><br>
+
+<div style="font-size: 10pt; color: rgb(0, 0, 0); font-family: Arial;"><font color="#000000" face="Arial" size="2">
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>
+<blockquote style="border-left: 2px solid blue; padding-left: 5px; margin-left: 5px;">
+  <div style="font-size: 10pt;">
+  <hr>
+  From: Momcrafty<br>To: <a href="mailto:Debbie_and_Charlie_Anderson@msn.com" target="_blank">Debbie_and_Charlie_Anderson@msn.com</a>, Tappy96, 
+  <a href="mailto:kjclark33@comcast.net" target="_blank">kjclark33@comcast.net</a>, <a href="mailto:Cheryl@fitnessinsurance.com" target="_blank">Cheryl@fitnessinsurance.com</a>, Wood1175, 
+  <a href="mailto:egallagher@crestlinemtg.com" target="_blank">egallagher@crestlinemtg.com</a>, <a href="mailto:ewurstjohnson@juno.com" target="_blank">ewurstjohnson@juno.com</a>, 
+  <a href="mailto:Stephanie_Koch@aesbrokers.com" target="_blank">Stephanie_Koch@aesbrokers.com</a>, <a href="mailto:meyergary57@comcast.net" target="_blank">meyergary57@comcast.net</a>, <a href="mailto:GLRYBO@MSN.COM" target="_blank">GLRYBO@MSN.COM</a>, 
+  <a href="mailto:ksvs66@comcast.net" target="_blank">ksvs66@comcast.net</a>, JTamayo@DirecTV.com, Stoodlebug, Twixiepop6969<br>Sent: 
+  4/24/2008 3:03:08 P.M. Mountain Daylight Time<br>Subj: Fwd: FW: Care for a 
+  swim?????<br></div>
+  <div>&nbsp;</div><font style="background-color: transparent;" color="#000000" face="Arial" size="2"><font color="#000000" face="Arial" size="2">
+  <div>&nbsp;</div></font><br><br><br>
+  <div><font style="font-family: ARIAL,SAN-SERIF; font-style: normal; font-variant: normal; font-weight: normal; font-size: 10pt; line-height: normal; font-size-adjust: none; font-stretch: normal; color: black;">
+  <hr style="margin-top: 10px;">
+  Need a new ride? Check out the largest site for U.S. used car listings at <a title="http://autos.aol.com/used?NCID=aolcmp00300000002851" href="http://autos.aol.com/used?NCID=aolcmp00300000002851" target="_blank">AOL 
+  Autos</a>.</font></div><br>-----------------<br>Forwarded Message: <br>
+  <table style="border: 1px solid rgb(192, 192, 192);" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+      <td>
+        <table style="font-size: 10pt; color: black; font-family: Arial; background-color: rgb(224, 224, 224);" border="0" cellpadding="1" cellspacing="0">
+          <tbody>
+          <tr>
+            <td valign="top" width="10%">Subj:</td>
+            <td><b>FW: Care for a swim?????&nbsp;</b></td></tr>
+          <tr>
+            <td valign="top" width="10%">Date:</td>
+            <td>4/24/2008 12:20:26 P.M. Mountain Daylight Time</td></tr>
+          <tr>
+            <td nowrap valign="top" width="10%">From:</td>
+            <td><a title="mailto:neil378@comcast.net" href="mailto:neil378@comcast.net" target="_blank">neil378@comcast.net</a></td></tr>
+          <tr>
+            <td nowrap valign="top" width="10%">To:</td>
+            <td><a title="mailto:emilylc@comcast.net" href="mailto:emilylc@comcast.net" target="_blank">emilylc@comcast.net</a>, <a title="mailto:cgcarroll3@sbcglobal.net" href="mailto:cgcarroll3@sbcglobal.net" target="_blank">cgcarroll3@sbcglobal.net</a>, 
+              <a title="mailto:Momcrafty@aol.com" href="mailto:Momcrafty@aol.com" target="_blank">Momcrafty@aol.com</a>, <a title="mailto:jim.neil@comcast.net" href="mailto:jim.neil@comcast.net" target="_blank">jim.neil@comcast.net</a>, <a title="mailto:sarbara@comcast.net" href="mailto:sarbara@comcast.net" target="_blank">sarbara@comcast.net</a>, <a title="mailto:movnfreight@yahoo.com" href="mailto:movnfreight@yahoo.com" target="_blank">movnfreight@yahoo.com</a>, <a title="mailto:tandm@mn.rr.com" href="mailto:tandm@mn.rr.com" target="_blank">tandm@mn.rr.com</a></td>
+</tr>
+          <tr>
+            <td colspan="2" bgcolor="#d0d0d0"><i>Sent from the Internet <a title="Internet Header Details">(Details)</a></i></td></tr></tbody></table></td></tr></tbody></table>
+  <div>&nbsp;</div>
+  
+  
+  
+  
+
+  
+
+  <div>
+  <p><b><font color="fuchsia" face="Comic Sans MS" size="2"><span style="font-weight: bold; font-size: 11pt; color: fuchsia;">&nbsp;</span></font></b></p>
+  <p><b><font color="fuchsia" face="Comic Sans MS" size="2"><span style="font-weight: bold; font-size: 11pt; color: fuchsia;">&nbsp;</span></font></b></p>
+  <div>
+  <div style="text-align: center;" align="center"><font face="Times New Roman" size="3"><span style="font-size: 12pt;">
+  <hr align="center" size="2" width="100%">
+  </span></font></div></div>
+  <div>
+  <div>
+  <p><b><font face="Arial" size="2"><span style="font-weight: bold; font-size: 10pt; font-family: Arial;">Subject:</span></font></b><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"> FW: Care 
+  for a swim?????</span></font></p></div></div>
+  <div>
+  <p><font face="Times New Roman" size="3"><span style="font-size: 12pt;">&nbsp;</span></font></p></div>
+  <p><font face="Times New Roman" size="3"><span style="font-size: 12pt;">&nbsp;</span></font></p>
+  <p><font face="Times New Roman" size="3"><span style="font-size: 12pt;">&nbsp;</span></font></p>
+  <blockquote style="margin-top: 5pt; margin-bottom: 5pt;">
+    <div>
+    <div>
+    <p><font face="Times New Roman" size="3"><span style="font-size: 12pt;">&nbsp;</span></font></p></div>
+    <blockquote style="margin-top: 5pt; margin-bottom: 5pt; margin-left: 3.75pt;">
+      <div>
+      <p><font face="Times New Roman" size="3"><span style="font-size: 12pt;">&nbsp;</span></font></p></div>
+      <div>
+      <div>
+      <p><b><font face="Arial" size="2"><span style="font-weight: bold; font-size: 10pt; font-family: Arial;">Subject: 
+      Care for a swim?????</span></font></b></p></div>
+      <div>
+      <p><font face="Times New Roman" size="3"><span style="font-size: 12pt;">&nbsp;</span></font></p></div></div>
+      <div>
+      <p><b><font color="navy" face="Bookman Old Style" size="3"><span style="font-weight: bold; font-size: 12pt; color: navy;">In 
+      Zimbabwe, Africa, you 
+      will find the magnificent Victoria Falls, 
+      at a height of 128m.</span></font></b><b><font face="Bookman Old Style" size="1"><span style="font-weight: bold; font-size: 9pt;"><br></span></font></b><b><font color="navy" face="Bookman Old Style"><span style="font-weight: bold; color: navy;">The 
+      location is known as the &#39;Devil&#39;s Swimming Pool&#39;. During the months of 
+      September and December, people can swim as close as possible to the edge 
+      of the falls without falling over.</span></font></b><b><font face="Bookman Old Style"><span style="font-weight: bold;"><br><font color="navy"><span style="color: navy;">These falls are becoming well known 
+      amongst the &#39;radical tourist&#39; industry, when more and more people search 
+      for the ultimate 
+      experience.</span></font></span></font></b></p></div>
+      <blockquote style="margin-top: 5pt; margin-bottom: 5pt;">
+        <div>
+        <p><b><font face="Bookman Old Style" size="3"><span style="font-weight: bold; font-size: 12pt;"><br><font color="navy"><span style="color: navy;">Would you 
+        dare?</span></font></span></font></b><b><font color="navy" face="Bookman Old Style" size="1"><span style="font-weight: bold; font-size: 9pt; color: navy;"><br></span></font></b><b><font face="Verdana" size="1"><span style="font-weight: bold; font-size: 9pt; font-family: Verdana;"><br>
+<br></span></font></b><b><font face="Verdana" size="2"><span style="font-weight: bold; font-size: 10pt; font-family: Verdana;"><img src="cid:X.MA1.1209141891@aol.com" height="600" width="800"><br><br><img src="cid:X.MA2.1209141891@aol.com" height="534" width="800"><br>
+<br><img src="cid:X.MA3.1209141891@aol.com" height="600" width="800"><br><br><img src="cid:X.MA4.1209141891@aol.com" height="600" width="800"><br><br><img src="cid:X.MA5.1209141891@aol.com" height="534" width="800"><br><br>
+<img src="cid:X.MA6.1209141891@aol.com" height="328" width="512"></span></font></b></p></div></blockquote></blockquote></div>
+    <div>
+    <div style="text-align: center;" align="center"><font color="black" face="Arial" size="2"><span style="font-size: 10pt; color: black; font-family: Arial;">
+    <hr align="center" size="2" width="100%">
+    </span></font></div>
+    <p><font color="black" face="Arial" size="2"><span style="font-size: 10pt; color: black; font-family: Arial;">Get the <a title="http://www.mapquest.com/toolbar?NCID=mpqmap00030000000003" href="http://www.mapquest.com/toolbar?NCID=mpqmap00030000000003" target="_blank">MapQuest Toolbar</a>, Maps, Traffic, Directions &amp; 
+    More!</span></font><font face="Tahoma" size="2"><span style="font-size: 10pt; font-family: Tahoma;"> 
+    </span></font></p></div></blockquote>
+  <p><font face="Times New Roman" size="3"><span style="font-size: 12pt;">&nbsp;</span></font></p>
+  <div style="text-align: center;" align="center"><font face="Tahoma" size="2"><span style="font-size: 10pt; font-family: Tahoma;">
+  <hr align="center" size="2" width="100%">
+  </span></font></div>
+  <p><font face="Tahoma" size="2"><span style="font-size: 10pt; font-family: Tahoma;">More immediate than e-mail? <a title="http://www.windowslive.com/messenger/overview.html?ocid=TXT_TAGLM_WL_Refresh_instantaccess_042008" href="http://www.windowslive.com/messenger/overview.html?ocid=TXT_TAGLM_WL_Refresh_instantaccess_042008" target="_blank">Get instant access with Windows Live 
+  Messenger.</a></span></font></p></div></font></blockquote></div></font><br><br><br><div><font style="color: black; font-family: ARIAL,SAN-SERIF; font-style: normal; font-variant: normal; font-weight: normal; font-size: 10pt; line-height: normal; font-size-adjust: none; font-stretch: normal;"><hr style="margin-top: 10px;">
+Need a new ride? Check out the largest site for U.S. used car listings at <a title="http://autos.aol.com/used?NCID=aolcmp00300000002851" href="http://autos.aol.com/used?NCID=aolcmp00300000002851" target="_blank">AOL Autos</a>.</font></div>
+</div>
+</div><br>
+
+
+    [editor] => html
+    [header] => Fwd: FW: Care for a swim?????
+    [type] => html
+    [volume_id] => 1
+)
+
+2008-05-02 02:51:10 Error: new post saved via email
+2008-05-02 02:51:11 Error: Scott@grizz : OK[] error:
+2008-05-02 02:51:23 Error: test : OK[] error:
+2008-05-02 02:51:24 Error: Scott@grizz : OK[] error:
+2008-05-02 19:56:08 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/imstp_pets_cat1_en.gif
+2008-05-02 19:56:08 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x15_imstp_pets_cat1_en.gif
+2008-05-02 19:56:08 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/image0023.gif
+2008-05-02 19:56:08 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_image0023.gif
+2008-05-02 19:56:08 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/image0014.jpg
+2008-05-02 19:56:08 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_image0014.jpg
+2008-05-02 20:09:32 Error: test : OK[] error:
+2008-05-02 20:09:32 Error: Scott@grizz : OK[] error:
+2008-05-02 20:10:45 Error: test : OK[] error:
+2008-05-02 20:10:45 Error: Scott@grizz : OK[] error:
+2008-05-02 20:11:06 Error: test : OK[] error:
+2008-05-02 20:11:06 Error: Scott@grizz : OK[] error:
+2008-05-02 20:43:22 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:43:22 Error: 
+2008-05-02 20:43:22 Error: Saved new admin variable: absoluteimageurl:
+2008-05-02 20:43:22 Error: Saved image: stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-02 20:44:49 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:44:49 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:44:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:44:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:44:53 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:44:53 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:45:05 Error: test : OK[] error:
+2008-05-02 20:45:05 Error: Scott@grizz : OK[] error:
+2008-05-02 20:46:14 Error: oldpath: /var/www/dev/sinvert/app/webroot/img/pictures/
+2008-05-02 20:46:14 Error: newpath: /var/www/dev/sinvert/app/webroot/img/pictures/
+2008-05-02 20:46:14 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:46:14 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:46:14 Error: The site has a email post passpester386
+2008-05-02 20:46:15 Error: Scott@grizz : OK[] error:
+2008-05-02 20:46:19 Error: test : OK[] error:
+2008-05-02 20:46:19 Error: Scott@grizz : OK[] error:
+2008-05-02 20:56:41 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:56:41 Error: 
+2008-05-02 20:56:41 Error: Saved new admin variable: absoluteimgurl:
+2008-05-02 20:57:09 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:57:09 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 6
+            [name] => absoluteimgurl
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:57:17 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:57:17 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 6
+            [name] => absoluteimgurl
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:57:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:57:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:59:36 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 20:59:36 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:01:16 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:01:16 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:01:26 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:01:26 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:01:31 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:01:31 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:01:55 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:01:55 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:19 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:19 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:19 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/29650523.gif
+2008-05-02 21:02:19 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x22_29650523.gif
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/57459549.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x85_57459549.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/96580179.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x72_96580179.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/35580320.gif
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x22_35580320.gif
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/50037671.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x68_50037671.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/40836242.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x53_40836242.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/13718272.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x66_13718272.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/91213090.jpg
+2008-05-02 21:02:20 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x88_91213090.jpg
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/51181576.jpg
+2008-05-02 21:02:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/75x100_51181576.jpg
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/24698238.jpg
+2008-05-02 21:02:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_24698238.jpg
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/testa.jpg
+2008-05-02 21:02:21 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_testa.jpg
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/testa.jpg
+2008-05-02 21:02:21 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_testa.jpg
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/testa.jpg
+2008-05-02 21:02:21 Error: Image file not a valid file, at least not for me:/var/www/dev/sinvert/app/webroot/img/pictures/cache/100x100_testa.jpg
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/11291403.gif
+2008-05-02 21:02:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x22_11291403.gif
+2008-05-02 21:02:21 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/99736960.jpg
+2008-05-02 21:02:21 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_99736960.jpg
+2008-05-02 21:02:50 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:50 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:50 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:50 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:50 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:50 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:50 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/94397729.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x72_94397729.jpg
+2008-05-02 21:02:50 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/60665714.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_60665714.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/55231280.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x68_55231280.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/41080091.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x88_41080091.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/70337009.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x66_70337009.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/8.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_8.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/35369804.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x53_35369804.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/30255275.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x85_30255275.jpg
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/45334144.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/100x67_45334144.jpg
+2008-05-02 21:02:51 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/87141453.jpg
+2008-05-02 21:02:51 Error: Image file deleted: /var/www/dev/sinvert/app/webroot/img/pictures/cache/75x100_87141453.jpg
+2008-05-02 21:03:18 Error: test : OK[] error:
+2008-05-02 21:03:18 Error: Scott@grizz : OK[] error:
+2008-05-02 21:03:35 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:03:35 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:03:35 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:03:35 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:12:49 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:12:49 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:12:55 Error: File exists writing different file..
+2008-05-02 21:12:55 Error: Image save path updated to: /var/www/dev/sinvert/app/webroot/img/pictures/grizzlyflames(1).png
+2008-05-02 21:12:58 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:12:58 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 2
+            [name] => emailtopostpass
+            [value] => pester386
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:12:58 Error: The site has a email post passpester386
+2008-05-02 21:12:59 Error: Scott@grizz : OK[] error:
+2008-05-02 21:13:10 Error: test : OK[] error:
+2008-05-02 21:13:10 Error: Scott@grizz : OK[] error:
+2008-05-02 21:13:17 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:13:17 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 6
+            [name] => absoluteimgurl
+            [value] => 
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:13:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:13:20 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:14:03 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:14:03 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:14:06 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:14:06 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:14:23 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:14:23 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:14:41 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 4
+            [name] => imagepath
+            [value] => /dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-02 21:14:41 Error: Array
+(
+    [Admin] => Array
+        (
+            [id] => 5
+            [name] => absoluteimageurl
+            [value] => http://192.168.1.33/dev/sinvert/img/pictures/
+            [description] => auto-generated site variable
+        )
+
+)
+
+2008-05-04 13:03:37 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [data] => Array
+                (
+                    [Image] => Array
+                        (
+                            [id] => 
+                            [name] => 
+                            [user_id] => 
+                            [album_id] => 0
+                        )
+
+                )
+
+            [Filedata] => Array
+                (
+                    [name] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+                    [type] => image/png
+                    [tmp_name] => /tmp/phprVqvyN
+                    [error] => 0
+                    [size] => 98
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Image] => Array
+                (
+                    [id] => 
+                    [name] => 
+                    [user_id] => 
+                    [album_id] => 0
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-05-04 13:03:37 Error: file save failed code 1
+2008-05-04 13:12:21 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [data] => Array
+                (
+                    [Image] => Array
+                        (
+                            [id] => 
+                            [name] => 
+                            [user_id] => 
+                            [album_id] => 0
+                        )
+
+                )
+
+            [Filedata] => Array
+                (
+                    [name] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+                    [type] => image/png
+                    [tmp_name] => /tmp/phpqpel76
+                    [error] => 0
+                    [size] => 98
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Image] => Array
+                (
+                    [id] => 
+                    [name] => 
+                    [user_id] => 
+                    [album_id] => 0
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-05-04 13:13:30 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [data] => Array
+                (
+                    [Image] => Array
+                        (
+                            [id] => 
+                            [name] => 
+                            [user_id] => 
+                            [album_id] => 0
+                        )
+
+                )
+
+            [Filedata] => Array
+                (
+                    [name] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+                    [type] => image/png
+                    [tmp_name] => /tmp/phpoxFcf9
+                    [error] => 0
+                    [size] => 98
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Image] => Array
+                (
+                    [id] => 
+                    [name] => 
+                    [user_id] => 
+                    [album_id] => 0
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-05-04 13:13:30 Error: Saved image: stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-04 13:13:30 Error: Array
+(
+    [Image] => Array
+        (
+            [location] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+            [name] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+            [album_id] => 0
+            [user_id] => 1
+            [width] => 4
+            [height] => 4
+            [thumb] => cache/100x100_stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+        )
+
+)
+
+2008-05-04 13:15:51 Error: Image file deleted: /var/www/dev/capuchn/app/webroot/img/pictures/stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-04 13:15:52 Error: Image file deleted: /var/www/dev/capuchn/app/webroot/img/pictures/cache/100x100_stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-04 13:16:16 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [data] => Array
+                (
+                    [Image] => Array
+                        (
+                            [id] => 
+                            [name] => 
+                            [user_id] => 
+                            [album_id] => 0
+                        )
+
+                )
+
+            [Filedata] => Array
+                (
+                    [name] => phone-paper-jolly.jpg
+                    [type] => image/jpeg
+                    [tmp_name] => /tmp/phpxooVBF
+                    [error] => 0
+                    [size] => 15344
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Image] => Array
+                (
+                    [id] => 
+                    [name] => 
+                    [user_id] => 
+                    [album_id] => 0
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-05-04 13:16:16 Error: Saved image: phone-paper-jolly.jpg
+2008-05-04 13:16:16 Error: Array
+(
+    [Image] => Array
+        (
+            [location] => phone-paper-jolly.jpg
+            [name] => phone-paper-jolly.jpg
+            [album_id] => 0
+            [user_id] => 1
+            [width] => 120
+            [height] => 160
+            [thumb] => cache/75x100_phone-paper-jolly.jpg
+        )
+
+)
+
+2008-05-04 13:20:35 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [data] => Array
+                (
+                    [Image] => Array
+                        (
+                            [id] => 
+                            [name] => 
+                            [user_id] => 
+                            [album_id] => 0
+                        )
+
+                )
+
+            [Filedata] => Array
+                (
+                    [name] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+                    [type] => image/png
+                    [tmp_name] => /tmp/php2YC4Og
+                    [error] => 0
+                    [size] => 98
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Image] => Array
+                (
+                    [id] => 
+                    [name] => 
+                    [user_id] => 
+                    [album_id] => 0
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-05-04 13:20:35 Error: Saved image: stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-04 13:20:35 Error: Array
+(
+    [Image] => Array
+        (
+            [location] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+            [name] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+            [album_id] => 0
+            [user_id] => 1
+            [width] => 4
+            [height] => 4
+            [thumb] => cache/100x100_stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+        )
+
+)
+
+2008-05-04 13:20:47 Error: Image file deleted: /var/www/dev/capuchn/app/webroot/img/pictures/stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-04 13:20:47 Error: Image file deleted: /var/www/dev/capuchn/app/webroot/img/pictures/cache/100x100_stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-04 13:20:49 Error: Array
+(
+    [pass] => Array
+        (
+        )
+
+    [controller] => images
+    [action] => upload
+    [form] => Array
+        (
+            [data] => Array
+                (
+                    [Image] => Array
+                        (
+                            [id] => 
+                            [name] => 
+                            [user_id] => 
+                            [album_id] => 0
+                        )
+
+                )
+
+            [Filedata] => Array
+                (
+                    [name] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+                    [type] => image/png
+                    [tmp_name] => /tmp/phpGapEgi
+                    [error] => 0
+                    [size] => 98
+                )
+
+        )
+
+    [data] => Array
+        (
+            [Image] => Array
+                (
+                    [id] => 
+                    [name] => 
+                    [user_id] => 
+                    [album_id] => 0
+                )
+
+        )
+
+    [url] => Array
+        (
+            [url] => images/upload
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-05-04 13:20:49 Error: Saved image: stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-04 13:20:49 Error: Array
+(
+    [Image] => Array
+        (
+            [location] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+            [name] => stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+            [album_id] => 0
+            [user_id] => 1
+            [width] => 4
+            [height] => 4
+            [thumb] => cache/100x100_stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+        )
+
+)
+
+2008-05-04 17:27:31 Error: saveSiteVar: absoluteimageurl : http://192.168.1.33/dev/capuchn/img/pictures/
+2008-05-04 17:27:31 Error: saveSiteVar: imagepath : /dev/capuchn/img/pictures/
+2008-05-04 17:27:31 Error: saveSiteVar: defaultvolume : 0
+2008-05-04 17:27:31 Error: saveSiteVar: emailtopostpass : waterpig
+2008-05-04 17:27:31 Error: saveSiteVar: absoluteimgurl : /img/pictures/
+2008-05-04 17:33:09 Error: Saved new admin variable: absoluteimageurl:http://192.168.1.33/dev/capuchn/img/pictures/
+2008-05-04 17:33:09 Error: Saved new admin variable: imagepath:/dev/capuchn/img/pictures/
+2008-05-04 17:33:09 Error: Saved new admin variable: defaultvolume:0
+2008-05-04 17:33:09 Error: Saved new admin variable: emailtopostpass:waterpig
+2008-05-04 17:33:09 Error: Saved new admin variable: absoluteimgurl:/img/pictures/
+2008-05-04 17:34:12 Error: Saved new admin variable: absoluteimageurl:http://192.168.1.33/dev/capuchn/img/pictures/
+2008-05-04 17:34:12 Error: Saved new admin variable: imagepath:/dev/capuchn/img/pictures/
+2008-05-04 17:34:12 Error: Saved new admin variable: defaultvolume:0
+2008-05-04 17:34:12 Error: Saved new admin variable: emailtopostpass:waterpig
+2008-05-04 17:34:12 Error: Saved new admin variable: absoluteimgurl:/img/pictures/
+2008-05-04 18:40:57 Error: Wrote new file: /var/www/dev/capuchn/app/webroot/css/style.css
+2008-05-04 18:41:42 Error: Wrote new file: /var/www/dev/capuchn/app/webroot/css/style.css
+2008-05-04 19:07:53 Error: Wrote new file: /var/www/dev/capuchn/app/views/layouts/default.thtml
+2008-05-05 19:06:50 Error: Image file not a valid file, at least not for me:/var/www/dev/capuchn/app/webroot/img/pictures/stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-05 19:06:50 Error: Image file not a valid file, at least not for me:/var/www/dev/capuchn/app/webroot/img/pictures/cache/100x100_stripe_47e4c6b2ef7340d1f6cc4ea595a96d79.png
+2008-05-05 19:06:55 Error: Image file not a valid file, at least not for me:/var/www/dev/capuchn/app/webroot/img/pictures/phone-paper-jolly.jpg
+2008-05-05 19:06:55 Error: Image file not a valid file, at least not for me:/var/www/dev/capuchn/app/webroot/img/pictures/cache/75x100_phone-paper-jolly.jpg

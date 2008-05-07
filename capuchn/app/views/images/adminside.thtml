@@ -1,0 +1,109 @@
+<?php 
+/*
+ * Images/index view
+ * This should be called into a layout that has loaded swfupload components and has some 'global' functions
+ * like submit form 
+ */
+ if(isset($justimages)){
+ 	displayImages($files,$path);
+	exit();
+ }
+ //was going to do things different
+ function displayImages($filess,$path){
+	foreach($filess as $file){
+		echo "<div class=\"thumbdivdock\" id=\"sidethumbddock_".$file['Image']['id']."\">";
+		echo "<div class=\"thumbnailContainer\" id=\"thumb_".$file['Image']['id']."\">";
+		echo "<div class=\"thumbNormalizeSize\" dojoType=\"dojo.dnd.Source\" copyOnly=\"true\">";
+		//echo "<img class=\"thumb\" id=\"img_".$file['Image']['id']."\" src=\"".$path.$file['Image']['thumb']."\" onClick=\"thumbClick(this)\"/>";
+		echo "<img filename=\"".$file['Image']['location']."\" class=\"dojoDndItem\" dndType=\"image\" id=\"img_".$file['Image']['id']."\" trelsrc=\"".$path.$file['Image']['thumb']."\" src=\"".$path.$file['Image']['thumb']."\" width=\"40\" height=\"40\" onClick=\"thumbClick(this)\"/>";
+		echo "</div>";//end normalizeSize
+		?>
+		<div id="editable_<?php echo $file['Image']['id']?>" class="thumbtext" 
+			dojoType="dijit.InlineEditBox" 
+			onChange="myHandler(this.id,arguments[0])">
+			<?php echo $file['Image']['name'];?>
+		</div>
+		<?php 
+		 
+		echo "</div>";//end container
+		echo "</div>";//end dock
+	}
+	
+ }
+ 
+?>
+
+		<!-- <div id="swfu_container" style="display: none; margin: 0px 0px;"> -->
+		<div id="swfu_container" style="margin: 0px 0px;">
+			<div>
+				<form id="imgextended" enctype="multipart/form-data" method="post">
+					<?php echo $html->input('Image/id',array('type'=>'hidden'));?>
+					<?php echo $html->input('Image/name',array('type'=>'hidden'));?>
+					<?php echo $html->input('Image/user_id',array('type'=>'hidden'));?>
+					<?php echo $html->input('Image/album_id',array('type'=>'hidden'));?>
+					<input name="Filedata" type="file"></input>
+				</form>
+				<?php
+				//<form>
+				//	<button id="btnBrowse" type="button" style="padding: 5px;margin:5px 0 0 10px" onclick="swfu.selectFiles(); this.blur();"><img src="/dev/sinvert/img/page_white_add.png" style="padding-right: 3px; vertical-align: bottom;">Select Images <span style="font-size: 7pt;">(2 MB Max)</span></button>
+				//</form>
+				?>
+				<div dojoType="dijit.form.ComboButton" onclick="dojofileupload(this);">
+		    		<span>Upload Files</span>
+		            <div dojoType="dijit.Menu" id="imgMenu" toggle="fade" style="display: none;">
+		                <div dojoType="dijit.MenuItem" onclick="dijit.byId('newAlbumDialog').show()">
+		                    New Album
+		                </div>
+		                <div dojoType="dijit.MenuItem" onclick="imagesTab()">
+		                    Manage Files
+		                </div>
+		            </div>
+		        </div>
+				<br/>
+						
+				<div id="albumSelectBox" style="padding:2px">
+					
+				</div>
+				<br/>
+			</div>
+			<div id="divFileProgressContainer" style=""></div>
+			<div style="clear:both" />
+			<div id="sidethumbnails" dojoType="dojox.layout.ContentPane" >
+			<?php 
+				//TODO: Add a form for each image , delete, rename, select album
+				foreach($files as $file){
+					echo "<div class=\"thumbdivdock\" id=\"sidethumbddock_".$file['Image']['id']."\">";
+					echo "<div class=\"thumbnailContainer\" id=\"thumb_".$file['Image']['id']."\">";
+					echo "<div class=\"thumbNormalizeSize\" dojoType=\"dojo.dnd.Source\" copyOnly=\"true\">";
+					//echo "<img class=\"thumb\" id=\"img_".$file['Image']['id']."\" src=\"".$path.$file['Image']['thumb']."\" onClick=\"thumbClick(this)\"/>";
+					echo "<img class=\"dojoDndItem\" dndType=\"image\" id=\"img_".$file['Image']['id']."\" filename=\"".$file['Image']['location']."\" src=\"".$path.$file['Image']['thumb']."\" width=\"40\" height=\"40\" onClick=\"thumbClick(this)\"/>";
+					echo "</div>";//end normalizeSize
+					?>
+					<div id="editable_<?php echo $file['Image']['id']?>" class="thumbtext" 
+                		dojoType="dijit.InlineEditBox" 
+                		onChange="myHandler(this.id,arguments[0])">
+                		<?php echo $file['Image']['name'];?>
+    				</div>
+					<?php 
+					 
+					echo "</div>";//end container
+					echo "</div>";//end dock
+				}
+			
+			?>			
+			</div>
+		</div>
+	</div>
+
+	<div id="swftarget"/>
+
+<script>
+	//force loading after this page has loaded
+	dojo.addOnLoad(function(){
+        console.debug("Successfully loaded!");
+        swfuInit();
+		loadAlbumSelect();
+    });
+</script>
+
+	

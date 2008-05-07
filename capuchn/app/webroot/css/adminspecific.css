@@ -1,0 +1,548 @@
+@CHARSET "ISO-8859-1";
+/*All specific id's and classes not associated with a lib*/
+	
+.thumbdivdock {
+	/*a 'dock' for drag and drop, once that happens */
+	width:120px;
+	height:160px;
+	padding:5px;
+	margin: 0px;
+	float:left;
+}
+.thumbnailContainer {
+	/*image max is 100 by 100*/
+	/*container for image a form elements*/
+	background-color: #999;
+	padding: 5px;
+	width:110px;
+	height: 150px;
+	/*float:left;*/
+	margin: 5px;
+	text-align:center;
+	vertical-align:bottom;
+	position:relative;
+}
+
+.thumbtextabs{
+	/*force to bottom of div*/
+	/*not currently used*/
+	position:absolute;
+	bottom:5px;
+	left:5px;
+	overflow:hidden;
+	width:110px;
+}
+
+.thumbtext{
+	font-family:Tahoma, Arial, sans-serif;
+	font-size:10px;
+	position:relative;
+	overflow:hidden;
+	width:103px;
+	height:14px;
+	border:solid 1px black;
+	margin:2px 0px 2px 0px;
+	padding:0 2px 0 2px
+}
+
+.thumbcheck{
+	background:#aaa;
+	position:absolute;
+	left:5px;
+	top:5px;
+}
+
+.thumbNormalizeSize{
+	padding:5px;
+	margin:0px;
+	width:100px;
+	height:100px;
+	background: #a5a5a5;
+	text-align:center;
+}
+.thumbname{
+	width:110px;
+}
+
+.imageContainer{
+	
+}
+
+.thumb {
+	
+}
+
+.thumbnails {
+	
+}
+table.messages{
+	empty-cells:show;
+}
+	
+
+tr.message {
+	width:100%;
+}
+
+table.messages td{
+	border-bottom:1px solid #ccc;
+	padding:2px;
+	background-color:#ddd;
+}
+
+.message td.from {
+	font-size: small;
+	width:20%;
+	overflow:hidden;
+	white-space: nowrap;
+	empty-cells:show;
+}
+.message td.from .msgfrom{
+	width:100%;
+	overflow:hidden;
+	font-size:small;
+}
+
+.message td.subject{
+	font-size: normal;
+	width:60%;
+	overflow:hidden;
+	white-space: nowrap;
+	empty-cells:show;
+	
+}
+.message td.subject .msgsubject{
+	width:100%;
+	overflow:hidden;
+	background-color:#eee;
+	font-size:110%;
+}
+		
+
+.message td.date{
+	font-size: small;
+	width:20%;
+	overflow:hidden;
+	white-space: nowrap;
+	empty-cells:show;
+}
+
+.message td.date .msgdate{
+	width:100%;
+	overflow:hidden;
+	font-size:80%;
+}
+
+#mailchecktime{
+	font-size:70%;
+}
+
+#topContentPane{
+	
+	display:inline;
+	
+}
+
+#magform .formline{
+	vertical-align:bottom;
+	height:30px;
+	float:left; 
+	margin:2px 0 2px 5px;
+}
+
+#svpostbutton{
+	padding:0px;
+}
+
+/***********************
+ * 
+ * Left side css
+ * 
+ ***********************/
+
+#sidethumbnails .thumbdivdock {
+	/*a 'dock' for drag and drop, once that happens */
+	width:60px;
+	height:80px;
+	padding:5px;
+	margin: 0px;
+	float:left;
+}
+#sidethumbnails .thumbnailContainer {
+	/*image max is 100 by 100*/
+	/*container for image a form elements*/
+	background-color: #999;
+	padding: 5px;
+	width:50px;
+	height: 70px;
+	/*float:left;*/
+	margin: 5px;
+	text-align:center;
+	vertical-align:bottom;
+	position:relative;
+}
+
+#sidethumbnails .thumbtextabs{
+	/*force to bottom of div*/
+	/*not currently used*/
+	position:absolute;
+	bottom:5px;
+	left:5px;
+	overflow:hidden;
+	width:50px;
+}
+
+#sidethumbnails .thumbtext{
+	font-family:Tahoma, Arial, sans-serif;
+	font-size:10px;
+	position:relative;
+	overflow:hidden;
+	width:43px;
+	height:14px;
+	border:solid 1px black;
+	margin:2px 0px 2px 0px;
+	padding:0 2px 0 2px
+}
+
+#sidethumbnails .thumbNormalizeSize{
+	padding:5px;
+	margin:0px;
+	width:40px;
+	height:40px;
+	background: #a5a5a5;
+	text-align:center;
+}
+#sidethumbnails .thumbname{
+	width:50px;
+}
+
+#sidethumbnails img{
+	width:40px;
+	height:40px;
+}
+
+table.albums{
+	width:100%;
+}
+
+table.albums td{
+	border:1px 0 0 1px solid #0b0b0b;
+}
+	
+/***********************
+ * 
+ * SWF Upload CSS
+ * 
+ ***********************/
+
+
+.likeParent {
+	font: inherit;
+	color: inherit;
+	text-decoration: inherit;
+}
+
+a.likeParent,
+a.likeParent:link,
+a.likeParent:active,
+a.likeParent:visited,
+a.likeParent:hover 
+{
+	font: inherit;
+	color: #000000;
+	text-decoration: none;
+}
+
+
+.progressWrapper {
+	/*width: 357px;*/
+	width: 80%;
+	overflow: hidden;
+}
+.progressContainer {
+	margin: 5px;
+	padding: 4px;
+	
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	
+	overflow: hidden;
+}
+.red /* Error */
+{
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+.green /* Current */ 
+{
+	border: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+}
+.blue /* Complete */
+{
+	border: solid 1px #CEE2F2;
+	background-color: #F0F5FF;
+}
+
+.progressName {
+	font-size: 8pt;
+	font-weight: bold;
+	color: #555555;
+	
+	/*width: 323px;*/
+	width: 90%;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+	font-size: 0px;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+.progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+.progressBarStatus {
+	margin-top: 2px;
+	/*wwidth: 337px;*/
+	width: 80%;
+	font-size: 7pt;
+	font-family: Verdana;
+	text-align: left;
+	white-space: nowrap;
+}
+ 
+a.progressCancel,
+a.progressCancel:link,
+a.progressCancel:active,
+a.progressCancel:visited,
+a.progressCancel:hover
+{
+	font-size: 0px;
+	display: block;
+	height: 14px;
+	width: 14px;
+	
+	background-image: url(/img/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+a.progressCancel:hover 
+{
+	background-position: 0px 0px;
+}
+
+.mailmessage {
+	margin: 10px;
+	padding: 10px;
+	background:#ededed;
+	text-align:center;
+	
+}
+
+.mailmessage div.from,div.subject,div.body {
+	width: 100%;
+	margin-top:0px;
+	border:1px solid #666;
+	background:#fcfcfc;
+	text-align:left;
+	padding:0px;
+	overflow:auto;
+}
+
+.mailmessage div.msgtext{
+	padding:5px;
+}
+
+
+.mailmessage div.msglabel{
+	margin:10px 0 0 0;
+	border-top:1px solid #666;
+	border-left:1px solid #666;
+	border-right:1px solid #666;
+	width: 100%;
+	background: #aaa;
+	text-align:left;
+}
+
+.widgetColumnContainer{
+	width:100%;
+	background:#a0a0a0;
+	border:solid black;
+	padding:1px;
+	margin:0px;
+}
+
+#maincontain{
+	width:100%;
+	height:100%;
+}
+#wcOne {
+	width:49%;
+	float:left;
+	border:1px dashed black;
+	padding:10px;
+	margin:0px;
+}
+
+#wcTwo {
+	width:49%;
+	float:left;
+	border:1px dashed black;	
+	padding:10px;
+	margin:0px;
+}
+
+#widgetcolumnone{
+	display:inline;
+	float:left;
+}
+
+#widgetcolumntwo{
+	display:inline;
+	float:left;
+	
+}
+
+.widget {
+	/*bassckground: url(../img/widgetbg.gif) repeat;	*/
+	background:#F4F4F4;
+	width: 90%; margin: 1em auto;
+	border-left:1px solid #BFBFBF;	
+	border-right:1px solid #AAAAAA;
+}
+.widgetTopold div {
+	background: url(../img/widget_round_up_left.png) no-repeat top left; 
+	
+	padding-left:20px;
+	height:20px;
+}
+
+.widgetTopold {
+	background: url(../img/widget_round_up_righta.png) no-repeat top right; 
+	background-color:#ddd;
+	height:20px;
+}
+
+
+.widgetTop {
+	background:#F9F9F9 url(../js/dojoroot/dijit/themes/tundra/images/accordionItemActive.gif) repeat-x scroll center bottom;
+	border-bottom:1px solid #BFBFBF;
+	border-top:1px solid #AAAAAA;
+	cursor:default;
+	font-weight:bold;
+	padding:6px 4px 6px 8px;
+}
+
+.widgetTop div{
+	background:#F9F9F9 url(../js/dojoroot/dijit/themes/tundra/images/accordionItemActive.gif) repeat-x scroll center bottom;
+	width:50%;
+	font-size: 10px;
+}
+
+.widgetContent {
+	
+	margin: 10px 7px 10px 7px; 
+}
+
+.widgetBottom div{
+	 /*background: url(../img/widget_round_bot_left.png) no-repeat bottom left;*/
+	background:#F9F9F9 url(../js/dojoroot/dijit/themes/tundra/images/accordionItemActive.gif) repeat-x scroll center bottom;
+	height:10px;
+}
+
+.widgetBottom {
+	/*background: url(../img/widget_round_bot_righta.png) no-repeat bottom right;*/
+	background:#F9F9F9 url(../js/dojoroot/dijit/themes/tundra/images/accordionItemActive.gif) repeat-x scroll center bottom;
+	height:10px;
+	border-bottom:1px solid #BFBFBF;
+	border-top:1px solid #AAAAAA;
+}
+
+.widgetTarget {
+	display:none;
+	height:100px;
+	width:100%;
+
+}
+
+.widgetDropZone {
+	width:100%;
+	text-align:center;
+	margin:0 5px 0 5px;
+	padding-bottom:1px;
+	/*backround for testing*/
+	background:#ccc;
+	
+}
+
+.widgetDropTarget {
+	height:200px;
+	background:#cdcdcd;
+	padding:1px;
+	margin:1px;
+	
+}
+
+.widgeticon{
+	
+	width:36px;
+	height:36px;
+	background:#444;
+	border: 1px dotted;
+	
+}
+
+.widgetlistblock {
+	background:#888;
+	padding:1px;
+	border:1px solid;	
+	height:40px;
+}
+
+.widgetdescribe{
+	background:#bbb;
+}
+
+.widgetbuttons{
+	height:30px;
+	background:#bbb;	
+}
+
+.spacer {
+		background:#acbacc;
+	width: 90%; margin: 1em auto;
+}
+
+.target {border: 1px dotted gray; width: 300px; height: 300px;padding: 5px; 
+      -moz-border-radius:8pt 8pt;radius:8pt;}
+.source {border: 1px dotted skyblue;
+       -moz-border-radius:8pt 8pt;radius:8pt;}
+.dojoDndItemOver {
+	sbackground: #feb;
+	sborder: 1px dotted gray; 
+}
+.dojoDndItemBefore {border-left: 2px dotted gray; }
+.dojoDndItemAfter {border-right: 2px dotted gray; }
+.target .dojoDndItemAnchor {border:1px solid gray;}
+.dojoDndAvatar {font-size: 75%; color: black;}
+.dojoDndAvatar td {padding-left: 20px; padding-right: 4px;height:20px}
+.dojoDndAvatarHeader {background: #ccc; background-repeat: no-repeat;}
+.dojoDndAvatarItem {background: #eee;}
+.dojoDndMove .dojoDndAvatarHeader {background-image: url(js/dojo/resources/images/dndNoMove.png);}
+.dojoDndMove .dojoDndAvatarCanDrop .dojoDndAvatarHeader {background-image: 
+        url(js/dojo/resources/images/dndMove.png);}
