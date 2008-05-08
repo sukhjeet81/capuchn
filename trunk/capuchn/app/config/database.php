@@ -58,9 +58,9 @@ class DATABASE_CONFIG
 	var $default = array('driver' => 'mysql',
 								'connect' => 'mysql_connect',
 								'host' => 'localhost',
-								'login' => 'stillboy_sv',
-								'password' => 's1nv3rt',
-								'database' => 'stillboy_sinvertical',
+								'login' => 'user',
+								'password' => 'password',
+								'database' => 'capuchn',
 								'prefix' => '');
 
 	var $test = array('driver' => 'mysql',

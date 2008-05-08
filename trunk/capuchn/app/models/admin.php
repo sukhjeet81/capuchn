@@ -17,17 +17,18 @@ class Admin extends AppModel
 	
 	function saveSiteVar($var, $newvar, $desc=null){
 		$oldvar = $this->findByName($var);
-		if(isset($oldvar['value'])){
-			$oldvar['value'] = $newvar;
+		if(isset($oldvar['Admin']['value'])){
+			$oldvar['Admin']['value'] = $newvar;
 			if($this->save($oldvar)){
+				$this->log("Saved admin variable: ".$var.":".$newvar);
 				return true;
 			}else{
 				return false;
 			}
 		}else{
-			$oldvar['name']=$var;
-			$oldvar['value']=$newvar;
-			$oldvar['description']=$desc;
+			$oldvar['Admin']['name']=$var;
+			$oldvar['Admin']['value']=$newvar;
+			$oldvar['Admin']['description']=$desc;
 			if($this->save($oldvar)){
 				$this->log("Saved new admin variable: ".$var.":".$newvar);
 				return true;

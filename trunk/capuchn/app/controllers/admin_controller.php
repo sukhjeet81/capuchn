@@ -61,6 +61,7 @@ class AdminController extends AppController
 	}
 	
 	function readfile($file = null){
+		
 		if($file == "default"){
 			$output = file_get_contents(LAYOUTS."default.thtml");
 			$filename = "default.thtml";
