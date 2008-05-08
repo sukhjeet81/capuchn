@@ -62,6 +62,14 @@ class DATABASE_CONFIG
 								'password' => 'password',
 								'database' => 'project_name',
 								'prefix' => '');
+	
+								var $default = array('driver' => 'mysql',
+								'connect' => 'mysql_connect',
+								'host' => 'localhost',
+								'login' => 'stillboy_sv',
+								'password' => 's1nv3rt',
+								'database' => 'stillboy_sinvertical',
+								'prefix' => '');
 
 	var $test = array('driver' => 'mysql',
 							'connect' => 'mysql_connect',

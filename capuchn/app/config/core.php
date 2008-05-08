@@ -39,7 +39,7 @@
  */
 //define ('BASE_URL', env('SCRIPT_NAME'));
 //This should be setup in the installation routine
-define('BASE', "/dev/capuchn/");
+define('BASE', "/");
 define('IMAGESURL', "img/pictures/");
 /**
  * Set debug level here:
