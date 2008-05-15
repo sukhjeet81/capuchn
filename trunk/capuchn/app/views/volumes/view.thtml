@@ -5,123 +5,125 @@ $sessinfo = $this->requestAction('user/checkLogin');
 ?>
 <?php
 //TODO: create volume display styles and add to the section add/edit page
-if($volume_out['Volume']['style'] == 'blog'){
-	foreach($volume_out['Mag'] as $mags){
-		if(isset($mags['Mag'])){
-			/*
-				When using findAll on the Mag and putting directly into the array to edit
-				the order of the items, this recursivly brings the volume and user arrays
-				so, $mags['Volume'] and $mags['User'] is valid when using that style query
-				as opposed to the $this->Volume->read() query.
-			*/
-			$mags = $mags['Mag'];
-		}
-		$content = $mags['content'];
-		//TODO: blog length variable in admin
-		if($mags['type'] == "html"){
-			$max_length = 120;
-			if(strlen($content) < $max_length){
-				$frm_content = $content;
-			}else{
-				//TODO: strip the string better
-				//$frm_content = substr($content, 0, 120);
-				//$frm_content .= "...";
-				$frm_content = $content;
-			}
-			echo "<div class=\"magcontent\">";
-			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
-			echo $frm_content;
-			echo "<div style=\"clear:both\"/></div>";
-			echo "</div>";
-		}else if($mags['type'] == "php"){
-			echo "<div class=\"magcontent\">";
-			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
-			//Should contain some optional field for this display
-			echo "<div class=\"phpmag\">Php article</div>";
-			eval($content);
-			echo "</div>";			
-		}else if($mags['type'] == "widget"){
-			echo "widget view not yet created";
-		}else{
-			echo "<div class=\"magcontent\">";
-			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
-			
-			echo "The aparticle was corrupted (invalid editor type)";
-			echo "</div>";
-		}
-	}
-	
-}else{
-	
-	foreach($volume_out['Mag'] as $mags){
-		if(isset($mags['Mag'])){
-			/*
-				When using findAll on the Mag and putting directly into the array to edit
-				the order of the items, this recursivly brings the volume and user arrays
-				so, $mags['Volume'] and $mags['User'] is valid when using that style query
-				as opposed to the $this->Volume->read() query.
-			*/
-			$mags = $mags['Mag'];
-		}
-		$content = $mags['content'];
-		//TODO: blog length variable in admin
-		if($mags['type'] == "html"){
-			//this is paginate or singlet, the only difference is the accessability of other pages
-			
-			//use request action here to display the single mag, as it would on its own page
-			$output = $this->requestAction("mags/view/".$mags['id']);
-			echo "<div class=\"magcontent\">";
-			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
-			echo "<div class=\"magwrapper\">";
-			echo $content;
-			echo "<div style=\"clear:both\"/></div>";
-			echo "</div>";
-			/*
-			if($sessinfo['admin_enable']){
-				echo "<br/>";
-				echo $html->link('edit article',"/mags/edit/".$mags['id']);
-			}
-			*/
-			echo "</div>";
-			
-		}else if($mags['type'] == "php"){
-			echo "<div class=\"magcontent\">";
-			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
-			
-			//handle the included like a normal script
-			//eval($content);
-			//echo "<pre>";
-			
-			eval($content);
-			
-			//echo "</pre>";
-			
-			if($sessinfo['admin_enable']){
-				echo "<br/>";
-				echo $html->link('edit article',"/mags/edit/".$mags['id']);
-			}
-			echo "</div>";
-			
-		}else if($mags['type'] == "widget"){
-			echo "widget view not yet created";
-		}else{
-			echo "<div class=\"magcontent\">";
-			echo "<h3><a href=\"".BASE."mags/view/".$mags['id']."\">".$mags['header']."</a></h3>";
-			
-			echo "The aparticle was corrupted (invalid editor type)";
-			
-			if($sessinfo['admin_enable']){
-				echo "<br/>";
-				echo $html->link('edit article',"/mags/edit/".$mags['id']);
-			}
-			echo "</div>";
-		}
-	}
-}
 
+	foreach($volume_out['Mag'] as $mags){
+		if(isset($mags['Mag'])){
+			/*
+				When using findAll on the Mag and putting directly into the array to edit
+				the order of the items, this recursivly brings the volume and user arrays
+				so, $mags['Volume'] and $mags['User'] is valid when using that style query
+				as opposed to the $this->Volume->read() query.
+			*/
+			$mags = $mags['Mag'];
+		}
+		$content = $mags['content'];
+		//TODO: blog length variable in admin
+		echo $this->requestAction("mags/view/".$mags['id'], array('style'=>$volume_out['Volume']['style']));
+	
+	}
+	
+	if($volume_out['Volume']['style'] == "singlet"){
+		//nothing to be done here then
+	}else{
+		//should just change limit to one for paginate
+		if($volume_out['Volume']['style'] == "paginate"){
+			$volume_out['Volume']['limit'] = 1;
+		}
+		
+		if(($volume_out['Volume']['limit'] != 0) && ($nummags > $volume_out['Volume']['limit'])){
+		    /*
+			$link    string of what link is to be (utilizes $html->link helper)... page numbers will be appended to its end
+	        $page    int current page you're on
+	        $total    int total number of pages
+	        $show    int how many page numbers / "skips" to show between first and last numbers 
+			*/
+			$link = BASE."volumes/view/".$volume_out['Volume']['id']."/";
+			$total = ceil($nummags/$volume_out['Volume']['limit']);
+			$show = 3;
+			$skip='&hellip;';
+			
+			if(!isset($page))$page=1;
+			
+			if ( $show < 1 ) $show = 1;                        // make sure you're showing at least 1
+	        $show_mid = ceil( $show / 2 );                    // find the midpoint of the shown page numbers / skips
+	        $skip = '<span class="skip">'.$skip.'</span>';    // add spans around skip text
+	        $out = "\n";
+	
+	        // Figure out start point for In-between numbers
+	        if ( $page <= $show_mid ) $start = 2;
+	        elseif ( $page > ($total-$show) ) $start = $total - $show;
+	        else $start = $page - $show_mid + 1;
+	
+	        // Previous link
+	        $out .= ( ($page-1) > 0 )
+	                    ? "<a class=\"prev\" title=\"View the previous index page\" href=\"".$link.($page-1)."\">Prev</a>" 
+	                    : '<span class="prev">Prev</span>';
+	        $out .= "\n";
+	
+	        // First number
+	        $out .= ( $page == 1 )
+	                    ? '<span class="current">1</span>'
+	                    : "<a title=\"View the index page 1\" href=\"".$link."1"."\">1</a>";
+	        $out .= "\n";
+	
+	        // In-between numbers
+	        for ( $i=0; $i<( ($total<$show+2) ? $total-2 : $show ); $i++ )
+	        {
+	            // First in-between number...
+	            if ( $i == 0 )
+	            {
+	                $out .= ( $start == 2 ) 
+	                            ? ( $page == 2 )
+	                                ? '<span class="current">2</span>'
+	                                : "<a title=\"View the index page 2\" href=\"".$link."2"."\">2</a>"
+	                            : $skip;
+	            }
+	
+	            // Last in-between number...
+	            elseif ( $i == ($show-1) )
+	            {
+	                $out .= ( $start >= ($total-$show) ) 
+	                            ? ( $page == ($total-1) )
+	                                ? '<span class="current">'.($total-1).'</span>'
+	                                : "<a title=\"View the index page ".($total-1)."\" href=\"".$link.($total-1)."\">".($total-1)."</a>" 
+	                            : $skip;
+	            }
+	
+	            // Else...
+	            else 
+	            {
+	                $out .= ( $page == ($start+$i) )
+	                            ? '<span class="current">'.($start+$i).'</span>'
+	                            : "<a title=\"View the index page ".($start+$i)."\" href=\"".$link.($start+$i)."\">".($start+$i)."</a>"; 
+	            }
+	
+	            $out .= "\n";
+	        }
+	
+	        // Last number
+	        if ( $total > 1 )
+	        {
+	            $out .= ( $page == $total )
+	                        ? '<span class="current">'.$total.'</span>'
+	                        : "<a title=\"View the index page ".($total)."\" href=\"".$link.($total)."\">".($total)."</a>";
+	            $out .= "\n";
+	        }
+	
+	        // Next link
+	        $out .= ( ($page+1) <= $total )
+	                    ? "<a class=\"next\" title=\"View the next index page\" href=\"".$link.($page+1)."\">Next</a>" 
+	                    : '<span class="next">Next</span>';
+	        $out .= "\n"; 
+			
+			echo $out;
+		}
+	}
+	
+/*might not require tooo much code to make this happen, but... esp if it is only included with admins...
 if($sessinfo['admin_enable']){
 	echo "<br/>";
 	echo $html->link('edit section',"/admin/volumes/edit/".$volume_out['Volume']['id']);
 }
+*/
 ?>
  

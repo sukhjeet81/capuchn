@@ -4,16 +4,22 @@ class WidgetController extends AppController
 	var $name = 'Widget';
     var $layout = 'ajax';
 	
+	//This is a potentially dangerous function, since this would technically allow
+	//code here to execute as a admin space var. 
 	function callback($id,$format = "callback"){
 		//check for params? or let the callback code handle it.
-		//
 		if($id>0){
 			$this->Widget->id = $id;
 			$widg = $this->Widget->read();
+			$buffer = "";
+			$output = "";
 			if($widg['Widget']['callback']!=""){
-				$output = eval($widg['Widget']['callback']);
+				ob_start();
+				$output .= eval($widg['Widget']['callback']);
+				$buffer .= ob_get_contents();
+				ob_end_clean();
 			}
-			$this->set('output',$output);
+			$this->set('output',$buffer.$output);
 			$this->render($format,'ajax');
 		}else{
 			$this->set('output',"id is incorrect");
@@ -21,7 +27,9 @@ class WidgetController extends AppController
 		}
 	}
 	
-		
+	/*
+	 * getAdmin returns the admin widget code.
+	 */
 	function getAdmin($id){
 		$this->Widget->id = $id;
 		$widg = $this->Widget->read();
@@ -30,22 +38,14 @@ class WidgetController extends AppController
 		$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id']);
 		$this->set("output",$output);
 		$this->render("json","ajax");
-		
-		
-		//$json = "{\"name\": \"".$widg['Widget']['name']."\", \"widgetcode\": \"".$widg['Widget']['admin_xhtml']."\"}";
-		//$this->set('output',$json);
-		//$this->render('wrapper','ajax');
-		
 	}
 	
 	function getDisplay($name){
-	
 		//get the display code if possible.
 		$out = "<h1>".$name."</h1>";
 		$json = '{"name":"'.$name.'","widget_code":"'.addslashes($out).'"}';
 		$this->set('output',$json);
 		$this->render('wrapper','ajax');
-	
 	}
 	
 	function jslist(){
@@ -74,6 +74,8 @@ class WidgetController extends AppController
 			 $status = array('status'=>false, 'message'=>'save failed');
 			 if(isset($this->data['Widget']['id'])){
 			 	$id = $this->data['Widget']['id'];
+			 }else{
+			 	$id = "0";
 			 }
 			 if ($this->Widget->save($this->data))
 	         {
@@ -82,6 +84,7 @@ class WidgetController extends AppController
 	        	$this->set('savetext',"Widget Saved! - ".$id);
 				$status['status'] = true;
 				$status['message'] = "Widget saved! - " . $id;
+				$status['id'] = $id;
 				$this->set('output',$status);
 				$this->render('json','ajax');		         	
 	         }
@@ -100,7 +103,7 @@ class WidgetController extends AppController
 			$data['Widget']['display_xhtml'] = "";
 			$data['Widget']['callback'] = "";
 			$data['Widget']['version'] = "0.0";
-			
+			$data['Widget']['id'] = "0";
 			
 			if($id==null || $id==0){
 				$this->set('widget_content',"");

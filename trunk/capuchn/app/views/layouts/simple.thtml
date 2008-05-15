@@ -13,11 +13,6 @@
 
 <div class="head" id="headerbg">&nbsp;
   <div id="headerwrap">
-    <center>
-    	<div id="titlebox">
-    		<?php echo $html->image("sinvertical_title.png", array('width'=>'328','height'=>'150')) ;?>
-    	</div>
-    </center>
   </div><!-- End headerwrap div  -->
 </div>
 <div id="mainbody">

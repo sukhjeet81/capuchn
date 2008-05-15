@@ -5,7 +5,7 @@ class VolumesController extends AppController
 	var $layout = 'default';
 	var $helpers = array('Tree','Html');
 	var $components = array('ContentList');
-	var $uses = array('Mag','Volume','Admin');
+	var $uses = array('Mag','Volume','Admin','Theme');
 	
 	/*
 	 * template,style,publish
@@ -35,30 +35,32 @@ class VolumesController extends AppController
 		    
     function view($id=NULL, $page=1){
     	//TODO: fix volumes controller view.
-    	if($id == NULL){
-    	    $main_vol = $this->Admin->findByName('main_vol');
-    		//get the main vol and set the recursive to 1
-    		if(isset($main_vol['Admin']['value'])){
-    			$id = $main_vol['Admin']['value'];
-    		}else{
-    			$id = 1;
-    		}
+    	if($id == NULL){   	    
+			$id = $this->Admin->siteVar('defaultvolume');
+			if($id == null){
+				$id=1;
+			}
     	}
     		
    		$this->Volume->id = $id;
    		$volume = $this->Volume->Read();
-   		
+   		$pages = $this->Mag->findCount("`volume_id`=$id");
+		
    		if ($volume['Volume']['style'] == 'blog'){    			
-   			$volume['Mag'] = $this->Mag->findAll("`volume_id`=$id",null,"Mag.id DESC", $volume['Volume']['limit'],$page);
+   			$volume['Mag'] = $this->Mag->findAll("`volume_id`=$id",null,"Mag.id DESC", $volume['Volume']['limit'],$page);	
    		}else if ($volume['Volume']['style'] == 'singlet'){
    			//$output = $this->Mag->find("`volume_id`=$id",null,'id DEC');
    			//One would assume that nobody would put more than one page in this section....
 			$volume['Mag'] = $this->Mag->findAll("`volume_id`=$id",null,'Mag.id DESC',1);
    		}else if ($volume['Volume']['style'] == 'paginate'){
-   			$volume['Mag'] = $this->Mag->findAll("`volume_id`=$id",null,"Mag.id DESC", $volume['Volume']['limit'],$page);
+   			$volume['Mag'] = $this->Mag->findAll("`volume_id`=$id",null,"Mag.id DESC", 1,$page);
    		}//else leave whatever read() pulls up.   		
    		$this->set('volume_out', $volume);
    		$this->set('volid',$id);
+		$this->set('nummags',$pages);
+		$this->set('page',$page);
+		$this->set('themename',$volume['Volume']['template']);
+		$this->log('The theme for the current volume is::'.$volume['Volume']['template']);
     }
         
     function navmenu(){
@@ -66,10 +68,33 @@ class VolumesController extends AppController
     	 *This is used exclusivly by the navmenu element, we could insert menu options here if needed 
     	 */
     	$menu = $this->Volume->findAllThreaded("Volume.publish=1");
+		foreach($menu as $key => $sec){
+			if($sec['Volume']['style']=="singlet"){
+				unset($menu[$key]['Mag']);
+			}
+		}
     	if(isset($this->params['requested'])) {
              return $menu;
         }
     }
+	
+	function rss($id = null){
+		if($id == null){
+			//set to default
+			$id = $this->Admin->siteVar('defaultvolume');
+			if($id == null){
+				$id = 1;
+			}
+		}
+		
+		$this->Volume->id  = $id;
+		$vol = $this->Volume->read();
+		$this->log($vol);
+		$this->set('volume',$vol);
+		$this->set('siteroot',$this->Admin->siteVar('siteroot'));
+		$this->set('sitedescripton',$this->Admin->siteVar('sitedescription'));
+		$this->render('rss','ajax');
+	}
     
     function jsnavmenu(){
     	$listing = $this->Volume->findAllThreaded();
@@ -88,7 +113,6 @@ class VolumesController extends AppController
              return $menu;
         }
     }
-    //TODO: um.... this was a waste of time. for some reason I recreated it.
 
     /*
      * This is going to be ajax only as admin controller handles the iface
@@ -131,12 +155,13 @@ class VolumesController extends AppController
 				$voldefault['Volume'] = array();
 				$voldefault['Volume']['name'] = "New Volume";
 				$voldefault['Volume']['parent_id'] = "0";
-				$voldefault['Volume']['template'] = "0";
+				$voldefault['Volume']['template'] = $this->Admin->siteVar('defaulttheme');
 				$voldefault['Volume']['style'] = "singlet";
 				$voldefault['Volume']['publish'] = "1";
 				$voldefault['Volume']['limit'] = "0";
 				$this->data = $voldefault;
 				$this->set('vol',null);
+				
     		}else{
     			$this->Volume->id = $id;
     			$vol = $this->Volume->read();
@@ -145,6 +170,8 @@ class VolumesController extends AppController
     		}
     		$this->set('section_list', $this->Volume->findAllThreaded());
     		$this->set('vol_id', $id);
+			
+			$this->set('themelist',$this->Theme->findAll());
     		$this->set('form', BASE.'volumes/edit/'.$id);
     		$this->render('edit','ajax');
     		exit();

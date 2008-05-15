@@ -1,0 +1,25 @@
+<form id="themeform">
+	<button dojoType="dijit.form.Button" onclick="saveTheme(this)">
+    	Save
+	</button>
+	<input type="hidden" value="<?php echo $theme['Theme']['id']?>" cols="60" name="data[Theme][id]"/>
+	<input id="ThemeName" type="text" value="<?php echo $theme['Theme']['name']?>" cols="60" name="data[Theme][name]"/>
+
+	<div dojoType="dijit.TitlePane" title="Style.css">	
+	  	<textarea id="dataThemeStyle" class="codepress javascript linenumbers-on" style="display:block; width:100%" name="data[Theme][style]"><?php echo $theme['Theme']['style']?></textarea>
+	</div>
+	<div dojoType="dijit.TitlePane" title="Mce.css">
+		<textarea id="dataThemeMce" class="codepress javascript html css linenumbers-on" style="display:block; height: 400px;" name="data[Theme][mce]"><?php echo $theme['Theme']['mce']?></textarea>
+	</div>
+	<div dojoType="dijit.TitlePane" title="Layout">
+		<textarea id="dataThemeLayout" class="codepress php html linenumbers-on" style="display:block; height: 400px;" name="data[Theme][layout]"><?php echo $theme['Theme']['layout']?></textarea>
+	</div>
+</form>
+
+<script>
+	
+	var tmp = function(){
+		CodePress.run();
+	}
+	dojo.addOnLoad(tmp);
+</script>

@@ -11,8 +11,7 @@ class TemplateController extends AppController
         $this->checkSession();
         $this->set('content_list', $this->Volume->findAllThreaded());
     }
-	
-	
+		
 	function csslist($template_id = NULL){
 		/*
 		 * Get a list of all the css files, template_id will come later and will only display files associated

@@ -46,6 +46,22 @@ class ImagesController extends AppController
     	
     }
 	
+	function dynamic($id = null, $width=0, $height=0, $aspect = 1 ){
+		if($id != null){
+			//get the image data , 
+			//read from the file
+			//set the location and size and do output in view
+			$this->Image->id = $id;
+			$img = $this->Image->read();
+			$this->set('image',$img);
+			$this->set('width',$width);
+			$this->set('height',$height);
+			$this->set('asp',$aspect);
+			$this->set('path',$this->Admin->siteVar('imglocalpath'));
+			$this->render('dynamic','ajax');
+		}
+	}
+	
 	function adminside($album=null){
 		//TODO: must load a special layout to include swfupload. ooooh, special
 		

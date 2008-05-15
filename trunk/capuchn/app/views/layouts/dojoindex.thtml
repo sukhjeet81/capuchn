@@ -31,7 +31,7 @@
 	
 	<!-- custom scripts for site -->
 	<script type="text/javascript" src="js/dojoindex.js"></script>
-	<script type="text/javascript" src="js/editmce.js"></script>
+	
 </head>
 <body class="tundra">
 <div dojoType="dijit.layout.LayoutContainer" style="width: 100%; height: 100%; padding: 0; margin: 0; border: 0;">
@@ -45,7 +45,8 @@
 			<a href="#" onClick="albumTab();">Albums</a>
 			<a href="#" onClick="siteTab();">Site</a>
 			<a href="#" onClick="imagesTab();">Manage Images</a>
-			<a href="#" onClick="viewSiteTab()">View Me!</a>
+			<a href="#" onClick="themesTab();">Manage Themes</a>
+			<a href="#" onClick="Capuchn.viewSiteTab()">View Me!</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<a style="float:right;" href="<?php echo BASE ?>user/logout">Logout.</a>
 		</div>
@@ -58,8 +59,7 @@
 	        <div dojoType="dijit.layout.AccordionPane" title="Articles" selected="true">
 				<button dojoType="dijit.form.Button" onclick="loadVol('0')">
 	            	New Volume
-	        	</button>
-											
+	        	</button>					
 	        	<button dojoType="dijit.form.Button" onclick="loadMag('0')">
 	            	New Mag
 	        	</button>

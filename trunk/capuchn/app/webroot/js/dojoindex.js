@@ -3,7 +3,7 @@
 	* 
 	* 
 	*/
-
+	var Capuchn = {};
 	dojo.require("dijit.Tooltip");
 	dojo.require("dojo.io.iframe");
 	
@@ -15,6 +15,7 @@
 	var currentAlbum = 0;
 	var contentDirectory;
 	var albumDirectory;
+	var mostrecenteditor = "tinymce";
 	
 	dojo.subscribe("updateTree", function(caller){
 		loadTree();
@@ -52,6 +53,20 @@
 		loadAlbumSelect();
 	});
 	
+		dojo.subscribe("/dnd/start", function(source,nodes,iscopy){
+	  console.debug(nodes);
+	  console.debug(source);
+	  currentDragNode = nodes;
+	});
+	
+	dojo.subscribe("/dnd/drop", function(source,nodes,iscopy){
+		currentDragNode = null;
+		return true;
+	});
+	//This will most likely be the case since we are got it.
+	dojo.subscribe("/dnd/cancel", function(){			
+		currentDragNode = null;
+	});
 	
 	function loadTree()
 	{
@@ -65,7 +80,7 @@
 	        dojo.byId('treeBox').appendChild(mytree.domNode);
 	}
 	
-	function loadAlbumSelect(){
+	loadAlbumSelect = function(){
 		oldselect = dijit.byId("AlbumSelect");
 		if (oldselect) {
 			oldselect.destroy();
@@ -196,7 +211,7 @@
 	}
 	
 	
-	function viewSiteTab(){
+	Capuchn.viewSiteTab = function(){
 		//This should be the model for a tab creator function... since most are very similar
 		tabUrl = baseurl;
 		newTabId = "viewSiteTab";
@@ -358,6 +373,68 @@
 	   	tabcontain.selectChild(newtab);
 	}
 	
+	function editTheme(themeid){
+		var taburl = "theme/edittab/"+themeid;
+		var new_tab_id = "theme_"+themeid;
+		var mywidget = dijit.byId(new_tab_id);
+		var tabcontain = dijit.byId('mainTabContainer');
+		if (!mywidget) {
+		
+			var newtab = new dojox.layout.ContentPane({
+				id: new_tab_id,
+				title: "Theme " + themeid,
+				closable: true,
+				selected: true,
+				href: taburl,
+				executeScripts: true
+				//onLoad: seteditor
+			});
+			newtab.onClose = function(){
+				this.destroyDescendants();
+				return true;
+			}
+			tabcontain.addChild(newtab);
+			
+		}else{
+			newtab = mywidget;
+			console.debug("old widget found.");
+		}
+	   	tabcontain.selectChild(newtab);
+	}
+	
+	function deleteTheme(id,row){
+		alert("delete theme is not yet implimented");
+	}
+	
+	function themesTab(){
+		var taburl = "theme/themelist";
+		var new_tab_id = "themelisttab"
+		var mywidget = dijit.byId(new_tab_id);
+		var tabcontain = dijit.byId('mainTabContainer');
+		if (!mywidget) {
+		
+			var newtab = new dojox.layout.ContentPane({
+				id: new_tab_id,
+				title: "Theme List",
+				closable: true,
+				selected: true,
+				href: taburl,
+				executeScripts: true
+				//onLoad: seteditor
+			});
+			newtab.onClose = function(){
+				this.destroyDescendants();
+				return true;
+			}
+			tabcontain.addChild(newtab);
+			
+		}else{
+			newtab = mywidget;
+			console.debug("old widget found.");
+		}
+	   	tabcontain.selectChild(newtab);
+	}
+	
 	function loadVol(volindex){
 		//window.open("admin/volumes/"+volindex, "_top");
 		var taburl = "volumes/edit/"+volindex;
@@ -386,7 +463,40 @@
 		}
 	   	tabcontain.selectChild(newtab);
 	}
-	
+	function editor(controlelement){
+		console.debug("Fix the editor");
+		var currentForm = dojo.byId(controlelement.id).form;
+		parts = currentForm.id.split("_");
+		if(parts.length > 1){
+    		var myid = parts[parts.length-1];
+    	}else{
+    		var myid = "0";
+    	}
+		
+		contentelement = "magcontent_"+myid;
+		currcontelm = dojo.byId(contentelement);
+		// ooooor just check the form and change, wtf.
+		if (currentForm["data[Mag][type]"].value == "html") {
+			//currently a codepress node
+			eval("magcontent_"+myid+".toggleEditor()");
+			
+			if(currcontelm == undefined){
+				currcontelm = dojo.byId(contentelement+"_cp");
+				currcontelm.id = contentelement;
+			}
+			currcontelm.className = "tinymceelement";
+			tinyMCE.execCommand('mceAddControl',true,contentelement);
+		}else{
+			//currently a tinymce window.
+			tinyMCE.triggerSave();
+			tinyMCE.execCommand('mceRemoveControl',true,contentelement);
+			currcontelm.className = "codepress php linenumbers-on";
+			currcontelm.width = "100%";
+			CodePress.run();
+
+		}
+
+	}
 	
 	function loadMag(magindex){		
 		var taburl = "mags/edit/"+magindex;
@@ -396,7 +506,15 @@
 		magcontrolid = "magcontent_"+magindex;
 		if (!mywidget) {
 			var seteditor = function(){
-				tinyMCE.execCommand('mceAddControl', true, magcontrolid);
+				console.debug(mostrecenteditor);
+				if(mostrecenteditor == "codepress"){
+					currcontelm = dojo.byId(magcontrolid);
+					currcontelm.className = "codepress php linenumbers-on";
+					currcontelm.width = "100%";
+					CodePress.run();
+				}else{
+					tinyMCE.execCommand('mceAddControl', true, magcontrolid);					
+				}
 			}
 			var newtab = new dojox.layout.ContentPane({
 				id: new_tab_id,
@@ -409,9 +527,14 @@
 			});
 			newtab.onClose = function(){
 				//Get the editor
-				if(!tinyMCE.execCommand('mceRemoveControl',false,magcontrolid)){
-					console.debug("Failed to destroy/remove tinyMCE control: " + magcontrolid);
-				}				
+				try{
+					if(!tinyMCE.execCommand('mceRemoveControl',false,magcontrolid)){
+						console.debug("Failed to destroy/remove tinyMCE control: " + magcontrolid);
+					}	
+				}catch(e){
+					console.debug("no mce control");
+				}
+							
 				this.destroyDescendants();
 				return true;
 			}
@@ -530,6 +653,17 @@
 			console.debug(e);
 		}
 	    var currentForm = dojo.byId(button.id).form;
+		try{
+			if((currentForm['data[Mag][type]'].value == "php")||(currentForm['data[Mag][type]'] == "html-code")){
+				//codepress element
+				alert("writing back...");
+				ta = currentForm['data[Mag][content]'].id;
+				taparts = ta.replace("_cp","");
+				eval(taparts+".toggleEditor()");
+			}
+		}catch(e){
+			;
+		}
 	    
 		var kw = {
 	    	url: currentForm.action,
@@ -545,6 +679,13 @@
 	    	form: currentForm.id
 		};
 		dojo.xhrPost(kw);
+		try{
+			if(taparts != undefined){//was php
+				eval(taparts+".toggleEditor()");
+			}
+		}catch(e){
+			
+		}
 	}
 	
 	function submitFormData(aurl, formObj, callback){
@@ -589,11 +730,11 @@
 	   
 	   
 	   var newtab = new dijit.layout.ContentPane({
-	   		id:tabid,
-	   		title:"Message "+msgid,
-	   		closable:true,
-	   		selected:true,
-	   		href:taburl,
+		   		id:tabid,
+		   		title:"Message "+msgid,
+		   		closable:true,
+		   		selected:true,
+		   		href:taburl
 	   		});
 	   		
 	   var tabcontain = dijit.byId('mainTabContainer');
@@ -603,7 +744,6 @@
 	}	
 	
 	function messageCheck(msgid){
-		388-2200
 		return;
 	}
 	
@@ -636,26 +776,6 @@
 		
 		submitFormData(posturl, msgForm, insert_into_msg);
 		 
-	}
-	
-	dojo.subscribe("/dnd/start", function(source,nodes,iscopy){
-	  console.debug(nodes);
-	  console.debug(source);
-	  currentDragNode = nodes;
-	});
-	
-	dojo.subscribe("/dnd/drop", function(source,nodes,iscopy){
-		currentDragNode = null;
-		return true;
-	});
-	//This will most likely be the case since we are got it.
-	dojo.subscribe("/dnd/cancel", function(){			
-		currentDragNode = null;
-	});
-	
-	function setswfuparams(){
-		swfu.settings.post_params.Album = currentAlbum;
-		swfu.setPostParams(swfu.settings.post_params);
 	}	
 	
 	function dojofileupload(target){
@@ -690,61 +810,11 @@
 		req=dojo.io.iframe.send(bindArgs);			
 		return false;
 	}
-			
-	function swfuInit(target){	
-		return false;		
-		//MAKE this go away....
-		if(!target)target = "";
-		swfu = new SWFUpload({
-			// Backend Settings
-			upload_url: "http://sinvertical.grizzlyracing.org/images/upload/45",	// Relative to the SWF file
-			post_params: {"PHPSESSID": phpsessionid,"Album": ""},
-
-			// File Upload Settings
-			file_size_limit : "2048",	// 2MB
-			file_types : "*.*",
-			file_types_description : "All",
-			file_upload_limit : "0",
-
-			// Event Handler Settings - these functions as defined in Handlers.js
-			//  The handlers are not part of SWFUpload but are part of my website and control how
-			//  my website reacts to the SWFUpload events.
-			file_queue_error_handler : fileQueueError,
-			file_dialog_complete_handler : fileDialogComplete,
-			upload_progress_handler : uploadProgress,
-			upload_error_handler : uploadError,
-			upload_complete_handler : uploadComplete,
-			file_complete_handler : fileComplete,
-
-			// Flash Settings
-			// flash_url : "/js/swfupload/swfupload_f8.swf",	// Relative to this file
-			flash_url : "http://sinvertical.grizzlyracing.org/js/swfupload/swfupload.swf",
-			// UI Settings
-			swfupload_element_id : target+"swfu_container",
-			//ui_container_id : target+"swfu_container",
-			degraded_container_id : target+"degraded_container",
-
-			// Debug Settings
-			debug: true
-		});
-		swfu.customSettings.upload_target = target+"divFileProgressContainer";
-	}
 	
 	function changeAlbum(){
 	//get the new album, set the href of tab1
 	
 	}
-	
-	function initEditor(){
-	  tinyMCE.idCounter=0;
-	  tinyMCE.execCommand( 'mceAddControl', true, 'elm1' );		  
-	}
-	// Destroys the instance - very important otherwise you get all sorts of nasty errors
-	function killEditor() {
-	  tinyMCE.execCommand( 'mceRemoveControl', true, 'elm1' );
-	}
-	
-
 
     function thumbClick(obj){
     	var tid=obj.id;
@@ -796,6 +866,29 @@
 		album = {"id":url, "value":value,"field":field};
 		dojo.rawXhrPost( {
 	        url: "albums/editbox",
+	        handleAs: "json-comment-filtered",
+	        postData: dojo.toJson(album),
+	        timeout: 1000,
+	        load: function(response, ioArgs) {
+	                console.debug(response);
+					dojo.publish("updateAlbums",['albumeditor'])
+	        },
+	        error: function(response, ioArgs) {
+	                return response;
+	        }
+		});
+	}
+	function themeEditBoxHandler(idOfBox,value){
+		var myalbid = idOfBox.split("_");//sleeping beauty
+    	if(myalbid.length > 1){
+    		var url = myalbid[2];
+			var field = myalbid[1];
+    	}else{
+    		console.debug("cannot parse image id:"+idOfBox);
+    	}
+		album = {"id":url, "value":value,"field":field};
+		dojo.rawXhrPost( {
+	        url: "theme/editbox",
 	        handleAs: "json-comment-filtered",
 	        postData: dojo.toJson(album),
 	        timeout: 1000,
@@ -877,6 +970,31 @@
 		dataWidgetAdmin.toggleEditor();
 		dataWidgetDisplay.toggleEditor();
 		dataWidgetCallback.toggleEditor();
+	}
+	
+	function saveTheme(button){
+		dataThemeStyle.toggleEditor();
+		dataThemeMce.toggleEditor();
+		dataThemeLayout.toggleEditor();
+	    var currentForm = dojo.byId(button.id).form;
+	    console.debug(currentForm);
+		var kw = {
+	    	url: "theme/save",
+			handleAs:"json-comment-filtered",
+	 		load: function(responseObj,ioargs){
+				save_response_callback_json(responseObj);
+	    	},
+	    	error: function(data){
+		            console.debug("An error occurred: ", data);
+	        },
+	        timeout: 2000,
+	    	form: currentForm.id
+		};
+		dojo.xhrPost(kw);		
+		//Turn them back on...
+		dataThemeStyle.toggleEditor();
+		dataThemeMce.toggleEditor();
+		dataThemeLayout.toggleEditor();
 	}
 	
 	function moveWidgetLeft(wid){
@@ -1094,13 +1212,22 @@
 	
 	function imageDeleteFiles(){
 		var frm = dojo.byId("imgindexform");
-		var selectedImages = Array();
-		
+		var selectedImages = Array();		
+		/*FF only
 		for( img in frm.elements ){
 			if ((frm.elements[img].name == "imgcheck") && (frm.elements[img].checked==true)) {
 				selectedImages.push(frm.elements[img]);
 			}
 		}
+		*/
+		
+		for (var i=0; i < frm.elements.length; i++) {
+		   var element = frm.elements[i];
+		   if ((element.name == "imgcheck") && (element.checked==true)) {
+				selectedImages.push(element);
+		   }		   
+		}
+		
 		if (confirm("Delete images?")) {
 			for (slc in selectedImages) {
 				console.debug(selectedImages[slc].id);
@@ -1120,12 +1247,7 @@
 		}
 		
 	}
-	
-	function editor(){
-		//this is here because the editor changing script went away some time ago.
 		
-	}
-	
 	function saveSiteVars(){
 		var kw = {
 	    	url: 'admin/updatesite',
@@ -1229,14 +1351,358 @@
 		
 	}
 	
+	    
+    //TODO: change css link
+     
+	tinyMCE.init({
+		    theme : "advanced",
+		    mode : "none",
+		    //elements : "elm1",
+		    //save_callback : "mySave",
+		    content_css : "css/mce.css",
+		    extended_valid_elements : "a[href|target|name]",
+		    plugins : "save,table",
+		    theme_advanced_buttons1_add_before : "code,save,separator",
+		    //theme_advanced_buttons3_add_before : "tablecontrols,separator",
+		    //invalid_elements : "a",
+		    theme_advanced_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Highlight=highlight", // Theme specific setting CSS classes
+		    execcommand_callback : "myCustomExecCommandHandler",
+		    theme_advanced_toolbar_align : "left",
+		    theme_advanced_buttons3 : "",
+		    theme_advanced_toolbar_location : "top",
+		    apply_source_formatting : true,
+			//document_base_url : "/dev/sinvert/",
+			//relative_url : true,
+			//remove_script_host : false,
+			//save_callback : "MamboSave",
+			urlconverter_callback: "conurl", 
+			//documentBaseURL : baseurl,
+		    gecko_spellcheck : true,
+		    debug : true,
+		    init_instance_callback : "myInitFunction",
+			handle_event_callback : "myHandleEvent",
+		    width : "100%",
+			height: "100%"
+		    
+	});
+	
+	function conurl(url, node, on_save) {
+	   // strUrl=strUrl.replace("../","");
+	   t = tinyMCE.activeEditor;
+	   u = t.documentBaseURI.toAbsolute(url, t.settings.remove_script_host);
+	   strUrl = url;
+	   
+	   console.debug("Convert url:"+strUrl);
+	   return strUrl;
+	} 
+	
+	function myHandleEvent(e) {
+		//console.debug( "event:" + e.type);
+		if (e.type == "mouseup") {			
+		    mySelection = tinyMCE.activeEditor.selection.getNode();
+	        if (mySelection.tagName == "IMG") {
+				var imgdbid = mySelection.id.split("_");
+				if (imgdbid.length > 2) {
+					//the id of the image should be the very last section of the id
+					var url = imgdbid[imgdbid.length - 1];
+					
+					//dynamic url, uses 100pixel width
+					var nimgurl = baseurl + "images/dynamic/" + url + "/" + mySelection.width + "/" + mySelection.height;
+					mySelection.src = nimgurl;
+					for (attrib in mySelection.attributes) {
+						if (mySelection.attributes[attrib].nodeName == "src") {
+							mySelection.attributes[attrib].value = nimgurl;
+							break;
+						}
+					}
+				}
+	        }
+
+			var t = new dojo.dnd.manager();
+			if(currentDragNode != null){
+				console.debug("currentDragNode:"+currentDragNode);
+				var t = new dojo.dnd.manager();
+				if(t.nodes.length > 1){
+					console.debug("more than one node dragging for some reason");
+				}else{
+					var curnode = t.nodes[0];					
+					var inst = window.tinyMCE.selectedInstance;
+					var new_img = document.createElement("img");
+					var new_link = document.createElement("a");
+					new_img.className = "thumb";
+					new_img.id = "disp_"+curnode.id;
+					//get  image id
+					//
+					var imgdbid = curnode.id.split("_");
+					if (imgdbid.length > 1) {
+						//the id of the image should be the very last section of the id
+						var url = imgdbid[imgdbid.length - 1];
+					}
+					//dynamic url, uses 100pixel width
+					var nimgurl = baseurl+"images/dynamic/"+url+"/100";
+					console.debug("current image src: " + curnode.src);
+					console.debug(t.nodes[0]);
+					var newimagesource = "";
+					//filename is also available here... and this will not add the absolute path
+					
+					for(attrib in curnode.attributes){
+						if(curnode.attributes[attrib].nodeName == "src"){
+							newimagesource = curnode.attributes[attrib].value;
+							break;
+						}
+					}
+					
+					for(attrib in curnode.attributes){
+						if(curnode.attributes[attrib].nodeName == "filename"){
+							new_link.href = imagesurl + curnode.attributes[attrib].value;
+							console.debug("href:"+new_link.href);
+							break;
+						}
+					}
+					
+					//new_img.src = curnode.src; //baseurl is set from the BASE php var baseUrl +
+					
+					//new_img.src = newimagesource;
+					console.debug(nimgurl);
+					new_img.src = nimgurl;
+					new_link.appendChild(new_img);
+					tinyMCE.activeEditor.dom.add(tinyMCE.activeEditor.getBody(), new_link);
+				}
+				//cancel so that it does not put pic into target div like normal
+				dojo.publish("/dnd/cancel");
+				t.stopDrag();
+			}
+		}
+
+		return true; // Continue handling
+	}
+
+	function myInitFunction(inst) {
+	    var editorFrame, editorX, editorY, winHeight, editorMaxHeight, IE;	    
+	    editorResize(inst);
+		window.onresize = function () {
+	        editorResize(inst);
+			
+	    };
+	}
+	
+	function editorResize(inst) {
+	    var editorFrame, editorX, editorY, winHeight, editorMaxHeight, IE;    
+	    var oldElement = inst.getElement();
+		if (oldElement != undefined) {
+			editorY = oldElement.parentNode.offsetParent.offsetHeight;
+			document.getElementById(inst.editorId).style.height = (editorY - 103) + "px";
+			//TODO: add this function to the function list
+			frame = document.getElementById(inst.editorId + "_ifr");
+			frame.style.height = (editorY - 103) + "px";
+		}
+		//if oldElelment is undefined then this instance is no longer valid
+	}
+ 
+      // Custom event handler
+	function myCustomExecCommandHandler(editor_id, elm, command, user_interface, value) {
+	    var linkElm, imageElm, inst;
+	
+	    switch (command) {
+	        case "mceSave":
+	        	mceSubmitForm(editor_id);
+	        	return true;
+	        	
+	        case "smceLink":
+	            inst = tinyMCE.getInstanceById(editor_id);
+	            linkElm = tinyMCE.getParentElement(inst.selection.getFocusElement(), "a");
+	
+	            if (linkElm)
+	                alert("Link dialog has been overriden. Found link href: " + tinyMCE.getAttrib(linkElm, "href"));
+	            else
+	                alert("Link dialog has been overriden.");
+	
+	            return true;
+	
+	        case "mceImages":
+	            inst = tinyMCE.getInstanceById(editor_id);
+	            imageElm = tinyMCE.getParentElement(inst.selection.getFocusElement(), "img");
+	
+	            if (imageElm)
+	                alert("Image dialog has been overriden. Found image src: " + tinyMCE.getAttrib(imageElm, "src"));
+	            else
+	                alert("Image dialog has been overriden.");
+	
+	            return true;
+	    }
+	
+	    return false; // Pass to next handler in chain
+	}
+ 
+    // Custom save callback, gets called when the contents is to be submitted
+    
+    function fileBrowserCallBack(field_name, url, type, win) {
+		// This is where you insert your custom filebrowser logic
+		console.debug("Filebrowser callback: field_name: " + field_name + ", url: " + url + ", type: " + type);
+
+		// Insert new URL, this would normaly be done in a popup
+		win.document.forms[0].elements[field_name].value = "someurl.htm";
+	}
+	
+	resizeEditorBox = function (editor) {
+	    // Have this function executed via TinyMCE's init_instance_callback option!
+	    // requires TinyMCE3.x
+	    var container = editor.contentAreaContainer, /* new in TinyMCE3.x -
+	        for TinyMCE2.x you need to retrieve the element differently! */
+	        formObj = document.forms[0], // this might need some adaptation to your site
+	        dimensions = {
+	            x: 0,
+	            y: 0,
+	            maxX: 0,
+	            maxY: 0
+	        }, doc, docFrame;
+	
+	    dimensions.x = formObj.offsetLeft; // get left space in front of editor
+	    dimensions.y = formObj.offsetTop; // get top space in front of editor
+	
+	    dimensions.x += formObj.offsetWidth; // add horizontal space used by editor
+	    dimensions.y += formObj.offsetHeight; // add vertical space used by editor
+	
+	    // get available width and height
+	    if (window.innerHeight) {
+	        dimensions.maxX = window.innerWidth;
+	        dimensions.maxY = window.innerHeight;
+	    } else {
+			// check if IE for CSS1 compatible mode
+	        doc = (document.compatMode && document.compatMode == "CSS1Compat")
+	            ? document.documentElement
+	            : document.body || null;
+	        dimensions.maxX = doc.offsetWidth - 4;
+	        dimensions.maxY = doc.offsetHeight - 4;
+	    }
+	
+	    // extend container by the difference between available width/height and used width/height
+	    docFrame = container.children [0] // doesn't seem right : was .style.height;
+	    docFrame.style.width = container.style.width = (container.offsetWidth + dimensions.maxX - dimensions.x - 2) + "px";
+	    docFrame.style.height = container.style.height = (container.offsetHeight + dimensions.maxY - dimensions.y - 2) + "px";
+	}
 	
 
+   /*
+    * dump (object, string, "<br/>", "&nbsp;", 5)
+    */
+	function dump(theItem,theItemName,recDelim,aNester,
+	      howDeep,begString,endString) {
+	   dumpDepthCount = 0;
+	   maxDumpDepth = 5;
+	   newline = "";
+	   nester = "";
+	   debugString = "";
+	   if (howDeep) {
+	      if (howDeep > maxDumpDepth) {
+	         keepItUp = confirm("The debugging function dump() is being called with a greater nest level than is recommended.\nThis may take a 	       while, and it may error out or crash your 	         browser.\nContinue?");
+	         if (!keepItUp) { 
+	            return;
+	         }
+	      }
+	      maxDumpDepth = howDeep;
+	   }
+	   recDelim ? newline = recDelim : newline = '\n';
+	   aNester ? nester = aNester : nester = '\t';
 	
+	   function indent() {
+	      var retVal = "";
+	      for (var i=dumpDepthCount; i>1; i--) {
+	         retVal += nester;
+	      }
+	      return retVal;
+	   }
+   	   function asdlkasf(theItem,theItemName) {
+	      dumpDepthCount++;
+	      if (dumpDepthCount >= maxDumpDepth) {
+	         dumpDepthCount--;
+	         return;
+	      }
+	      var itemType = typeof theItem;
+	      switch(itemType) {
+	         case "number":
+	         case "boolean":
+	            debugString += indent() + theItemName + 
+	            ', a ' + itemType + ': ' + 
+	            theItem.toString().toLowerCase() + newline;
+	            break;
+	         case "string":
+	            debugString += indent() + theItemName + 
+	            ", a string: '" + theItem + "'" + newline;
+	            break;
+	         case "function":
+	            if (theItem.toString().indexOf(
+	            'native code]') == -1) {
+	               indentStr = newline+indent();
+	               debugString += indent() + theItemName + 
+	                  ', a function: ' + 
+	                  theItem.toString().replace(
+	                     /(\\n|\<br\>)/g, indentStr) + 
+	                  newline;
+	            }
+	            break;
+	         case "object":
+	            try {
+	               debugString += indent() + theItemName + 
+	                  ', an object' + newline;
+	               for (att in theItem) {
+	                  if (att && att != "undefined" && 
+	                     theItem[att] && 
+	                     theItem[att] != "undefined" && 
+	                     att != 'parentNode' && 
+	                     att != 'offsetParent' && 
+	                     att != 'ownerDocument' && 
+	                     att != 'nextSibling' && 
+	                     att != 'previousSibling') {
+	                        asdlkasf(theItem[att],att) + 
+	                           newline;
+	                  }
+	               }
+	            } catch (ex) {
+	               debugString += indent() + "(" + att + 
+	                  " inaccessible as object attribute)" 
+	                  + newline;
+	            }
+	            try {
+	               if (theItem[0]) {
+	                  debugString += indent() + theItemName 
+	                     + ', an array' + newline;
+	                  dumpDepthCount++;
+	                  for (var i=0;i<theItem.length;i++) { 
+	                     if (theItem[i]) {
+	                        if (theItem[i] && 
+	                           theItem[i] != "undefined") {
+	                           debugString += indent() + 
+	                              "Index " + i + newline;
+	                           asdlkasf(theItem[i],i) + 
+	                              newline;
+	                        }
+	                     }
+	                  }
+	                  dumpDepthCount--;
+	               }
+	            } catch (ex) {
+	               debugString += indent() + "(Index " + i 
+	                  + " inaccessible as array element)" 
+	                  + newline;
+	            }
+	            break;
+	         case "undefined":
+	            debugString += indent() + 
+	               "(type undefined)";
+	            break;
+	      }
+	      dumpDepthCount--;
+	   }
 	
-		/*
-	dojo.addOnLoad(function() {
-	   //initEditor();
-	   updateMessageStore();
-		});
-		*/
+	   if (begString && begString.length > 0) {
+	      debugString += begString;
+	   }
+	   asdlkasf(theItem,theItemName,recDelim,aNester);
+	   if (endString && endString.length > 0)  {
+	      debugString += endString;
+	   }
+	   return debugString;
+	}
+
 	

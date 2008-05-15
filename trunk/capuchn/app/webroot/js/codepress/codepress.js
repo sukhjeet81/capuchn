@@ -18,8 +18,22 @@ CodePress = function(obj, fullwidth){
 	//var oldElement = self.textarea;
 	editorY = self.textarea.parentNode.offsetParent.offsetHeight;
 	editorX = self.textarea.parentNode.offsetParent.offsetWidth;
-	self.style.height = (editorY-103) + "px";
-	self.style.width = (editorX-40)+"px";
+
+	edtY = editorY - 103;
+	edtX = editorX - 40;
+	if(edtY < 10){
+		edtY = "300px";
+	}else{
+		edtY += "px";	
+	}
+	if(edtX < 10){
+		edtX = "90%";
+	}else{
+		edtX += "px";		
+	}
+
+	self.style.height = edtY;
+	self.style.width = edtX;
 	/*
 	if (fullwidth) {
 		//self.style.height = self.textarea.parentNode.clientHeight + 'px';
@@ -162,6 +176,7 @@ CodePress.run = function(fullwidth) {
 			CodePress.path = s[i].src.replace('codepress.js','');
 		}
 	}
+
 	t = document.getElementsByTagName('textarea');
 	for(var i=0,n=t.length;i<n;i++) {
 		if(t[i].className.match('codepress')) {
@@ -175,6 +190,7 @@ CodePress.run = function(fullwidth) {
 			t[i].parentNode.insertBefore(eval(id), t[i]);
 		} 
 	}
+	
 }
 
 //if(window.attachEvent) window.attachEvent('onload',CodePress.run);

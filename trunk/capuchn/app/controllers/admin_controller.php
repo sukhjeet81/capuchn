@@ -176,6 +176,13 @@ class AdminController extends AppController
 	function readfromfile(){
 		
 	}
+	
+	function getsitevar($name){
+		if($this->params['requested']){
+			return $this->Admin->siteVar($name);
+		}
+		exit(0);
+	}
 }
 
 ?>

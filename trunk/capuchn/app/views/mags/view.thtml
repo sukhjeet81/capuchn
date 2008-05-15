@@ -1,7 +1,7 @@
 
 
 <div class="magcontent">
-<h2 class="magviewtitle"><?php echo $mag['Mag']['header']?></h2>
+<a href="<?php echo BASE?>mags/view/<?php echo $mag['Mag']['id']?>"><h2 class="magviewtitle"><?php echo $mag['Mag']['header']?></h2></a>
 <?php 
 if($mag['Mag']['type'] == "php"){
 	eval($mag['Mag']['content']);	
