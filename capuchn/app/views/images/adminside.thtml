@@ -101,7 +101,6 @@
 	//force loading after this page has loaded
 	dojo.addOnLoad(function(){
         console.debug("Successfully loaded!");
-        swfuInit();
 		loadAlbumSelect();
     });
 </script>

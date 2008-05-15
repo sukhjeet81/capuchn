@@ -63,9 +63,20 @@ $tree->sectionToList($section_list, $optionList);
 				);
 			?>
 		</div>
+		<div style="margin:2px 0 2px 5px">Theme:<br/>
+		<?php 
+			$themes = array();
+			foreach($themelist as $thm){
+				$themes[$thm['Theme']['name']] = $thm['Theme']['name'];
+			}
+			//TODO: select the correct default editor, store for page.
+			echo $html->selectTag('Volume/template',$themes);
+		?>
+		</div>
 		<br/>
 		<div style="margin:2px 0 2px 5px">Limit:<br/>
-			<?php echo $html->input('Volume/limit', array('cols'=>'60'))?>
+			<?php 
+			echo $html->input('Volume/limit', array('cols'=>'60'))?>
 			<?php //<input type="button" name="save" value="save" onclick="tinyMCE.triggerSave();" /> ?>
 		</div>
 		</div>
@@ -78,6 +89,8 @@ if(isset($vol)){
 	//echo "<pre>";
 	//var_dump($vol);
 	//echo "</pre>";
-}  	
+} 
+
+ 	
 ?>
   	

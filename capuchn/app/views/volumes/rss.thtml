@@ -1,0 +1,19 @@
+<rss version="0.91">
+  <channel>
+    <title><?php echo $volume['Volume']['name']?></title>
+    <link><?php echo $siteroot."volumes/view/".$volume['Volume']['id']?></link>
+    <description><?php echo $sitedescripton ?></description>
+    <language>en-us</language>
+	<?php
+	
+	//TODO: this method currently works, but is not running through the mag controller, so no filter
+	foreach($volume['Mag'] as $mag){
+		echo "<item>";
+		echo "<title>".htmlentities($mag['header'])."</title>";
+		echo "<link>".$siteroot."mags/view/".$mag['id']."</link>";
+		echo "<description>".htmlentities(strip_tags($mag['content']))."</description>";
+		echo "</item>";
+	}
+	?>
+  </channel>
+</rss>
