@@ -27,7 +27,8 @@ class ImagesController extends AppController
     	$this->set('admin_enable', false);
     	$this->imgfolder = APP . DS . WEBROOT_DIR . DS . "img" . DS . "pictures" . DS;
 		$this->pictures = $this->Admin->siteVar('imagepath');
-		$this->fullUrl = $this->Admin->siteVar('absoluteimageurl');
+		$this->fullURL = $this->Admin->siteVar('absoluteimageurl');
+
     }
     
     function index($album=null){
@@ -246,9 +247,11 @@ class ImagesController extends AppController
 			$this->set('width', $vals[0]);
 			$this->set('height',$vals[1]);
 		}
+		
 		$this->set('file',$imgdata);
     	$this->set('path',$this->pictures);
     	$this->set('baseurl', $this->fullURL);
+		
     	$this->set('debug', "");
 		
 	}//end edit

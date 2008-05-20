@@ -55,13 +55,21 @@
  */
 class DATABASE_CONFIG
 {
-	var $default = array('driver' => 'mysql',
+	var $ndefault = array('driver' => 'mysql',
 								'connect' => 'mysql_connect',
 								'host' => 'localhost',
 								'login' => 'user',
 								'password' => 'password',
 								'database' => 'capuchn',
 								'prefix' => '');
+								
+	var $default = array('driver' => 'mysql',
+								'connect' => 'mysql_connect',
+								'host' => 'localhost',
+								'login' => 'stillboy_sv',
+								'password' => 's1nv3rt',
+								'database' => 'stillboy_sinvertical',
+								'prefix' => '');								
 
 	var $test = array('driver' => 'mysql',
 							'connect' => 'mysql_connect',
