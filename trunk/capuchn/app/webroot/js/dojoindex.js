@@ -50,38 +50,7 @@
 	});
 	
 	dojo.subscribe("updateAlbums", function(){
-		loadAlbumSelect();
-	});
-	
-		dojo.subscribe("/dnd/start", function(source,nodes,iscopy){
-	  console.debug(nodes);
-	  console.debug(source);
-	  currentDragNode = nodes;
-	});
-	
-	dojo.subscribe("/dnd/drop", function(source,nodes,iscopy){
-		currentDragNode = null;
-		return true;
-	});
-	//This will most likely be the case since we are got it.
-	dojo.subscribe("/dnd/cancel", function(){			
-		currentDragNode = null;
-	});
-	
-	function loadTree()
-	{
-	        oldTree =  dijit.byId("contentTree");
-			oldTree.destroy();
-			contentDirectory = new dojo.data.ItemFileReadStore({url: "volumes/jsnavmenu"});
-			mytree = new dijit.Tree(
-	                {store : contentDirectory, labelAttr : name, id : 'contentTree', label : 'Site Contents', 'onClick' : onTreeClick},
-	                document.createElement('div')
-	        );                 
-	        dojo.byId('treeBox').appendChild(mytree.domNode);
-	}
-	
-	loadAlbumSelect = function(){
-		oldselect = dijit.byId("AlbumSelect");
+				oldselect = dijit.byId("AlbumSelect");
 		if (oldselect) {
 			oldselect.destroy();
 		}
@@ -106,11 +75,36 @@
 			});			
 		}
 		
-		dojo.byId('albumSelectBox').appendChild(myfilterselect.domNode);			
+		dojo.byId('albumSelectBox').appendChild(myfilterselect.domNode);	
+	});
+	
+	dojo.subscribe("/dnd/start", function(source,nodes,iscopy){
+	  currentDragNode = nodes;
+	});
+	
+	dojo.subscribe("/dnd/drop", function(source,nodes,iscopy){
+		currentDragNode = null;
+		return true;
+	});
+	
+	
+	dojo.subscribe("/dnd/cancel", function(){			
+		currentDragNode = null;
+	});
+	
+	function loadTree()
+	{
+	        oldTree =  dijit.byId("contentTree");
+			oldTree.destroy();
+			contentDirectory = new dojo.data.ItemFileReadStore({url: "volumes/jsnavmenu"});
+			mytree = new dijit.Tree(
+	                {store : contentDirectory, labelAttr : name, id : 'contentTree', label : 'Site Contents', 'onClick' : onTreeClick},
+	                document.createElement('div')
+	        );                 
+	        dojo.byId('treeBox').appendChild(mytree.domNode);
 	}
 	
 	function onTreeClick(item, node){
-		
 		var currentIndex = contentDirectory.getIdentity(item);
 		console.debug(currentIndex);
 		if(currentIndex.charAt(0) == 'm'){
@@ -121,16 +115,9 @@
 			loadVol(currentIndex.substring(2));
 		}
 	}
-	
-	function newAlbum(){
-		dojo.publish("updateAlbums",[]);
-		alert("creating a newAlbum");
-	}
-	
 
 	function addNewAlbum(dialogFields) {
-		//alert(dialogFields.albumName);
-		console.debug(dialogFields[0].name);
+		//console.debug(dialogFields[0].name);
 		var kw = {
 		url: "albums/add/" + dialogFields[0].name,
 		handleAs:"json-comment-filtered",
@@ -149,10 +136,9 @@
 		timeout: 2000
 		};
 		dojo.xhrPost(kw);
-		}
+	}
 	
 	function imagesTab(){
-		//create
 		if(currentAlbum == undefined){
 			currentAlbum = 0;
 		}
@@ -161,7 +147,6 @@
 		mywidget = dijit.byId(newTabId);
 		var tabcontain = dijit.byId('mainTabContainer');
 		if (!mywidget) {
-		
 			var newtab = new dojox.layout.ContentPane({
 				id: newTabId,
 				title: "Images",
@@ -174,10 +159,9 @@
 				this.destroyDescendants();
 				return true;
 			}		
-			tabcontain.addChild(newtab);		
+			tabcontain.addChild(newtab);
 		}else{
 			newtab = mywidget;
-			console.debug("old widget found.");
 		}
 	   	tabcontain.selectChild(newtab);		
 	}
@@ -219,10 +203,6 @@
 		mywidget = dijit.byId(newTabId);
 		var tabcontain = dijit.byId('mainTabContainer');
 		if (!mywidget) {		
-			//<iframe src="http://localhost:8080/TestHelloWorld" id="tab1" 
-			//	dojoType="ContentPane" label="Test"
-	  		//	refreshOnShow="true" cacheContent="false" style="display: 
-			//	none;border:0px; width:100%; height:100%"></iframe>
 			ifr = document.createElement('iframe');
 			ifr.src = tabUrl;
 			var newtab = new dojox.layout.ContentPane({
@@ -304,10 +284,10 @@
 			//send 
 			var kw = {
 				url: "albums/delete/" + albumid,
-				load: function(response){
-					dojo.publish("updateAlbums", ["deleteAlbum"]);				
-					json_response_callback(response);
-					//reload the tab
+				handleAs:"json-comment-filtered",
+	 			load: function(responseObj,ioargs){
+					dojo.publish("updateAlbums", ["deleteAlbum"]);
+					save_response_callback_json(responseObj);
 				},
 				error: function(data){
 					console.debug("An error occurred: ", data);
@@ -407,6 +387,7 @@
 	}
 	
 	function themesTab(){
+		//Create the tab that lists all the themes
 		var taburl = "theme/themelist";
 		var new_tab_id = "themelisttab"
 		var mywidget = dijit.byId(new_tab_id);
@@ -463,6 +444,7 @@
 		}
 	   	tabcontain.selectChild(newtab);
 	}
+	//When we change the editor
 	function editor(controlelement){
 		console.debug("Fix the editor");
 		var currentForm = dojo.byId(controlelement.id).form;
@@ -493,9 +475,7 @@
 			currcontelm.className = "codepress php linenumbers-on";
 			currcontelm.width = "100%";
 			CodePress.run();
-
 		}
-
 	}
 	
 	function loadMag(magindex){		
@@ -526,7 +506,8 @@
 				onLoad: seteditor
 			});
 			newtab.onClose = function(){
-				//Get the editor
+				//Get the editor, I suspect that this is not functioning correctly
+				//sometimes because triggerSave fails
 				try{
 					if(!tinyMCE.execCommand('mceRemoveControl',false,magcontrolid)){
 						console.debug("Failed to destroy/remove tinyMCE control: " + magcontrolid);
@@ -565,30 +546,7 @@
 		}
 	}
 	
-	function openTab(tab){
-		console.debug("Depreciated openTab function being used.");
-		var taburl = "posts/editview";
-		if(tab == 'albums'){
-			taburl = "albums/editview";
-		}
-	
-		var newtab = new dojox.layout.ContentPane({
-	   		id:tab,
-	   		title:tab,
-	   		closable:true,
-	   		selected:true,
-	   		href:taburl,
-	   		executeScripts:true
-	   		});
-	   	
-	   	var tabcontain = dijit.byId('mainTabContainer');
-	   	tabcontain.addChild(newtab);
-	   	tabcontain.selectChild(newtab);
-	}
-	
-	
-	function mceSubmitForm(editid){    
-		
+	function mceSubmitForm(editid){    		
 		if(document.forms.length == 0){
 			//there is no form loaded.... 
 			alert("No name set");
@@ -606,16 +564,7 @@
 		}
 	}
 	
-	function save_response_callback(response){
-		//TODO: do something with this list...
-		lastResponse.push(response);
-		//cant get any f-ing effects to work, so
-		sn = dojo.byId("save_note_0");
-		sn.innerHTML = "Saved";
-		sn.style.opacity = "0.8";
-		setTimeout(function(){sn.style.opacity = 0.0},2000);
-	}
-	
+	//This will show the simple response for a moment to notify of success or fail	
 	function save_response_callback_json(responseObj){
 		console.debug(responseObj);
 		if (responseObj.status) {

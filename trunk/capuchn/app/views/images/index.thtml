@@ -58,6 +58,7 @@
     }
 	
 	function changeManagerAlbum(newAlbum){		
+		console.debug(arguments);
 		console.debug("changeManagerAlbum: "+dijit.byId("managerSelect").value);
 		dojo.publish("changeAlbum", [newAlbum]);
 	}
@@ -70,14 +71,8 @@
 	<div id="title" class="title">Upload Images</div>
 		<div id="managerswfu_container" style="margin: 0px 0px;">
 			<div>
-				<form id="imgextended">
-					<?php echo $html->input('Image/id',array('type'=>'hidden'));?>
-					<?php echo $html->input('Image/name',array('type'=>'hidden'));?>
-					<?php echo $html->input('Image/user_id',array('type'=>'hidden'));?>
-					<?php echo $html->input('Image/album_id',array('type'=>'hidden'));?>
-					<input name="Filedata" type="file"></input>
-				</form>				
-				<div dojoType="dijit.form.ComboButton" onclick="">
+			
+				<div dojoType="dijit.form.ComboButton" onclick="" style="display:inline">
 		    		<span>Actions...</span>
 		            <div dojoType="dijit.Menu" toggle="fade" style="display: none;">
 		                <div dojoType="dijit.MenuItem" onclick="imageDeleteFiles()">
@@ -92,17 +87,30 @@
 		            </div>
 		        </div>
 				
-				<select name="state1" id="managerSelect"
+				<select name="state1" id="managerSelect" 
                 		dojoType="dijit.form.ComboBox"
                 		autocomplete="false"
                 		onChange="changeManagerAlbum">
-	                <option selected="selected">Select Album</option>                			
-					<?php						
+	                <!-- <option selected="selected">Select Album</option> -->
+					<?php		
+										
 						foreach($albums as $a){
-							echo "<option value=\"".$a['Album']['id']."\">".$a['Album']['name']."</option>";							
+							if($selectedalbum == $a['Album']['id']){
+								$selected = "selected=\"selected\"";
+							}else{
+								$selected = "";
+							}
+							echo "<option ".$selected." value=\"".$a['Album']['id']."\">".$a['Album']['name']."</option>";							
 						}
 					?>
         		</select>
+				<form id="imgextended" style="display:inline">
+					<?php echo $html->input('Image/id',array('type'=>'hidden'));?>
+					<?php echo $html->input('Image/name',array('type'=>'hidden'));?>
+					<?php echo $html->input('Image/user_id',array('type'=>'hidden'));?>
+					<?php echo $html->input('Image/album_id',array('type'=>'hidden'));?>
+					<input name="Filedata" type="file"></input>
+				</form>	
 				
 			</div>
 
