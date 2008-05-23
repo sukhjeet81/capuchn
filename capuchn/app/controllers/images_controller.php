@@ -34,11 +34,20 @@ class ImagesController extends AppController
     function index($album=null){
     	$this->checkSession();
 		//TODO: must load a special layout to include swfupload.
+		$alid=0;
     	if($album == null){
     		$files = $this->Image->findAllByAlbumId('0');
     	}else{
-    		$files = $this->Image->findAllByAlbumId($album);
+    		if(is_numeric($album)){
+				$files = $this->Image->findAllByAlbumId($album);
+				$alid = $album;
+			}else{
+				$album = $this->Album->findAllByName($album);				
+				$files = $this->Image->findAllByAlbumId($album[0]['Album']['id']);
+				$alid = $album[0]['Album']['id'];
+			}
     	}
+		$this->set('selectedalbum',$alid);
 		$this->set('albums', $this->Album->findAll());
     	$this->set('files',$files);
     	$this->set('path',$this->pictures);
@@ -71,7 +80,12 @@ class ImagesController extends AppController
 			//only get the last 10 pics....
 			$files = $this->Image->findAll("`album_id`=0",null,"`Image`.`id` DESC",10);
     	}else{
-    		$files = $this->Image->findAllByAlbumId($album);
+    		if(is_numeric($album)){
+				$files = $this->Image->findAllByAlbumId($album);
+			}else{
+				$album = $this->Album->findAllByName($album);				
+				$files = $this->Image->findAllByAlbumId($album[0]['Album']['id']);
+			}
     	}
     	$this->set('files',$files);
     	$this->set('path',$this->pictures);
@@ -86,7 +100,12 @@ class ImagesController extends AppController
 			//only get the last 10 pics....
 			$files = $this->Image->findAll("`album_id`=0",null,"`Image`.`id` DESC",10);
     	}else{
-    		$files = $this->Image->findAllByAlbumId($album);
+    		if(is_numeric($album)){
+				$files = $this->Image->findAllByAlbumId($album);
+			}else{
+				$album = $this->Album->findAllByName($album);
+				$files = $this->Image->findAllByAlbumId($album[0]['Album']['id']);
+			}
     	}
     	$this->set('files',$files);
     	$this->set('justimages',true);

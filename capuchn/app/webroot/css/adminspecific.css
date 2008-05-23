@@ -546,3 +546,14 @@ a.progressCancel:hover
 .dojoDndMove .dojoDndAvatarHeader {background-image: url(js/dojo/resources/images/dndNoMove.png);}
 .dojoDndMove .dojoDndAvatarCanDrop .dojoDndAvatarHeader {background-image: 
         url(js/dojo/resources/images/dndMove.png);}
+		
+/* menu item icons */
+
+.menubariconupload{
+        background-image: url('img/add.png'); /* mega-image */
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+}
+        text-align: center;
+ */
