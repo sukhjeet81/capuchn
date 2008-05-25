@@ -62,33 +62,60 @@ This submits forms and is intended to be a general usage function, although it w
 general
 basically this does the same as above and should see the same fate as above.
 ===getWidget(name)===
-
+widget
 ===messageClick(msgid)===
+mailboxes, message
 ===messageCheck(msgid)===
+mailboxes, message
 ===call_message_function(choice)===
+mailboxes, message
 ===setswfuparams()===
+unused
 ===dojofileupload(target)===
+images
 ===swfuInit(target)===
+unused
 ===changeAlbum()===
+album
 ===initEditor()===
+tinymce,mag, unused
 ===killEditor()===
+tinymce,mag,unused
 ===thumbClick(obj)===
+images
 ===myHandler(idOfBox, value)===
+images
 edited inline form
 ===albumEditBoxHandler(idOfBox,value)===
+album
 ===imageLinkHandler(idOfBox, value)===
+images
 when the link part is clicked
 ===loadWidget(thename)===
+widget
 ===addWidget(widgetId)===
+widget
 ===saveWidgetConfig()===
+widget
 ===saveWidget(button)===
+widget
 ===moveWidgetLeft(wid)===
+widget
 ===moveWidgetRight(wid)===
+widget
 ===moveWidgetUp(wid)===
+widget
 ===moveWidgetDown(wid)===
+widget
 ===closeWidget(wid)===
+widget
 ===imageDeleteFiles()===
+image
 ===saveSiteVars()===
+widget
 ===saveFile()===
+admin
 ===siteTab()===
+admin
 ===deleteImage(imageId,needconfirm)===
+image
