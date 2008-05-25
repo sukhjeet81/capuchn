@@ -11,29 +11,58 @@ The main parts of the
 
 
 ===loadTree()===
+This re-reads the content tree and updates
 ===loadAlbumSelect()===
+album,image
 ===onTreeClick(item, node)===
+general
 ===newAlbum()===
+album
 ===addNewAlbum(dialogFields)===
+album
 ===imagesTab()===
+album,images
 ===editFileTab(file)===
+admin
 ===viewSiteTab()===
+general
 ===mailboxesTab()===
+mailboxes
 ===albumTab()===
+album
 ===deleteAlbum(albumid, nodeToRemove)===
+album
 ===deleteMailbox(mboxid,nodeToRemove)===
+mailboxes
 ===editWidget(widgetid)===
+widget
 ===loadVol(volindex)===
+volume
 ===loadMag(magindex)===
+mag
 ===deleteMag(magid, magheader)===
+mag
 ===openTab(tab)===
-===mceSubmitForm(editid)=== - handle save button from tinymce interface
+unused
+===mceSubmitForm(editid)===
+mag?
+handle save button from tinymce interface
 ===save_response_callback(response)===
+unused, general 
+This should not be used as _all_ responses that only contain a notification should use json
 ===save_response_callback_json(responseObj)===
+general
 ===json_response_callback(response)===
+general, unused
+This should also not be used as this does the same as above, basically.
 ===submitForm(button,aurl,formObj,response_callback)===
+general
+This submits forms and is intended to be a general usage function, although it was not used, this should be replaced in all the functions by their own code to remove some complexity.
 ===submitFormData(aurl, formObj, callback)===
+general
+basically this does the same as above and should see the same fate as above.
 ===getWidget(name)===
+
 ===messageClick(msgid)===
 ===messageCheck(msgid)===
 ===call_message_function(choice)===
@@ -44,9 +73,11 @@ The main parts of the
 ===initEditor()===
 ===killEditor()===
 ===thumbClick(obj)===
-===myHandler(idOfBox, value)=== - edited inline form
+===myHandler(idOfBox, value)===
+edited inline form
 ===albumEditBoxHandler(idOfBox,value)===
-===imageLinkHandler(idOfBox, value)=== - when the link part is clicked
+===imageLinkHandler(idOfBox, value)===
+when the link part is clicked
 ===loadWidget(thename)===
 ===addWidget(widgetId)===
 ===saveWidgetConfig()===
