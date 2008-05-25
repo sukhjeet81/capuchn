@@ -10,54 +10,54 @@ The initial development of the javascript front end is sloppy at best. This real
 The main parts of the 
 
 
-loadTree()
-loadAlbumSelect()
-onTreeClick(item, node)
-newAlbum()
-addNewAlbum(dialogFields)
-imagesTab()
-editFileTab(file)
-viewSiteTab()
-mailboxesTab()
-albumTab()
-deleteAlbum(albumid, nodeToRemove)
-deleteMailbox(mboxid,nodeToRemove)
-editWidget(widgetid)
-loadVol(volindex)
-loadMag(magindex)
-deleteMag(magid, magheader)
-openTab(tab)
-mceSubmitForm(editid) - handle save button from tinymce interface
-save_response_callback(response)
-save_response_callback_json(responseObj)
-json_response_callback(response)
-submitForm(button,aurl,formObj,response_callback)
-submitFormData(aurl, formObj, callback)
-getWidget(name)
-messageClick(msgid)
-messageCheck(msgid)
-call_message_function(choice)
-setswfuparams()
-dojofileupload(target)
-swfuInit(target)
-changeAlbum()
-initEditor()
-killEditor() 
-thumbClick(obj)
-myHandler(idOfBox, value) - edited inline form
-albumEditBoxHandler(idOfBox,value)
-imageLinkHandler(idOfBox, value) - when the link part is clicked
-loadWidget(thename)
-addWidget(widgetId)
-saveWidgetConfig()
-saveWidget(button)
-moveWidgetLeft(wid)
-moveWidgetRight(wid)
-moveWidgetUp(wid)
-moveWidgetDown(wid)
-closeWidget(wid)
-imageDeleteFiles()
-saveSiteVars()
-saveFile()
-siteTab()
-deleteImage(imageId,needconfirm)
+===loadTree()===
+===loadAlbumSelect()===
+===onTreeClick(item, node)===
+===newAlbum()===
+===addNewAlbum(dialogFields)===
+===imagesTab()===
+===editFileTab(file)===
+===viewSiteTab()===
+===mailboxesTab()===
+===albumTab()===
+===deleteAlbum(albumid, nodeToRemove)===
+===deleteMailbox(mboxid,nodeToRemove)===
+===editWidget(widgetid)===
+===loadVol(volindex)===
+===loadMag(magindex)===
+===deleteMag(magid, magheader)===
+===openTab(tab)===
+===mceSubmitForm(editid)=== - handle save button from tinymce interface
+===save_response_callback(response)===
+===save_response_callback_json(responseObj)===
+===json_response_callback(response)===
+===submitForm(button,aurl,formObj,response_callback)===
+===submitFormData(aurl, formObj, callback)===
+===getWidget(name)===
+===messageClick(msgid)===
+===messageCheck(msgid)===
+===call_message_function(choice)===
+===setswfuparams()===
+===dojofileupload(target)===
+===swfuInit(target)===
+===changeAlbum()===
+===initEditor()===
+===killEditor()===
+===thumbClick(obj)===
+===myHandler(idOfBox, value)=== - edited inline form
+===albumEditBoxHandler(idOfBox,value)===
+===imageLinkHandler(idOfBox, value)=== - when the link part is clicked
+===loadWidget(thename)===
+===addWidget(widgetId)===
+===saveWidgetConfig()===
+===saveWidget(button)===
+===moveWidgetLeft(wid)===
+===moveWidgetRight(wid)===
+===moveWidgetUp(wid)===
+===moveWidgetDown(wid)===
+===closeWidget(wid)===
+===imageDeleteFiles()===
+===saveSiteVars()===
+===saveFile()===
+===siteTab()===
+===deleteImage(imageId,needconfirm)===
