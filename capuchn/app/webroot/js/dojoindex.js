@@ -1,6 +1,6 @@
 	/**
 	* @author Scott Fennell
-	* 
+	* Rev 15
 	* 
 	*/
 	var Capuchn = {};
