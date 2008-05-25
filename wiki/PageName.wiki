@@ -9,27 +9,34 @@ The initial development of the javascript front end is sloppy at best. This real
 
 The main parts of the 
 
-
 ===loadTree()===
 This re-reads the content tree and updates
 ===loadAlbumSelect()===
 album,image
+This reloads the albumselection combo box....
 ===onTreeClick(item, node)===
 general
+When the content tree is clicked, this method is called.
 ===newAlbum()===
 album
+Creates a dialog to enter a new album name. 
 ===addNewAlbum(dialogFields)===
-album
+album this is the return from the newAlbum dialog.
 ===imagesTab()===
 album,images
+Creates a new tab to display images
 ===editFileTab(file)===
 admin
+This edit files tab is used to edit the style.css, default layout and mce.css - which is now depreciated, although this tab should be used for the 'codepress' theme bits editor. 
 ===viewSiteTab()===
 general
+Opens an iframe inside a tab to view the live site.
 ===mailboxesTab()===
 mailboxes
+Opens the mailboxes manager tab. Nothing special done here
 ===albumTab()===
 album
+show the album manager tab
 ===deleteAlbum(albumid, nodeToRemove)===
 album
 ===deleteMailbox(mboxid,nodeToRemove)===
