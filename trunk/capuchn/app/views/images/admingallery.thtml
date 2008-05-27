@@ -1,0 +1,128 @@
+<?php
+/*
+ * This view should be able to be used by both the side 'accordian' and the main view
+ * Basically the only difference should be that they will use a different leading
+ * bit for ids "side" vs "main" etc. And the amount of images shown
+ * 
+ * imagesize  int - size of the images to be displayed in this list
+ * prefix string - the prefix of all ids so that there is no clobbering of the 2
+ * showcontrols bool - weather to show control or just images if this is an 'update'
+ * wrapperclass string - the class for the gallery div, so to handle different css
+ * albums array - array of current albums
+ * files array
+ * path string - prefix for the images folder, this will be the path to images so...
+ * baseurl - for a absolute url to the image, to embed in another site - if needed.
+ */
+
+?>
+
+<script>
+    
+</script>
+<?php
+	//insert controls if they do not exist
+	if($showcontrols){
+?>
+		<div id="managerswfu_container" style="margin: 0px 0px;">
+		    <div id="toolbar1" dojoType="dijit.Toolbar">
+
+		    	<div dojoType="dijit.form.Button" id="toolbar1.cut" iconClass="menubariconupload"   
+		            showLabel="true" onclick="imageDeleteFiles()">Upload
+				</div>
+
+				<div dojoType="dijit.form.Button" id="toolbar1.copy" iconClass="dijitEditorIcon dijitEditorIconCopy"
+		            showLabel="false">Copy
+				</div>
+
+				<div dojoType="dijit.form.Button" id="toolbar1.paste" iconClass="dijitEditorIcon dijitEditorIconPaste"
+		            showLabel="false">Paste
+				</div>
+				<div dojoType="dijit.form.ComboButton" onclick="">
+		    		<span>Actions...</span>
+		            <div dojoType="dijit.Menu" toggle="fade" style="display: none;">
+		                <div dojoType="dijit.MenuItem" >
+		                    Delete Files
+		                </div>
+		                <div dojoType="dijit.MenuItem" onclick="">
+		                    Move to album
+		                </div>
+						<div dojoType="dijit.MenuItem" onclick="dojofileupload(this);">
+		                    Upload
+		                </div>
+		            </div>
+		        </div>
+				
+				<div id="<?php echo $prefix;?>_albumcombobox" style="display:inline"> 
+					<select name="state1" id="managerSelect"
+	                		dojoType="dijit.form.ComboBox"
+	                		autocomplete="false"
+	                		onChange="changeManagerAlbum(this.item.value, this.item.text)">
+		                <option selected="selected">Select Album</option>                			
+						<?php						
+							foreach($albums as $a){
+								echo "<option value=\"".$a['Album']['id']."\">".$a['Album']['name']."</option>";							
+							}
+						?>
+	        		</select>
+				</div>
+				<div style="display:inline">
+					<form id="imgextended" style="display:inline">
+						<?php echo $html->input('Image/id',array('type'=>'hidden'));?>
+						<?php echo $html->input('Image/name',array('type'=>'hidden'));?>
+						<?php echo $html->input('Image/user_id',array('type'=>'hidden'));?>
+						<?php echo $html->input('Image/album_id',array('type'=>'hidden'));?>
+						<input style="display:inline" name="Filedata" type="file"></input>
+					</form>						
+				</div>
+				<!-- The following adds a line between toolbar sections-->
+				<span dojoType="dijit.ToolbarSeparator"></span>
+   			</div><!-- end toolbar -->
+			
+			<form id="imgindexform">
+			<div id="thumbnails" dojoType="dojox.layout.ContentPane" >
+				
+				<?php 
+				}//end show controls
+					//TODO: Add a form for each image , delete, rename, select album
+					foreach($files as $file){
+						echo "<div class=\"thumbdivdock\" id=\"thumbddock_".$file['Image']['id']."\">";
+						echo "<div class=\"thumbnailContainer\" id=\"thumb_".$file['Image']['id']."\">";
+						?>
+						<input id="<?php echo $prefix?>_checkbox_<?php echo $file['Image']['id']?>" 
+							class="thumbcheck"
+							dojotype="dijit.form.CheckBox" 
+							name="imgcheck" 
+							value="off"
+	           				type="checkbox" />
+						<?php
+						echo "<div class=\"thumbNormalizeSize\">";
+						echo "<img class=\"thumb\" id=\"".$prefix."_img_".$file['Image']['id']."\" src=\"".$path.$file['Image']['thumb']."\" onClick=\"thumbClick(this)\"/>";
+						echo "</div>";//end normalizeSize
+						?>
+						<div id="<?php echo $prefix?>_editable_<?php echo $file['Image']['id']?>" class="thumbtext" 
+	                		dojoType="dijit.InlineEditBox" 
+	                		onChange="myHandler(this.id,arguments[0])">
+	                		<?php echo $file['Image']['name'];?>
+	    				</div>
+						<div id="<?php echo $prefix?>_imagelink_<?php echo $file['Image']['id']?>" class="thumbtext" 
+	                		dojoType="dijit.InlineEditBox" 
+	                		onChange="imageLinkHandler(this.id,arguments[0])"
+	                		onClick="imageLinkHandler(this.id,arguments[0])">
+	                		<?php echo $baseurl.$file['Image']['location'];?>
+	    				</div>
+						<?php 
+						 
+						echo "</div>";//end container
+						echo "</div>";//end dock
+					}
+				
+				if($showcontrols){
+				?>			
+			</div><!-- end wrapper class -->
+			</form>
+		</div> <!-- end manager containter -->
+		<?}//end showcotrols bottom ?>
+
+
+
+	

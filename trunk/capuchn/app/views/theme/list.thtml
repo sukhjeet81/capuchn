@@ -1,5 +1,10 @@
 <?php
 ?>
+<div style="padding:5px" class="thememanager">
+<h2>Manage themes.</h2>
+<p>
+	If you would like to create a new theme, I would suggest cloning an existing theme to start. Just click clone, and then start editing the files!
+</p>
 <table class="albums" border="0" cellpadding="0" cellspacing="0">
 <thead>
 	<tr>
@@ -10,7 +15,16 @@
 			Name
 		</td>
 		<td>
-			Edit
+			Edit layout
+		</td>
+		<td>
+			Edit Style
+		</td>
+		<td>
+			Edit MCE style
+		</td>
+		<td>
+			Clone
 		</td>
 		<td>
 			delete?
@@ -36,12 +50,23 @@
 				</td>
 
 				<td class="<? echo $even; ?>">
-					<a href="#"	onClick="editTheme('<? echo $theme['Theme']['id']?>')">Edit</a>									
+					<a href="#"	onClick="Capuchn.theme.edit('<? echo $theme['Theme']['id']?>','layout')">Edit Layout</a>									
 				</td>
 				<td class="<? echo $even; ?>">
-					<a href="#"	onClick="deleteTheme('<? echo $theme['Theme']['id']?>',this.parentNode.parentNode)">delete</a>				
+					<a href="#"	onClick="Capuchn.theme.edit('<? echo $theme['Theme']['id']?>','style')">Edit Style</a>									
 				</td>
-				
+				<td class="<? echo $even; ?>">
+					<a href="#"	onClick="Capuchn.theme.edit('<? echo $theme['Theme']['id']?>','mce')">Edit MCE</a>									
+				</td>	
+				<td class="<? echo $even; ?>">
+					<button dojoType="dijit.form.Button" onclick="Capuchn.theme.clone('<? echo $theme['Theme']['id']?>')">
+			    	Clone
+					</button>
+				</td>			
+				<td class="<? echo $even; ?>">
+					<a href="#"	onClick="Capuchn.theme.deletetheme('<? echo $theme['Theme']['id']?>',this.parentNode.parentNode)">delete</a>				
+				</td>
+	
 				<td class="<? echo $even; ?>">
 					view! from the left :)
 				</td>
@@ -53,3 +78,4 @@
 ?>
 </tbody>	
 </table>
+</div>

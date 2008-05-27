@@ -49,6 +49,10 @@
 		dojo.xhrPost(kw);
 	});
 	
+	function loadAlbumSelect(){
+		console.debug("loadAlbumSelect still being called");
+		dojo.publish('updateAlbums');
+	}
 	dojo.subscribe("updateAlbums", function(){
 				oldselect = dijit.byId("AlbumSelect");
 		if (oldselect) {
@@ -92,6 +96,291 @@
 		currentDragNode = null;
 	});
 	
+	/*Capuchn globals*/
+	function CapuchnGlobals(){
+		//marker for editor
+	}
+		
+	Capuchn.newtab = function(url,id,title){
+		//Create the tab that lists all the themes
+		var taburl = url;
+		var new_tab_id = id;
+		var mywidget = dijit.byId(new_tab_id);
+		var tabcontain = dijit.byId('mainTabContainer');
+		if (!mywidget) {
+		
+			var newtab = new dojox.layout.ContentPane({
+				id: new_tab_id,
+				title: title,
+				closable: true,
+				selected: true,
+				href: taburl,
+				executeScripts: true
+				//onLoad: seteditor
+			});
+			newtab.onClose = function(){
+				this.destroyDescendants();
+				return true;
+			}
+			tabcontain.addChild(newtab);
+			
+		}else{
+			newtab = mywidget;
+			console.debug("old widget found.");
+		}
+	   	tabcontain.selectChild(newtab);
+	}
+	
+	/*Capuchn theme code*/
+	function CapuchnTheme(){
+		//marker for editor
+		this.name = "Capuchn theme functions and data";
+	}
+	
+	Capuchn.theme = new CapuchnTheme();
+	
+	Capuchn.theme.clone = function(themeid){
+		var kw = {
+	    	url: "theme/clonetheme/"+themeid,
+			handleAs: "json-comment-filtered",
+	 		load: function(responseObj, ioArgs){
+				save_response_callback_json(responseObj);
+				tlt = dijit.byId("themelisttab");
+				if(tlt != undefined){
+					tlt.refresh();
+				}else{
+					console.debug('Theme tab not open?');
+				}
+	    	},
+	    	error: function(data, ioArgs){
+		            console.debug("An error occurred: ", data);
+	        },
+	        timeout: 2000
+		};
+		dojo.xhrPost(kw);
+	}
+	
+	Capuchn.theme.edit = function(themeid, part){
+		//part is layout, style, or mce
+		var taburl = "theme/edittab/"+themeid+"/"+part;
+		var new_tab_id = "theme_"+part+"_"+themeid;
+		var mywidget = dijit.byId(new_tab_id);
+		var tabcontain = dijit.byId('mainTabContainer');
+		if (!mywidget) {
+		
+			var newtab = new dojox.layout.ContentPane({
+				id: new_tab_id,
+				title: "Theme " + part + " - " + themeid,
+				closable: true,
+				selected: true,
+				href: taburl,
+				executeScripts: true
+				//onLoad: seteditor
+			});
+			newtab.onClose = function(){
+				console.debug("May still have an open codepress obj");
+				this.destroyDescendants();
+				return true;				
+			}
+			tabcontain.addChild(newtab);
+			
+		}else{
+			newtab = mywidget;
+			console.debug("old widget found.");
+		}
+	   	tabcontain.selectChild(newtab);
+		
+	}
+	
+	Capuchn.theme.deletetheme = function(id,row){
+		if (confirm('DeleteTheme' + id + "?")) {
+			//send 
+			fakeform = {"confirmed":"true"};
+			
+			var kw = {
+				url: "theme/delete/" + id,
+				handleAs:"json-comment-filtered",
+	 			content: fakeform,
+				load: function(responseObj,ioargs){
+					
+					save_response_callback_json(responseObj);
+				},
+				error: function(data){
+					console.debug("An error occurred: ", data);
+				},
+				timeout: 2000
+			};
+			dojo.xhrPost(kw);
+			if(row){
+				row.parentNode.removeChild(row);
+			}	
+		}
+	}
+	
+	Capuchn.theme.tab = function(){
+		//Create the tab that lists all the theme
+		Capuchn.newtab("theme/themelist","themelisttab","Theme List");
+	}
+	
+	//I do not believe that this is currently implimented.
+	Capuchn.theme.nameeditbox = function(idOfBox,value){
+		var myalbid = idOfBox.split("_");//sleeping beauty
+    	if(myalbid.length > 1){
+    		var url = myalbid[2];
+			var field = myalbid[1];
+    	}else{
+    		console.debug("cannot parse image id:"+idOfBox);
+    	}
+		album = {"id":url, "value":value,"field":field};
+		dojo.rawXhrPost( {
+	        url: "theme/editbox",
+	        handleAs: "json-comment-filtered",
+	        postData: dojo.toJson(album),
+	        timeout: 1000,
+	        load: function(response, ioArgs) {
+	                console.debug(response);
+					dojo.publish("updateAlbums",['albumeditor'])
+	        },
+	        error: function(response, ioArgs) {
+	                return response;
+	        }
+		});
+	}
+	
+	Capuchn.theme.save = function(button,textareaid){
+		Capuchn.codepress[textareaid].toggleEditor();
+		console.debug(Capuchn.codepress[textareaid]);
+	    var currentForm = dojo.byId(button.id).form;
+	    console.debug(currentForm);
+		var kw = {
+	    	url: "theme/save",
+			handleAs:"json-comment-filtered",
+	 		load: function(responseObj,ioargs){
+				save_response_callback_json(responseObj);
+	    	},
+	    	error: function(data){
+		            console.debug("An error occurred: ", data);
+	        },
+	        timeout: 2000,
+	    	form: currentForm.id
+		};
+		dojo.xhrPost(kw);		
+		//Turn the editor back on
+		Capuchn.codepress[textareaid].toggleEditor();
+	}
+	
+	function CapuchnAlbum(){
+		this.albums = {};
+	}
+	
+	Capuchn.album = new CapuchnAlbum();
+	
+	Capuchn.album.adddialog = function(){
+		diag = new dijit.Dialog({title:"Add New Album"});
+		diag.execute = function(frm){
+			var kw = {
+			url: "albums/add/" + frm.name,
+			handleAs:"json-comment-filtered",
+			load: function(responseObj, ioargs){					
+					if(responseObj.status){
+						dojo.publish("updateAlbums",[]);
+					}else{
+						console.debug(responseObj.message);
+					}
+					//reload the tab
+				},
+			error: function(data){
+					console.debug("An error occurred: ", data);
+				},
+			timeout: 2000
+			};
+			dojo.xhrPost(kw);
+		}
+		content = "<table><tr><td><label for=\"name\">Album Name </label></td>";
+		content += "<td><input dojoType=\"dijit.form.TextBox\" trim=\"true\" name=\"name\"></td></tr><tr><td colspan=\"2\" align=\"center\">";
+        content += "<button dojoType=dijit.form.Button type=\"submit\">OK</button></td></tr></table>";
+   		diag.setContent(content);
+		diag.startup();
+		diag.show();
+	}
+	
+	function addNewAlbum(dialogFields) {
+		//console.debug(dialogFields[0].name);
+		var kw = {
+		url: "albums/add/" + dialogFields[0].name,
+		handleAs:"json-comment-filtered",
+		load: function(responseObj, ioargs){
+				
+				if(responseObj.status){
+					dojo.publish("updateAlbums",[]);
+				}else{
+					alert(responseObj.message);
+				}
+				//reload the tab
+			},
+		error: function(data){
+				console.debug("An error occurred: ", data);
+			},
+		timeout: 2000
+		};
+		dojo.xhrPost(kw);
+	}
+	
+	function albumTab(){
+		tabUrl = "albums/index";
+		newTabId = "albumManageTab";
+		mywidget = dijit.byId(newTabId);
+		var tabcontain = dijit.byId('mainTabContainer');
+		if (!mywidget) {
+		
+			var newtab = new dojox.layout.ContentPane({
+				id: newTabId,
+				title: "Albums",
+				closable: true,
+				selected: true,
+				href: tabUrl,
+				executeScripts: true
+				//onLoad: seteditor
+			});
+			newtab.onClose = function(){
+				this.destroyDescendants();
+				return true;
+			}				
+			tabcontain.addChild(newtab);
+		}else{
+			newtab = mywidget;
+		}
+	   	tabcontain.selectChild(newtab);
+	}	
+	function changeAlbum(){
+	//get the new album, set the href of tab1
+	
+	}
+	
+	function albumEditBoxHandler(idOfBox,value){
+		var myalbid = idOfBox.split("_");//sleeping beauty
+    	if(myalbid.length > 1){
+    		var url = myalbid[2];
+			var field = myalbid[1];
+    	}else{
+    		console.debug("cannot parse image id:"+idOfBox);
+    	}
+		album = {"id":url, "value":value,"field":field};
+		dojo.rawXhrPost( {
+	        url: "albums/editbox",
+	        handleAs: "json-comment-filtered",
+	        postData: dojo.toJson(album),
+	        timeout: 1000,
+	        load: function(response, ioArgs) {
+	                console.debug(response);
+					dojo.publish("updateAlbums",['albumeditor'])
+	        },
+	        error: function(response, ioArgs) {
+	                return response;
+	        }
+		});
+	}
+	
 	function loadTree()
 	{
 	        oldTree =  dijit.byId("contentTree");
@@ -116,27 +405,7 @@
 		}
 	}
 
-	function addNewAlbum(dialogFields) {
-		//console.debug(dialogFields[0].name);
-		var kw = {
-		url: "albums/add/" + dialogFields[0].name,
-		handleAs:"json-comment-filtered",
-		load: function(responseObj, ioargs){
-				
-				if(responseObj.status){
-					dojo.publish("updateAlbums",[]);
-				}else{
-					alert(responseObj.message);
-				}
-				//reload the tab
-			},
-		error: function(data){
-				console.debug("An error occurred: ", data);
-			},
-		timeout: 2000
-		};
-		dojo.xhrPost(kw);
-	}
+
 	
 	function imagesTab(){
 		if(currentAlbum == undefined){
@@ -353,68 +622,7 @@
 	   	tabcontain.selectChild(newtab);
 	}
 	
-	function editTheme(themeid){
-		var taburl = "theme/edittab/"+themeid;
-		var new_tab_id = "theme_"+themeid;
-		var mywidget = dijit.byId(new_tab_id);
-		var tabcontain = dijit.byId('mainTabContainer');
-		if (!mywidget) {
-		
-			var newtab = new dojox.layout.ContentPane({
-				id: new_tab_id,
-				title: "Theme " + themeid,
-				closable: true,
-				selected: true,
-				href: taburl,
-				executeScripts: true
-				//onLoad: seteditor
-			});
-			newtab.onClose = function(){
-				this.destroyDescendants();
-				return true;
-			}
-			tabcontain.addChild(newtab);
-			
-		}else{
-			newtab = mywidget;
-			console.debug("old widget found.");
-		}
-	   	tabcontain.selectChild(newtab);
-	}
-	
-	function deleteTheme(id,row){
-		alert("delete theme is not yet implimented");
-	}
-	
-	function themesTab(){
-		//Create the tab that lists all the themes
-		var taburl = "theme/themelist";
-		var new_tab_id = "themelisttab"
-		var mywidget = dijit.byId(new_tab_id);
-		var tabcontain = dijit.byId('mainTabContainer');
-		if (!mywidget) {
-		
-			var newtab = new dojox.layout.ContentPane({
-				id: new_tab_id,
-				title: "Theme List",
-				closable: true,
-				selected: true,
-				href: taburl,
-				executeScripts: true
-				//onLoad: seteditor
-			});
-			newtab.onClose = function(){
-				this.destroyDescendants();
-				return true;
-			}
-			tabcontain.addChild(newtab);
-			
-		}else{
-			newtab = mywidget;
-			console.debug("old widget found.");
-		}
-	   	tabcontain.selectChild(newtab);
-	}
+
 	
 	function loadVol(volindex){
 		//window.open("admin/volumes/"+volindex, "_top");
@@ -760,10 +968,7 @@
 		return false;
 	}
 	
-	function changeAlbum(){
-	//get the new album, set the href of tab1
-	
-	}
+
 
     function thumbClick(obj){
     	var tid=obj.id;
@@ -804,52 +1009,8 @@
     	submitFormData("images/update/"+url, ext, updateResponse);		
     }    
 	
-	function albumEditBoxHandler(idOfBox,value){
-		var myalbid = idOfBox.split("_");//sleeping beauty
-    	if(myalbid.length > 1){
-    		var url = myalbid[2];
-			var field = myalbid[1];
-    	}else{
-    		console.debug("cannot parse image id:"+idOfBox);
-    	}
-		album = {"id":url, "value":value,"field":field};
-		dojo.rawXhrPost( {
-	        url: "albums/editbox",
-	        handleAs: "json-comment-filtered",
-	        postData: dojo.toJson(album),
-	        timeout: 1000,
-	        load: function(response, ioArgs) {
-	                console.debug(response);
-					dojo.publish("updateAlbums",['albumeditor'])
-	        },
-	        error: function(response, ioArgs) {
-	                return response;
-	        }
-		});
-	}
-	function themeEditBoxHandler(idOfBox,value){
-		var myalbid = idOfBox.split("_");//sleeping beauty
-    	if(myalbid.length > 1){
-    		var url = myalbid[2];
-			var field = myalbid[1];
-    	}else{
-    		console.debug("cannot parse image id:"+idOfBox);
-    	}
-		album = {"id":url, "value":value,"field":field};
-		dojo.rawXhrPost( {
-	        url: "theme/editbox",
-	        handleAs: "json-comment-filtered",
-	        postData: dojo.toJson(album),
-	        timeout: 1000,
-	        load: function(response, ioArgs) {
-	                console.debug(response);
-					dojo.publish("updateAlbums",['albumeditor'])
-	        },
-	        error: function(response, ioArgs) {
-	                return response;
-	        }
-		});
-	}
+
+
 	
     var updateResponse = function(response){
     	//what to be done?
@@ -921,30 +1082,6 @@
 		dataWidgetCallback.toggleEditor();
 	}
 	
-	function saveTheme(button){
-		dataThemeStyle.toggleEditor();
-		dataThemeMce.toggleEditor();
-		dataThemeLayout.toggleEditor();
-	    var currentForm = dojo.byId(button.id).form;
-	    console.debug(currentForm);
-		var kw = {
-	    	url: "theme/save",
-			handleAs:"json-comment-filtered",
-	 		load: function(responseObj,ioargs){
-				save_response_callback_json(responseObj);
-	    	},
-	    	error: function(data){
-		            console.debug("An error occurred: ", data);
-	        },
-	        timeout: 2000,
-	    	form: currentForm.id
-		};
-		dojo.xhrPost(kw);		
-		//Turn them back on...
-		dataThemeStyle.toggleEditor();
-		dataThemeMce.toggleEditor();
-		dataThemeLayout.toggleEditor();
-	}
 	
 	function moveWidgetLeft(wid){
 		col = 0;

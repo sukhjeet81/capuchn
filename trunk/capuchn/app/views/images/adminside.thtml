@@ -51,7 +51,7 @@
 				<div dojoType="dijit.form.ComboButton" onclick="dojofileupload(this);">
 		    		<span>Upload Files</span>
 		            <div dojoType="dijit.Menu" id="imgMenu" toggle="fade" style="display: none;">
-		                <div dojoType="dijit.MenuItem" onclick="dijit.byId('newAlbumDialog').show()">
+		                <div dojoType="dijit.MenuItem" onclick="Capuchn.album.adddialog()">
 		                    New Album
 		                </div>
 		                <div dojoType="dijit.MenuItem" onclick="imagesTab()">

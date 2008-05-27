@@ -45,7 +45,7 @@
 			<a href="#" onClick="albumTab();">Albums</a>
 			<a href="#" onClick="siteTab();">Site</a>
 			<a href="#" onClick="imagesTab();">Manage Images</a>
-			<a href="#" onClick="themesTab();">Manage Themes</a>
+			<a href="#" onClick="Capuchn.newtab('theme/themelist','themelisttab','Theme List');">Manage Themes</a>
 			<a href="#" onClick="Capuchn.viewSiteTab()">View Me!</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<a style="float:right;" href="<?php echo BASE ?>user/logout">Logout.</a>
@@ -169,17 +169,6 @@
 </div>
 <!-- end dojo layout stuff -->
 <!-- initially hidden dialog box -->
-<div dojoType="dijit.Dialog" id="newAlbumDialog" title="Add New Album" execute="addNewAlbum(arguments);">
-    <table>
-        <tr>
-        <td><label for="name">Album Name </label></td>
-                <td><input dojoType="dijit.form.TextBox" trim="true" name="name"></td>
-        </tr>
-        <tr>
-                <td colspan="2" align="center">
-                        <button dojoType=dijit.form.Button type="submit">OK</button></td>
-        </tr>
-    </table>
-</div> 
+
 </body>
 </html>
