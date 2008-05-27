@@ -9,13 +9,14 @@
  * Read the full licence: http://www.opensource.org/licenses/lgpl-license.php
  */
 
-CodePress = function(obj, fullwidth){
+CodePress = function(obj){
 	var self = document.createElement('iframe');
 	self.textarea = obj;
 	self.textarea.disabled = true;
 	self.textarea.style.overflow = 'hidden';
 	
 	//var oldElement = self.textarea;
+	//this is all broken, remove once we move all codepress calls to the init function
 	editorY = self.textarea.parentNode.offsetParent.offsetHeight;
 	editorX = self.textarea.parentNode.offsetParent.offsetWidth;
 
@@ -34,17 +35,6 @@ CodePress = function(obj, fullwidth){
 
 	self.style.height = edtY;
 	self.style.width = edtX;
-	/*
-	if (fullwidth) {
-		//self.style.height = self.textarea.parentNode.clientHeight + 'px';
-		self.style.width = self.textarea.parentNode.clientWidth + 'px';
-	}
-	else {
-		self.style.width = self.textarea.clientWidth + 'px';
-	}
-	
-	self.style.height = self.textarea.clientHeight +'px';
-	*/
 	
 	self.textarea.style.overflow = 'auto';
 	self.style.border = '1px solid gray';
@@ -52,7 +42,7 @@ CodePress = function(obj, fullwidth){
 	self.style.visibility = 'hidden';
 	self.style.position = 'absolute';
 	self.options = self.textarea.className;
-	
+	console.debug(self.options);
 	self.initialize = function() {
 		self.editor = self.contentWindow.CodePress;
 		self.editor.body = self.contentWindow.document.getElementsByTagName('body')[0];
@@ -112,6 +102,7 @@ CodePress = function(obj, fullwidth){
 	
 	self.toggleEditor = function() {
 		if(self.textarea.disabled) {
+			console.debug("enabling...");
 			self.textarea.value = self.getCode();
 			self.textarea.disabled = false;
 			self.style.display = 'none';
@@ -167,7 +158,40 @@ CodePress.sizeInit = function(){
 		frame.style.height = (editorY-103) + "px";
 	}
 	*/
+CodePress.init = function(textareaid){
+	//get the text area id that is to be converted to a codepress textarea
 
+	ta = document.getElementById(textareaid);
+	//get the scripts and get the path
+	s = document.getElementsByTagName('script');
+	for(var i=0,n=s.length;i<n;i++) {
+		if(s[i].src.match('codepress.js')) {
+			CodePress.path = s[i].src.replace('codepress.js','');
+		}
+	}
+	//custom load code.
+	if(Capuchn != undefined){
+		pn = ta.parentNode;	
+		if(Capuchn.codepress == undefined){
+			Capuchn.codepress = Array();			
+		}
+		Capuchn.codepress[textareaid] = new CodePress(ta);
+		pn.insertBefore(Capuchn.codepress[textareaid],ta);
+		try{
+			Capuchn.codepress[textareaid].style.width = (pn.parentNode.clientWidth-4) + "px";	
+			Capuchn.codepress[textareaid].style.margin = 'auto';	
+			Capuchn.codepress[textareaid].style.height = (pn.parentNode.clientHeight-18) + "px";	
+			pn.parentNode.style.overflow = "hidden";
+		}catch(e){
+			alert(e);
+		}
+		
+	}else{
+		console.debug("Capuchn object not found");
+	}
+	console.debug(pn.parentNode);
+	
+}
 
 CodePress.run = function(fullwidth) {
 	s = document.getElementsByTagName('script');
@@ -182,11 +206,7 @@ CodePress.run = function(fullwidth) {
 		if(t[i].className.match('codepress')) {
 			id = t[i].id;
 			t[i].id = id+'_cp';
-			if (fullwidth) {
-				eval(id + ' = new CodePress(t[i],true)');
-			}else{
-				eval(id + ' = new CodePress(t[i])');
-			}
+			eval(id + ' = new CodePress(t[i])');
 			t[i].parentNode.insertBefore(eval(id), t[i]);
 		} 
 	}

@@ -4,17 +4,23 @@
 
 	
 <form id="fileeditform">
+	<div style="height:30px;margin:0px">
 	<?php echo $filename; ?>
 	<button dojoType="dijit.form.Button" onclick="saveFile(this)">
     	Save
 	</button>
 	<input type="hidden" value="<?php echo $filename?>" cols="60" name="filename">
+	</div>
 	<textarea id="fileEditor" class="codepress <?php echo $filetype?> linenumbers-on" style="display:block; width:100%" name="savetext"><?php echo $filecontents; ?></textarea>
 </form>
 
 <script>
-	dojo.addOnLoad(function(){
+	//console.debug('Funn');
+	//CodePress.init('fileEditor');
+	console.debug(dojo.byId('fileEditor'));
+	tmp = function(){
 		console.debug("running codepress.run");
-		CodePress.run();
-	});
+		CodePress.init('fileEditor');
+	}
+	dojo.addOnLoad(tmp);
 </script>	

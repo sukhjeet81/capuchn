@@ -47,8 +47,11 @@ class ThemeController extends AppController
 	/*
 	 * Get the data to fill the form for the edittab
 	 */
-	function edittab($id=null){
+	function edittab($id=null,$part=null){
 		$this->checkSessionAjax();
+		if($part == null){
+			$part = 'layout';
+		}
 		if($id != null){
 			$this->Theme->id = $id;
 			$tmp = $this->Theme->read();
@@ -61,6 +64,7 @@ class ThemeController extends AppController
 			$tmp['Theme']['layout'] = $def['Theme']['layout'];
 			$tmp['Theme']['config'] = $def['Theme']['config'];			
 		}
+		$this->set('part',$part);
 		$this->set('theme',$tmp);
 		$this->render('edittab','ajax');		
 	}
@@ -70,6 +74,54 @@ class ThemeController extends AppController
 		$datas = $this->Theme->findAll();
 		$this->set('datas',$datas);
 		$this->render('list','ajax');
+	}
+	
+	function clonetheme($id = null){
+		$this->checkSessionAjax();
+		if($id != null){
+			$this->Theme->id = $id;
+			$currtheme = $this->Theme->read();
+			$newtheme = array("Theme"=>$currtheme['Theme']);
+			unset($newtheme['Theme']['id']);
+			$newtheme['Theme']['name'] = $newtheme['Theme']['name']." Clone";
+			$this->Theme->id = null;			
+			if ($this->Theme->save($newtheme))
+	         {
+	            $id = $this->Theme->getLastInsertId();	            
+	        	$this->set('savetext',"Theme Saved! - ".$id);
+				$status['status'] = true;
+				$status['message'] = "Theme saved! - " . $id;
+				$this->set('output',$status);
+				$this->render('json','ajax');		         	
+	         }
+	         else
+	         {
+	            $saveErrors = $this->validateErrors($this->Theme);
+				$status['message'] = "Failed: ".var_export($saveErrors,true);
+				$this->set('output',$status);
+				$this->render('json','ajax');		         					
+	         }
+			 exit(0);
+		}
+	}
+	
+	function delete($id = null){
+		$this->checkSessionAjax();
+		
+		$status = false;
+		if($id != null){
+			if($this->Theme->del($id)){
+				$status = true;				
+				$message = "Theme $id deleted successfully";
+			}else{
+				$message = "Theme $id failed to deleted";
+			}
+		}else{
+			$message = "No theme id";
+		}
+		$out = array("status"=>$status,"message"=>$message);
+		$this->set('output', $out);
+		$this->render("json","ajax");
 	}
 	
 	/*

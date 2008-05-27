@@ -1,21 +1,5 @@
 <?php 
-
+//This is never displayed.. just a holder
 ?>
-
-<div style="text-align: left; width=600 px;float:left">
-
-	Dev notes:<br/>
-	
-	I need a way to add in simple components/plugins and have a way to select thier display - like drupal maybe
-	<br/>
-	<br/>
-	I want to also edit files, templates and css
-	<br/>
-	<br/>
-	
-	
-	
-	
-</div>
 
 
