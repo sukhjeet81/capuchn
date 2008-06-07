@@ -6,6 +6,7 @@
 	var Capuchn = {};
 	dojo.require("dijit.Tooltip");
 	dojo.require("dojo.io.iframe");
+	dojo.require("dijit.Toolbar");
 	
 	/*Global variables*/
 	var editorID = 0;
@@ -49,37 +50,8 @@
 		dojo.xhrPost(kw);
 	});
 	
-	function loadAlbumSelect(){
-		console.debug("loadAlbumSelect still being called");
-		dojo.publish('updateAlbums');
-	}
 	dojo.subscribe("updateAlbums", function(){
-				oldselect = dijit.byId("AlbumSelect");
-		if (oldselect) {
-			oldselect.destroy();
-		}
-		albumDirectory = new dojo.data.ItemFileReadStore({url:"albums/jslist"})
-		myfilterselect = new dijit.form.FilteringSelect(
-								{
-									store: albumDirectory,
-									searchAttr:'name',
-									name:'albumselect',
-									id:'AlbumSelect',
-									autocomplete:true
-								});
-		myfilterselect.onChange = function (newvalue){
-			
-			albumDirectory.fetchItemByIdentity({
-			  identity: newvalue, 
-			  onItem: function(item){
-			    ip = dijit.byId("ImagesPane");
-				dojo.publish("changeAlbum", [albumDirectory.getValue(item,"id")])
-				console.debug("The ID for the album you have chosen is: ", albumDirectory.getValue(item,"id"));
-			  }
-			});			
-		}
-		
-		dojo.byId('albumSelectBox').appendChild(myfilterselect.domNode);	
+		console.debug("updateAlbums needs to go");
 	});
 	
 	dojo.subscribe("/dnd/start", function(source,nodes,iscopy){
@@ -100,6 +72,27 @@
 	function CapuchnGlobals(){
 		//marker for editor
 	}
+	Capuchn.getElementsByClassName = function(strClassName,type){
+		oElm = document;
+		if (type == undefined) {
+			strTagName = "div";
+		}else{
+			strTagName = type;
+		}
+		var arrElements = (strTagName == "*" && document.all)? document.all : oElm.getElementsByTagName(strTagName);
+	    var arrReturnElements = new Array();
+	    strClassName = strClassName.replace(/\-/g, "\\-");
+	    var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$)");
+	    var oElement;
+	    for(var i=0; i<arrElements.length; i++){
+			oElement = arrElements[i];
+	        if(oRegExp.test(oElement.className)){
+	            arrReturnElements.push(oElement);
+	        }
+	    }
+	    return (arrReturnElements)
+	}
+
 		
 	Capuchn.newtab = function(url,id,title){
 		//Create the tab that lists all the themes
@@ -129,6 +122,14 @@
 			console.debug("old widget found.");
 		}
 	   	tabcontain.selectChild(newtab);
+	}
+	
+	Capuchn.refreshTabs = function(){
+		tabContain  = dijit.byId('mainTabContainer');
+		childs = tabContain.getChildren();
+		for(i=0;i<childs.length;i++){
+			childs[i].refresh();
+		}
 	}
 	
 	/*Capuchn theme code*/
@@ -271,6 +272,9 @@
 	
 	function CapuchnAlbum(){
 		this.albums = {};
+		this.selected = 1;//default selected id
+		this.sideAlbumSelected = 0;
+		this.mainAlbumSelected = 0;
 	}
 	
 	Capuchn.album = new CapuchnAlbum();
@@ -304,60 +308,7 @@
 		diag.show();
 	}
 	
-	function addNewAlbum(dialogFields) {
-		//console.debug(dialogFields[0].name);
-		var kw = {
-		url: "albums/add/" + dialogFields[0].name,
-		handleAs:"json-comment-filtered",
-		load: function(responseObj, ioargs){
-				
-				if(responseObj.status){
-					dojo.publish("updateAlbums",[]);
-				}else{
-					alert(responseObj.message);
-				}
-				//reload the tab
-			},
-		error: function(data){
-				console.debug("An error occurred: ", data);
-			},
-		timeout: 2000
-		};
-		dojo.xhrPost(kw);
-	}
-	
-	function albumTab(){
-		tabUrl = "albums/index";
-		newTabId = "albumManageTab";
-		mywidget = dijit.byId(newTabId);
-		var tabcontain = dijit.byId('mainTabContainer');
-		if (!mywidget) {
-		
-			var newtab = new dojox.layout.ContentPane({
-				id: newTabId,
-				title: "Albums",
-				closable: true,
-				selected: true,
-				href: tabUrl,
-				executeScripts: true
-				//onLoad: seteditor
-			});
-			newtab.onClose = function(){
-				this.destroyDescendants();
-				return true;
-			}				
-			tabcontain.addChild(newtab);
-		}else{
-			newtab = mywidget;
-		}
-	   	tabcontain.selectChild(newtab);
-	}	
-	function changeAlbum(){
-	//get the new album, set the href of tab1
-	
-	}
-	
-	function albumEditBoxHandler(idOfBox,value){
+	Capuchn.album.editBoxHandler = function(idOfBox,value){
 		var myalbid = idOfBox.split("_");//sleeping beauty
     	if(myalbid.length > 1){
     		var url = myalbid[2];
@@ -374,6 +325,9 @@
 	        load: function(response, ioArgs) {
 	                console.debug(response);
 					dojo.publish("updateAlbums",['albumeditor'])
+					if(response['status']){
+						Capuchn.album.change(value);
+					}
 	        },
 	        error: function(response, ioArgs) {
 	                return response;
@@ -381,6 +335,248 @@
 		});
 	}
 	
+	Capuchn.album.change = function(content){
+		if (content == "sideAlbum") {
+			Capuchn.album.select({
+				value: Capuchn.album.sideAlbumSelected
+			}, "sideAlbum");
+		}else{
+			Capuchn.album.select({
+				value: Capuchn.album.mainAlbumSelected
+			}, "mainAlbum");			
+		}
+	}
+	
+	Capuchn.album.select = function(option,selectid){	
+		console.debug(arguments);
+		//option.text is the album name... or at least the text
+		//option.value is the id
+		if(selectid == "sideAlbum"){
+			Capuchn.album.sideAlbumSelected = option.value;
+			var kw = {
+				url: "images/adminsidefiles/"+option.value,
+				load: function(response){
+						var thumbdiv = dijit.byId("sidethumbnails");
+						thumbdiv.destroyDescendants();
+						thumbdiv.setContent(response);
+					},
+				error: function(data){
+						console.debug("An error occurred: ", data);
+					},
+				timeout: 2000
+			};
+			dojo.xhrPost(kw);
+		}else{
+			Capuchn.album.mainAlbumSelected = option.value;
+			mywidget = dijit.byId("imageManageTab");
+			if(mywidget){
+				tabUrl = "images/index/"+option.value;
+				mywidget.setHref(tabUrl);
+			}
+		}
+	}
+	
+	Capuchn.album.update = function(){
+		//get json albumlist
+		var kw = {
+		url: "albums/aslist",
+		handleAs:"json-comment-filtered",
+		load: function(responseObj, ioargs){
+				if (responseObj['status']) {
+					Capuchn.album.list = responseObj['list'];
+					asb = Capuchn.getElementsByClassName("albumSelect", "select");
+					if (asb.length > 0) {
+						for (k in asb) {
+							tmp = asb[k];
+							tmp.onChange = Capuchn.album.select;
+							tmp.options.length = 0;
+							count = 0;										
+							for (j in Capuchn.album.list.items) {
+								console.debug(j);
+								tmp.options[count] = new Option(Capuchn.album.list.items[j]['name'], Capuchn.album.list.items[j]['id']);	
+								count++;
+							}
+						}
+
+					}else{
+						console.debug("no elements found");
+					}
+				}else{
+					console.debug("status not ture");
+				}
+			},
+		error: function(data){
+				console.debug("An error occurred: ", data);
+			},
+		timeout: 2000
+		};
+		dojo.xhrPost(kw);
+	}
+	
+	Capuchn.album.del = function(albumid, nodeToRemove){
+		//	function deleteAlbum(albumid, nodeToRemove){
+		if (confirm('Delete Album' + albumid + "?")) {
+			//send 
+			var kw = {
+				url: "albums/delete/" + albumid,
+				handleAs:"json-comment-filtered",
+	 			load: function(responseObj,ioargs){
+					Capuchn.album.update();
+					//dojo.publish("updateAlbums", ["deleteAlbum"]);
+					save_response_callback_json(responseObj);
+				},
+				error: function(data){
+					console.debug("An error occurred: ", data);
+				},
+				timeout: 2000
+			};
+			dojo.xhrPost(kw);
+			if(nodeToRemove){
+				nodeToRemove.parentNode.removeChild(nodeToRemove);
+			}
+			
+		}
+	
+	}
+	
+	function CapuchnImage(){
+		//marker and defaults.
+	}
+	
+	Capuchn.image = new CapuchnImage();
+	
+	Capuchn.image.upload = function(tform){
+		thisform = dojo.byId(tform);
+		if (tform == "imgextendedside") {
+			albumid = Capuchn.album.sideAlbumSelected;
+			content = "sideAlbum";
+		}else{
+			albumid = Capuchn.album.mainAlbumSelected;
+			content = "mainAlbum";
+		}
+		if(thisform != undefined){
+			if(thisform['Filedata'].value == ""){
+				alert("select file first");
+				return;
+			}
+			console.debug("currentAlbum: "+albumid);
+			thisform['data[Image][album_id]'].value = albumid;			
+		}
+		
+		var bindArgs = {
+			url: "images/upload",
+			form: tform,
+			method: "post",
+			handleAs: "json",
+			load: function(data) {
+				Capuchn.album.change(content);
+			},
+			error: function(data) {
+				alert('Error uploading see console');
+				console.debug(data);
+			}
+		};
+		
+		// dispatch the request
+		req=dojo.io.iframe.send(bindArgs);			
+		return false;
+	}
+	
+	Capuchn.image.del = function(){
+		
+	}
+	
+	Capuchn.image.multimove = function(){
+		alert("multi move is not yet implimented");
+	}
+	
+	Capuchn.image.multidelete = function(){	
+		var frm = dojo.byId("imgindexform");
+		var selectedImages = Array();		
+		/*FF only
+		for( img in frm.elements ){
+			if ((frm.elements[img].name == "imgcheck") && (frm.elements[img].checked==true)) {
+				selectedImages.push(frm.elements[img]);
+			}
+		}
+		*/
+		
+		for (var i=0; i < frm.elements.length; i++) {
+		   var element = frm.elements[i];
+		   if ((element.name == "imgcheck") && (element.checked==true)) {
+				selectedImages.push(element);
+		   }		   
+		}
+		
+		if (confirm("Delete images?")) {
+			for (slc in selectedImages) {
+				console.debug(selectedImages[slc].id);
+				var myimgid = selectedImages[slc].id.split("_");//sleeping beauty
+				if (myimgid.length > 1) {
+					//the id of the image should be the very last section of the id
+					var url = myimgid[myimgid.length - 1];
+				}
+				else {
+					alert("cannot parse image id");
+				}
+				deleteImage(url,true)
+				
+			}
+		}else{
+			console.debug("delete canceled")
+		}
+	}
+	
+	Capuchn.image.editname = function(idOfBox, value){
+    	console.debug("Edited value from "+idOfBox+" is now "+value);
+    	var myimgid = idOfBox.split("_");//sleeping beauty
+    	if (myimgid.length > 1) {
+			//the id of the image should be the very last section of the id
+			var url = myimgid[myimgid.length-1];
+		}else{
+    		alert("cannot parse image id");
+    	}
+		
+		img = {"id":url, "value":value};
+		dojo.rawXhrPost( {
+	        url: "images/update/"+url,
+	        handleAs: "json-comment-filtered",
+	        postData: dojo.toJson(img),
+	        timeout: 1000,
+	        load: function(response, ioArgs) {
+				save_response_callback_json(response);
+	        },
+	        error: function(response, ioArgs) {
+	                return response;
+	        }
+		});		
+	}
+	
+	Capuchn.image.editlink = function(idOfBox, value){
+		//called when the link is clicked		
+    	console.debug("not editable - disable editing... make this onClick and set to copy");
+	}
+	
+	Capuchn.image.thumbclick = function(obj){
+    	var tid=obj.id;
+    	var idarr = tid.split("_");
+    	if(idarr.length > 1){
+    		var myid = idarr[idarr.length-1];//seems to be the way to go.
+    	}else{
+    		var myid = "0";
+    	}	
+    	var editpath = "images/edit/"+myid;
+    	var diagid = "imgdialog"+myid
+    	//check for existing
+    	if(dojo.byId(diagid) == null){
+    		var myimgdialog = new dijit.Dialog({id:diagid, href:editpath});
+    	}else{
+    		var myimgdialog = dijit.byId(diagid);
+    	}
+    	myimgdialog.show();
+	}
+
+
 	function loadTree()
 	{
 	        oldTree =  dijit.byId("contentTree");
@@ -404,37 +600,7 @@
 			loadVol(currentIndex.substring(2));
 		}
 	}
-
-
-	
-	function imagesTab(){
-		if(currentAlbum == undefined){
-			currentAlbum = 0;
-		}
-		tabUrl = "images/index/"+currentAlbum;
-		newTabId = "imageManageTab";
-		mywidget = dijit.byId(newTabId);
-		var tabcontain = dijit.byId('mainTabContainer');
-		if (!mywidget) {
-			var newtab = new dojox.layout.ContentPane({
-				id: newTabId,
-				title: "Images",
-				closable: true,
-				selected: true,
-				href: tabUrl,
-				executeScripts: true
-			});
-			newtab.onClose = function(){
-				this.destroyDescendants();
-				return true;
-			}		
-			tabcontain.addChild(newtab);
-		}else{
-			newtab = mywidget;
-		}
-	   	tabcontain.selectChild(newtab);		
-	}
-	
+		
 	function editFileTab(file){
 		//This should be the model for a tab creator function... since most are very similar
 		tabUrl = "admin/readfile/"+file;
@@ -521,55 +687,7 @@
 	   	tabcontain.selectChild(newtab);
 	}
 	
-	function albumTab(){
-		tabUrl = "albums/index";
-		newTabId = "albumManageTab";
-		mywidget = dijit.byId(newTabId);
-		var tabcontain = dijit.byId('mainTabContainer');
-		if (!mywidget) {
-		
-			var newtab = new dojox.layout.ContentPane({
-				id: newTabId,
-				title: "Albums",
-				closable: true,
-				selected: true,
-				href: tabUrl,
-				executeScripts: true
-				//onLoad: seteditor
-			});
-			newtab.onClose = function(){
-				this.destroyDescendants();
-				return true;
-			}				
-			tabcontain.addChild(newtab);
-		}else{
-			newtab = mywidget;
-		}
-	   	tabcontain.selectChild(newtab);
-	}
-	
-	function deleteAlbum(albumid, nodeToRemove){
-		if (confirm('Delete Album' + albumid + "?")) {
-			//send 
-			var kw = {
-				url: "albums/delete/" + albumid,
-				handleAs:"json-comment-filtered",
-	 			load: function(responseObj,ioargs){
-					dojo.publish("updateAlbums", ["deleteAlbum"]);
-					save_response_callback_json(responseObj);
-				},
-				error: function(data){
-					console.debug("An error occurred: ", data);
-				},
-				timeout: 2000
-			};
-			dojo.xhrPost(kw);
-			if(nodeToRemove){
-				nodeToRemove.parentNode.removeChild(nodeToRemove);
-			}
-			
-		}
-	}
+
 	
 	function deleteMailbox(mboxid,nodeToRemove){
 		if (confirm('Delete mailbox ' + mboxid + "?")) {
@@ -864,6 +982,7 @@
 	}
 	
 	function getWidget(name){
+		alert('Old getWidget name')
 		var kw = {
 			url: "widget/getAdmin/"+name,
 			timeout: 2000,
@@ -935,92 +1054,261 @@
 		 
 	}	
 	
-	function dojofileupload(target){
-		//setup the form
-		thisform = dojo.byId('imgextended');
-		if(thisform != undefined){
-			if(thisform['Filedata'].value == ""){
-				alert("select file first");
-				return;
-			}
-			console.debug("currentAlbum: "+currentAlbum);
-			thisform['data[Image][album_id]'].value = currentAlbum;
-			console.debug(thisform);		
-		}
-		
-		var bindArgs = {
-			url: "images/upload",
-			form: "imgextended",
-			method: "post",
-			handleAs: "json",
-			load: function(data) {				
-				console.debug(data);
-				dojo.publish('changeAlbum',[currentAlbum]);
-			},
-			error: function(data) {
-				alert('Error uploading see console');
-				console.debug(data);
-			}
-		};
-		
-		// dispatch the request
-		req=dojo.io.iframe.send(bindArgs);			
-		return false;
-	}
+
 	
 
 
-    function thumbClick(obj){
-    	var tid=obj.id;
-    	var idarr = tid.split("_");
-    	if(idarr.length > 1){
-    		var myid = idarr[idarr.length-1];//seems to be the way to go.
-    	}else{
-    		var myid = "0";
-    	}	
-    	var editpath = "images/edit/"+myid;
-    	var diagid = "imgdialog"+myid
-    	//check for existing
-    	if(dojo.byId(diagid) == null){
-    		var myimgdialog = new dijit.Dialog({id:diagid, href:editpath});
-    	}else{
-    		var myimgdialog = dijit.byId(diagid);
-    	}
-    	myimgdialog.show();
-    }
 	
 
     
-	function myHandler(idOfBox, value) {
-    	console.debug("Edited value from "+idOfBox+" is now "+value);
-    	var myimgid = idOfBox.split("_");//sleeping beauty
-    	if (myimgid.length > 1) {
-			//the id of the image should be the very last section of the id
-			var url = myimgid[myimgid.length-1];
-		}else{
-    		alert("cannot parse image id");
-    	}
-    	var ext = dojo.byId("imgextended");
-    	ext.elements[0].value=url;
-    	ext.elements[1].value = value;
-    	ext.elements[2].value = "";//userid ... not yet. 
-    	ext.elements[3].value = "";//albumid
-    	
-    	submitFormData("images/update/"+url, ext, updateResponse);		
-    }    
-	
+
 
 
 	
     var updateResponse = function(response){
     	//what to be done?
     }
-    function imageLinkHandler(idOfBox, value){
-    	console.debug("not editable - disable editing... make this onClick and set to copy");
-    }
+
 	
 	function loadWidget(thename){
 		console.debug("you rang?");
+	}
+	
+	function CapuchnWidget(){
+		this.columns = 2;
+		this.layout = [];
+		this.config = {"last":1,"layout":[[],[]]};//default config
+	}
+	
+	Capuchn.widget = new CapuchnWidget();
+	
+	Capuchn.widget.saveConfig = function(){
+		
+		dojo.rawXhrPost({
+				url: "user/saveconfig",
+				handleAs: "json-comment-filtered",
+				postData: dojo.toJson(Capuchn.widget.config),
+				timeout: 1000,
+				load: function(response, ioArgs){
+					console.debug(response);
+					return response;
+				},
+				error: function(response, ioArgs){
+					console.debug(response);
+					return response;
+				}
+		});
+		
+	}
+	
+	Capuchn.widget.add = function(widgetId){
+		Capuchn.widget.config.last++;
+		console.debug("Length is " + Capuchn.widget.config.layout[0].length);
+		idx = Capuchn.widget.config.layout[0].length++;
+		
+		//uneeded, just do it in the layout itself
+		//Capuchn.widget.config[Capuchn.widget.config.last] = {"id":widgetId};//config options
+		Capuchn.widget.config.layout[0][idx] =  {"id":widgetId,"instanceid":Capuchn.widget.config.last} ;
+		console.debug("Length is now: " + idx);
+		console.debug(Capuchn.widget.config);
+		Capuchn.widget.saveConfig();
+		Capuchn.widget.get(Capuchn.widget.config.last);
+	}
+	
+	Capuchn.widget.info = function(iid){
+		//search for the widget in the layout by its instance id and
+		//return the config object along with its 'address'
+		widg = null
+		for (j in Capuchn.widget.config.layout) {
+			for (i in Capuchn.widget.config.layout[j]) {
+				if (Capuchn.widget.config.layout[j][i].instanceid == iid) {
+					widg = Capuchn.widget.config.layout[j][i];
+					widg.col = j;
+					widg.row = i;
+					break;
+				}
+			}
+			if(widg != null)break;//not sure if the above will break both loops
+		}
+		return widg;		
+	}
+	
+	Capuchn.widget.get = function(instanceid){
+		if(Capuchn.widget.pending != null){
+			console.debug("Pending widget still, cannot get", Capuchn.widget.pending);
+			return;
+		}
+		
+		Capuchn.widget.pending = Capuchn.widget.info(instanceid);
+		console.debug("row,col - "+Capuchn.widget.pending.row+" , "+Capuchn.widget.pending.col);
+		if(Capuchn.widget.pending == null){
+			Console.debug('Failed to fetch widget info');
+			return;
+		}
+		//getting ajax widget.... 
+		var kw = {
+			url: "widget/getajaxwidget/"+instanceid,
+			postData: {"requested":"1"},
+			timeout: 2000,
+			//handleAs: "json-comment-filtered",
+			error: function(data,ioargs){
+				console.debug("error occurred in Capuchn.get.widget: ",data);
+			},
+			load: function(response,ioargs){
+				Capuchn.widget.display(response);
+				//displayWidget(response);
+			}
+		}
+		dojo.xhrPost(kw);
+	}
+	
+	Capuchn.widget.display = function(response){
+		//there is really no good reason why I would want to do this
+		//the way I have been. so.... just
+		if(Capuchn.widget.pending == null){
+			alert("No widgets pending display");
+			return;
+		}
+		
+//		var widgetWrapper = document.createElement("div");
+//		widgetWrapper.innerHTML(response);
+		
+		superNode = document.createElement('div');
+		superNode.innerHTML = response;
+		for(i in superNode.childNodes){
+			if (superNode.childNodes[i].tagName == "DIV") {
+				widgetNode = superNode.childNodes[i];
+				break;
+			}
+		}
+		
+		//widgetNode = document.createTextNode(response);
+		console.debug('The column is : column_'+Capuchn.widget.pending.col);
+		column = dojo.byId('column_'+Capuchn.widget.pending.col);
+		rowcount = 0;
+		added = false;
+		
+		for(i in column.childNodes){
+			if(column.childNodes[i].tagName == "DIV"){
+				if (Capuchn.widget.pending.row == rowcount) {
+					column.insertBefore(widgetNode, column.childNodes[i]);
+					added = true;
+					break;
+				}else if (Capuchn.widget.pending.row < rowcount) {
+					//I dont think I can ever get here.
+					column.appendChild(widgetNode);
+					added = true;
+					break;
+				} else {
+					rowcount++;//found a div
+				}
+			}
+		}
+		//fell off the end... append
+		if(!added)column.appendChild(widgetNode);
+		
+		//been inserted. i guess. set pending to null
+		Capuchn.widget.pending = null;
+
+	}
+	
+	Capuchn.widget.move = function(iid,dir){
+		
+		curr = Capuchn.widget.info(iid);
+		
+		if (dir == "left") {
+			if (curr.col == 0) {
+				console.debug('Already in left most col');
+				return;
+			}
+			//update the config,
+			//update the dom
+			Capuchn.widget.config.layout[curr.col].splice(curr.row, 1);
+			Capuchn.widget.config.layout[curr.col - 1].push(curr);
+			//just in case someone is relying on row and col 
+			curr = Capuchn.widget.info(iid);
+			currNode = dojo.byId("wrapper_" + iid);
+			curr.col = parseInt(curr.col);
+			oldcol = dojo.byId("column_" + (curr.col + 1));
+			newcol = dojo.byId("column_" + curr.col);
+			oldcol.removeChild(currNode);
+			newcol.appendChild(currNode);
+		} else if (dir == "right"){
+			
+			if (curr.col ==	(Capuchn.widget.columns-1)) {
+				console.debug('Already in right most col');
+				return;
+			}
+			//update the config,
+			//update the dom
+			curr.col = parseInt(curr.col);
+			console.debug(typeof curr.col);
+			Capuchn.widget.config.layout[curr.col].splice(curr.row, 1);
+			Capuchn.widget.config.layout[curr.col + 1].push(curr);
+			//just in case someone is relying on row and col 
+			curr = Capuchn.widget.info(iid);
+			currNode = dojo.byId("wrapper_" + iid);
+			oldcol = dojo.byId("column_" + (curr.col - 1));
+			newcol = dojo.byId("column_" + curr.col);
+			oldcol.removeChild(currNode);
+			newcol.appendChild(currNode);
+		} else if (dir == "up"){
+			if(curr.row == 0){
+				console.debug("already at top");
+				return;
+			}
+			//swap in array
+			tmp = Capuchn.widget.config.layout[curr.col][curr.row-1]	
+			Capuchn.widget.config.layout[curr.col][curr.row-1] = curr;
+			Capuchn.widget.config.layout[curr.col][curr.row] = tmp;
+			aboveiid = Capuchn.widget.config.layout[curr.col][curr.row].instanceid;
+			currNode = dojo.byId("wrapper_" + iid);
+			aboveNode = dojo.byId("wrapper_" + aboveiid);
+			currcol = dojo.byId("column_" + curr.col);
+			currcol.removeChild(currNode);
+			currcol.insertBefore(currNode,aboveNode);
+
+		}else if (dir == "down"){
+			console.debug(Capuchn.widget.config.layout[curr.col].length);
+			console.debug(curr.row);
+			if(curr.row >= (Capuchn.widget.config.layout[curr.col].length-1)){
+				console.debug("already at bottom");
+				return;
+			}
+			//swap in array
+			curr.row = parseInt(curr.row);
+			tmp = Capuchn.widget.config.layout[curr.col][curr.row+1]	
+			console.debug(tmp);
+			Capuchn.widget.config.layout[curr.col][curr.row+1] = curr;
+			Capuchn.widget.config.layout[curr.col][curr.row] = tmp;
+			
+			belowiid = Capuchn.widget.config.layout[curr.col][curr.row].instanceid;
+			currNode = dojo.byId("wrapper_" + iid);
+			currcol = dojo.byId("column_" + curr.col);
+			currcol.removeChild(currNode);
+			//if at bottom, append, otherwise, insert befire the next node.
+			if (Capuchn.widget.config.layout[curr.col].length >= (curr.row + 2)) {
+				currcol.appendChild(currNode);
+			}
+			else {
+				aboveiid = Capuchn.widget.config.layout[curr.col][curr.row + 2].instanceid;
+				aboveNode = dojo.byId("wrapper_" + aboveiid);
+				currcol.insertBefore(currNode,aboveNode);
+			}
+		}
+		Capuchn.widget.saveConfig();
+		
+	}
+	
+	Capuchn.widget.close = function(iid){
+		curr = Capuchn.widget.info(iid);
+		curr.col = parseInt(curr.col);;
+		Capuchn.widget.config.layout[curr.col].splice(curr.row, 1);
+		//just in case someone is relying on row and col 
+		currNode = dojo.byId("wrapper_" + iid);
+		oldcol = dojo.byId("column_" + (curr.col));
+		oldcol.removeChild(currNode);
+		Capuchn.widget.saveConfig();
 	}
 	
 	function addWidget(widgetId){
@@ -1036,6 +1324,7 @@
 	}
 	
 	function saveWidgetConfig(){
+		alert("old widget code");
 		if (widgetConfig != undefined) {
 			dojo.rawXhrPost({
 				url: "user/saveconfig",
@@ -1107,6 +1396,7 @@
 			console.debug("already as far left as possible");
 		}else{
 			var widgetLimbo  = widgetConfig.layout.columnTwo[pos];
+			//widgetLimbo is a number, this would actually be the widget instance
 			for(x = pos; x < widgetConfig.layout.columnTwo.length-1; x++){
 				widgetConfig.layout.columnTwo[x] = widgetConfig.layout.columnTwo[x+1];				
 			}
@@ -1296,43 +1586,7 @@
 	}
 	
 	
-	function imageDeleteFiles(){
-		var frm = dojo.byId("imgindexform");
-		var selectedImages = Array();		
-		/*FF only
-		for( img in frm.elements ){
-			if ((frm.elements[img].name == "imgcheck") && (frm.elements[img].checked==true)) {
-				selectedImages.push(frm.elements[img]);
-			}
-		}
-		*/
-		
-		for (var i=0; i < frm.elements.length; i++) {
-		   var element = frm.elements[i];
-		   if ((element.name == "imgcheck") && (element.checked==true)) {
-				selectedImages.push(element);
-		   }		   
-		}
-		
-		if (confirm("Delete images?")) {
-			for (slc in selectedImages) {
-				console.debug(selectedImages[slc].id);
-				var myimgid = selectedImages[slc].id.split("_");//sleeping beauty
-				if (myimgid.length > 1) {
-					//the id of the image should be the very last section of the id
-					var url = myimgid[myimgid.length - 1];
-				}
-				else {
-					alert("cannot parse image id");
-				}
-				deleteImage(url,true)
-				
-			}
-		}else{
-			console.debug("delete canceled")
-		}
-		
-	}
+
 		
 	function saveSiteVars(){
 		var kw = {
