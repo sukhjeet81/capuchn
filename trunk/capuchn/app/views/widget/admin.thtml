@@ -1,0 +1,43 @@
+<?php
+/*will display a widget for the 'home' page
+ * $output is the only set var. 
+ * $output = array(
+ * "name"=>$widg['Widget']['name'], 
+ * "widgetcode"=>$widg['Widget']['admin_xhtml'], 
+ * "id"=>$widg['Widget']['id']);
+ * if "instance id" then use that
+ * 
+ * 
+ * Need to inject any config code...
+ * id should be an instance id so that it will be easy to address this byId
+ */
+ 
+ if(isset($output['instanceid'])){
+ 	$id = $output['instanceid'];
+ }else{
+ 	$id = $output['id'];
+ }
+ 
+?>
+
+<div id="wrapper_<?php echo $id?>" class="widgetSource">
+	<div class="widget">
+		<div class="widgetTop">
+			<div>
+				<img onclick="Capuchn.widget.move('<?php echo $id ?>','left')" src="img/left_button.png"/>
+				<img onclick="Capuchn.widget.move('<?php echo $id ?>','up')" src="img/up_button.png"/>
+				<img onclick="Capuchn.widget.move('<?php echo $id ?>','down')" src="img/down_button.png"/>
+				<img onclick="Capuchn.widget.move('<?php echo $id ?>','right')" src="img/right_button.png"/>
+				<img onclick="Capuchn.widget.close('<?php echo $id ?>')" src="img/close_button.png"/>
+				<h3><?php echo $output['name'];?></h3>
+				<a href="#" onclick="Capuchn.widget.instanceedit('<?php echo $id ?>')">Edit</a>
+			</div>
+		</div>
+		<div class="widgetContent">
+			<?php echo $output['widgetcode'];?>		
+		</div>
+		<div class="widgetBottom">
+			<div></div>
+		</div>
+	</div>
+</div>
