@@ -41,11 +41,23 @@ class UserController extends AppController
 			$uid = $this->Session->read('id');
 			$this->User->id = $uid;
 			$user = $this->User->read();		
-			$this->set('user_profile',$user['User']['profile']);
+			$profile = $user['User']['profile'];
 		}else{
 			//TODO set default profile?
-			$this->set('user_profile','{"default":"not logged in"}');
+			$profile = '{"default":"not logged in"}';			
 		}		
+		
+		//convert profile to php
+		vendor('JSON');
+		$js = new Services_JSON();
+		$prof = $js->decode($profile);
+		
+		//$prof['layout']['columnOne'][0] = "widgetid"
+		//$prof['widgetid'] = array containing setup vars.
+				
+		$this->set('user_profile',$profile);//for use by the ajax interface
+		$this->set('php_profile',$prof);//for use in display
+		
 		$this->set('output','NOTHING TO SEE HERE!');
     	$this->render('home','ajax');
     }

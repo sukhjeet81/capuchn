@@ -7,6 +7,7 @@
 	//remove slashes on save
 	<?php echo "var txt =".$user_profile.";" ?>
 	var widgetConfig = eval(txt);
+	Capuchn.widget.config = widgetConfig;
 	var wrapperCount = 1;
 	var widgetTargets = [];
 	var targetNode = null;
@@ -19,6 +20,7 @@
 			widgetConfig["layout"] = {"columnOne":[],"columnTwo":[]};
 		}
 		layout = widgetConfig.layout;
+		/*
 		for(widg in layout.columnOne){
 			//console.debug("colOne get"+widg);
 			getWidget(widgetConfig.layout.columnOne[widg]);
@@ -27,7 +29,7 @@
 			//console.debug("colTwo get",widg);
 			getWidget(widgetConfig.layout.columnTwo[widg]);
 		}
-		
+		*/
 		//for( var wname in widgetConfig ){
 		//	getWidget(wname);	
 		//}
@@ -89,13 +91,38 @@
 	
 </script>
 
+<?php
+//have the html to display and go ahead and write the html here
+/*
+ * convert the profile to an php array 
+ * write out html according to profile. 
+ * ensure that the page will handle ajax updates in the same way.
+ * 
+ */
+
+?>
+
 <div id="maincontain">
-	<div id="widgetcolumns" 
+	<div id="widgetcolumns" style="display:inline"
 		dojoType="dojox.layout.ContentPane" 
-		title="widgetpanel1"
-	>
-		<div id="widgetcolumnone" style="width:50%"></div>
-		<div id="widgetcolumntwo" style="width:50%"></div>
+		title="widgetpanel1">
+		
+		<?php
+			$this->log($php_profile);
+			$prct = "50";//should be dynamic
+			foreach($php_profile->layout as $key => $column){
+				//I want to get the widget here, but I want to 
+				echo "<div id=\"column_".$key."\" style=\"float:left; width:".$prct."%\">";
+				foreach($php_profile->layout[$key] as $wdgt){
+					if(isset($wdgt->id)){
+						$this->requestAction('widget/getAdmin/'.$wdgt->id, array('instanceid'=>$wdgt->instanceid));		
+					}else{
+						$this->requestAction('widget/getAdmin/'.$wdgt, array('test'=>'ruckus'));	
+					}					
+				}
+				echo "</div>";
+			}
+		?>
 	</div>
 <div id="debugbox"></div>
 

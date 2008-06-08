@@ -35,22 +35,62 @@
 </head>
 <body class="tundra">
 <div dojoType="dijit.layout.LayoutContainer" style="width: 100%; height: 100%; padding: 0; margin: 0; border: 0;">
-   <div dojoType="dijit.layout.ContentPane" layoutAlign="top" style="margin: 5px" id="topContentPane">
+   <div dojoType="dijit.layout.ContentPane" layoutAlign="top" style="margin-bottom: 2px" id="topContentPane">
 		<div id="header">
 			<div id="titlebox">
-				<?php echo $html->image("sinvertical_title_admin.png", array('width'=>'164','height'=>'75')) ;?>
+				<?php echo $html->image("CapuchnLogo75h.png", array('width'=>'307','height'=>'75')) ;?>
 			</div>
+			<div id="toolbar1" dojoType="dijit.Toolbar">
+				<div dojoType="dijit.form.ComboButton" onclick="loadMag('0');">
+			    <span>New</span>
+		            <div dojoType="dijit.Menu" toggle="fade" style="display: none;">
+		                <div dojoType="dijit.MenuItem" onclick="loadMag('0');">
+		                    New Mag
+		                </div>
+		                <div dojoType="dijit.MenuItem" onclick="loadVol('0');">
+		                    New Volume
+		                </div>
+		                <div dojoType="dijit.MenuItem" onclick="Capuchn.album.adddialog();">
+		                    New Album
+		                </div>
+		            </div>
+			    </div>
+				<div dojoType="dijit.form.ComboButton" onclick="Capuchn.newtab('admin/site','siteManageTab','Site')">
+			    <span>Manage</span>
+		            <div dojoType="dijit.Menu" toggle="fade" style="display: none;">
+		                <div dojoType="dijit.MenuItem" onclick="Capuchn.newtab('admin/site','siteManageTab','Site')">
+		                    Manage Site
+		                </div>
+		                <div dojoType="dijit.MenuItem" onclick="Capuchn.newtab('theme/themelist','themelisttab','Theme List');">
+		                    Manage Themes
+		                </div>
+		                <div dojoType="dijit.MenuItem" onclick="Capuchn.newtab('albums/index','albumlisttab','Album List');">
+		                    Manage Albums
+		                </div>
+						<div dojoType="dijit.MenuItem" onclick="mailboxesTab();">
+		                    Manage Mailboxes
+		                </div>
+		            </div>
+			    </div>
+				<span dojoType="dijit.ToolbarSeparator"></span>
+				<button dojoType="dijit.form.Button" onclick="Capuchn.viewSiteTab()">View Site</button>
+				<button dojoType="dijit.form.Button" onclick="Capuchn.refreshTabs()">Refresh Tabs</button>
+				<span dojoType="dijit.ToolbarSeparator"></span>
+				<a style="position:relative; top:10px right:10px;" href="<?php echo BASE ?>user/logout">Logout.</a>
+		   </div>
+		   <!--
 			<a href="<?php echo BASE ?>admin/">Admin Home</a>			
 			<a href="#" onClick="mailboxesTab();">Mailboxes</a>
-			<a href="#" onClick="albumTab();">Albums</a>
+			<a href="#" onClick="Capuchn.newtab('albums/index','albumlisttab','Album List');">Albums</a>
 			<a href="#" onClick="siteTab();">Site</a>
-			<a href="#" onClick="imagesTab();">Manage Images</a>
+			<a href="#" onClick="Capuchn.newtab('images/index/0','imageManageTab','Manage Images');">Manage Images</a>
 			<a href="#" onClick="Capuchn.newtab('theme/themelist','themelisttab','Theme List');">Manage Themes</a>
 			<a href="#" onClick="Capuchn.viewSiteTab()">View Me!</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a style="float:right;" href="<?php echo BASE ?>user/logout">Logout.</a>
+			<a style="position:relative; top:10px right:10px;" href="<?php echo BASE ?>user/logout">Logout.</a>
+			-->
 		</div>
-		<div id="save_note_0" style="background:red; float:right;opacity: 0;">Saved!</div>		
+		<div id="save_note_0" style="background:red; position:absolute; right:10px; top:10px; opacity: 0;">Saved!</div>		
 	</div>
 	<!-- End top layout -->
 	<!-- Start Where code goes -->

@@ -1,124 +1,42 @@
-<?php 
-/*
- * Images/index view
- * This should be called into a layout that has loaded swfupload components and has some 'global' functions
- * like submit form 
- */
-?>
-<script>
-	dojo.addOnLoad(function(){
-        console.debug("Successfully loaded!");
-        //swfuInit("manager");
-    });
-
-    function thumbClick(obj){
-    	var tid=obj.id;
-    	var idarr = tid.split("_");
-    	if(idarr.length > 1){
-    		var myid = idarr[1];
-    	}else{
-    		var myid = "0";
-    	}	
-    	var editpath = "<?php echo BASE."images/edit/"?>"+myid;
-    	var diagid = "imgdialog"+myid
-    	//check for existing
-    	if(dojo.byId(diagid) == null){
-    		var myimgdialog = new dijit.Dialog({id:diagid, href:editpath});
-    	}else{
-    		var myimgdialog = dijit.byId(diagid);
-    	}
-    	myimgdialog.show();
-    }
-    dojo.require("dojo.parser");
-    dojo.require("dijit.InlineEditBox");
-    dojo.require("dijit.form.TextBox");
-    dojo.require("dijit.form.ComboBox");
-    dojo.require("dijit.Dialog");
-    function myHandler(idOfBox, value) {
-    	console.debug("Edited value from "+idOfBox+" is now "+value);
-    	var myimgid = idOfBox.split("_");//sleeping beauty
-    	if(myimgid.length > 1){
-    		var url = myimgid[myimgid.length-1];
-    	}else{
-    		alert("cannot parse image id");
-    	}
-    	var ext = dojo.byId("imgextended");
-    	ext.elements[0].value = url;
-    	ext.elements[1].value = value;
-    	ext.elements[2].value = "";//userid ... not yet. 
-    	ext.elements[3].value = "";//albumid
-    	
-    	submitFormData("<?php echo BASE?>images/update/"+url, ext, updateResponse);
-    }    
-    var updateResponse = function(response){
-    	//what to be done?
-    }
-    function imageLinkHandler(idOfBox, value){
-    	console.debug("not editable - disable editing... make this onClick and set to copy");
-    }
-	
-	function changeManagerAlbum(newAlbum){		
-		console.debug(arguments);
-		console.debug("changeManagerAlbum: "+dijit.byId("managerSelect").value);
-		dojo.publish("changeAlbum", [newAlbum]);
-	}
-    
-</script>
-
-<style type="text/css">
-        @import "<?php echo BASE ?>css/swfupload.css";
-</style>
-	<div id="title" class="title">Upload Images</div>
-		<div id="managerswfu_container" style="margin: 0px 0px;">
-			<div>
-			
+	<div id="title" class="title">Manage Images</div>
+			<div id="imageManageControls">			
 				<div dojoType="dijit.form.ComboButton" onclick="" style="display:inline">
 		    		<span>Actions...</span>
 		            <div dojoType="dijit.Menu" toggle="fade" style="display: none;">
-		                <div dojoType="dijit.MenuItem" onclick="imageDeleteFiles()">
+		                <div dojoType="dijit.MenuItem" onclick="Capuchn.image.multidelete()">
 		                    Delete Files
 		                </div>
-		                <div dojoType="dijit.MenuItem" onclick="">
+		                <div dojoType="dijit.MenuItem" onclick="Capuchn.image.multimove()">
 		                    Move to album
-		                </div>
-						<div dojoType="dijit.MenuItem" onclick="dojofileupload(this);">
-		                    Upload
 		                </div>
 		            </div>
 		        </div>
-				
-				<select name="state1" id="managerSelect" 
-                		dojoType="dijit.form.ComboBox"
-                		autocomplete="false"
-                		onChange="changeManagerAlbum">
-	                <!-- <option selected="selected">Select Album</option> -->
-					<?php		
-										
-						foreach($albums as $a){
-							if($selectedalbum == $a['Album']['id']){
-								$selected = "selected=\"selected\"";
-							}else{
-								$selected = "";
-							}
-							echo "<option ".$selected." value=\"".$a['Album']['id']."\">".$a['Album']['name']."</option>";							
+				<select class="albumSelect dijitComboBox" id="mainAlbum" onChange="Capuchn.album.select(this.options[selectedIndex],this.id)">
+				<?php
+					$aslist = $this->requestAction('albums/aslist');
+					foreach($aslist as $album){
+						$selectstring = "";
+						if($selectedalbum == $album['Album']['id']){
+							$selectstring = " selected=\"selected\" ";
 						}
-					?>
-        		</select>
-				<form id="imgextended" style="display:inline">
+						echo "<option value=\"".$album['Album']['id']."\" ".$selectstring.">".$album['Album']['name']."</option>";
+					}
+				?>				
+				</select>	
+
+				<form id="imgextendedmain" style="display:inline" enctype="multipart/form-data" method="post">
 					<?php echo $html->input('Image/id',array('type'=>'hidden'));?>
 					<?php echo $html->input('Image/name',array('type'=>'hidden'));?>
 					<?php echo $html->input('Image/user_id',array('type'=>'hidden'));?>
 					<?php echo $html->input('Image/album_id',array('type'=>'hidden'));?>
 					<input name="Filedata" type="file"></input>
+					<button dojoType="dijit.form.Button" onclick="Capuchn.image.upload('imgextendedmain')">-upload-</button>
 				</form>	
 				
 			</div>
-
-			<div id="managerdivFileProgressContainer" style=""></div>
 			<form id="imgindexform">
 			<div id="thumbnails">
 			<?php 
-				//TODO: Add a form for each image , delete, rename, select album
 				foreach($files as $file){
 					echo "<div class=\"thumbdivdock\" id=\"thumbddock_".$file['Image']['id']."\">";
 					echo "<div class=\"thumbnailContainer\" id=\"thumb_".$file['Image']['id']."\">";
@@ -131,18 +49,18 @@
            				type="checkbox" />
 					<?php
 					echo "<div class=\"thumbNormalizeSize\">";
-					echo "<img class=\"thumb\" id=\"img_".$file['Image']['id']."\" src=\"".$path.$file['Image']['thumb']."\" onClick=\"thumbClick(this)\"/>";
+					echo "<img class=\"thumb\" id=\"img_".$file['Image']['id']."\" src=\"".$path.$file['Image']['thumb']."\" onClick=\"Capuchn.image.thumbclick(this)\"/>";
 					echo "</div>";//end normalizeSize
 					?>
 					<div id="mng_editable_<?php echo $file['Image']['id']?>" class="thumbtext" 
                 		dojoType="dijit.InlineEditBox" 
-                		onChange="myHandler(this.id,arguments[0])">
+                		onChange="Capuchn.image.editname(this.id,arguments[0])">
                 		<?php echo $file['Image']['name'];?>
     				</div>
 					<div id="mng_imagelink_<?php echo $file['Image']['id']?>" class="thumbtext" 
                 		dojoType="dijit.InlineEditBox" 
-                		onChange="imageLinkHandler(this.id,arguments[0])"
-                		onClick="imageLinkHandler(this.id,arguments[0])">
+                		onChange="Capuchn.image.editlink(this.id,arguments[0])"
+                		onClick="Capuchn.image.editlink(this.id,arguments[0])">
                 		<?php echo $baseurl.$file['Image']['location'];?>
     				</div>
 					<?php 
@@ -154,9 +72,7 @@
 			?>			
 			</div>
 			</form>
-		</div>
 	</div>
-	<div id="managerswftarget"/>
 
 
 	

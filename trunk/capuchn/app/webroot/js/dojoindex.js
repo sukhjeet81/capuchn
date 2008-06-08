@@ -1311,41 +1311,128 @@
 		Capuchn.widget.saveConfig();
 	}
 	
-	function addWidget(widgetId){
-		//need to pull the configuration, 
-		if(widgetConfig != undefined){			
-			widgetConfig[""+widgetId] = {"prof":"save"};
-			widgetConfig.layout.columnOne.push(widgetId);
-			this.saveWidgetConfig();
-		}else{
-			console.debug("WidgetConfig... what a concept");
-		}
-		getWidget(widgetId);
+	Capuchn.widget.instanceedit = function(iid){
+		//get vars, any type
+		Capuchn.widget.createPrefsForm(iid);
 	}
 	
-	function saveWidgetConfig(){
-		alert("old widget code");
-		if (widgetConfig != undefined) {
-			dojo.rawXhrPost({
-				url: "user/saveconfig",
-				handleAs: "json-comment-filtered",
-				postData: dojo.toJson(widgetConfig),
-				timeout: 1000,
-				load: function(response, ioArgs){
-					console.debug(response);
-					return response;
-				},
-				error: function(response, ioArgs){
-					console.debug(response);
-					return response;
+	Capuchn.widget.createPrefsForm = function(iid){
+		//I suppose it needs to be iid to get the html node
+		curr = Capuchn.widget.info(iid);
+		currNode = dojo.byId("wrapper_" + iid);
+		prefs = currNode.getElementsByTagName("PREFERENCES");
+			
+		formelm = [];	
+		for(i in prefs){
+			formelements = {}
+			if (prefs[i].attributes != undefined) {
+				for (j in prefs[i].attributes) {
+					if (prefs[i].attributes[j].name == "default") {
+						formelements.def = prefs[i].attributes[j].value;
+					}
+					else 
+						if (prefs[i].attributes[j].name == "type") {
+							val = prefs[i].attributes[j].value;
+							switch (val) {
+								case "number":
+									formelements.type = "number";
+									break;
+								case "number":
+									formelements.type = "boolean";
+									break;
+								case "number":
+									formelements.type = "static";
+									break;
+								case "text":
+								default:
+									formelements.type = "text";
+							}
+						}
+						else 
+							if (prefs[i].attributes[j].name == "value") {
+								formelements.value = prefs[i].attributes[j].value;
+							}
+							else {
+								formelements[prefs[i].attributes[j].name] = prefs[i].attributes[j].value;
+							}
 				}
-			});
-		}else{
-			console.debug("widgetConfig is not here...")
+				formelm.push(formelements);
+			}
+			//could check here to make sure there are enough elements. but i dont want to
+			
 		}
+		console.debug(formelm);
 		
+		//generate a form based off of this 
+		////////////////////////////
+		//see if we have thi saved and make sure to use the save values as defaults
+		////////////////////////////
+		
+		//create table		
+		tbl = document.createElement("table");
+		for(obj in formelm){
+			cname = formelm[obj].name;
+			cval = formelm[obj].value;
+			cdef = formelm[obj].def;
+			rw = document.createElement("tr");
+			dttitle = document.createElement("td");
+			dttitle.innerHTML = cname;
+			rw.appendChild(dttitle);
+
+			dt = document.createElement("td");
+			rw.appendChild(dt);
+			switch (formelm[obj].type){
+				case "text":
+					ipt = document.createElement("input");
+					ipt.name = cname;
+					ipt.value = cval;
+					ipt.innerHTML = cval;
+					dt.appendChild(ipt)
+					console.debug("ipt: "+cval);
+					dipt = new dijit.form.TextBox({name:cname,value:cval},ipt);					
+					break;
+				case "boolean":
+					ipt = document.createElement("input");
+					dt.appendChild(ipt)
+					dipt = new dijit.form.CheckBox({},ipt);
+					dipt.name = cname;
+					dipt.value = cval;
+					break;
+				case "static":
+					dt.appendChild(document.createTextNode(cval));
+					break;
+			}
+			tbl.appendChild(rw);
+		}
+		btn = document.createElement('button');
+		nrw = document.createElement("tr");
+		nd = document.createElement("td");
+		nd.colspan = "2";
+		nrw.appendChild(nd);
+		nd.appendChild(btn);
+		tbl.appendChild(nrw);
+		btn.innerHTML = "submit";
+		dbtn = new dijit.form.Button({type:"submit"},btn);
+	
+		diag = document.createElement("div");
+		diag.appendChild(tbl);
+		ddiag = new dijit.Dialog({},diag);
+		ddiag.execute = function(){
+			console.debug(arguments);
+			Capuchn.widget.savewidgetinstance(arguments[0]);
+		}
+		ddiag.show()
 	}
 	
+	Capuchn.widget.savewidgetinstance = function(){
+		console.debug("still not saving instance vars");
+		console.debug(arguments[0]);
+		//arguments 0 here seems to have all the form data needed, we probably also want to add
+		//the instance id in the form... just for good measure :)
+	}
+	
+	
+	//editor
 	function saveWidget(button){
 		dataWidgetAdmin.toggleEditor();
 		dataWidgetDisplay.toggleEditor();
@@ -1370,224 +1457,7 @@
 		dataWidgetDisplay.toggleEditor();
 		dataWidgetCallback.toggleEditor();
 	}
-	
-	
-	function moveWidgetLeft(wid){
-		col = 0;
-		pos = -1;
-		//Find the widget in the layout array, probably a better way to do this but...
-		for (var x = 0; x < widgetConfig.layout.columnOne.length; x++) {
-			if (widgetConfig.layout.columnOne[x] == wid) {
-				col = 1;
-				pos = x;
-				break;
-			}
-		}
-		if (col == 0) {
-			for (var x = 0; x < widgetConfig.layout.columnTwo.length; x++) {
-				if (widgetConfig.layout.columnTwo[x] == wid) {
-					col = 2;
-					pos = x;
-					break;
-				}
-			}
-		}
-		if(col < 1){
-			console.debug("already as far left as possible");
-		}else{
-			var widgetLimbo  = widgetConfig.layout.columnTwo[pos];
-			//widgetLimbo is a number, this would actually be the widget instance
-			for(x = pos; x < widgetConfig.layout.columnTwo.length-1; x++){
-				widgetConfig.layout.columnTwo[x] = widgetConfig.layout.columnTwo[x+1];				
-			}
-			widgetConfig.layout.columnTwo.pop();
-			widgetConfig.layout.columnOne.push(widgetLimbo);
-			parentCol = activeWidgets[widgetLimbo].parentNode;
-			parentCol.removeChild(activeWidgets[widgetLimbo]);
-			newCol = dojo.byId("widgetcolumnone");
-			newCol.appendChild(activeWidgets[widgetLimbo]);
-			saveWidgetConfig();
-		}
-		
-		
-	}
-	
-	function moveWidgetRight(wid){
-		col = 0;
-		pos = -1;
-		//Find the widget in the layout array, probably a better way to do this but...
-//		if (widgetConfig.layout.columnOne.length == 1) {
-//			console.debug("cannot remove last widget from this column")
-//		}
-		for (var x = 0; x < widgetConfig.layout.columnOne.length; x++) {
-			if (widgetConfig.layout.columnOne[x] == wid) {
-				col = 1;
-				pos = x;
-				break;
-			}
-		}
-		if (col == 0) {
-			for (var x = 0; x < widgetConfig.layout.columnTwo.length; x++) {
-				if (widgetConfig.layout.columnTwo[x] == wid) {
-					col = 2;
-					pos = x;
-					break;
-				}
-			}
-		}
-		if((col == 2)|| (col == 0)){
-			console.debug("cannot move this widget col is :" + col);
-			console.debug(widgetConfig.layout);
-		}else{
-			var widgetLimbo  = widgetConfig.layout.columnOne[pos];
-			for(x = pos; x < widgetConfig.layout.columnOne.length-1; x++){
-				widgetConfig.layout.columnOne[x] = widgetConfig.layout.columnOne[x+1];				
-			}
-			widgetConfig.layout.columnOne.pop();
-			widgetConfig.layout.columnTwo.push(widgetLimbo);
-			parentCol = activeWidgets[widgetLimbo].parentNode;
-			parentCol.removeChild(activeWidgets[widgetLimbo]);
-			newCol = dojo.byId("widgetcolumntwo");
-			newCol.appendChild(activeWidgets[widgetLimbo]);
-			saveWidgetConfig();
-		}
-	}
-	
-	function moveWidgetUp(wid){
-		col = 0;
-		pos = -1;
-		for (var x = 0; x < widgetConfig.layout.columnOne.length; x++){
-			if(widgetConfig.layout.columnOne[x]==wid){
-				col = 1;
-				pos = x;
-				break;
-			}
-		}
-		if(col == 0){
-			for (var x = 0; x < widgetConfig.layout.columnTwo.length; x++){
-				if(widgetConfig.layout.columnTwo[x]==wid){
-					col = 2;
-					pos = x;
-					break;
-				}
-			}
-		}
-		if((col == 0) || (pos == 0)){
-			console.debug("cannot move this widget...")
-		}else{
-			if (col == 1) {
-				movewidget = widgetConfig.layout.columnOne[pos];
-				movedwidget = widgetConfig.layout.columnOne[pos - 1];
-				widgetConfig.layout.columnOne[pos - 1] = movewidget;
-				widgetConfig.layout.columnOne[pos] = movedwidget;
-			}else{
-				movewidget = widgetConfig.layout.columnTwo[pos];
-				movedwidget = widgetConfig.layout.columnTwo[pos - 1];
-				widgetConfig.layout.columnTwo[pos - 1] = movewidget;
-				widgetConfig.layout.columnTwo[pos] = movedwidget;
-			}
-			parentCol = activeWidgets[movewidget].parentNode;
-			parentCol.removeChild(activeWidgets[movewidget]);
-			parentCol.insertBefore(activeWidgets[movewidget],activeWidgets[movedwidget]);
-			saveWidgetConfig();
-		}
-	}
-	
-	function moveWidgetDown(wid){
-		col = 0;
-		pos = -1;
-		//Find the widget in the layout array, probably a better way to do this but...
-		for (var x = 0; x < widgetConfig.layout.columnOne.length; x++) {
-			if (widgetConfig.layout.columnOne[x] == wid) {
-				col = 1;
-				pos = x;
-				break;
-			}
-		}
-		if (col == 0) {
-			for (var x = 0; x < widgetConfig.layout.columnTwo.length; x++) {
-				if (widgetConfig.layout.columnTwo[x] == wid) {
-					col = 2;
-					pos = x;
-					break;
-				}
-			}
-		}
-		
-		if (col == 1){
-			var currcolLength = widgetConfig.layout.columnOne.length;
-		}else if(col == 2){
-			var currcolLength = widgetConfig.layout.columnTwo.length;
-		}
-		//Reposition elements in layout array and in dom
-		if((col == 0) || (pos == (currcolLength-1))){
-			console.debug("cannot move this widget...")
 
-		}else{
-			if (col == 1) {
-				movewidget = widgetConfig.layout.columnOne[pos];
-				movedwidget = widgetConfig.layout.columnOne[pos + 1];
-				widgetConfig.layout.columnOne[pos + 1] = movewidget;
-				widgetConfig.layout.columnOne[pos] = movedwidget;
-			}else{
-				movewidget = widgetConfig.layout.columnTwo[pos];
-				movedwidget = widgetConfig.layout.columnTwo[pos + 1];
-				widgetConfig.layout.columnTwo[pos + 1] = movewidget;
-				widgetConfig.layout.columnTwo[pos] = movedwidget;
-			}
-			parentCol = activeWidgets[movewidget].parentNode;
-			parentCol.removeChild(activeWidgets[movewidget]);
-			parentCol.insertAfter(activeWidgets[movewidget],activeWidgets[movedwidget]);
-			saveWidgetConfig();	
-		}
-		
-		
-	}
-	
-	function closeWidget(wid){
-		col = 0;
-		pos = -1;
-		//Find the widget in the layout array, probably a better way to do this but...
-		for (var x = 0; x < widgetConfig.layout.columnOne.length; x++) {
-			if (widgetConfig.layout.columnOne[x] == wid) {
-				col = 1;
-				pos = x;
-				break;
-			}
-		}
-		if (col == 0) {
-			for (var x = 0; x < widgetConfig.layout.columnTwo.length; x++) {
-				if (widgetConfig.layout.columnTwo[x] == wid) {
-					col = 2;
-					pos = x;
-					break;
-				}
-			}
-		}
-		if (col == 1) {
-			var widgetLimbo = widgetConfig.layout.columnOne[pos];
-			for (x = pos; x < widgetConfig.layout.columnOne.length - 1; x++) {
-				widgetConfig.layout.columnOne[x] = widgetConfig.layout.columnOne[x + 1];
-			}
-			widgetConfig.layout.columnOne.pop();
-		}else{
-			var widgetLimbo = widgetConfig.layout.columnTwo[pos];
-			for (x = pos; x < widgetConfig.layout.columnTwo.length - 1; x++) {
-				widgetConfig.layout.columnTwo[x] = widgetConfig.layout.columnTwo[x + 1];
-			}
-			widgetConfig.layout.columnTwo.pop();
-		}
-		widgetLimbo = dojo.byId(activeWidgets[widgetLimbo].id);
-		//console.debug( activeWidgets[widgetLimbo]);
-		parentCol = widgetLimbo.parentNode;
-		parentCol.removeChild(widgetLimbo);		
-		saveWidgetConfig();
-		console.debug("Deleted widget"+wid);
-	}
-	
-	
-
-		
 	function saveSiteVars(){
 		var kw = {
 	    	url: 'admin/updatesite',
@@ -1621,31 +1491,6 @@
 		};
 		dojo.xhrPost(kw);
 		fileEditor.toggleEditor();
-	}
-	
-	function siteTab(){
-		tabUrl = "admin/site";
-		newTabId = "siteManageTab";
-		mywidget = dijit.byId(newTabId);
-		var tabcontain = dijit.byId('mainTabContainer');
-		if (!mywidget) {
-			var newtab = new dojox.layout.ContentPane({
-				id: newTabId,
-				title: "Site",
-				closable: true,
-				selected: true,
-				href: tabUrl,
-				executeScripts: true
-			});
-			newtab.onClose = function(){
-				this.destroyDescendants();
-				return true;
-			}				
-			tabcontain.addChild(newtab);
-		}else{
-			newtab = mywidget;
-		}
-	   	tabcontain.selectChild(newtab);
 	}
 		
 	function deleteImage(imageId,needconfirm){

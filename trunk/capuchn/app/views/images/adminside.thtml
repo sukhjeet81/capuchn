@@ -8,19 +8,19 @@
  	displayImages($files,$path);
 	exit();
  }
- //was going to do things different
+ //If we are updating the display only then we go ahead and just refresh the images.
  function displayImages($filess,$path){
 	foreach($filess as $file){
 		echo "<div class=\"thumbdivdock\" id=\"sidethumbddock_".$file['Image']['id']."\">";
 		echo "<div class=\"thumbnailContainer\" id=\"thumb_".$file['Image']['id']."\">";
 		echo "<div class=\"thumbNormalizeSize\" dojoType=\"dojo.dnd.Source\" copyOnly=\"true\">";
 		//echo "<img class=\"thumb\" id=\"img_".$file['Image']['id']."\" src=\"".$path.$file['Image']['thumb']."\" onClick=\"thumbClick(this)\"/>";
-		echo "<img filename=\"".$file['Image']['location']."\" class=\"dojoDndItem\" dndType=\"image\" id=\"img_".$file['Image']['id']."\" trelsrc=\"".$path.$file['Image']['thumb']."\" src=\"".$path.$file['Image']['thumb']."\" width=\"40\" height=\"40\" onClick=\"thumbClick(this)\"/>";
+		echo "<img filename=\"".$file['Image']['location']."\" class=\"dojoDndItem\" dndType=\"image\" id=\"img_".$file['Image']['id']."\" trelsrc=\"".$path.$file['Image']['thumb']."\" src=\"".$path.$file['Image']['thumb']."\" width=\"40\" height=\"40\" onClick=\"Capuchn.image.thumb(this)\"/>";
 		echo "</div>";//end normalizeSize
 		?>
 		<div id="editable_<?php echo $file['Image']['id']?>" class="thumbtext" 
 			dojoType="dijit.InlineEditBox" 
-			onChange="myHandler(this.id,arguments[0])">
+			onChange="Capuchn.image.editname(this.id,arguments[0])">
 			<?php echo $file['Image']['name'];?>
 		</div>
 		<?php 
@@ -36,38 +36,51 @@
 		<!-- <div id="swfu_container" style="display: none; margin: 0px 0px;"> -->
 		<div id="swfu_container" style="margin: 0px 0px;">
 			<div>
-				<form id="imgextended" enctype="multipart/form-data" method="post">
+				<table border=0 cellpadding=0 cellspacing=0 width="100%">
+				<tr>
+					<td>
+					<form id="imgextendedside" enctype="multipart/form-data" method="post">
 					<?php echo $html->input('Image/id',array('type'=>'hidden'));?>
 					<?php echo $html->input('Image/name',array('type'=>'hidden'));?>
 					<?php echo $html->input('Image/user_id',array('type'=>'hidden'));?>
 					<?php echo $html->input('Image/album_id',array('type'=>'hidden'));?>
-					<input name="Filedata" type="file"></input>
-				</form>
-				<?php
-				//<form>
-				//	<button id="btnBrowse" type="button" style="padding: 5px;margin:5px 0 0 10px" onclick="swfu.selectFiles(); this.blur();"><img src="/dev/sinvert/img/page_white_add.png" style="padding-right: 3px; vertical-align: bottom;">Select Images <span style="font-size: 7pt;">(2 MB Max)</span></button>
-				//</form>
-				?>
-				<div dojoType="dijit.form.ComboButton" onclick="dojofileupload(this);">
-		    		<span>Upload Files</span>
-		            <div dojoType="dijit.Menu" id="imgMenu" toggle="fade" style="display: none;">
-		                <div dojoType="dijit.MenuItem" onclick="Capuchn.album.adddialog()">
-		                    New Album
-		                </div>
-		                <div dojoType="dijit.MenuItem" onclick="imagesTab()">
-		                    Manage Files
-		                </div>
-		            </div>
-		        </div>
-				<br/>
-						
-				<div id="albumSelectBox" style="padding:2px">
-					
-				</div>
-				<br/>
+					<input style="font-size:0.7em" name="Filedata" type="file"></input>
+					</form>	
+					</td>
+					<td>
+					<div dojoType="dijit.form.ComboButton" onclick="Capuchn.image.upload('imgextendedside')">
+			    		<span>Upload -></span>
+			            <div dojoType="dijit.Menu" id="imgMenu" toggle="fade" style="display: none;">
+			                <div dojoType="dijit.MenuItem" onclick="Capuchn.album.adddialog()">
+			                    New Album
+			                </div>
+			                <div dojoType="dijit.MenuItem" onclick="imagesTab()">
+			                    Open in tab
+			                </div>
+			            </div>
+		        	</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<select style="width:100%" class="albumSelect dijitComboBox" id="sideAlbum" onChange="Capuchn.album.select(this.options[selectedIndex],this.id)">
+						<?php
+							$aslist = $this->requestAction('albums/aslist');
+							
+							foreach($aslist as $album){
+								$selectstring = "";
+								if($selectedalbum == $album['Album']['id']){
+									$selectstring = " selected=\"selected\" ";
+								}
+								echo "<option value=\"".$album['Album']['id']."\" $selectedstring>".$album['Album']['name']."</option>";
+							}
+						?>				
+						</select>
+					</td>
+				</tr>
+				</table>
 			</div>
-			<div id="divFileProgressContainer" style=""></div>
-			<div style="clear:both" />
+			<br/>
 			<div id="sidethumbnails" dojoType="dojox.layout.ContentPane" >
 			<?php 
 				//TODO: Add a form for each image , delete, rename, select album
@@ -76,12 +89,12 @@
 					echo "<div class=\"thumbnailContainer\" id=\"thumb_".$file['Image']['id']."\">";
 					echo "<div class=\"thumbNormalizeSize\" dojoType=\"dojo.dnd.Source\" copyOnly=\"true\">";
 					//echo "<img class=\"thumb\" id=\"img_".$file['Image']['id']."\" src=\"".$path.$file['Image']['thumb']."\" onClick=\"thumbClick(this)\"/>";
-					echo "<img class=\"dojoDndItem\" dndType=\"image\" id=\"img_".$file['Image']['id']."\" filename=\"".$file['Image']['location']."\" src=\"".$path.$file['Image']['thumb']."\" width=\"40\" height=\"40\" onClick=\"thumbClick(this)\"/>";
+					echo "<img class=\"dojoDndItem\" dndType=\"image\" id=\"img_".$file['Image']['id']."\" filename=\"".$file['Image']['location']."\" src=\"".$path.$file['Image']['thumb']."\" width=\"40\" height=\"40\" onClick=\"Capuchn.image.thumbclick(this)\"/>";
 					echo "</div>";//end normalizeSize
 					?>
 					<div id="editable_<?php echo $file['Image']['id']?>" class="thumbtext" 
                 		dojoType="dijit.InlineEditBox" 
-                		onChange="myHandler(this.id,arguments[0])">
+                		onChange="Capuchn.image.editname(this.id,arguments[0])">
                 		<?php echo $file['Image']['name'];?>
     				</div>
 					<?php 
@@ -97,12 +110,6 @@
 
 	<div id="swftarget"/>
 
-<script>
-	//force loading after this page has loaded
-	dojo.addOnLoad(function(){
-        console.debug("Successfully loaded!");
-		loadAlbumSelect();
-    });
-</script>
+
 
 	

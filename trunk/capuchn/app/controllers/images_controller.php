@@ -48,7 +48,7 @@ class ImagesController extends AppController
 			}
     	}
 		$this->set('selectedalbum',$alid);
-		$this->set('albums', $this->Album->findAll());
+		$this->set('albums', $this->Album->findAll());//go away
     	$this->set('files',$files);
     	$this->set('path',$this->pictures);
     	$this->set('baseurl', $this->fullURL);
@@ -74,7 +74,8 @@ class ImagesController extends AppController
 	
 	function adminside($album=null){
 		//TODO: must load a special layout to include swfupload. ooooh, special
-		
+		$album = mysql_real_escape_string($album);
+		$aid = 0;
     	if($album == null){
     		//$files = $this->Image->findAllByAlbumId('0');
 			//only get the last 10 pics....
@@ -82,11 +83,14 @@ class ImagesController extends AppController
     	}else{
     		if(is_numeric($album)){
 				$files = $this->Image->findAllByAlbumId($album);
+				$aid = $album;
 			}else{
 				$album = $this->Album->findAllByName($album);				
 				$files = $this->Image->findAllByAlbumId($album[0]['Album']['id']);
+				$aid = $album[0]['Album']['id'];
 			}
     	}
+		$this->set('selectedalbum',$aid);
     	$this->set('files',$files);
     	$this->set('path',$this->pictures);
     	$this->set('baseurl', $this->fullURL);
@@ -296,33 +300,36 @@ class ImagesController extends AppController
 	}
 	
 	function update($id){
-		$this->checkSession();
+		$this->checkSessionAjax();
+		vendor('JSON');
+		$js = new Services_JSON();
+		$output = file_get_contents('php://input');
+		$input = $js->decode($output);
+		$stat = array("status"=>false,"message"=>"failed for some reason");
 		if($id != NULL){				
 			$this->Image->id = $id;
-			if(!empty($this->data)){
+			if(!empty($input)){
 				$imgdata = $this->Image->read();
 				//	currently not updating album, only the name
-				$imgdata['Image']['name']=$this->data['Image']['name']; 
+				$imgdata['Image']['name']=$input->value; 
 			
 				 if (!$this->Image->save($imgdata))
 		         {
 		            //$this->validateErrors($this->Image);
-		            $output = "there was a problem:".var_export($this->data,true);		            
+		            $stat['message'] = "Failed to save to db - ".$this->validateError($this->Image);
 		         }else{
-		         	$output = "OK!";
+		         	$stat['status'] = true;
+					$stat['message'] = "Saved new name - ".$input->value;
 		         }
 			}else{
-				$output = "no data sent";
+				$stat['message'] = "Failed to decode, or empty - ".$output;
 			}
 		}else{
-			$output = "no id sent";
+			$stat['message'] = "No ID in url";
 		}
-		$this->set('output', $output);
-		$this->render('upload','ajax');
+		$this->set('output', $stat);
+		$this->render('json','ajax');
 	}
-	
-	
-    
 }
 
 ?>
