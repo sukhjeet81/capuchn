@@ -56,7 +56,7 @@ Should We view pics here?
 				<td class="<? echo $even; ?>">
 					<div id="album_name_<?php echo $album['Album']['id']?>" class="albumeditbox" 
                 		dojoType="dijit.InlineEditBox" 
-                		onChange="albumEditBoxHandler(this.id,arguments[0])">
+                		onChange="Capuchn.album.editBoxHandler(this.id,arguments[0])">
                 		<? echo $album['Album']['name']; ?>
     				</div>					
 				</td>
@@ -73,7 +73,7 @@ Should We view pics here?
 					
 				</td>
 				<td class="<? echo $even; ?>">
-					<a href="#"	onClick="deleteAlbum('<? echo $album['Album']['id']?>',this.parentNode.parentNode)">delete</a>				
+					<a href="#"	onClick="Capuchn.album.del('<? echo $album['Album']['id']?>',this.parentNode.parentNode)">delete</a>				
 				</td>
 				
 				<td class="<? echo $even; ?>">

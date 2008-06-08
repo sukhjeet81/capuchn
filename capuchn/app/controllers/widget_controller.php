@@ -3,6 +3,8 @@ class WidgetController extends AppController
 {
 	var $name = 'Widget';
     var $layout = 'ajax';
+	var $uses = array("Widget","User");
+	
 	
 	//This is a potentially dangerous function, since this would technically allow
 	//code here to execute as a admin space var. 
@@ -33,12 +35,67 @@ class WidgetController extends AppController
 	function getAdmin($id){
 		$this->Widget->id = $id;
 		$widg = $this->Widget->read();
-		$out = "<h1>".$widg['Widget']['name']."</h1>";
-		
 		$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id']);
-		$this->set("output",$output);
-		$this->render("json","ajax");
+		
+		if($this->params['requested']){
+			//Throw the display code
+			//This->params['passed variables from calling function'] 
+			//$this->params['test'] is the var name coming from requested
+			if(isset($this->params['instanceid'])){
+				$output['instanceid'] = $this->params['instanceid']; 
+			}
+			$this->set("output",$output);
+			$this->render("admin","ajax");
+		}else{
+			$this->set("output",$output);
+			$this->render("json","ajax");
+		}
 	}
+	
+	function getajaxwidget($iid){
+		$this->checkSession();
+		if($this->Session->check('id')){	
+			$uid = $this->Session->read('id');
+			$this->User->id = $uid;
+			$user = $this->User->read();		
+			$profile = $user['User']['profile'];
+		}else{
+			//TODO set default profile?
+			$profile = '{"default":"not logged in"}';			
+		}				
+		//convert profile to php
+		vendor('JSON');
+		$js = new Services_JSON();
+		$prof = $js->decode($profile);
+		$widget_config_obj = null;
+		foreach($prof->layout as $colkey => $col){
+			//im looking for the instance id here..
+			foreach($col as $rowkey => $row){
+				if($row->instanceid == $iid){
+					$widget_config_obj = $row;
+					//$this->log("found the instance in the thing");
+					//$this->log($widget_config_obj);
+				}	
+			}
+		}
+		
+		//$prof['layout']['columnOne'][0] = "widgetid"
+		//$prof['widgetid'] = array containing setup vars.
+		
+		$this->Widget->id = $widget_config_obj->id;
+		$widg = $this->Widget->read();
+		$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id']);
+
+		$output['instanceid'] = $widget_config_obj->instanceid; 
+		
+		$this->set('user_profile',$profile);//for use by the ajax interface
+		$this->set('php_profile',$prof);//for use in display
+		$this->set("output",$output);
+				
+		$this->render("admin","ajax");		
+	}
+	
+	
 	
 	function getDisplay($name){
 		//get the display code if possible.

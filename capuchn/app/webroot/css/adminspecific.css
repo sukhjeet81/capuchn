@@ -143,6 +143,16 @@ table.messages td{
 	
 }
 
+#header{
+		background:#F9F9F9;
+		border:1px solid #BFBFBF;
+		margin:0;
+}
+
+#titlebox{
+	margin:5px;
+}
+
 #magform .formline{
 	vertical-align:bottom;
 	height:30px;
