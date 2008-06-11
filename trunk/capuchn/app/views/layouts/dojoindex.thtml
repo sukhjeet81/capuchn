@@ -184,9 +184,13 @@
 				dojoType="dojox.layout.ContentPane" 
 				title="Home"
 				executeScripts="true"
-				<?php echo $tab1href?>
+				<?php /*echo $tab1href*/ ?>
 			>
-		    	<?php echo $content_for_layout?>
+		    	<?php 
+					$this->requestAction("user/home");
+					echo $content_for_layout;
+				 ?>
+		    		
 			</div>
 			<!-- end email content pain -->
 			<?php

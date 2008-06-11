@@ -124492,3 +124492,3161 @@ $mag['Mag']['content'] = implode("",$curr);
 )
 
 2008-06-08 10:56:04 Error: outputing theme: default
+2008-06-08 11:21:43 Error: stdClass Object
+(
+    [last] => 12
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                )
+
+            [1] => Array
+                (
+                )
+
+        )
+
+)
+
+2008-06-08 11:21:50 Error: outputing theme: default
+2008-06-08 11:22:02 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                            [col] => 0
+                            [row] => 0
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:23:06 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                            [col] => 0
+                            [row] => 0
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:23:13 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                            [col] => 0
+                            [row] => 0
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:24:03 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                            [col] => 0
+                            [row] => 0
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:24:24 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                            [col] => 0
+                            [row] => 0
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:26:12 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:29:15 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:29:15 Error: coliumn 0
+2008-06-08 11:29:15 Error: coliumn 1
+2008-06-08 11:29:15 Error: out
+2008-06-08 11:30:04 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:30:04 Error: coliumn 0
+2008-06-08 11:30:04 Error: coliumn 1
+2008-06-08 11:30:04 Error: out
+2008-06-08 11:31:18 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 14
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 11:31:18 Error: coliumn 0
+2008-06-08 11:31:18 Error: coliumn 1
+2008-06-08 11:31:18 Error: out
+2008-06-08 11:33:42 Error: stdClass Object
+(
+    [last] => 14
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                )
+
+            [1] => Array
+                (
+                )
+
+        )
+
+)
+
+2008-06-08 11:33:43 Error: coliumn 0
+2008-06-08 11:33:43 Error: coliumn 1
+2008-06-08 11:33:43 Error: out
+2008-06-08 11:33:43 Error: outputing theme: default
+2008-06-08 11:34:09 Error: stdClass Object
+(
+    [last] => 15
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 15
+                        )
+
+                )
+
+            [1] => Array
+                (
+                )
+
+        )
+
+)
+
+2008-06-08 11:34:09 Error: coliumn 0
+2008-06-08 11:34:09 Error: coliumn 1
+2008-06-08 11:34:09 Error: out
+2008-06-08 11:34:54 Error: stdClass Object
+(
+    [last] => 15
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                        )
+
+                )
+
+            [1] => Array
+                (
+                )
+
+        )
+
+)
+
+2008-06-08 11:34:54 Error: coliumn 0
+2008-06-08 11:34:54 Error: coliumn 1
+2008-06-08 11:34:54 Error: out
+2008-06-08 11:34:54 Error: outputing theme: default
+2008-06-08 11:35:23 Error: stdClass Object
+(
+    [last] => 16
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                        )
+
+                )
+
+            [1] => Array
+                (
+                )
+
+        )
+
+)
+
+2008-06-08 11:35:23 Error: coliumn 0
+2008-06-08 11:35:23 Error: coliumn 1
+2008-06-08 11:35:23 Error: out
+2008-06-08 19:54:01 Error: stdClass Object
+(
+    [last] => 17
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 17
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 19:54:01 Error: coliumn 0
+2008-06-08 19:54:01 Error: coliumn 1
+2008-06-08 19:54:01 Error: out
+2008-06-08 19:59:58 Error: stdClass Object
+(
+    [last] => 17
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 17
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 19:59:58 Error: coliumn 0
+2008-06-08 19:59:58 Error: coliumn 1
+2008-06-08 19:59:58 Error: out
+2008-06-08 20:00:02 Error: outputing theme: default
+2008-06-08 20:10:12 Error: stdClass Object
+(
+    [last] => 18
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 11
+                            [instanceid] => 18
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 17
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 20:10:12 Error: coliumn 0
+2008-06-08 20:10:12 Error: coliumn 1
+2008-06-08 20:10:12 Error: out
+2008-06-08 20:10:15 Error: outputing theme: default
+2008-06-08 20:12:57 Error: stdClass Object
+(
+    [last] => 19
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 19
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 17
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 20:12:57 Error: coliumn 0
+2008-06-08 20:12:57 Error: coliumn 1
+2008-06-08 20:12:57 Error: out
+2008-06-08 20:13:00 Error: outputing theme: default
+2008-06-08 20:14:12 Error: stdClass Object
+(
+    [last] => 20
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 12
+                            [instanceid] => 20
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 17
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 20:14:12 Error: coliumn 0
+2008-06-08 20:14:12 Error: coliumn 1
+2008-06-08 20:14:12 Error: out
+2008-06-08 20:14:16 Error: outputing theme: default
+2008-06-08 20:15:34 Error: Array
+(
+    [pass] => Array
+        (
+            [0] => 22
+        )
+
+    [controller] => widget
+    [action] => getajaxwidget
+    [form] => Array
+        (
+            [requested] => 1
+            [widget] => {"id":"15","instanceid":22,"col":"0","row":"3"}
+        )
+
+    [url] => Array
+        (
+            [url] => widget/getajaxwidget/22
+        )
+
+    [bare] => 0
+    [webservices] => 
+    [plugin] => 
+)
+
+2008-06-08 20:22:18 Error: stdClass Object
+(
+    [last] => 24
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 24
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-08 20:22:18 Error: coliumn 0
+2008-06-08 20:22:18 Error: coliumn 1
+2008-06-08 20:22:18 Error: out
+2008-06-08 20:22:22 Error: outputing theme: default
+2008-06-08 20:23:39 Error: The theme for the current volume is::wookies
+2008-06-08 20:23:39 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:39 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:39 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:39 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:39 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:39 Error: outputing theme: wookies
+2008-06-08 20:23:39 Error: The theme for the current volume is::wookies
+2008-06-08 20:23:40 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:40 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:40 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:40 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:40 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:40 Error: outputing theme: wookies
+2008-06-08 20:23:42 Error: The theme for the current volume is::wookies
+2008-06-08 20:23:42 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:42 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:42 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:42 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:42 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:42 Error: outputing theme: wookies
+2008-06-08 20:23:51 Error: The theme for the current volume is::
+2008-06-08 20:23:51 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:51 Error: outputing theme: default
+2008-06-08 20:23:54 Error: The theme for the current volume is::wookies
+2008-06-08 20:23:54 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:54 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:54 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:54 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:54 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:23:54 Error: outputing theme: wookies
+2008-06-08 20:24:49 Error: The theme for the current volume is::wookies
+2008-06-08 20:24:49 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:24:49 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:24:49 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:24:49 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:24:49 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:24:49 Error: outputing theme: wookies
+2008-06-08 20:25:25 Error: The theme for the current volume is::wookies
+2008-06-08 20:25:25 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:25:25 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:25:25 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:25:26 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:25:26 Error: Array
+(
+    [0] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 1
+                    [name] => test
+                    [text] => yank
+                    [type] => text
+                    [code] => tortoooga ye scurvy manchaods.
+                    [active] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Filter] => Array
+                (
+                    [id] => 2
+                    [name] => breakformore
+                    [text] => \[\[break\]\]
+                    [type] => php
+                    [code] => //if more than one break, just do the first
+if($mag['style'] == 'blog'){
+$mag['Mag']['content'] = $curr[0];
+}else{
+//remove maches
+$mag['Mag']['content'] = implode("",$curr);
+}
+                    [active] => 1
+                )
+
+        )
+
+)
+
+2008-06-08 20:25:26 Error: outputing theme: wookies
+2008-06-10 20:14:43 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:14:43 Error: coliumn 0
+2008-06-10 20:14:43 Error: coliumn 1
+2008-06-10 20:14:43 Error: out
+2008-06-10 20:14:46 Error: outputing theme: default
+2008-06-10 20:25:23 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:25:23 Error: coliumn 0
+2008-06-10 20:25:23 Error: coliumn 1
+2008-06-10 20:25:23 Error: out
+2008-06-10 20:25:27 Error: outputing theme: default
+2008-06-10 20:26:06 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:26:06 Error: coliumn 0
+2008-06-10 20:26:06 Error: coliumn 1
+2008-06-10 20:26:06 Error: out
+2008-06-10 20:26:09 Error: outputing theme: default
+2008-06-10 20:26:14 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:26:14 Error: coliumn 0
+2008-06-10 20:26:14 Error: coliumn 1
+2008-06-10 20:26:14 Error: out
+2008-06-10 20:26:15 Error: outputing theme: default
+2008-06-10 20:26:19 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:26:19 Error: coliumn 0
+2008-06-10 20:26:19 Error: coliumn 1
+2008-06-10 20:26:19 Error: out
+2008-06-10 20:26:20 Error: outputing theme: default
+2008-06-10 20:26:33 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:26:33 Error: coliumn 0
+2008-06-10 20:26:33 Error: coliumn 1
+2008-06-10 20:26:33 Error: out
+2008-06-10 20:26:34 Error: outputing theme: default
+2008-06-10 20:27:30 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:27:30 Error: coliumn 0
+2008-06-10 20:27:30 Error: coliumn 1
+2008-06-10 20:27:30 Error: out
+2008-06-10 20:27:33 Error: outputing theme: default
+2008-06-10 20:28:20 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:28:20 Error: coliumn 0
+2008-06-10 20:28:20 Error: coliumn 1
+2008-06-10 20:28:20 Error: out
+2008-06-10 20:28:24 Error: outputing theme: default
+2008-06-10 20:29:06 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:29:06 Error: coliumn 0
+2008-06-10 20:29:06 Error: coliumn 1
+2008-06-10 20:29:06 Error: out
+2008-06-10 20:29:10 Error: outputing theme: default
+2008-06-10 20:36:41 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:36:41 Error: coliumn 0
+2008-06-10 20:36:41 Error: coliumn 1
+2008-06-10 20:36:41 Error: out
+2008-06-10 20:36:44 Error: outputing theme: default
+2008-06-10 20:38:00 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:38:01 Error: coliumn 0
+2008-06-10 20:38:01 Error: coliumn 1
+2008-06-10 20:38:01 Error: out
+2008-06-10 20:38:04 Error: outputing theme: default
+2008-06-10 20:39:31 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:39:31 Error: coliumn 0
+2008-06-10 20:39:31 Error: coliumn 1
+2008-06-10 20:39:31 Error: out
+2008-06-10 20:39:34 Error: outputing theme: default
+2008-06-10 20:40:03 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-10 20:40:03 Error: coliumn 0
+2008-06-10 20:40:03 Error: coliumn 1
+2008-06-10 20:40:03 Error: out
+2008-06-10 20:40:04 Error: outputing theme: default
+2008-06-11 13:28:09 Error: stdClass Object
+(
+    [last] => 26
+    [layout] => Array
+        (
+            [0] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 13
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 9
+                            [instanceid] => 15
+                            [col] => 0
+                            [row] => 1
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 14
+                            [instanceid] => 21
+                            [col] => 0
+                            [row] => 2
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 15
+                            [instanceid] => 22
+                            [col] => 0
+                            [row] => 3
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 17
+                            [instanceid] => 23
+                            [col] => 0
+                            [row] => 4
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 13
+                            [instanceid] => 25
+                            [col] => 0
+                            [row] => 5
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 10
+                            [instanceid] => 16
+                            [col] => 1
+                            [row] => 0
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 8
+                            [instanceid] => 26
+                            [col] => 1
+                            [row] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+2008-06-11 13:28:09 Error: coliumn 0
+2008-06-11 13:28:09 Error: coliumn 1
+2008-06-11 13:28:09 Error: out
+2008-06-11 13:28:17 Error: outputing theme: default
