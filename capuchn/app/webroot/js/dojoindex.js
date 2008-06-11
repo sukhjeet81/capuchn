@@ -7,6 +7,7 @@
 	dojo.require("dijit.Tooltip");
 	dojo.require("dojo.io.iframe");
 	dojo.require("dijit.Toolbar");
+	dojo.require("dijit.Editor");
 	
 	/*Global variables*/
 	var editorID = 0;
@@ -811,7 +812,7 @@
 		var tabcontain = dijit.byId('mainTabContainer');
 		magcontrolid = "magcontent_"+magindex;
 		if (!mywidget) {
-			var seteditor = function(){
+			var seteditor = function(pnode){
 				console.debug(mostrecenteditor);
 				if(mostrecenteditor == "codepress"){
 					currcontelm = dojo.byId(magcontrolid);
@@ -819,8 +820,19 @@
 					currcontelm.width = "100%";
 					CodePress.run();
 				}else{
-					tinyMCE.execCommand('mceAddControl', true, magcontrolid);					
+					//tinyMCE.execCommand('mceAddControl', true, magcontrolid);					
+					//<textarea name="field" width="200px" dojoType="dijit.Editor">
+				    //    It was a dark and stormy night.  Your story belongs here!
+					//</textarea>
+					console.debug(pnode);
+					dijiEdit = new dijit.Editor({},magcontrolid);
+					//dijiEdit.resize = function(dnode,size){
+					//	this.height(dnode.clientHeight);
+					//	console.debug('editor resize fired');
+					//}
+					
 				}
+				return true;
 			}
 			var newtab = new dojox.layout.ContentPane({
 				id: new_tab_id,
@@ -829,7 +841,7 @@
 				selected: true,
 				href: taburl,
 				executeScripts: true,
-				onLoad: seteditor
+				onLoad: seteditor(new_tab_id)
 			});
 			newtab.onClose = function(){
 				//Get the editor, I suspect that this is not functioning correctly
@@ -1146,9 +1158,10 @@
 			return;
 		}
 		//getting ajax widget.... 
+		
 		var kw = {
 			url: "widget/getajaxwidget/"+instanceid,
-			postData: {"requested":"1"},
+			content: {"requested":"1","widget":dojo.toJson(Capuchn.widget.pending)},
 			timeout: 2000,
 			//handleAs: "json-comment-filtered",
 			error: function(data,ioargs){

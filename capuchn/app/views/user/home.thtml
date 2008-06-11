@@ -6,36 +6,17 @@
 <script type="text/javascript">
 	//remove slashes on save
 	<?php echo "var txt =".$user_profile.";" ?>
+	console.debug("got here 1");
 	var widgetConfig = eval(txt);
 	Capuchn.widget.config = widgetConfig;
+	console.debug("got here");
+	/*
 	var wrapperCount = 1;
 	var widgetTargets = [];
 	var targetNode = null;
 	var isDragging = false;
 	var activeWidgets = [];
 
-	dojo.addOnLoad(function(){
-		//get layout configuration. 
-		if(widgetConfig.layout == undefined){
-			widgetConfig["layout"] = {"columnOne":[],"columnTwo":[]};
-		}
-		layout = widgetConfig.layout;
-		/*
-		for(widg in layout.columnOne){
-			//console.debug("colOne get"+widg);
-			getWidget(widgetConfig.layout.columnOne[widg]);
-		}
-		for(widg in layout.columnTwo){
-			//console.debug("colTwo get",widg);
-			getWidget(widgetConfig.layout.columnTwo[widg]);
-		}
-		*/
-		//for( var wname in widgetConfig ){
-		//	getWidget(wname);	
-		//}
-	});//end addOnLoad
-	
-	
 	function displayWidget(response){
 
 		var widgetWrapper = document.createElement("div");
@@ -54,7 +35,8 @@
 		footer.appendChild(document.createElement("div"));
 		var content = document.createElement("div");
 		//header.innerHTML = response['widgettitle'];
-		
+		*/
+		/*
 		header.innerHTML = "<div><img src=\"img/left_button.png\" onClick=\"moveWidgetLeft("+response['id']+")\"><img src=\"img/up_button.png\" onClick=\"moveWidgetUp("+response['id']+")\"><img src=\"img/down_button.png\" onClick=\"moveWidgetDown("+response['id']+")\"><img src=\"img/right_button.png\" onClick=\"moveWidgetRight("+response['id']+")\"><img src=\"img/close_button.png\" onClick=\"closeWidget("+response['id']+")\">"+response['name']+"</div>";
 		footer.className = "widgetBottom";
 		content.className = "widgetContent";
@@ -80,6 +62,7 @@
 		activeWidgets[''+response['id']] = widgetWrapper;		
 	}
 	
+	
 	function updateWidgetConfig(wconfig){
 		console.debug(wconfig);
 	}
@@ -87,7 +70,7 @@
 	function saveWidgetConfigOld(){
 		console.debug(txt);
 	}
-	
+	*/
 	
 </script>
 
@@ -108,9 +91,11 @@
 		title="widgetpanel1">
 		
 		<?php
+			
 			$this->log($php_profile);
 			$prct = "50";//should be dynamic
 			foreach($php_profile->layout as $key => $column){
+				$this->log("coliumn ".$key);
 				//I want to get the widget here, but I want to 
 				echo "<div id=\"column_".$key."\" style=\"float:left; width:".$prct."%\">";
 				foreach($php_profile->layout[$key] as $wdgt){
@@ -122,6 +107,8 @@
 				}
 				echo "</div>";
 			}
+			$this->log("out");
+			
 		?>
 	</div>
 <div id="debugbox"></div>

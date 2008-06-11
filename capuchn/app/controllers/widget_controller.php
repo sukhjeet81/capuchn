@@ -1,4 +1,4 @@
-<?php
+mv<?php
 class WidgetController extends AppController
 {
 	var $name = 'Widget';
@@ -52,8 +52,14 @@ class WidgetController extends AppController
 		}
 	}
 	
+	function iframe($id){
+		//get the iframe with the widget in the address
+		$this->set("id",$id);
+	}
+	
 	function getajaxwidget($iid){
 		$this->checkSession();
+
 		if($this->Session->check('id')){	
 			$uid = $this->Session->read('id');
 			$this->User->id = $uid;
@@ -73,25 +79,28 @@ class WidgetController extends AppController
 			foreach($col as $rowkey => $row){
 				if($row->instanceid == $iid){
 					$widget_config_obj = $row;
-					//$this->log("found the instance in the thing");
-					//$this->log($widget_config_obj);
 				}	
 			}
 		}
-		
-		//$prof['layout']['columnOne'][0] = "widgetid"
-		//$prof['widgetid'] = array containing setup vars.
-		
-		$this->Widget->id = $widget_config_obj->id;
-		$widg = $this->Widget->read();
-		$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id']);
+		if($widget_config_obj == null){
+			$config = $js->decode($this->params['form']['widget']);
+			if(!isset($config->id)){
+				$this->log("Could not find the id requested");				
+				$bad = true;
+			}
+		}
 
-		$output['instanceid'] = $widget_config_obj->instanceid; 
-		
+		if(!$bad){				
+			$this->Widget->id = $widget_config_obj->id;
+			$widg = $this->Widget->read();
+			$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id']);
+			$output['instanceid'] = $widget_config_obj->instanceid; 
+		}else{
+			$output = array("name"=>"Unknown","widgetcode"=>"Failed to find widget id, no widget fetched","id"=>"-1","instanceid"=>"-1");
+		}		
 		$this->set('user_profile',$profile);//for use by the ajax interface
 		$this->set('php_profile',$prof);//for use in display
-		$this->set("output",$output);
-				
+		$this->set("output",$output);				
 		$this->render("admin","ajax");		
 	}
 	
