@@ -1,4 +1,4 @@
-mv<?php
+<?php
 class WidgetController extends AppController
 {
 	var $name = 'Widget';

@@ -129,6 +129,80 @@ class MagsController extends AppController
 		//id is currently unused.
 	}
 	
+	function dojoedit(){
+		
+		$this->log($this->params);
+		if($id==0){
+			$this->data['Mag']['editor'] = 'html';
+			$this->data['Mag']['type'] = 'html';
+			$this->data['Mag']['header'] = 'New Mag';
+			$this->data['Mag']['volume_id'] = $this->Admin->siteVar('defaultvolume');
+			$this->data['Mag']['id'] = 0;
+			$this->data['Mag']['content'] = "Your data here!";
+		}else{
+			$this->Mag->id = $id;
+			$this->data = $this->Mag->read();
+		}
+		
+		$this->set('output', $this->data);		
+		$this->render('json','ajax');		
+	}
+	
+	function editor($id=null){
+		$this->log("editor");
+		$this->log($this->params);
+		if((!empty($this->params['form'])) && (!isset($this->params['form']['get']))){
+			//we have a winner
+			
+			$status = array('status'=>false,'message'=>'Failed, unknown');
+			$this->datas['Mag']['content'] = $this->params['form']['content'];
+			$this->datas['Mag']['header'] = $this->params['form']['name'];
+			$this->datas['Mag']['volume_id'] = $this->params['form']['volumeid'];
+
+			if(isset($this->params['form']['id'])){
+				$id = $this->params['form']['id'];
+				$this->datas['Mag']['id'] = $id;
+			}
+			$this->log($this->datas);
+			if ($this->Mag->save($this->datas))
+	        {
+				if($id == NULL)$id = $this->Mag->getLastInsertId();
+	        	$status['savedata'] = $this->Mag->read();	        	
+				$status['status'] = true;
+				$status['message'] = "Mag saved! - ".$id;
+	         }
+	         else
+	         {
+	            $saveErrors = $this->validateErrors($this->Mag);
+				$status['message'] = "Failed: ".var_export($saveErrors,true);					
+	         }
+			 $this->set('output',$status);
+			 $this->render('json','ajax');
+			 exit(0);
+		}else{
+			//no data sent or get is set. 
+			if($id == 0)$id = null;
+			if($id != null){
+				$this->Mag->id = $id;
+				$this->set("mag",$this->Mag->read());			
+			}else if(isset($this->params['form']['id'])){
+				$this->Mag->id = $this->params['form']['id'];
+				$this->set("mag",$this->Mag->read());							
+			}else{
+				$this->data['Mag']['editor'] = 'html';
+				$this->data['Mag']['type'] = 'html';
+				$this->data['Mag']['header'] = 'New Mag';
+				$this->data['Mag']['volume_id'] = $this->Admin->siteVar('defaultvolume');
+				$this->data['Mag']['id'] = 0;
+				$this->data['Mag']['header'] = "name";
+				$this->data['Mag']['content'] = "Your data here!";
+				$this->set('mag',$this->data);
+			}
+		}
+		$this->set("what","whatever");
+		$this->render('editor','ajax');
+	}
+	
 	function edit($id = NULL){
 		$this->checkSession();	 
 		//if saving, then we return a json string.

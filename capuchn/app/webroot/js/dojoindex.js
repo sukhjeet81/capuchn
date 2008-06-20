@@ -3,12 +3,23 @@
 	* Rev 15
 	* 
 	*/
+	
+	
+	
 	var Capuchn = {};
 	dojo.require("dijit.Tooltip");
 	dojo.require("dojo.io.iframe");
 	dojo.require("dijit.Toolbar");
 	dojo.require("dijit.Editor");
+	dojo.require("dijit.layout.ContentPane");
+	dojo.require("capuchn.CapuchnEditor");
 	
+	//var volumeStore = new dojo.data.ItemFileReadStore({data: dataItems});
+	//var volumeStore = dojo.data.ItemFileReadStore({
+	//		jsId: "volumeStore",
+	//		url: "volumes/storeJson"
+	//	});
+	//dojo.addOnLoad(Capuchn.volumeStore);
 	/*Global variables*/
 	var editorID = 0;
 	var lastResponse = Array();
@@ -18,6 +29,9 @@
 	var contentDirectory;
 	var albumDirectory;
 	var mostrecenteditor = "tinymce";
+	var capuchnImageStore = new dojo.data.ItemFileReadStore({url:"images/imageStore"});
+	console.debug(capuchnImageStore);
+	
 	
 	dojo.subscribe("updateTree", function(caller){
 		loadTree();
@@ -131,6 +145,16 @@
 		for(i=0;i<childs.length;i++){
 			childs[i].refresh();
 		}
+	}
+	
+	Capuchn.makeVolumeStore = function(){
+		/*
+		volumeStore = dojo.data.ItemFileReadStore({
+			jsId: "volumeStore",
+			url: "volumes/storeJson"
+		});
+		volumeStore.startup();
+		*/
 	}
 	
 	/*Capuchn theme code*/
@@ -805,7 +829,44 @@
 		}
 	}
 	
-	function loadMag(magindex){		
+	
+	
+	function loadMag(magindex){	
+		var new_tab_id = "mag_"+magindex;
+		var mywidget = dijit.byId(new_tab_id);
+		var tabcontain = dijit.byId('mainTabContainer');
+		magcontrolid = "magcontent_"+magindex;
+		if (!mywidget) {
+			console.debug("new tab idx: "+magindex);
+			var newtab = new dijit.layout.ContentPane({
+				id: new_tab_id,
+				title: "Post " + magindex,
+				closable: true,
+				href:"mags/editor/"+magindex,
+				selected: true,
+			});
+			
+			/*seems this method does not work on ff3 because of security...?
+			editDiv = dojo.doc.createElement("div");
+			dijEdit = new capuchn.CapuchnEditor({},editDiv);
+			newtab.addChild(dijEdit);
+			*/
+			
+			newtab.onClose = function(){
+				//Get the editor, I suspect that this is not functioning correctly
+				//sometimes because triggerSave fails
+				this.destroyDescendants();
+				return true;
+			}
+			tabcontain.addChild(newtab);
+		}else{
+			newtab = mywidget;
+			console.debug("old widget found.");
+		}
+	   	tabcontain.selectChild(newtab);	
+	}
+	
+	function loadMagOld(magindex){		
 		var taburl = "mags/edit/"+magindex;
 		var new_tab_id = "mag_"+magindex;
 		var mywidget = dijit.byId(new_tab_id);
@@ -1549,51 +1610,6 @@
 		
 	}
 	
-	    
-    //TODO: change css link
-     
-	tinyMCE.init({
-		    theme : "advanced",
-		    mode : "none",
-		    //elements : "elm1",
-		    //save_callback : "mySave",
-		    content_css : "css/mce.css",
-		    extended_valid_elements : "a[href|target|name]",
-		    plugins : "save,table",
-		    theme_advanced_buttons1_add_before : "code,save,separator",
-		    //theme_advanced_buttons3_add_before : "tablecontrols,separator",
-		    //invalid_elements : "a",
-		    theme_advanced_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Highlight=highlight", // Theme specific setting CSS classes
-		    execcommand_callback : "myCustomExecCommandHandler",
-		    theme_advanced_toolbar_align : "left",
-		    theme_advanced_buttons3 : "",
-		    theme_advanced_toolbar_location : "top",
-		    apply_source_formatting : true,
-			//document_base_url : "/dev/sinvert/",
-			//relative_url : true,
-			//remove_script_host : false,
-			//save_callback : "MamboSave",
-			urlconverter_callback: "conurl", 
-			//documentBaseURL : baseurl,
-		    gecko_spellcheck : true,
-		    debug : true,
-		    init_instance_callback : "myInitFunction",
-			handle_event_callback : "myHandleEvent",
-		    width : "100%",
-			height: "100%"
-		    
-	});
-	
-	function conurl(url, node, on_save) {
-	   // strUrl=strUrl.replace("../","");
-	   t = tinyMCE.activeEditor;
-	   u = t.documentBaseURI.toAbsolute(url, t.settings.remove_script_host);
-	   strUrl = url;
-	   
-	   console.debug("Convert url:"+strUrl);
-	   return strUrl;
-	} 
-	
 	function myHandleEvent(e) {
 		//console.debug( "event:" + e.type);
 		if (e.type == "mouseup") {			
@@ -1674,112 +1690,6 @@
 
 		return true; // Continue handling
 	}
-
-	function myInitFunction(inst) {
-	    var editorFrame, editorX, editorY, winHeight, editorMaxHeight, IE;	    
-	    editorResize(inst);
-		window.onresize = function () {
-	        editorResize(inst);
-			
-	    };
-	}
-	
-	function editorResize(inst) {
-	    var editorFrame, editorX, editorY, winHeight, editorMaxHeight, IE;    
-	    var oldElement = inst.getElement();
-		if (oldElement != undefined) {
-			editorY = oldElement.parentNode.offsetParent.offsetHeight;
-			document.getElementById(inst.editorId).style.height = (editorY - 103) + "px";
-			//TODO: add this function to the function list
-			frame = document.getElementById(inst.editorId + "_ifr");
-			frame.style.height = (editorY - 103) + "px";
-		}
-		//if oldElelment is undefined then this instance is no longer valid
-	}
- 
-      // Custom event handler
-	function myCustomExecCommandHandler(editor_id, elm, command, user_interface, value) {
-	    var linkElm, imageElm, inst;
-	
-	    switch (command) {
-	        case "mceSave":
-	        	mceSubmitForm(editor_id);
-	        	return true;
-	        	
-	        case "smceLink":
-	            inst = tinyMCE.getInstanceById(editor_id);
-	            linkElm = tinyMCE.getParentElement(inst.selection.getFocusElement(), "a");
-	
-	            if (linkElm)
-	                alert("Link dialog has been overriden. Found link href: " + tinyMCE.getAttrib(linkElm, "href"));
-	            else
-	                alert("Link dialog has been overriden.");
-	
-	            return true;
-	
-	        case "mceImages":
-	            inst = tinyMCE.getInstanceById(editor_id);
-	            imageElm = tinyMCE.getParentElement(inst.selection.getFocusElement(), "img");
-	
-	            if (imageElm)
-	                alert("Image dialog has been overriden. Found image src: " + tinyMCE.getAttrib(imageElm, "src"));
-	            else
-	                alert("Image dialog has been overriden.");
-	
-	            return true;
-	    }
-	
-	    return false; // Pass to next handler in chain
-	}
- 
-    // Custom save callback, gets called when the contents is to be submitted
-    
-    function fileBrowserCallBack(field_name, url, type, win) {
-		// This is where you insert your custom filebrowser logic
-		console.debug("Filebrowser callback: field_name: " + field_name + ", url: " + url + ", type: " + type);
-
-		// Insert new URL, this would normaly be done in a popup
-		win.document.forms[0].elements[field_name].value = "someurl.htm";
-	}
-	
-	resizeEditorBox = function (editor) {
-	    // Have this function executed via TinyMCE's init_instance_callback option!
-	    // requires TinyMCE3.x
-	    var container = editor.contentAreaContainer, /* new in TinyMCE3.x -
-	        for TinyMCE2.x you need to retrieve the element differently! */
-	        formObj = document.forms[0], // this might need some adaptation to your site
-	        dimensions = {
-	            x: 0,
-	            y: 0,
-	            maxX: 0,
-	            maxY: 0
-	        }, doc, docFrame;
-	
-	    dimensions.x = formObj.offsetLeft; // get left space in front of editor
-	    dimensions.y = formObj.offsetTop; // get top space in front of editor
-	
-	    dimensions.x += formObj.offsetWidth; // add horizontal space used by editor
-	    dimensions.y += formObj.offsetHeight; // add vertical space used by editor
-	
-	    // get available width and height
-	    if (window.innerHeight) {
-	        dimensions.maxX = window.innerWidth;
-	        dimensions.maxY = window.innerHeight;
-	    } else {
-			// check if IE for CSS1 compatible mode
-	        doc = (document.compatMode && document.compatMode == "CSS1Compat")
-	            ? document.documentElement
-	            : document.body || null;
-	        dimensions.maxX = doc.offsetWidth - 4;
-	        dimensions.maxY = doc.offsetHeight - 4;
-	    }
-	
-	    // extend container by the difference between available width/height and used width/height
-	    docFrame = container.children [0] // doesn't seem right : was .style.height;
-	    docFrame.style.width = container.style.width = (container.offsetWidth + dimensions.maxX - dimensions.x - 2) + "px";
-	    docFrame.style.height = container.style.height = (container.offsetHeight + dimensions.maxY - dimensions.y - 2) + "px";
-	}
-	
 
    /*
     * dump (object, string, "<br/>", "&nbsp;", 5)
