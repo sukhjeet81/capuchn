@@ -330,6 +330,39 @@ class ImagesController extends AppController
 		$this->set('output', $stat);
 		$this->render('json','ajax');
 	}
+	
+	function imageStore($album=null){
+		//
+		$album = mysql_real_escape_string($album);
+		$height = 50;
+		if($album == null){
+			$files = $this->Image->findAll("`album_id`=0");
+    	}else{
+    		if(is_numeric($album)){
+				$files = $this->Image->findAllByAlbumId($album);
+			}else{			
+				$album = $this->Album->findAllByName($album);
+				$files = $this->Image->findAllByAlbumId($album[0]['Album']['id']);
+			}
+    	}
+		$js = array();
+		$js['items'] = array();
+		
+		foreach($files as $file){
+			$nf = array();
+			$nf['thumb'] = $this->Admin->siteVar("imagepath").$file['Image']['thumb'];
+			$nf['title'] = $file['Image']['name'];
+			$nf['large'] = $this->Admin->siteVar("imagepath").$file['Image']['location'];
+			$nf['link'] = $this->Admin->siteVar("absoluteimageurl").$file['Image']['location'];
+			$nf['width'] = $file['Image']['width'];
+			$nf['height'] = $file['Image']['height'];
+			$nf['id'] = $file['Image']['id'];
+			$nf['album'] = $file['Image']['album_id'];
+			$js['items'][] = $nf;
+		}
+		$this->set("output",$js);
+		$this->render('json','ajax');
+	}
 }
 
 ?>

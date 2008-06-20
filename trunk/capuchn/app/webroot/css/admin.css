@@ -2,6 +2,7 @@
         @import "../js/dojo/dojox/grid/_grid/tundraGrid.css";
         @import "../js/dojo/dojo/resources/dojo.css";
         @import "adminspecific.css";
+		@import "../js/dojo/dojox/image/resources/image.css";
 
 /*Color scheme: E7E8D1, D3CEAA, FBF7E4, 424242, 8E001C*/
 /* or tundra moss FCF4E2,33301E,BAB497,4F4A24,C03910 */

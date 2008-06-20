@@ -3,4 +3,5 @@
  $json = new Services_JSON();
  $out = $json->encode($output);
  echo "/*".$out."*/";
+
 ?>

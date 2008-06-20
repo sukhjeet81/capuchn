@@ -101,6 +101,36 @@ class VolumesController extends AppController
     	$this->layout = "ajax";
     	$this->set("listing",$listing);
     }
+	
+	function storeJson(){
+		$volumes = $this->Volume->findAllThreaded();		
+		$out = array();
+		$this->makeStore($volumes,0,$out);
+		$out['label'] = "id";
+		$out['identifier'] = "displayname";
+		$this->set("output",$out);
+		$this->render('json','ajax');		
+	}
+	
+	//Make an array that fits what the store wants, for the FilteringSelect
+	function makeStore($arr,$level = 0,&$toReturn){
+		$ls = "";
+		for($i=0;$i<level;$i++){$ls .= "-";}
+		foreach($arr as $vol){
+			if(isset($vol['Volume'])){
+				$na = array();
+				$na['name'] = $vol['Volume']['name'];
+				$na['displayname'] = $ls.$vol['Volume']['name'];
+				$na['type'] = 'volume';
+				$na['id'] = $vol['Volume']['id'];		
+				$toReturn[] = $na;
+				if(count($vol['children'])>0){
+					makeStore($vol['children'],$level+1,$toReturn);
+				}
+			}//end volume check
+		}//end foreach
+	}
+
         
     function contentlist(){
     	/*

@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Testing the ThumbnailPicker</title>
+
+	<style type="text/css">
+		@import "../../../dojo/dijit/tests/css/dijitTests.css";
+		@import "../../dojox/image/resources/image.css";
+		.thumbOuter {
+			border:1px solid;
+		}
+	</style>
+	
+	<script type="text/javascript" src="../../../dojo/dojo/dojo.js" djconfig="parseOnLoad:true, isDebug: true, defaultTestTheme:'soria'"></script>
+	<script type="text/javascript" src="../../../dojo/dijit/tests/_testCommon.js"></script>
+	<script type="text/javascript" src="../CapuchnThumbnailPicker.js"></script>
+	
+	<script type="text/javascript">
+		// dojo.require("dojox.image.Gallery");
+		//dojo.require("dojox.data.FlickrRestStore"); 
+		dojo.require("dojo.data.ItemFileReadStore"); 
+		dojo.require("dojo.parser");	// find widgets
+		
+		/*
+			Initializes the second ThumbnailPicker widget with a data store that
+			reads information from a JSON URL.  This also tells the ThumbnailPicker
+			the name of the JSON attributes to read from each data item retrieved
+			from the JSON URL.
+		*/
+		function initItemStoreGallery(){
+			var itemRequest = {
+				query: {},
+				count: 20
+			};
+			var itemNameMap = {
+				imageThumbAttr: "thumb",
+				imageLargeAttr: "large"
+			};
+			
+			//Set the dojo.data.ItemFileReadStore on two of the dojox.image.ThumbnailPicker widgets
+			//Note the use of the 'itemNameMap', which tells the widget what attributes to
+			//read from the store.  Look in the 'images.json' file in the same folder as this
+			//file to see the data being read by the widget.
+			console.debug(imageItemStore);
+			dijit.byId('thumbPicker2').setDataStore(imageItemStore, itemRequest, itemNameMap);			
+		}
+		
+		//Subscribe to clicks on the thumbnails, and print out the information provided
+		function doSubscribe(){
+			function updateDiv(packet){
+				dojo.byId('PublishedData').innerHTML = "You selected the thumbnail:"
+						+ "<br/><b>Index:</b> " + packet.index
+						+ "<br/><b>Url:</b> " + packet.url
+						+ "<br/><b>Large Url:</b> " + packet.largeUrl
+						+ "<br/><b>Title:</b> " + packet.title
+						+ "<br/><b>Link:</b> " + packet.link
+						;
+			};
+			
+			//When an image in the ThumbnailPicker is clicked on, it publishes
+			//information on the image to a topic, whose name is found by calling
+			//the 'getTopicName' function on the widget.			
+			dojo.subscribe(dijit.byId('thumbPicker2').getClickTopicName(), updateDiv);
+		}
+		
+		dojo.addOnLoad(initItemStoreGallery);
+		dojo.addOnLoad(doSubscribe);
+	</script>
+</head>
+<body>
+	<h1 class="testTitle">dojox.image.ThumbnailPicker</h1>
+
+	<div id="PublishedData" style="background-color:light-grey">
+		When you click on a thumbnail image, it's information is placed here
+	</div>
+
+    <h2>From ItemFileReadStore:</h2>
+	This ThumbnailPicker should have 5 thumbnails. Clicking on a thumbnail should NOT
+	open a URL, and the cursor should not change when over an image that is not an arrow.
+	
+    <div id="thumbPicker2" dojoType="capuchn.CapuchnThumbnailPicker" size="400"
+		isClickable="false"></div>
+
+	<div jsId="imageItemStore" dojoType="dojo.data.ItemFileReadStore" url="http://192.168.1.33/dev/capuchn/images/imageStore"></div>
+	<!--
+	<div dojoAttachPoint=\"outerNode\" class=\"thumbOuter\">
+		<div dojoAttachPoint=\"navPrev\" class=\"thumbNav thumbClickable\">
+			<img src=\"\" dojoAttachPoint=\"navPrevImg\"/>
+		</div>
+		<div dojoAttachPoint=\"thumbScroller\" class=\"thumbScroller\">
+			<div dojoAttachPoint=\"thumbsNode\" class=\"thumbWrapper\">
+			</div>
+		</div>
+		<div dojoAttachPoint=\"navNext\" class=\"thumbNav thumbClickable\">
+			<img src=\"\" dojoAttachPoint=\"navNextImg\"/>
+		</div>
+	</div>
+	-->
+	
+	
+</body>
+</html>

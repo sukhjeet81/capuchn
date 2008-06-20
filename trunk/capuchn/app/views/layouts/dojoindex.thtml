@@ -26,7 +26,6 @@
 		 this was built using the dojo buildscripts -->
 	<script type="text/javascript" src="js/dojo/dojo/capuchndojo.js"></script>		
 	<!-- editor / tinymce scripts -->
-	<script type="text/javascript" src="js/tiny_mce/tiny_mce.js"></script>
 	<script type="text/javascript" src="js/codepress/codepress.js"></script>
 	
 	<!-- custom scripts for site -->
