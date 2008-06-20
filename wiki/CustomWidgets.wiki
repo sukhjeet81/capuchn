@@ -1,0 +1,32 @@
+#summary Information on custom dojo widgets
+
+= Introduction =
+
+Widgets created for the Capuchn administration interface.
+
+
+==CapuchnEditor==
+
+The Capuchn editor extends the dijit.Editor to basically include the following features
+
+  *Impliment resize
+  *Single widget form - providing a single interface for data related to post 
+  *Integrated save - no bouncing around the DOM to find the correct forms
+  *Super simple initialization - a single div element will bring up the whole thing
+  
+Basically this can work as a stand-alone widget which may allow for wiki like page editing via a dialog.
+
+===Functions===
+====resize====
+====save====
+
+===Todo===
+  *Populate the form correctly
+  *Add save button
+  *GUI tweaking
+
+==ImageDialog Plugin==
+
+The image dialog plugin is intended to provide a simple way to add images from albums into a mag. Currently this has a thumbnail chooser wich will insert the thumbnail into the image. Once the image is selected, the diag can be brought up and values edited.
+
+Init->Insert new image
