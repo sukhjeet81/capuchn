@@ -1,128 +1,25 @@
-#summary Javascript redesign plans
+#summary design of the feed controller and model
 
-= Introduction =
+= Feed Component =
 
-The initial development of the javascript front end is sloppy at best. This really needs a complete rewrite and rework to help with stability and extendability.
-
+The feed component will handle the communication between the server and the page, creating a simple way to fetch rss feeds and pass them back to the page individually or as separate entities.
 
 = Details =
 
-The main parts of the 
+==Gather data==
+Gather data from rss feeds and other sources, such as myspace, twitter, etc. Potentially use plugins as codecs. Save the json string to the database to and integrate. Use some site settings to determine when to expire feeds
 
-===loadTree()===
-This re-reads the content tree and updates
-===loadAlbumSelect()===
-album,image
-This reloads the albumselection combo box....
-===onTreeClick(item, node)===
-general
-When the content tree is clicked, this method is called.
-===newAlbum()===
-album
-Creates a dialog to enter a new album name. 
-===addNewAlbum(dialogFields)===
-album this is the return from the newAlbum dialog.
-===imagesTab()===
-album,images
-Creates a new tab to display images
-===editFileTab(file)===
-admin
-This edit files tab is used to edit the style.css, default layout and mce.css - which is now depreciated, although this tab should be used for the 'codepress' theme bits editor. 
-===viewSiteTab()===
-general
-Opens an iframe inside a tab to view the live site.
-===mailboxesTab()===
-mailboxes
-Opens the mailboxes manager tab. Nothing special done here
-===albumTab()===
-album
-show the album manager tab
-===deleteAlbum(albumid, nodeToRemove)===
-album
-===deleteMailbox(mboxid,nodeToRemove)===
-mailboxes
-===editWidget(widgetid)===
-widget
-===loadVol(volindex)===
-volume
-===loadMag(magindex)===
-mag
-===deleteMag(magid, magheader)===
-mag
-===openTab(tab)===
-unused
-===mceSubmitForm(editid)===
-mag?
-handle save button from tinymce interface
-===save_response_callback(response)===
-unused, general 
-This should not be used as _all_ responses that only contain a notification should use json
-===save_response_callback_json(responseObj)===
-general
-===json_response_callback(response)===
-general, unused
-This should also not be used as this does the same as above, basically.
-===submitForm(button,aurl,formObj,response_callback)===
-general
-This submits forms and is intended to be a general usage function, although it was not used, this should be replaced in all the functions by their own code to remove some complexity.
-===submitFormData(aurl, formObj, callback)===
-general
-basically this does the same as above and should see the same fate as above.
-===getWidget(name)===
-widget
-===messageClick(msgid)===
-mailboxes, message
-===messageCheck(msgid)===
-mailboxes, message
-===call_message_function(choice)===
-mailboxes, message
-===setswfuparams()===
-unused
-===dojofileupload(target)===
-images
-===swfuInit(target)===
-unused
-===changeAlbum()===
-album
-===initEditor()===
-tinymce,mag, unused
-===killEditor()===
-tinymce,mag,unused
-===thumbClick(obj)===
-images
-===myHandler(idOfBox, value)===
-images
-edited inline form
-===albumEditBoxHandler(idOfBox,value)===
-album
-===imageLinkHandler(idOfBox, value)===
-images
-when the link part is clicked
-===loadWidget(thename)===
-widget
-===addWidget(widgetId)===
-widget
-===saveWidgetConfig()===
-widget
-===saveWidget(button)===
-widget
-===moveWidgetLeft(wid)===
-widget
-===moveWidgetRight(wid)===
-widget
-===moveWidgetUp(wid)===
-widget
-===moveWidgetDown(wid)===
-widget
-===closeWidget(wid)===
-widget
-===imageDeleteFiles()===
-image
-===saveSiteVars()===
-widget
-===saveFile()===
-admin
-===siteTab()===
-admin
-===deleteImage(imageId,needconfirm)===
-image
+==Format for display==
+Format feeds in a consistent way so that html is in the correct place if need be etc.
+
+{{{
+{feedName: name, feedtype: type, feedheader: header, items:[item,item]}
+}}}
+
+==Codec==
+
+Need a way to insert codecs as plugins, but need to define plug ins first.
+
+{{{
+if(is_funcition(codec))
+}}}
