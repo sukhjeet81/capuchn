@@ -3,11 +3,13 @@ if (!dojo._hasResource["capuchn.CapuchnEditor"]) { //_hasResource checks added b
 	dojo.provide("capuchn.CapuchnEditor");
 	dojo.require("dijit.Editor");
 	dojo.require("dijit.InlineEditBox");
-	dojo.require("dojo.dnd.Source");
+	//dojo.require("dojo.dnd.Source");
 	dojo.require("dijit._editor.plugins.AlwaysShowToolbar");
 	dojo.require("dijit.form.FilteringSelect");
 	//dojo.require("dojox._editor.plugins.EditorImageDialog");
 	dojo.require("dijit._editor.plugins.ImageDialog");
+	dojo.require("dijit._editor.plugins.SaveButton");
+	dojo.require("dijit._editor.plugins.LinkDialog");
 
 dojo.declare("capuchn.CapuchnEditor", dijit.Editor, {
 		
@@ -22,21 +24,16 @@ dojo.declare("capuchn.CapuchnEditor", dijit.Editor, {
 		volumeselect: null,
 		saveUrl: "mags/editor",
 		nameObj: null,
-		/*
-		constructor: function(){
-			this.extraPlugins = [
-				'dijit._editor.plugins.AlwaysShowToolbar',
-				'dojox._editor.plugins.EditorImageDialog',
-				'dijit._editor.plugins.LinkDialog'
-				];
-		},
-		*/
-		
+
 		postCreate: function(){
+			//this.commands['save'] = 'Save';
+			//this.extraPlugins = ['save'];
+			//console.debug("volumeid: ", this.volumeid);
 			this.inherited(arguments);
-		
+			
 			var nameDom = dojo.doc.createElement("span");
-			nameDom.innerHTML = "name here";
+			
+			nameDom.innerHTML = this.itemname;
 			nameDom.style.width = "10em";
 			var nameDij = new dijit.InlineEditBox({width:"10em"},nameDom);
 			this.toolbar.addChild(nameDij);
@@ -46,6 +43,7 @@ dojo.declare("capuchn.CapuchnEditor", dijit.Editor, {
 			
 			this.nameObj = nameDij;
 			var volSelect = dojo.doc.createElement("input");
+			volSelect.style.height= "20px";
 			this.volumeselect = new dijit.form.FilteringSelect({store:popStore,query: {type:"volume"},name:"volumeselect"},volSelect);
 			if(this.volumeid != null){				
 				popStore.fetch({
@@ -61,8 +59,15 @@ dojo.declare("capuchn.CapuchnEditor", dijit.Editor, {
 			//this.iframe.parentNode.style.border = "1px solid";
 			//dndtarget = new dojo.dnd.Source(this.iframe.parentNode);
 			//dndtarget.startup();
-			console.debug(this.iframe);
+			
 			this.addKeyHandler('h',this.KEY_CTRL,this.insertText);
+			
+			if(this.volumeid != null){
+				this.setStyleSheet();
+			}
+			
+			//this.addPlugin("save",0);
+			//console.debug(this.commands);
 			
 			
 		},
@@ -100,18 +105,15 @@ dojo.declare("capuchn.CapuchnEditor", dijit.Editor, {
 		//resize is the implimentation of the new thing
 		//	
 		resize: function(size){
-		
 			//size is {l,t,w,h}
-			//	not sure what l and t are
-			console.debug(size);
 			var availHeight = size.h;
-			availHeight = availHeight - this.toolbar.domNode.clientHeight - 2;
-			//console.debug(this.iframe.clientHeight);
-			//console.debug(availHeight);
-			
-			this.iframe.style.height = availHeight+"px";
-			//this.iframe.parentNode.syle.height = availHeight+"px"; //so dnd works
-			//return true;
+			if (this.toolbar) {
+				//resize gets called on close, make sure that we still have toolbar
+				availHeight = availHeight - this.toolbar.domNode.clientHeight - 2;
+			}
+			if (this.iframe) {
+				this.iframe.style.height = availHeight + "px";
+			}
 		},
 		
 		//uses the seturl function to send a request for data from the server
@@ -127,6 +129,12 @@ dojo.declare("capuchn.CapuchnEditor", dijit.Editor, {
 	        	},
 		    	timeout: 2000
 			});
+		},
+		
+		setStyleSheet: function(){
+			console.debug("theme/getEditorStyle/"+this.volumeid);		
+			this.addStyleSheet("theme/getEditorStyle/"+this.volumeid);
+			
 		},
 		
 		//How to save this form to the server
@@ -170,13 +178,13 @@ dojo.declare("capuchn.CapuchnEditor", dijit.Editor, {
 		//	name - the name of the item
 		//	 - more?
 		setData: function(responseObj){
-		
 			//Object
 			console.debug("setData: ", arguments );
 			this.setValue(responseObj.content);
 			this.nameObj.setValue(responseObj.name);
 			this.itemid = responseObj.id;			
-		},
+		}	
 		
 	});
-}
+};
+
