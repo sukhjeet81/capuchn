@@ -851,13 +851,16 @@
 			dijEdit = new capuchn.CapuchnEditor({},editDiv);
 			newtab.addChild(dijEdit);
 			*/
-			
+			/*
+			 * Calling destroy Descendants twice screws the pooch
+			 
 			newtab.onClose = function(){
 				//Get the editor, I suspect that this is not functioning correctly
 				//sometimes because triggerSave fails
 				this.destroyDescendants();
 				return true;
 			}
+			*/
 			tabcontain.addChild(newtab);
 		}else{
 			newtab = mywidget;

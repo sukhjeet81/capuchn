@@ -14,7 +14,8 @@ dojo.require("dojox.image.ThumbnailPicker");
 dojo.require("dojo.data.ItemFileReadStore");
 dojo.require("dijit.form.NumberSpinner");
 dojo.require("dijit.form.ComboBox");
-dojo.requireLocalization("dijit._editor", "LinkDialog", null, "pt,ru,gr,ja,es,hu,zh,ROOT,zh-tw,de,fr,cs,it,pl,ko");
+dojo.require("dijit.form.FilteringSelect");
+
 
 dojo.declare("dijit._editor.plugins.ImageDialog",
 	dijit._editor._Plugin,
@@ -28,13 +29,18 @@ dojo.declare("dijit._editor.plugins.ImageDialog",
 		//		needs to be able to choose the album though...
 		//		Nees a whole lot of tlc for the spinner size thing. probably removal
 		
-
+		
 		buttonClass: dijit.form.DropDownButton,
 		useDefaultCommand: false,
 		//urlRegExp: "((https?|ftps?)\\://|)(([0-9a-zA-Z]([-0-9a-zA-Z]{0,61}[0-9a-zA-Z])?\\.)+(arpa|aero|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|xxx|jobs|mobi|post|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|er|eu|es|et|fi|fj|fk|fm|fo|fr|ga|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sk|sl|sm|sn|sr|st|su|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tm|tn|to|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)|(((\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])\\.){3}(\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])|(0[xX]0*[\\da-fA-F]?[\\da-fA-F]\\.){3}0[xX]0*[\\da-fA-F]?[\\da-fA-F]|(0+[0-3][0-7][0-7]\\.){3}0+[0-3][0-7][0-7]|(0|[1-9]\\d{0,8}|[1-3]\\d{9}|4[01]\\d{8}|42[0-8]\\d{7}|429[0-3]\\d{6}|4294[0-8]\\d{5}|42949[0-5]\\d{4}|429496[0-6]\\d{3}|4294967[01]\\d{2}|42949672[0-8]\\d|429496729[0-5])|0[xX]0*[\\da-fA-F]{1,8}|([\\da-fA-F]{1,4}\\:){7}[\\da-fA-F]{1,4}|([\\da-fA-F]{1,4}\\:){6}((\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])\\.){3}(\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])))(\\:(0|[1-9]\\d*))?(/([^?#\\s/]+/)*)?([^?#\\s/]+(\\?[^?#\\s/]*)?(#[A-Za-z][\\w.:-]*)?)?",
+		command: '',
 		urlRegExp: ".",
 		ImageDialogTemplate: [
-			"<table><tr><td colspan=2>",
+			"<table><tr><td>",
+			"<label for='${id}_albumSelect'>Album</label>",
+			"</td><td>",
+			"<div id='${id}_albumSelect' dojoType='dijit.form.FilteringSelect' size='300'></div>",
+			"</td></tr><tr><td colspan=2>",
 			"<div id='${id}_thumbPick' dojoType='dojox.image.ThumbnailPicker' size='300'></div>",
 			"</td></tr><tr><td>",
 			"<label for='${id}_urlInput'>${url}</label>",
@@ -75,15 +81,15 @@ dojo.declare("dijit._editor.plugins.ImageDialog",
 		currLink:null,	
 		width:null,
 		height:null,
+		albumStore: null,
+		albumStoreUrl: "albums/albumStore",
+		
 		
 		_initButton: function(){
-			
 			var _this = this;
-			
-			var messages = dojo.i18n.getLocalization("dijit._editor", "LinkDialog", this.lang);
-			
+			var messages = {"set":"Set","text":"Description:","insertImageTitle":"Image Properties","url":"URL:","createLinkTitle":"Link Properties"};
 			var dropDown = (this.dropDown = new dijit.TooltipDialog({
-				title: messages[this.command + "Title"],
+				title: messages["insertImageTitle"],
 				execute: dojo.hitch(this, "setValue"),
 				onOpen: function(){
 					_this._onOpenDialog();
@@ -103,23 +109,52 @@ dojo.declare("dijit._editor.plugins.ImageDialog",
 			
 			dropDown.startup();
 			
-			/* no dynamic updating
-			this.widthSpinner = dijit.byId(messages.id+"_widthInput");
-			this.widthSpinner.onChange = dojo.hitch(this, this.spinnerChange);
 			
+			this.widthSpinner = dijit.byId(messages.id+"_widthInput");
+			this.widthSpinner.onChange = dojo.hitch(this, this.sizeChange);
+			/* no dynamic updating
 			this.styleMenu = dijit.byId(messages.id+"_styleInput");
 			this.styleMenu.onChange = dojo.hitch(this, this.styleChange);
 			*/
 			//Redo all this stuff when we setEditor... and then get the url from the editor. that would 
 			//be the only way to get that data
 			
+			
+			//widgets should be initilized and ready for use
+			this.albumStore = new dojo.data.ItemFileReadStore({url:this.albumStoreUrl});
+			//this.thumbPick.setDataStore(this.imageStore,{query:{},count:20},{imageThumbAttr: "thumb",imageLargeAttr:"large"});
+			var astore = dijit.byId(messages.id+"_albumSelect");
+			astore.store = this.albumStore;
+			astore.setValue('0');
+			astore.onChange = dojo.hitch(this, this._changeAlbum);
+						
 			this.thumbPick = dijit.byId(messages.id+"_thumbPick");
 			dojo.subscribe(this.thumbPick.getClickTopicName(), dojo.hitch(this,this.selectImage));
+
+			var className = this.iconClassPrefix+" "+this.iconClassPrefix + "InsertImage";
+			
+			var props = {
+				label: "ImageDialog",
+				showLabel: false,
+				iconClass: className,
+				dropDown: this.dropDown,
+				tabIndex: "-1"
+			};
+			this.button = new this.buttonClass(props);
+			
 			this.inherited(arguments);
 		},
 
 		_setContent: function(staticPanel){
 			this.dropDown.setContent(staticPanel);			
+		},
+		
+		_changeAlbum: function(){
+			console.debug("changeAlbum:",arguments);
+			//this.thumbPick
+			this.imageStoreUrl = "images/imageStore/"+arguments[0];
+			this.imageStore = new dojo.data.ItemFileReadStore({url:this.imageStoreUrl});
+			this.thumbPick.setDataStore(this.imageStore,{query:{},count:20},{imageThumbAttr: "thumb",imageLargeAttr:"large"});			
 		},
 
 		setValue: function(args){
@@ -134,10 +169,6 @@ dojo.declare("dijit._editor.plugins.ImageDialog",
 				}
 			}
 			
-			//we want to check the form, 
-			//if there is a link we need to add it to the selected bit, 
-			
-			console.debug(args);
 			//using 3 templates for 3 optional cases
 			var linkTemplate = "<a href=${link}>${content}</a>";
 			var imgTemplate = "<img class='${styleInput}' src='${urlInput}' _djrealurl='${urlInput}' alt='${textInput}' ${size} />";
@@ -149,8 +180,10 @@ dojo.declare("dijit._editor.plugins.ImageDialog",
 			imgobj.size = "";
 			imgobj.styleInput = args.styleInput;
 			
+			
 			/*
 			if(this.width){
+				console.debug("Custom width: ", this.width);
 				//height should also be set. and here is where we should modify
 				var sizeobj = {};
 				sizeobj.width = this.width;
@@ -158,6 +191,9 @@ dojo.declare("dijit._editor.plugins.ImageDialog",
 				imgobj.size = dojo.string.substitute(sizeTemplate, sizeobj); 
 			}
 			*/
+			imgobj.size = dojo.string.substitute(sizeTemplate, {width: this.currImage.width, height: this.currImage.height});
+			//this.currImage.width / this.currImage.height;
+			
 					
 			var outString = dojo.string.substitute(imgTemplate, imgobj);
 			
@@ -248,11 +284,12 @@ dojo.declare("dijit._editor.plugins.ImageDialog",
 			console.debug("Open form done");
 		},
 		
+		//No longer rocking the immediate change. 
 		spinnerChange: function(){
-			console.debug("SpinnerChange: ", arguments);
-			//this.currImage.width = arguments[0];
-			//get aspectRation
-			if(arguments[0] == "")return;
+			//use sizeChange (the 0th argument of spinner is a number, that I want here)
+		},
+		
+		sizeChange: function(nwidth){
 			var ratio = this.currImage.width / this.currImage.height;
 			console.debug("ration:", ratio);
 			var newWidth = arguments[0];
@@ -308,13 +345,5 @@ dojo.declare("dijit._editor.plugins.ImageDialog",
 */
 	}
 );
-
-dojo.subscribe(dijit._scopeName + ".Editor.getPlugin",null,function(o){
-	if(o.plugin){ return; }
-	switch(o.args.name){
-	case "createLink": case "insertImage":
-		o.plugin = new dijit._editor.plugins.ImageDialog({command: o.args.name});
-	}
-});
 
 }
