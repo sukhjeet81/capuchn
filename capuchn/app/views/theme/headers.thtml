@@ -1,0 +1,17 @@
+<?php
+//automatically generate the html for the current theme. Include any JS and CSS files.
+foreach($theme['Themefiles'] as $tfile){
+	if($tfile['type'] == "CSS"){
+	?>
+	<link rel="stylesheet" type="text/css" href="<?php BASE?>theme/css/<?php $tfile['name']?>" />
+	<?
+	}else if($tfile['type'] == "JS"){	
+	?>
+	<script type="text/javascript" src="<?php BASE?>theme/js/<?php $tfile['name']?>"></script>
+	<?
+	}	
+}
+
+
+
+?>

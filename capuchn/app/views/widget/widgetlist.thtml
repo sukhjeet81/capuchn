@@ -19,8 +19,8 @@ foreach($widgets as $widg){
 		</tr>
 		<tr>
 			<td class="widgetbuttons">
-				<a href="#" onClick="Capuchn.widget.add('<?php echo $widg['Widget']['id']?>')">Add</a> 
-				<a href="#" onClick="editWidget('<?php echo $widg['Widget']['id']?>')">Edit</a>
+				<a href="#" onClick="dojo.publish('/capuchnWidget/add', [<?php echo $widg['Widget']['id']?>])">Add</a> 
+				<a href="#" onClick="Capuchn.widget.edit('<? echo $widg['Widget']['id']?>','<? echo $widg['Widget']['name']?>')">Edit</a>
 				<a href="#" onClick="alert('Delete!')">Delete</a>
 			</td>
 		</tr>

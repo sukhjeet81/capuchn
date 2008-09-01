@@ -62,6 +62,54 @@ class UserController extends AppController
     	$this->render('home','ajax');
     }
 	
+	function editprofile(){
+		$this->checkSession();
+		if($this->Session->check('id')){	
+			$uid = $this->Session->read('id');
+			$this->User->id = $uid;
+			$user = $this->User->read();		
+			$profile = $user['User']['profile'];
+		}else{
+			//TODO set default profile?
+			$profile = '{"default":"not logged in"}';
+			$this->log("CRITICAL: checkSession not working, got past login check");
+		}
+		
+		if(isset($this->params['form'])){
+			foreach($this->params['form'] as $key => $data){
+				$user['User'][$key] = $data;	
+			}
+			
+			$status['status'] = true;
+			$status['message'] = "User variables save successfully";
+			
+			if(!$this->User->save($user)){
+				$status['status'] = false;
+				$status['message'] = 'Failed to save, see server log';
+				$this->log($user);				
+			}
+			
+			$this->set('output',$status);
+			$this->render('json','ajax');
+			exit(0);
+		}
+		
+		//convert profile to php
+		vendor('JSON');
+		$js = new Services_JSON();
+		$prof = $js->decode($profile);
+		
+		//$prof['layout']['columnOne'][0] = "widgetid"
+		//$prof['widgetid'] = array containing setup vars.
+		
+		$this->set('user',$user);				
+		
+		$this->set('user_profile',$profile);//for use by the ajax interface
+		$this->set('php_profile',$prof);//for use in display
+    	
+		$this->render('edit','ajax');
+	}
+	
 	/*
 	 * Save the json string in the profile after a widget config update
 	 */
@@ -71,7 +119,8 @@ class UserController extends AppController
 		if($this->Session->check('id')){	
 			$uid = $this->Session->read('id');
 			$this->User->id = $uid;
-			$user['User']['profile'] = file_get_contents('php://input');
+			$this->log($this->params);
+			$user['User']['profile'] = $this->params['form']['globalConfig'];
 			//$this->User->profile = file_get_contents('php://input');
 			$user = $this->User->save($user);		
 			//$this->set('user_profile',$user['User']['profile']);
@@ -85,6 +134,22 @@ class UserController extends AppController
 		$status['status'] = true;
 		$this->set('output',$status);
     	$this->render('json','ajax');		
+	}
+	
+	function getconfig(){
+		$this->checkSession();
+		if($this->Session->check('id')){	
+			$uid = $this->Session->read('id');
+			$this->User->id = $uid;
+			$user = $this->User->read();		
+			$profile = $user['User']['profile'];
+		}else{
+			//TODO set default profile?
+			$profile = '{"default":"not logged in"}';
+			$this->log("CRITICAL: checkSession not working, got past login check");
+		}
+		$this->set('output',$profile);
+		$this->render('plain','ajax');
 	}
 
     function logout()

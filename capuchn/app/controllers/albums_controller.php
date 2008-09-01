@@ -154,6 +154,24 @@ class AlbumsController extends AppController
 		$this->render('json','ajax');
 	}
 	
+	function albumStore(){
+		//$this->checkSessionAjax();
+		$albums = $this->Album->findAll();
+		$out = array();		
+		$out['items'] = array();
+		foreach($albums as $al){
+			$al['Album']['extendname'] = $al['Album']['name']."(".sizeof($al['Image']).")";
+			$out['items'][] = $al['Album'];
+		}
+
+		$out['identifier'] = "id";
+		$out['label'] = "name";
+		//$out['status'] = true;
+		//$out['message'] = "Albums found...";
+		$this->set('output',$out);
+		$this->render('json','ajax');
+	}
+	
 	//Add new album and return the status message pair, takes on argument.
 	function add($newname){
 			$this->checkSessionAjax();

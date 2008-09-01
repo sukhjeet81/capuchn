@@ -1403,6 +1403,7 @@ dojo.declare("dijit._editor.RichText", dijit._Widget, {
 	destroy: function(){
 		this.destroyRendering();
 		if(!this.isClosed){ this.close(false); }
+		console.debug('forg');
 		this.inherited("destroy",arguments);
 		//dijit._editor.RichText.superclass.destroy.call(this);
 	},

@@ -19,7 +19,8 @@
  }
  
 ?>
-
+<?php 
+/*
 <div id="wrapper_<?php echo $id?>" class="widgetSource">
 	<div class="widget">
 		<div class="widgetTop">
@@ -41,3 +42,18 @@
 		</div>
 	</div>
 </div>
+*/ 
+?>
+
+<?php 
+
+
+if($output['type']=="iframe"){
+	echo "<iframe class=\"widgetframe\" src=\"widget/iframe/".$output['id']."\"></iframe>";
+	echo "<div style=\"clear:both\"></div>";
+}else{
+	echo "<script>var instanceid = ".$id.";</script>";
+	echo $output['widgetcode']; 
+}
+
+?>

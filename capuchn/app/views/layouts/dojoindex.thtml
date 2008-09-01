@@ -24,9 +24,9 @@
         djConfig="parseOnLoad: true"></script>
 	<!-- mydojo.js contains all of the compiled layers required for this project,
 		 this was built using the dojo buildscripts -->
-	<script type="text/javascript" src="js/dojo/dojo/capuchndojo.js"></script>		
-	<!-- editor / tinymce scripts -->
-	<script type="text/javascript" src="js/codepress/codepress.js"></script>
+	<script type="text/javascript" src="js/dojo/dojo/capuchndojo.js"></script>
+	<!-- editor / tinymce scripts
+	<script type="text/javascript" src="js/codepress/codepress.js"></script> -->
 	
 	<!-- custom scripts for site -->
 	<script type="text/javascript" src="js/dojoindex.js"></script>
@@ -66,12 +66,16 @@
 		                <div dojoType="dijit.MenuItem" onclick="Capuchn.newtab('albums/index','albumlisttab','Album List');">
 		                    Manage Albums
 		                </div>
+						<div dojoType="dijit.MenuItem" onclick="Capuchn.newtab('widget/tablist','widgetlisttab','Widget List');">
+		                    Manage Widgets
+		                </div>
 						<div dojoType="dijit.MenuItem" onclick="mailboxesTab();">
 		                    Manage Mailboxes
 		                </div>
 		            </div>
-			    </div>
+			    </div>				
 				<span dojoType="dijit.ToolbarSeparator"></span>
+				<button dojoType="dijit.form.Button" onclick="Capuchn.newtab('user/editprofile', 'editmyprofile', 'My Profile')">Edit Profile</button>
 				<button dojoType="dijit.form.Button" onclick="Capuchn.viewSiteTab()">View Site</button>
 				<button dojoType="dijit.form.Button" onclick="Capuchn.refreshTabs()">Refresh Tabs</button>
 				<span dojoType="dijit.ToolbarSeparator"></span>

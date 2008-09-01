@@ -32,17 +32,19 @@ class WidgetController extends AppController
 	/*
 	 * getAdmin returns the admin widget code.
 	 */
-	function getAdmin($id){
+	function getAdmin($id, $vars=null){
 		$this->Widget->id = $id;
 		$widg = $this->Widget->read();
-		$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id']);
+		$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id'],"type"=>$widg['Widget']['type'] );
 		
-		if($this->params['requested']){
+		if((isset($this->params['requested'])) || ($vars != null)){
 			//Throw the display code
 			//This->params['passed variables from calling function'] 
 			//$this->params['test'] is the var name coming from requested
 			if(isset($this->params['instanceid'])){
 				$output['instanceid'] = $this->params['instanceid']; 
+			}else if ($vars != null){
+				$output['instanceid'] = $vars;
 			}
 			$this->set("output",$output);
 			$this->render("admin","ajax");
@@ -52,9 +54,24 @@ class WidgetController extends AppController
 		}
 	}
 	
+	function showWidget($id){
+		//intednend to do basically the same as above but work on a stand alone sort of way		
+		$this->Widget->id = $id;
+		$widg = $this->Widget->read();
+		$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id'], "type"=>$widg['Widget']['type'] );
+		$this->set('output',$output);
+		$this->render('admin','ajax');
+	}
+	
+	
 	function iframe($id){
 		//get the iframe with the widget in the address
-		$this->set("id",$id);
+		//$this->set("id",$id);
+		$this->Widget->id = $id;
+		$widg = $this->Widget->read();
+		//$output = array("name"=>$widg['Widget']['name'], "widgetcode"=>$widg['Widget']['admin_xhtml'], "id"=>$widg['Widget']['id'], "type"=>$widg['Widget']['type'] );
+		$this->set('output',$widg['Widget']['admin_xhtml']);
+		$this->render('iframe','ajax');
 	}
 	
 	function getajaxwidget($iid){
@@ -115,7 +132,7 @@ class WidgetController extends AppController
 	}
 	
 	function jslist(){
-		
+	
 		$widgets = $this->Widget->findAll();
 		$out = array();
 		$out['label']="name";
@@ -132,18 +149,45 @@ class WidgetController extends AppController
 		$this->render('json','ajax');
 	}
 	
+	function ifset($id,$set){
+		$status = array('status'=>false, 'message'=>'save failed');
+		if($id != null){
+			$this->Widget->id = $id;
+			$wgt = $this->Widget->read();
+			
+			if($set==="true"){
+				$wgt['Widget']['type'] = "iframe";
+			}else{
+				$wgt['Widget']['type'] = "inline";
+			}
+			if($this->Widget->save($wgt)){
+				$status['status'] = 'true';
+				$status['message'] = 'saved iframe status '.$id;
+			}
+			
+		}
+		$this->set('output',$status);
+		$this->render('json','ajax');	
+	}
+	
 	function edit($id = NULL){
 		$this->checkSession();	 
 		//$this->redirect('/admin');
 		$saveErrors = 0;
-		if(!empty($this->data)){
+		if(!empty($this->params['form'])){
 			 $status = array('status'=>false, 'message'=>'save failed');
-			 if(isset($this->data['Widget']['id'])){
-			 	$id = $this->data['Widget']['id'];
+			 $wgt['Widget'] = array();
+			 if(isset($this->params['form']['id'])){
+			 	$id = $this->params['form']['id'];
+				$wgt['Widget']['id'] = $id;
 			 }else{
 			 	$id = "0";
 			 }
-			 if ($this->Widget->save($this->data))
+			 
+			 $wgt['Widget']['admin_xhtml'] = $this->params['form']['content'];
+			 $wgt['Widget']['name'] = $this->params['form']['name'];
+			 
+			 if ($this->Widget->save($wgt))
 	         {
 	            if($id == NULL)$id = $this->Widget->getLastInsertId();
 	            //$widgdata = $this->Widget->read();
@@ -163,28 +207,29 @@ class WidgetController extends AppController
 	         }
 			 exit(0);
 		}else{
-		//Default widget - should start things off here too maybe.
-			$data['Widget']['name'] = "";
-			$data['Widget']['admin_xhtml'] = "";
-			$data['Widget']['display_xhtml'] = "";
-			$data['Widget']['callback'] = "";
-			$data['Widget']['version'] = "0.0";
-			$data['Widget']['id'] = "0";
-			
-			if($id==null || $id==0){
-				$this->set('widget_content',"");
-				$this->set('data',$data);
+			$response = array();
+			$response['id'] = $id;
+			$response['part'] = "";
+			$response['content'] = "";
+			$response['name']="";
 				
-			}else{
+			if(!($id==null || $id==0)){
 				$this->Widget->id = $id;
 				$thisWidget = $this->Widget->read();
-				$this->set('data',$thisWidget);
+				$response['content'] = $thisWidget['Widget']['admin_xhtml'];
+				$response['name'] = $thisWidget['Widget']['name'];
 			}
+			$this->set('output',$response);
+			$this->render('json','ajax');
 		}
 	}
 	
 	function widgetlist(){
 		$this->set('defaultIcon', "img/driver_ghost.png");
+		$this->set("widgets",$this->Widget->findAll());
+	}
+	
+	function tablist(){
 		$this->set("widgets",$this->Widget->findAll());
 	}
 }

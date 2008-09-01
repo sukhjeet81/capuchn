@@ -12,7 +12,12 @@
 	dojo.require("dijit.Toolbar");
 	dojo.require("dijit.Editor");
 	dojo.require("dijit.layout.ContentPane");
+	dojo.require("dijit.form.Textarea");
 	dojo.require("capuchn.CapuchnEditor");
+	dojo.require("capuchn.TextEditor");
+	dojo.require("capuchn.CapuchnWidget");
+	dojo.require("capuchn.WidgetPane");
+	
 	
 	//var volumeStore = new dojo.data.ItemFileReadStore({data: dataItems});
 	//var volumeStore = dojo.data.ItemFileReadStore({
@@ -186,38 +191,51 @@
 		dojo.xhrPost(kw);
 	}
 	
-	Capuchn.theme.edit = function(themeid, part){
-		//part is layout, style, or mce
-		var taburl = "theme/edittab/"+themeid+"/"+part;
-		var new_tab_id = "theme_"+part+"_"+themeid;
-		var mywidget = dijit.byId(new_tab_id);
-		var tabcontain = dijit.byId('mainTabContainer');
-		if (!mywidget) {
+	Capuchn.theme.edit = function(themefileid, part, name, themeid){
+		//if part is themefile then this will save just like below
 		
-			var newtab = new dojox.layout.ContentPane({
-				id: new_tab_id,
-				title: "Theme " + part + " - " + themeid,
+		var tabcontain = dijit.byId('mainTabContainer');
+		var newtab = new capuchn.TextEditor({
+				title: "tEditor",
 				closable: true,
 				selected: true,
-				href: taburl,
-				executeScripts: true
-				//onLoad: seteditor
+				saveUrl:"theme/edit/"+part+"/"+themeid+"/"+themefileid,
+				href:"theme/edit/"+part+"/"+themeid+"/"+themefileid,
+				helpUrl:"theme/help/themeedit",
+				//href: taburl, <--- need to overload
+				executeScripts: true,
+				textname:"style"
 			});
-			newtab.onClose = function(){
-				console.debug("May still have an open codepress obj");
-				this.destroyDescendants();
-				return true;				
-			}
-			tabcontain.addChild(newtab);
+		if(part == "themefile"){
+			//editing a non-new themefile will give the themefile id, and not the theme id
+			newtab.textId = themeid;
+			console.debug("setting nameTextBox");
+			newtab.nameTextBox.setDisplayedValue(name);
+			console.debug(newtab.nameTextBox);
+			newtab.textPart = "themefile";
+			//var typetext = new dijit.form.TextBox({name:"type", value:""}, dojo.doc.createElement("input"));
+			var selElement = dojo.doc.createElement("select");
+			selElement.options[0] = new Option('CSS','CSS');
+			selElement.options[1] = new Option('JS','JS');
+			selElement.options[2] = new Option('Mag Layout','Mag Layout');
+			selElement.options[3] = new Option('Volume Layout','Volume Layout');
+			selElement.options[4] = new Option('Mag Layout - disabled','Mag Layout - disabled');
+			selElement.options[5] = new Option('Volume Layout - disabled','Volume Layout - disabled');
+
+			var typetext = new dijit.form.ComboBox({name:"Type:"}, selElement);
 			
-		}else{
-			newtab = mywidget;
-			console.debug("old widget found.");
+			newtab.addFormWidget(typetext,"type");
+			//var pathtext = new dijit.form.TextBox({name:"path", value:""}, dojo.doc.createElement("input"));
+			var pathtext = new dijit.form.ValidationTextBox({name: "Path:", value:"",regExp:".*",invalidMessage:"bad data"}, dojo.doc.createElement("input") );
+			
+			newtab.addFormWidget(pathtext,"path");
+
 		}
-	   	tabcontain.selectChild(newtab);
+		tabcontain.addChild(newtab);
+		tabcontain.selectChild(newtab);
 		
 	}
-	
+		
 	Capuchn.theme.deletetheme = function(id,row){
 		if (confirm('DeleteTheme' + id + "?")) {
 			//send 
@@ -245,7 +263,19 @@
 	
 	Capuchn.theme.tab = function(){
 		//Create the tab that lists all the theme
-		Capuchn.newtab("theme/themelist","themelisttab","Theme List");
+		//Capuchn.newtab("theme/themelist","themelisttab","Theme List");
+		//<div dojoType="capuchn.TextEditor" saveUrl="themes/this" textname="style"><?php echo $theme['Theme']['style']?></div>
+		var tabcontain = dijit.byId('mainTabContainer');
+		var newtab = new capuchn.TextEditor({
+				title: "tEditor",
+				closable: true,
+				selected: true,
+				//href: taburl, <--- need to overload
+				executeScripts: true,
+				textname:"style",
+				//onLoad: seteditor			
+			});
+		tabcontain.addChild(newtab);
 	}
 	
 	//I do not believe that this is currently implimented.
@@ -795,41 +825,6 @@
 		}
 	   	tabcontain.selectChild(newtab);
 	}
-	//When we change the editor
-	function editor(controlelement){
-		console.debug("Fix the editor");
-		var currentForm = dojo.byId(controlelement.id).form;
-		parts = currentForm.id.split("_");
-		if(parts.length > 1){
-    		var myid = parts[parts.length-1];
-    	}else{
-    		var myid = "0";
-    	}
-		
-		contentelement = "magcontent_"+myid;
-		currcontelm = dojo.byId(contentelement);
-		// ooooor just check the form and change, wtf.
-		if (currentForm["data[Mag][type]"].value == "html") {
-			//currently a codepress node
-			eval("magcontent_"+myid+".toggleEditor()");
-			
-			if(currcontelm == undefined){
-				currcontelm = dojo.byId(contentelement+"_cp");
-				currcontelm.id = contentelement;
-			}
-			currcontelm.className = "tinymceelement";
-			tinyMCE.execCommand('mceAddControl',true,contentelement);
-		}else{
-			//currently a tinymce window.
-			tinyMCE.triggerSave();
-			tinyMCE.execCommand('mceRemoveControl',true,contentelement);
-			currcontelm.className = "codepress php linenumbers-on";
-			currcontelm.width = "100%";
-			CodePress.run();
-		}
-	}
-	
-	
 	
 	function loadMag(magindex){	
 		var new_tab_id = "mag_"+magindex;
@@ -869,66 +864,6 @@
 	   	tabcontain.selectChild(newtab);	
 	}
 	
-	function loadMagOld(magindex){		
-		var taburl = "mags/edit/"+magindex;
-		var new_tab_id = "mag_"+magindex;
-		var mywidget = dijit.byId(new_tab_id);
-		var tabcontain = dijit.byId('mainTabContainer');
-		magcontrolid = "magcontent_"+magindex;
-		if (!mywidget) {
-			var seteditor = function(pnode){
-				console.debug(mostrecenteditor);
-				if(mostrecenteditor == "codepress"){
-					currcontelm = dojo.byId(magcontrolid);
-					currcontelm.className = "codepress php linenumbers-on";
-					currcontelm.width = "100%";
-					CodePress.run();
-				}else{
-					//tinyMCE.execCommand('mceAddControl', true, magcontrolid);					
-					//<textarea name="field" width="200px" dojoType="dijit.Editor">
-				    //    It was a dark and stormy night.  Your story belongs here!
-					//</textarea>
-					console.debug(pnode);
-					dijiEdit = new dijit.Editor({},magcontrolid);
-					//dijiEdit.resize = function(dnode,size){
-					//	this.height(dnode.clientHeight);
-					//	console.debug('editor resize fired');
-					//}
-					
-				}
-				return true;
-			}
-			var newtab = new dojox.layout.ContentPane({
-				id: new_tab_id,
-				title: "Post " + magindex,
-				closable: true,
-				selected: true,
-				href: taburl,
-				executeScripts: true,
-				onLoad: seteditor(new_tab_id)
-			});
-			newtab.onClose = function(){
-				//Get the editor, I suspect that this is not functioning correctly
-				//sometimes because triggerSave fails
-				try{
-					if(!tinyMCE.execCommand('mceRemoveControl',false,magcontrolid)){
-						console.debug("Failed to destroy/remove tinyMCE control: " + magcontrolid);
-					}	
-				}catch(e){
-					console.debug("no mce control");
-				}
-							
-				this.destroyDescendants();
-				return true;
-			}
-			tabcontain.addChild(newtab);
-		}else{
-			newtab = mywidget;
-			console.debug("old widget found.");
-		}
-	   	tabcontain.selectChild(newtab);
-	}
-	
 	function deleteMag(magid, magheader){
 		if (confirm('Delete ' + magheader + "?")) {
 			//send 
@@ -945,24 +880,6 @@
 				timeout: 2000
 			};
 			dojo.xhrPost(kw);
-		}
-	}
-	
-	function mceSubmitForm(editid){    		
-		if(document.forms.length == 0){
-			//there is no form loaded.... 
-			alert("No name set");
-			editor = dijit.byId('SettingsPane');
-			dijit.byId('mainTabContainer').selectChild(editor);
-		}else{
-			//need to loop throught to get the correct form, although....
-			//submitForm(dojo.byId("savemagbutton"));
-			//bit of a hack but... it works. maybe
-			for(elm in tinyMCE.editors[editid].formElement.elements){
-				if(tinyMCE.editors[editid].formElement.elements[elm].type == "button"){
-					submitForm(tinyMCE.editors[editid].formElement.elements[elm]);
-				}
-			}
 		}
 	}
 	
@@ -1130,17 +1047,6 @@
 		 
 	}	
 	
-
-	
-
-
-	
-
-    
-
-
-
-	
     var updateResponse = function(response){
     	//what to be done?
     }
@@ -1176,6 +1082,42 @@
 		});
 		
 	}
+	
+	//Use the text editor widget 
+	Capuchn.widget.edit = function(widgetId,name){
+		var tabcontain = dijit.byId('mainTabContainer');
+		var newtab = new capuchn.TextEditor({
+				title: "Edit - "+name,
+				closable: true,
+				selected: true,
+				saveUrl:"widget/edit/"+widgetId,
+				href:"widget/edit/"+widgetId,
+				//href: taburl, <--- need to overload
+				executeScripts: true,
+				textname:""+name				
+			});
+		tabcontain.addChild(newtab);
+		tabcontain.selectChild(newtab);
+	}
+	
+	Capuchn.widget.ifcheck = function(widgetId,name, wid){
+		console.debug(wid);
+		var kw = {
+			url: "widget/ifset/"+widgetId+"/"+wid.checked,
+			timeout: 2000,
+			handleAs: "json-comment-filtered",
+			error: function(data,ioargs){
+				console.debug("error occurred in ifcheck: ",data);
+			},
+			load: function(response,ioargs){
+				console.debug(response);
+					return response;
+			}
+		}
+		dojo.xhrPost(kw);
+	}
+	
+	
 	
 	Capuchn.widget.add = function(widgetId){
 		Capuchn.widget.config.last++;
@@ -1509,7 +1451,7 @@
 	}
 	
 	
-	//editor
+	//editor page for editing widgets... should not really use.
 	function saveWidget(button){
 		dataWidgetAdmin.toggleEditor();
 		dataWidgetDisplay.toggleEditor();
@@ -1534,7 +1476,9 @@
 		dataWidgetDisplay.toggleEditor();
 		dataWidgetCallback.toggleEditor();
 	}
-
+	
+	//saveSiteVars
+	//	Saves the site variables on the admin/updatesite form
 	function saveSiteVars(){
 		var kw = {
 	    	url: 'admin/updatesite',
@@ -1551,9 +1495,27 @@
 		dojo.xhrPost(kw);		
 	}
 	
+	//saveProfileVars
+		//submit the form provided by user/editprofile to edit the current
+		// users profile.
+	function saveProfileVars(){
+		var kw = {
+	    	url: 'user/editprofile',
+			handleAs: "json-comment-filtered",
+	 		load: function(responseObj, ioArgs){
+				save_response_callback_json(responseObj);					
+	    	},
+	    	error: function(data, ioArgs){
+		            console.debug("An error occurred: ", data);
+	        },
+	        timeout: 2000,
+	    	form: 'uservarsform'
+		};
+		dojo.xhrPost(kw);		
+	}
+	
 	function saveFile(){
 		//need to write back to file
-		fileEditor.toggleEditor();
 		var kw = {
 	    	url: 'admin/savetofile',
 			handleAs: "json-comment-filtered",
@@ -1567,7 +1529,6 @@
 	    	form: 'fileeditform'
 		};
 		dojo.xhrPost(kw);
-		fileEditor.toggleEditor();
 	}
 		
 	function deleteImage(imageId,needconfirm){
@@ -1613,6 +1574,8 @@
 		
 	}
 	
+	//Depriciated, was used by tinymce, since that is gone, we shall only use
+	//this as reference maybe
 	function myHandleEvent(e) {
 		//console.debug( "event:" + e.type);
 		if (e.type == "mouseup") {			
@@ -1692,128 +1655,6 @@
 		}
 
 		return true; // Continue handling
-	}
-
-   /*
-    * dump (object, string, "<br/>", "&nbsp;", 5)
-    */
-	function dump(theItem,theItemName,recDelim,aNester,
-	      howDeep,begString,endString) {
-	   dumpDepthCount = 0;
-	   maxDumpDepth = 5;
-	   newline = "";
-	   nester = "";
-	   debugString = "";
-	   if (howDeep) {
-	      if (howDeep > maxDumpDepth) {
-	         keepItUp = confirm("The debugging function dump() is being called with a greater nest level than is recommended.\nThis may take a 	       while, and it may error out or crash your 	         browser.\nContinue?");
-	         if (!keepItUp) { 
-	            return;
-	         }
-	      }
-	      maxDumpDepth = howDeep;
-	   }
-	   recDelim ? newline = recDelim : newline = '\n';
-	   aNester ? nester = aNester : nester = '\t';
-	
-	   function indent() {
-	      var retVal = "";
-	      for (var i=dumpDepthCount; i>1; i--) {
-	         retVal += nester;
-	      }
-	      return retVal;
-	   }
-   	   function asdlkasf(theItem,theItemName) {
-	      dumpDepthCount++;
-	      if (dumpDepthCount >= maxDumpDepth) {
-	         dumpDepthCount--;
-	         return;
-	      }
-	      var itemType = typeof theItem;
-	      switch(itemType) {
-	         case "number":
-	         case "boolean":
-	            debugString += indent() + theItemName + 
-	            ', a ' + itemType + ': ' + 
-	            theItem.toString().toLowerCase() + newline;
-	            break;
-	         case "string":
-	            debugString += indent() + theItemName + 
-	            ", a string: '" + theItem + "'" + newline;
-	            break;
-	         case "function":
-	            if (theItem.toString().indexOf(
-	            'native code]') == -1) {
-	               indentStr = newline+indent();
-	               debugString += indent() + theItemName + 
-	                  ', a function: ' + 
-	                  theItem.toString().replace(
-	                     /(\\n|\<br\>)/g, indentStr) + 
-	                  newline;
-	            }
-	            break;
-	         case "object":
-	            try {
-	               debugString += indent() + theItemName + 
-	                  ', an object' + newline;
-	               for (att in theItem) {
-	                  if (att && att != "undefined" && 
-	                     theItem[att] && 
-	                     theItem[att] != "undefined" && 
-	                     att != 'parentNode' && 
-	                     att != 'offsetParent' && 
-	                     att != 'ownerDocument' && 
-	                     att != 'nextSibling' && 
-	                     att != 'previousSibling') {
-	                        asdlkasf(theItem[att],att) + 
-	                           newline;
-	                  }
-	               }
-	            } catch (ex) {
-	               debugString += indent() + "(" + att + 
-	                  " inaccessible as object attribute)" 
-	                  + newline;
-	            }
-	            try {
-	               if (theItem[0]) {
-	                  debugString += indent() + theItemName 
-	                     + ', an array' + newline;
-	                  dumpDepthCount++;
-	                  for (var i=0;i<theItem.length;i++) { 
-	                     if (theItem[i]) {
-	                        if (theItem[i] && 
-	                           theItem[i] != "undefined") {
-	                           debugString += indent() + 
-	                              "Index " + i + newline;
-	                           asdlkasf(theItem[i],i) + 
-	                              newline;
-	                        }
-	                     }
-	                  }
-	                  dumpDepthCount--;
-	               }
-	            } catch (ex) {
-	               debugString += indent() + "(Index " + i 
-	                  + " inaccessible as array element)" 
-	                  + newline;
-	            }
-	            break;
-	         case "undefined":
-	            debugString += indent() + 
-	               "(type undefined)";
-	            break;
-	      }
-	      dumpDepthCount--;
-	   }
-	
-	   if (begString && begString.length > 0) {
-	      debugString += begString;
-	   }
-	   asdlkasf(theItem,theItemName,recDelim,aNester);
-	   if (endString && endString.length > 0)  {
-	      debugString += endString;
-	   }
-	   return debugString;
 	}
 
 	

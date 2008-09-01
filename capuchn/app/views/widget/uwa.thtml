@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>RSS Reader</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="http://cdn.netvibes.com/themes/base/uwa-iframe.css.m.css"/>
+</head>
+<body class="moduleIframe">
+<div class="moduleContent" id="moduleContent">
+<p>Loading ...</p>
+</div>
+<script type="text/javascript">
+var NV_HOST = 'www.netvibes.com', NV_PATH = '/', NV_STATIC = 'http://cdn.netvibes.com', NV_MODULES = 'nvmodules.netvibes.com', NV_AVATARS = 'avatars.netvibes.com';
+</script>
+<script type="text/javascript" src="http://cdn.netvibes.com/js/c/UWA_Frame.js"></script>
+
+<script type="text/javascript" src="http://192.168.1.33/dev/netvibesUWA/exposition-php-server/public/widget/js?uwaUrl=http%3A%2F%2Fwww.netvibes.com%2Fapi%2Fuwa%2Fexamples%2Frssreader.html"></script>
+<script type="text/javascript">
+UWA.proxies = {"ajax":"http:\/\/192.168.1.33\/dev\/netvibesUWA\/exposition-php-server\/public\/proxy\/ajax","feed":"http:\/\/192.168.1.33\/dev\/netvibesUWA\/exposition-php-server\/public\/proxy\/feed"};
+UWA.script(widget);
+Environment.launchModule();
+</script>
+</body>
+</html>

@@ -5,7 +5,7 @@ class VolumesController extends AppController
 	var $layout = 'default';
 	var $helpers = array('Tree','Html');
 	var $components = array('ContentList');
-	var $uses = array('Mag','Volume','Admin','Theme');
+	var $uses = array('Mag','Volume','Admin','Theme','Themefiles');
 	
 	/*
 	 * template,style,publish
@@ -41,7 +41,7 @@ class VolumesController extends AppController
 				$id=1;
 			}
     	}
-    		
+			
    		$this->Volume->id = $id;
    		$volume = $this->Volume->Read();
    		$pages = $this->Mag->findCount("`volume_id`=$id");
@@ -59,7 +59,45 @@ class VolumesController extends AppController
    		$this->set('volid',$id);
 		$this->set('nummags',$pages);
 		$this->set('page',$page);
-		$this->set('themename',$volume['Volume']['template']);
+		$this->log($this->params);
+		if(isset($this->params['url']['url'])){
+			$currurl = $this->params['url']['url']; // "volumes/view/1"	
+		}else if(isset($this->params['url'])){
+			if(sizeof($this->params['url'] < 1)){
+				$currurl = "";
+			}
+		}
+		
+		$mytheme = $this->Theme->findByName($volume['Volume']['template']);
+		//find files that match this url... potentially check for an empty path and make sure it is is this volumes theme
+		$tmpList = $this->Themefiles->findAll("'".$currurl."' REGEXP `Themefiles`.`path` AND `Themefiles`.`theme_id`=".$mytheme['Theme']['id']);
+		
+		$vhighmatch = -1;
+		$volumetfile = "";
+		
+		foreach($tmpList as $file){
+			if($file['Themefiles']['type'] == "Volume Layout"){
+				$exp = explode("/", $file['Themefiles']['path']);
+				$eUrl = explode("/", $currurl);
+				//if 
+				if(sizeof($exp) > $vhighmatch){
+					$cHighmatch = 0; //the current matches based on path
+					for($i=0; $i<sizeof($exp); $i++){
+						if($exp[$i] == $eUrl[$i]){
+							$cHighmatch = $i;
+						}
+					}
+					if($cHighmatch > $vhighmatch){
+						$vhighmatch = $cHighmatch;
+						$volumetfile = $file;
+					}
+				}			
+			}
+		}
+		$this->set("headers", $this->requestAction("theme/headers/".$mytheme['Theme']['id']));
+		$this->set("volumetheme", $volumetfile);//the layout template for volume
+		$this->set('theme', $tmpList);//other theme files. if needed.
+		$this->set('themename',$volume['Volume']['template']);//themename to ease mags use maybe?
 		$this->log('The theme for the current volume is::'.$volume['Volume']['template']);
     }
         

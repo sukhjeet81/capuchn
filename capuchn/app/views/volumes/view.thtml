@@ -1,5 +1,5 @@
 <?php
-
+//volumes/view
 $sessinfo = $this->requestAction('user/checkLogin');
 
 ?>

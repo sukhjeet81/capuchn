@@ -4,6 +4,8 @@
 <h2>Manage themes.</h2>
 <p>
 	If you would like to create a new theme, I would suggest cloning an existing theme to start. Just click clone, and then start editing the files!
+	Layout is the php interpreted layout file, you can change this to edit the html structure
+	Style is the default css file
 </p>
 <table class="albums" border="0" cellpadding="0" cellspacing="0">
 <thead>
@@ -21,7 +23,7 @@
 			Edit Style
 		</td>
 		<td>
-			Edit MCE style
+			Additional Files
 		</td>
 		<td>
 			Clone
@@ -50,18 +52,30 @@
 				</td>
 
 				<td class="<? echo $even; ?>">
-					<a href="#"	onClick="Capuchn.theme.edit('<? echo $theme['Theme']['id']?>','layout')">Edit Layout</a>									
+					<a href="#"	onClick="Capuchn.theme.edit('0','layout', 'layout', '<?php echo $theme['Theme']['id']?>')">Edit Layout</a>									
 				</td>
 				<td class="<? echo $even; ?>">
-					<a href="#"	onClick="Capuchn.theme.edit('<? echo $theme['Theme']['id']?>','style')">Edit Style</a>									
+					<a href="#"	onClick="Capuchn.theme.edit('0','style', 'style', '<? echo $theme['Theme']['id']?>')">Edit Style</a>									
 				</td>
 				<td class="<? echo $even; ?>">
-					<a href="#"	onClick="Capuchn.theme.edit('<? echo $theme['Theme']['id']?>','mce')">Edit MCE</a>									
+					<button dojoType="dijit.form.Button" onclick="Capuchn.theme.edit('0','themefile', 'newfile', '<?php echo $theme['Theme']['id'] ?>')">
+			    	Add File
+					</button>
+					<ul>
+					<?php
+						foreach($theme['Themefiles'] as $file){
+							echo "<li><a href=\"#\"	onClick=\"Capuchn.theme.edit('".$file['id']."','themefile','".$file['name']."','".$theme['Theme']['id']."')\">".$file['name']." - ".$file['type']."</a>";
+							echo "</li>";
+						}
+						//<a href="#"	onClick="Capuchn.theme.edit('< ? echo $theme['Theme']['id']? >','mce')">Edit MCE</a>									
+					?>
+					</ul>
 				</td>	
 				<td class="<? echo $even; ?>">
 					<button dojoType="dijit.form.Button" onclick="Capuchn.theme.clone('<? echo $theme['Theme']['id']?>')">
 			    	Clone
 					</button>
+
 				</td>			
 				<td class="<? echo $even; ?>">
 					<a href="#"	onClick="Capuchn.theme.deletetheme('<? echo $theme['Theme']['id']?>',this.parentNode.parentNode)">delete</a>				

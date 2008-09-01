@@ -1,0 +1,72 @@
+<?php
+?>
+<div style="padding:5px" class="thememanager">
+<h2>Manage Widgets.</h2>
+
+<table class="albums" border="0" cellpadding="0" cellspacing="0">
+<thead>
+	<tr>
+		<td>
+			ID
+		</td>
+		<td>
+			Name
+		</td>
+		<td>
+			Iframe
+		</td>
+		<td>
+			Edit
+		</td>
+		<td>
+			Delete
+		</td>
+	</tr>
+</thead>
+<tbody>
+<?php
+		$even = true;
+		foreach($widgets as $wgt){
+			if($even=="even")$even="odd";
+			else $even="even";
+		?>
+			<tr>
+				<td class="<? echo $even; ?>">
+					<? echo $wgt['Widget']['id']; ?>
+				</td>
+								
+				<td class="<? echo $even; ?>">					
+                	<? echo $wgt['Widget']['name']; ?>
+				</td>
+				<td class="<? echo $even; ?>">
+					iFrame? 
+					<?php
+						if($wgt['Widget']['type'] == 'iframe'){
+							$checked = "checked=\"checked\"";
+						}else{
+							$checked = "";
+						}
+					?>
+					<input dojotype="dijit.form.CheckBox"
+ 				          name="iframe" value="on"
+				          type="checkbox" 
+						  <?php echo $checked ?>
+						  onclick="Capuchn.widget.ifcheck('<? echo $wgt['Widget']['id']?>','<? echo $wgt['Widget']['name']?>', this)"
+						  /> 
+				</td>
+
+				<td class="<? echo $even; ?>">
+					<button dojoType="dijit.form.Button" onclick="Capuchn.widget.edit('<? echo $wgt['Widget']['id']?>','<? echo $wgt['Widget']['name']?>')">
+			    	Edit
+					</button>
+				</td>			
+				<td class="<? echo $even; ?>">
+					<a href="#"	onClick="Capuchn.widget.widgetdelete('<? echo $wgt['Widget']['id']?>',this.parentNode.parentNode)">delete</a>				
+				</td>
+			</tr>					
+		<?php	
+		}
+?>
+</tbody>	
+</table>
+</div>

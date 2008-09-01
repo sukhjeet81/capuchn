@@ -1,0 +1,104 @@
+.tundra .dijitWidgetPane .dijitWidgetPaneTitle {
+	background: #cccccc;
+	dbackground:#fff url("../../dijit/themes/tundra/images/titleBar.png") repeat-x bottom left;
+	border:1px solid #bfbfbf;
+	padding:14px 4px 2px 4px;
+	
+	margin:5px 5px 0 5px;
+}
+
+/* TODO: merge these, and all other icons to a series of background-image:() and background-position: -16*n px styles */
+.tundra .dijitWidgetPane .dijitArrowNode {
+	width:16px;
+	height:16px;
+	float:right;
+	cursor: pointer;
+	border:1px solid #bfbfbf;
+	margin-bottom:2px;
+}
+
+.tundra .dijitWidgetPane .dijitControlNode {
+	width:16px;
+	height:16px;
+	float:right;
+	cursor: pointer;
+	border:1px solid #bfbfbf;
+	margin-bottom:2px;
+}
+
+.tundra .dijitWidgetPane .dijitClosed .dijitArrowNode {
+	background:url('../../dijit/themes/tundra/images/arrowRight.png') no-repeat center center;
+}
+.dj_ie6 .tundra .dijitWidgetPane .dijitClosed .dijitArrowNode {
+	background-image:url('../../dijit/themes/tundra/images/arrowRight.gif');
+}
+
+.tundra .dijitWidgetPaneFocused .dijitWidgetPaneTextNode {
+	text-decoration:underline;
+}
+
+.tundra .dijitWidgetPane .dijitOpen .dijitArrowNode {
+	background:url('../../dijit/themes/tundra/images/arrowDown.png') no-repeat center center;
+}
+
+.dj_ie6 .tundra .dijitWidgetPane .dijitOpen .dijitArrowNode {
+	background-image:url('../../dijit/themes/tundra/images/arrowDown.gif');
+}
+
+.tundra .dijitWidgetPane .closeImage {
+	background: url("../../dijit/themes/tundra/images/tabClose.png") no-repeat center center; 
+
+}
+.dj_ie6 .tundra .dijitWidgetPane .closeImage {
+	background: url("../../dijit/themes/tundra/images/tabClose.gif") no-repeat center center;
+}
+
+.tundra .dijitWidgetPane .upImage {
+	background: url("../../dijit/themes/tundra/images/arrowUp.png") no-repeat center center; 
+
+}
+.tundra .dijitWidgetPane .rightImage {
+	background: url("../../dijit/themes/tundra/images/arrowRight.png") no-repeat center center; 
+
+}
+.tundra .dijitWidgetPane .downImage {
+	background: url("../../dijit/themes/tundra/images/arrowDown.png") no-repeat center center; 
+
+}
+.tundra .dijitWidgetPane .leftImage {
+	background: url("../../dijit/themes/tundra/images/arrowLeft.png") no-repeat center center; 
+}
+
+.tundra .dijitWidgetPane .dijitArrowNodeInner {
+	visibility:hidden;
+}
+.dijit_a11y .dijitWidgetPane .dijitArrowNodeInner {
+	visibility:visible;
+}
+
+.tundra .dijitWidgetPaneTitle .dijitOpenCloseArrowOuter {
+	margin-right:5px;
+}
+
+.tundra .dijitOpen .dijitWidgetPaneTitle .dijitOpenCloseArrowOuter {
+	position:relative;
+	top:2px;
+}
+
+.tundra .dijitWidgetPaneContentOuter {
+	margin:0 5px 5px 5px;
+	background: #ffffff;
+	border:1px solid #bfbfbf;
+	border-top: 1px solid #ccc;	/* w/out this, an <h1> on the top line causes a gap between the .content and .label */
+}
+.tundra .dijitWidgetPaneContentInner {
+	padding:10px;
+}
+/* force hasLayout to ensure borders etc, show up */
+.dj_ie6 .tundra .dijitWidgetPaneContentOuter,
+.dj_ie6 .tundra .dijitWidgetPane .dijitWidgetPaneTitle {
+	zoom: 1;
+}
+.tundra .dijitClickableRegion {
+	background-color : #ffc !important;
+}
