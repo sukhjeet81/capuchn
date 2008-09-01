@@ -1,4 +1,4 @@
-if(!dojo._hasResource["dijit._Widget"]){ //_hasResource checks added by build. Do not use _hasResource directly in your code.
+		console.debug('forg');if(!dojo._hasResource["dijit._Widget"]){ //_hasResource checks added by build. Do not use _hasResource directly in your code.
 dojo._hasResource["dijit._Widget"] = true;
 dojo.provide("dijit._Widget");
 
@@ -185,7 +185,6 @@ dojo.declare("dijit._Widget", null, {
 		// finalize: Boolean
 		//		is this function being called part of global environment
 		//		tear-down?
-
 		this.destroyDescendants();
 		this.destroy();
 	},
@@ -196,12 +195,13 @@ dojo.declare("dijit._Widget", null, {
 		// finalize: Boolean
 		//		is this function being called part of global environment
 		//		tear-down?
-
+		
+				console.debug('forgs');
 		this.uninitialize();
 		dojo.forEach(this._connects, function(array){
 			dojo.forEach(array, dojo.disconnect);
 		});
-
+		
 		// destroy widgets created as part of template, etc.
 		dojo.forEach(this._supportingWidgets || [], function(w){ w.destroy(); });
 		

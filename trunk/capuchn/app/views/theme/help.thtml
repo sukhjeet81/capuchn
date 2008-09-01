@@ -1,0 +1,14 @@
+<h1>Theme Editor Help file</h1>
+Refrence for different files and formats.
+
+<h2>Mag Layout</h2>
+Available php data:
+<ul>
+<li>$mag['Mag']['id'] - the internal id of this mag</li>
+<li>$mag['Mag']['header'] - the name of the mag</li>
+<li>$mag['Mag']['content'] - the actuall content/text</li>
+<li>$mag['Mag']['type'] - html/php/somethingelse</li>
+<li>$mag['Mag']['date'] - the last edit date </li>
+<li>$mag['Mag']['volume_id'] - the internal id of the volume this is currently stored in</li>
+<li>$mag['Mag']['user_id'] - the id number of the user that created this mag</li>
+

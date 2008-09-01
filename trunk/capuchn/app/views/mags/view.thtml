@@ -1,4 +1,8 @@
-
+<?php
+if($magtemplate != ""){
+	eval("?>".$magtemplate['Themefiles']['content']."<?");
+}else{ //output default
+?>
 
 <div class="magcontent">
 <a href="<?php echo BASE?>mags/view/<?php echo $mag['Mag']['id']?>"><h2 class="magviewtitle"><?php echo $mag['Mag']['header']?></h2></a>

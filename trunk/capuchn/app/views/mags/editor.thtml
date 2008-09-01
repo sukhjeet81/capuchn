@@ -1,0 +1,17 @@
+<?php
+/*
+ * Editor is used to create an editor tab when editing a mag. This can also
+ * be used as an example for using the the editor in other scenarios
+ */
+?>
+<div 	dojoType="capuchn.CapuchnEditor" 
+		itemname="<?php echo $mag['Mag']['header']?>"  
+		id="mageditor_<?php echo $mag['Mag']['id']?>"
+		volumeid="<?php echo $mag['Mag']['volume_id']?>"
+		extraPlugins="['dijit._editor.plugins.AlwaysShowToolbar','createLink','dijit._editor.plugins.ImageDialog', 'dijit._editor.plugins.SaveButton']"
+		<?php
+			if($mag['Mag']['id'] != "0"){
+				echo "itemid=\"".$mag['Mag']['id']."\"";
+			}
+		?>
+		><?php echo $mag['Mag']['content']?></div>

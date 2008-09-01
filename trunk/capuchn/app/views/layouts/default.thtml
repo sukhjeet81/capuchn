@@ -2,14 +2,20 @@
     if(!isset($themename) || $themename == ""){
    		$themename = 'default';
     }
-
-	//get the layout from theme
-	$code = $this->requestAction('theme/layout/'.$themename);
+	
+	//$theme contains files to be used with this layout and I could have more than one match
+	if($volumetheme != ""){
+		//this view matched a specific theme file
+		$code = $volumetheme['Themefiles']['content'];
+	}else{
+		//get the layout from theme
+		$code = $this->requestAction('theme/layout/'.$themename);
+	}
 
 	if($code == ""){
 		//the theme load failed... for some reason, load default... as it should ALWAYS be there.
 		$code = $this->requestAction('theme/layout/default');
 		$this->log("There was a problem reading the layout for theme: ".$themename);
 	}
-	eval($code);
+	eval("?>".$code."<?");//will this dump html?
 ?>

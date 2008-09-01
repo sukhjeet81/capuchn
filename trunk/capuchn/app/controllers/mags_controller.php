@@ -5,7 +5,7 @@ class MagsController extends AppController
 	var $name = 'Mags';
 	var $helpers = array('Html','Javascript','Tree');
 	var $components = array('ContentList');
-	var $uses = array('Mag','Volume','Admin','Filter');
+	var $uses = array('Mag','Volume','Admin','Filter','Theme','Themefiles');
 	function beforeFilter()
     {
     	//this will enable some features, but will not redirect. specifically, this will set admin_enable (t or f)
@@ -47,6 +47,44 @@ class MagsController extends AppController
 			$this->set('mag', $thismag);
 			$this->set('magid',$id);
 			$this->set('themename',$thismag['Volume']['template']);
+			
+			$theme = $this->Theme->findByName($thismag['Volume']['template']);
+			//this includes all the theme files.
+			
+			$mhighmatch = -1;
+			$magtfile = "";
+			if(isset($this->params['url']['url'])){
+				$currurl = $this->params['url']['url']; // "volumes/view/1"	
+			}else if(isset($this->params['url'])){
+				if(sizeof($this->params['url'] < 1)){
+					$currurl = "";
+				}
+			}
+			
+			$tmpList = $this->Themefiles->findAll("'".$currurl."' REGEXP `Themefiles`.`path` AND `Themefiles`.`theme_id`=".$theme['Theme']['id']);
+			
+			//find the most specific match... such as volumes/view/1 or mags/.*
+			foreach($tmpList as $file){
+				if($file['Themefiles']['type'] == "Mag Layout"){
+					$exp = explode("/", $file['Themefiles']['path']);
+					$eUrl = explode("/", $currurl);
+					//if 
+					if(sizeof($exp) > $mhighmatch){
+						$cHighmatch = 0; //the current matches based on path
+						for($i=0; $i<sizeof($exp); $i++){
+							if($exp[$i] == $eUrl[$i]){
+								$cHighmatch = $i;
+							}
+						}
+						if($cHighmatch > $mhighmatch){
+							$mhighmatch = $cHighmatch;
+							$magtfile = $file;
+						}
+					}
+				}
+			}
+			
+			$this->set("magtemplate", $magtfile);
 			$this->render('view','default');
 		}
 	}
@@ -63,7 +101,6 @@ class MagsController extends AppController
 			//exec just evals php code in place
 			//replace just performs a simple operation			
 		$filters = $this->Filter->findAll('Filter.active');
-		$this->log($filters);
 		//id/name/text/type/code/active
 		foreach($filters as $filter){			
 			$curr = split($filter['Filter']['text'], $mag['Mag']['content']);
@@ -153,6 +190,7 @@ class MagsController extends AppController
 		$this->log($this->params);
 		if((!empty($this->params['form'])) && (!isset($this->params['form']['get']))){
 			//we have a winner
+			$this->log($this->params['form']['content']);
 			
 			$status = array('status'=>false,'message'=>'Failed, unknown');
 			$this->datas['Mag']['content'] = $this->params['form']['content'];

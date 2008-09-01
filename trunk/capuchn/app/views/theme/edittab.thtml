@@ -1,37 +1,5 @@
 <?php
 //part
 //theme
-$id = $theme['Theme']['id'];
-$editid = "themeelement_".$part."_".$id;//OMG, this was colliding with the tabid... 
 ?>
-
-<form id="themeform_<?=$id?>">
-	<button dojoType="dijit.form.Button" onclick="Capuchn.theme.save(this,'<?=$editid?>')">
-    	Save
-	</button>
-	<input type="hidden" value="<?php echo $theme['Theme']['id']?>" cols="60" name="data[Theme][id]"/>
-	<input id="ThemeName_<?=$id?>" type="text" value="<?php echo $theme['Theme']['name']?>" cols="60" name="data[Theme][name]"/>
-	<?php
-		if($part == 'style'){
-			?>
-				<textarea id="<?=$editid?>" class="codepress css linenumbers-on" style="display:block; width:100%" name="data[Theme][style]"><?php echo $theme['Theme']['style']?></textarea>			
-			<?
-		}else if($part == "mce"){
-			?>
-				<textarea id="<?=$editid?>" class="codepress css linenumbers-on" style="display:block; width:100%" name="data[Theme][mce]"><?php echo $theme['Theme']['mce']?></textarea>			
-			<?
-		}else{
-			?>
-				<textarea id="<?=$editid?>" class="codepress php linenumbers-on" style="display:block; width:100%" name="data[Theme][layout]"><?php echo $theme['Theme']['layout']?></textarea>			
-			<?
-		}
-	?>
-</form>
-
-<script>
-	
-	var tmp = function(){
-		CodePress.init('<?=$editid?>');
-	}
-	dojo.addOnLoad(tmp);
-</script>
+<div dojoType="capuchn.TextEditor" saveUrl="themes/this" textname="style"><?php echo $theme['Theme']['style']?></div>

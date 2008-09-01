@@ -2151,7 +2151,9 @@ dojo.declare("dijit._Widget", null, {
 		//		descendants.
 
 		// TODO: should I destroy in the reverse order, to go bottom up?
+		console.debug("a",this.getDescendants());
 		dojo.forEach(this.getDescendants(), function(widget){ widget.destroy(); });
+				console.debug("b");
 	},
 
 	uninitialize: function(){
@@ -2231,6 +2233,7 @@ dojo.declare("dijit._Widget", null, {
 		//	Returns all the widgets that contained by this, i.e., all widgets underneath this.containerNode.
 		if(this.containerNode){
 			var list= dojo.query('[widgetId]', this.containerNode);
+			console.debug("list", list.map(dijit.byNode));
 			return list.map(dijit.byNode);		// Array
 		}else{
 			return [];

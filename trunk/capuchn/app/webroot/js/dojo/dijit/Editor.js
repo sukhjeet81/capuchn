@@ -70,7 +70,7 @@ dojo.declare(
 				}
 			});
 			this._plugins=[];
-			this.toolbar.destroy(); delete this.toolbar;
+			this.toolbar.destroy(); delete this.toolbar;			
 			this.inherited(arguments);
 		},
 		addPlugin: function(/*String||Object*/plugin, /*Integer?*/index){
@@ -103,6 +103,7 @@ dojo.declare(
 				}
 				plugin=o.plugin;
 			}
+			
 			if(arguments.length > 1){
 				this._plugins[index] = plugin;
 			}else{
@@ -111,7 +112,7 @@ dojo.declare(
 			plugin.setEditor(this);
 			if(dojo.isFunction(plugin.setToolbar)){
 				plugin.setToolbar(this.toolbar);
-			}
+			}			
 		},
 		/* beginning of custom undo/redo support */
 
@@ -172,10 +173,11 @@ dojo.declare(
 			}
 		},
 		queryCommandEnabled: function(cmd){
+			if(cmd == 'save') return true;
 			if(this.customUndo && (cmd=='undo' || cmd=='redo')){
 				return cmd=='undo'?(this._steps.length>1):(this._undoedSteps.length>0);
 			}else{
-				return this.inherited('queryCommandEnabled',arguments);
+				return this.inherited('queryCommandEnabled',arguments);				
 			}
 		},
 		_moveToBookmark: function(b){

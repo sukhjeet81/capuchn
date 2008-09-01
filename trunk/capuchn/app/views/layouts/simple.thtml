@@ -2,29 +2,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>layouts - default</title>
-<?php echo $html->css('style');?>
-<?php echo $html->css('vertical');?>
+<title>login</title>
+
 <?php echo $html->css('forms');?>
+<link rel="stylesheet" href="css/admin.css" type="text/css">
+<style>
+	.loginform {
+		background: #777;
+		width: 200px;
+		height: 200px;
+		margin: 10px auto 0 auto;
+		border: solid 1px #0a0a0a;
+	}
+	body {
+		background: #afafaf;
+	}
+	.titlebox {
+		width: 100%;
+		margin: 200px auto 0 auto;
+		color:#0a0a0a;
+		border-bottom: solid 1px #3a3a3a;
+		text-align:center;
+		
+	}
+</style>
 </head>
 
-<body>
-
-
-<div class="head" id="headerbg">&nbsp;
-  <div id="headerwrap">
-  </div><!-- End headerwrap div  -->
-</div>
-<div id="mainbody">
-    <div id="content">
-		<?php echo $content_for_layout ?>
-    </div><!-- End content div -->
-	<div id="navbar">
-		
-	</div><!-- End navbar div -->
-</div><!-- End mainbody div -->
-
-<div style="clear:both">
-</div>
+<body class="tundra">
+	<h1 class="titlebox">
+		<?php echo (isset($sitename))?"Login:".$sitename:"Login"; ?>
+	</h1>
+	<?php echo $content_for_layout ?>
+	<p>
+		<a href="http://www.capuchn.com">Powered by Capuchn</a>
+	</p>
 </body>
 </html>

@@ -1,6 +1,17 @@
 @CHARSET "ISO-8859-1";
 /*All specific id's and classes not associated with a lib*/
-	
+
+.widgetframe {
+	width: 100%;
+	border:0px;
+	overflow:auto;
+	margin: 1px;
+}
+
+.WidgetPaneColumn{
+	float: left;
+}
+
 .thumbdivdock {
 	/*a 'dock' for drag and drop, once that happens */
 	width:120px;
